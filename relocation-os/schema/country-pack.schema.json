@@ -1,0 +1,255 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://relocation-os/schema/country-pack.schema.json",
+  "title": "Relocation OS Country Pack",
+  "description": "One country's complete relocation decision tree. Every country pack uses this identical structure so the renderer, the app, and the buyer's mental model stay the same across products.",
+  "type": "object",
+  "required": ["meta", "realityCheck", "tree", "pathways", "modules", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["country", "countryCode", "version", "verifiedAsOf", "origin", "currency", "priceUsd"],
+      "additionalProperties": false,
+      "properties": {
+        "country":     { "type": "string" },
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "version":     { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "verifiedAsOf":{ "type": "string", "format": "date", "description": "Date every fact in this pack was last checked against the cited sources." },
+        "reviewDue":   { "type": "string", "format": "date", "description": "Date the pack must be re-verified. Drives the content-freshness workflow." },
+        "origin":      { "type": "string", "description": "Country the buyer is departing from. Exit-side admin differs per origin." },
+        "currency":    { "type": "string" },
+        "fxNote":      { "type": "string" },
+        "priceUsd":    { "type": "number" },
+        "tagline":     { "type": "string" }
+      }
+    },
+
+    "realityCheck": {
+      "type": "array",
+      "description": "Things that do NOT exist or do not work the way buyers assume. Sold first, before any pathway, because it prevents the most expensive mistakes and establishes that the guide is not marketing.",
+      "items": {
+        "type": "object",
+        "required": ["claim", "reality", "why"],
+        "additionalProperties": false,
+        "properties": {
+          "claim":   { "type": "string", "description": "The widespread belief." },
+          "reality": { "type": "string", "description": "What is actually true." },
+          "why":     { "type": "string", "description": "Why the myth persists / who profits from it." },
+          "sourceIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "tree": {
+      "type": "object",
+      "description": "The if/then flowchart. A directed graph of question nodes terminating in pathway or dead-end nodes.",
+      "required": ["entry", "nodes"],
+      "additionalProperties": false,
+      "properties": {
+        "entry": { "type": "string", "description": "id of the first node" },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "id":       { "type": "string", "pattern": "^[a-z0-9-]+$" },
+              "type":     { "enum": ["question", "outcome", "deadend"] },
+              "question": { "type": "string", "description": "Required for type=question." },
+              "help":     { "type": "string", "description": "Plain-language explanation of what the question really means, and how people get it wrong." },
+              "answers": {
+                "type": "array",
+                "description": "Required for type=question. Each answer is an if/then edge.",
+                "items": {
+                  "type": "object",
+                  "required": ["label", "next"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "label": { "type": "string" },
+                    "note":  { "type": "string" },
+                    "next":  { "type": "string", "description": "id of the next node" }
+                  }
+                }
+              },
+              "pathwayId": { "type": "string", "description": "Required for type=outcome. Which pathway this lands on." },
+              "verdict":   { "type": "string", "description": "Required for type=deadend. The honest 'this does not work' answer." },
+              "alternatives": {
+                "type": "array",
+                "description": "For dead ends: what to actually do instead.",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "pathways": {
+      "type": "array",
+      "description": "Every legal route into long-term residence. One per visa/permit strategy.",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "summary", "difficulty", "eligibility", "steps"],
+        "additionalProperties": false,
+        "properties": {
+          "id":      { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name":    { "type": "string" },
+          "visaCodes": { "type": "array", "items": { "type": "string" } },
+          "summary": { "type": "string" },
+          "bestFor": { "type": "string" },
+          "difficulty": { "enum": ["low", "moderate", "high", "very-high"] },
+          "durationGranted": { "type": "string" },
+          "renewable": { "type": "string" },
+          "leadsToPermanentResidence": { "type": "string" },
+          "canBringFamily": { "type": "string" },
+          "canWorkLocally": { "type": "string" },
+          "eligibility": {
+            "type": "array",
+            "description": "Hard gates. If a buyer fails one, this pathway is closed to them.",
+            "items": {
+              "type": "object",
+              "required": ["requirement"],
+              "additionalProperties": false,
+              "properties": {
+                "requirement": { "type": "string" },
+                "detail": { "type": "string" },
+                "sourceIds": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "costs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["item", "amount"],
+              "additionalProperties": false,
+              "properties": {
+                "item":   { "type": "string" },
+                "amount": { "type": "string" },
+                "note":   { "type": "string" },
+                "sourceIds": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "timeline": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["title", "detail"],
+              "additionalProperties": false,
+              "properties": {
+                "title":   { "type": "string" },
+                "detail":  { "type": "string" },
+                "who":     { "type": "string", "description": "Who performs this step: you, your employer, your lawyer, a Vietnamese sponsor." },
+                "where":   { "type": "string" },
+                "takes":   { "type": "string" },
+                "blocker": { "type": "string", "description": "What must be finished before this step can start." },
+                "sourceIds": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "failureModes": {
+            "type": "array",
+            "description": "Specific, named ways applications on this pathway get rejected.",
+            "items": {
+              "type": "object",
+              "required": ["mistake", "consequence", "avoid"],
+              "additionalProperties": false,
+              "properties": {
+                "mistake":     { "type": "string" },
+                "consequence": { "type": "string" },
+                "avoid":       { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "modules": {
+      "type": "array",
+      "description": "Phase-ordered checklists that apply regardless of which pathway the buyer took. Identical phase spine in every country pack.",
+      "items": {
+        "type": "object",
+        "required": ["id", "phase", "title", "items"],
+        "additionalProperties": false,
+        "properties": {
+          "id":    { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "phase": {
+            "enum": ["decide", "documents", "exit-origin", "money", "arrival", "first-90-days", "ongoing", "contingency"],
+            "description": "The fixed spine. Every country pack fills these same eight phases."
+          },
+          "title":  { "type": "string" },
+          "window": { "type": "string", "description": "When this phase happens relative to move date, e.g. 'T-120 to T-60 days'." },
+          "intro":  { "type": "string" },
+          "appliesTo": {
+            "type": "array",
+            "description": "Pathway ids this module applies to. Omit or use ['*'] for all.",
+            "items": { "type": "string" }
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["task"],
+              "additionalProperties": false,
+              "properties": {
+                "task":   { "type": "string" },
+                "detail": { "type": "string" },
+                "why":    { "type": "string" },
+                "critical": { "type": "boolean", "description": "True if getting this wrong breaks a later step." },
+                "appliesTo": { "type": "array", "items": { "type": "string" } },
+                "sourceIds": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "gotchas": {
+      "type": "array",
+      "description": "Cross-cutting traps that do not belong to one pathway or phase. The highest-value page in the product.",
+      "items": {
+        "type": "object",
+        "required": ["title", "trap", "doThis"],
+        "additionalProperties": false,
+        "properties": {
+          "title":  { "type": "string" },
+          "trap":   { "type": "string" },
+          "doThis": { "type": "string" },
+          "severity": { "enum": ["annoying", "expensive", "trip-ending"] },
+          "expires": { "type": "string", "format": "date", "description": "For time-boxed gotchas tied to a rule change. Renderer flags these for review." },
+          "sourceIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "sources": {
+      "type": "array",
+      "description": "Citation registry. Every factual claim in the pack points here by id. No source, no claim.",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "tier", "checkedOn"],
+        "additionalProperties": false,
+        "properties": {
+          "id":    { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string" },
+          "url":   { "type": "string" },
+          "tier": {
+            "enum": ["primary-law", "government", "professional", "community"],
+            "description": "primary-law = the decree/statute itself; government = official agency page; professional = law/accounting firm analysis; community = forums and expat reports. Buyers see this so they know how much weight a claim carries."
+          },
+          "checkedOn": { "type": "string", "format": "date" },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1950 @@
+<title>Vietnam Relocation Guide</title>
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#fff; --ink:#1c1a17; --muted:#5f5a52; --faint:#8a837a;
+  --line:#e3ded6; --line-strong:#cfc7bb; --accent:#8a3324; --accent-soft:#f5ebe8;
+  --ok:#2f6a4a; --warn:#8a6a1f; --warn-soft:#fbf3e0; --danger:#a3301f; --danger-soft:#fbeceb;
+  --radius:10px; --measure:none;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}}
+:root[data-theme="dark"]{
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;
+  font:16px/1.65 ui-serif,Georgia,'Iowan Old Style','Times New Roman',serif;}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.012em}
+h2{font-size:1.75rem;margin:0 0 .35rem}
+h3{font-size:1.2rem;margin:2rem 0 .3rem}
+h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
+  margin:1.75rem 0 .5rem;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+p{margin:0 0 .8rem}
+a{color:var(--accent)}
+code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);
+  color:var(--accent);padding:.1em .4em;border-radius:4px}
+.lede{color:var(--muted);font-size:1.05rem;margin-bottom:1.5rem;max-width:42rem}
+
+/* header */
+header.top{border-bottom:1px solid var(--line-strong);background:var(--surface);padding:3.5rem 0 2.25rem}
+.eyebrow{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:0 0 .6rem}
+.tagline{font-size:1.15rem;color:var(--muted);max-width:38rem;margin-bottom:1.5rem}
+.stamp{display:flex;flex-wrap:wrap;gap:.5rem;font:.78rem/1.4 ui-sans-serif,system-ui,sans-serif}
+.stamp span{border:1px solid var(--line-strong);border-radius:999px;padding:.3rem .75rem;color:var(--muted)}
+.stamp b{color:var(--ink);font-weight:650}
+
+/* trust notice */
+.notice{background:var(--warn-soft);border:1px solid var(--line-strong);border-left:3px solid var(--warn);
+  border-radius:var(--radius);padding:1rem 1.15rem;margin:2rem 0;
+  font:.9rem/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+.notice b{color:var(--ink)}
+.warn-box{background:var(--warn-soft);border:1px solid var(--line-strong);border-radius:var(--radius);padding:1rem}
+
+/* bands */
+.band{padding:3rem 0;border-bottom:1px solid var(--line)}
+.band:last-of-type{border-bottom:0}
+
+/* reality check */
+.myth{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin-bottom:.85rem}
+.myth-claim{font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.myth-why{color:var(--muted);font-size:.92rem;margin-bottom:0}
+.tag{display:inline-block;font:600 .66rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.07em;
+  text-transform:uppercase;padding:.28em .55em;border-radius:4px;margin-right:.55rem;vertical-align:.12em}
+.tag-false{background:var(--danger-soft);color:var(--danger)}
+.tag-critical{background:var(--danger-soft);color:var(--danger);margin-left:.5rem;margin-right:0}
+
+/* decision tree */
+.tree-card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.5rem;min-height:12rem}
+.q-text{font-size:1.3rem;font-weight:600;margin-bottom:.5rem}
+.q-help{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.answers{display:flex;flex-direction:column;gap:.6rem}
+.answer{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line-strong);
+  border-radius:var(--radius);padding:.85rem 1rem;cursor:pointer;font:inherit;color:inherit;
+  transition:border-color .12s,background .12s}
+.answer:hover{border-color:var(--accent);background:var(--accent-soft)}
+.answer b{display:block;margin-bottom:.15rem}
+.answer i{font-style:normal;color:var(--muted);font-size:.88rem}
+.breadcrumb{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0 0 .9rem;
+  font:.8rem/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.breadcrumb li::after{content:" ›";color:var(--line-strong)}
+.breadcrumb li:last-child::after{content:""}
+.tree-controls{display:flex;gap:.6rem;margin-top:.9rem}
+.btn{font:600 .85rem ui-sans-serif,system-ui,sans-serif;padding:.5rem .9rem;border-radius:8px;
+  border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[hidden]{display:none}
+.result-kicker{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.result-dead .result-kicker{color:var(--danger)}
+.alts{margin:.6rem 0 0;padding-left:1.1rem}
+.alts li{margin-bottom:.35rem}
+
+/* pathways */
+.pathway{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem;margin-bottom:1.25rem}
+.pathway-head h3{margin-top:0}
+.codes{font:.8rem ui-sans-serif,system-ui,sans-serif;margin-bottom:.6rem}
+.diff{display:inline-block;margin-left:.4rem;padding:.25em .6em;border-radius:999px;
+  font:600 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.diff-low{background:#e7f2ec;color:var(--ok)} .diff-moderate{background:var(--warn-soft);color:var(--warn)}
+.diff-high,.diff-very-high{background:var(--danger-soft);color:var(--danger)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .diff-low{background:#1d2b24}}
+.summary{color:var(--muted)}
+.facts{display:grid;grid-template-columns:minmax(9rem,auto) 1fr;gap:.35rem .9rem;margin:1.1rem 0;
+  padding:1rem;background:var(--bg);border-radius:var(--radius);font-size:.93rem}
+.facts dt{font:650 .78rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--faint)}
+.facts dd{margin:0}
+.reqs{padding-left:1.1rem} .reqs li{margin-bottom:.5rem}
+.costs{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:.5rem}
+.costs th{text-align:left;font:650 .72rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--faint);border-bottom:1px solid var(--line-strong);padding:.4rem .5rem}
+.costs td{border-bottom:1px solid var(--line);padding:.55rem .5rem;vertical-align:top}
+.costs .amt{white-space:nowrap;font-weight:600}
+.steps{padding-left:1.3rem} .steps li{margin-bottom:1.1rem}
+.step-title{font-weight:650;margin-bottom:.2rem}
+.step-meta{font:.82rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:0}
+.step-blocker{font-size:.88rem;color:var(--warn);margin:.35rem 0 0}
+.failures{display:grid;gap:.7rem}
+.failure{border-left:3px solid var(--danger);background:var(--danger-soft);
+  border-radius:0 var(--radius) var(--radius) 0;padding:.85rem 1rem}
+.failure p{margin-bottom:.3rem;font-size:.93rem} .failure p:last-child{margin-bottom:0}
+.f-mistake{font-weight:650}
+
+/* checklists */
+.phase-nav{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.phase-nav a{font:600 .78rem ui-sans-serif,system-ui,sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line-strong);border-radius:999px;padding:.35rem .8rem}
+.phase-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.module{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem;scroll-margin-top:1rem}
+.module h3{margin-top:0}
+.window{font:600 .78rem ui-sans-serif,system-ui,sans-serif;color:var(--accent);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.mod-intro{color:var(--muted);font-size:.95rem}
+.checklist{list-style:none;padding:0;margin:1rem 0 0}
+.checklist li{display:flex;gap:.7rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.checklist li.critical{border-left:3px solid var(--danger);padding-left:.7rem;margin-left:-.7rem}
+.checklist input{margin-top:.35rem;width:1.05rem;height:1.05rem;flex-shrink:0;accent-color:var(--accent)}
+.checklist label{display:block;cursor:pointer}
+.checklist .task{display:block;font-weight:600}
+.checklist .detail,.checklist .why,.checklist .scope{display:block;color:var(--muted);font-size:.9rem;margin-top:.2rem}
+.checklist .scope{font:.8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.checklist input:checked + label .task{text-decoration:line-through;color:var(--faint)}
+.checklist li[hidden]{display:none}
+
+/* gotchas */
+.gotcha{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.2rem 1.35rem;margin-bottom:.85rem}
+.gotcha.sev-expensive{border-left-color:var(--warn)}
+.gotcha.sev-trip-ending{border-left-color:var(--danger)}
+.gotcha h3{margin:0 0 .15rem;font-size:1.12rem}
+.gnum{display:inline-block;min-width:1.6rem;color:var(--faint);font-family:ui-sans-serif,system-ui,sans-serif}
+.sev-label{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--faint);margin:0 0 .7rem 1.6rem}
+.gotcha p{font-size:.95rem}
+.expires{color:var(--warn);font-size:.86rem;margin-bottom:0}
+
+/* sources */
+.sources{padding-left:1.5rem;font-size:.9rem}
+.sources li{margin-bottom:.75rem;padding-left:.25rem}
+.tier{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;padding:.28em .5em;border-radius:4px;margin-right:.5rem;vertical-align:.1em}
+.tier-primary-law{background:var(--accent-soft);color:var(--accent)}
+.tier-government{background:#e7f2ec;color:var(--ok)}
+.tier-professional{background:var(--warn-soft);color:var(--warn)}
+.tier-community{background:var(--bg);color:var(--faint);border:1px solid var(--line-strong)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tier-government{background:#1d2b24}}
+.checked,.src-note{display:block;color:var(--faint);font-size:.8rem;margin-top:.15rem}
+.cite{font-size:.7em;vertical-align:super;white-space:nowrap}
+.cite a{text-decoration:none;padding:0 .12em;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+
+footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,system-ui,sans-serif}
+@media print{
+  .tree-controls,.phase-nav,#tree-app .answers{display:none}
+  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module{page-break-inside:avoid}
+  body{background:#fff;color:#000;font-size:11pt}
+}
+@media (max-width:34rem){ .facts{grid-template-columns:1fr;gap:.1rem .5rem} .facts dt{margin-top:.5rem} }
+</style>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">United States &rarr; Vietnam</p>
+  <h1>The Vietnam Relocation Guide</h1>
+  <p class="tagline">Every legal route from the USA to Vietnam, as one decision tree. Including the routes that do not exist.</p>
+  <div class="stamp">
+    <span>Edition <b>v1.0.0</b></span>
+    <span>Verified <b>September 8, 2026</b></span>
+    <span>Next review <b>December 8, 2026</b></span>
+    <span><b>8</b> pathways</span>
+    <span><b>23</b> cited sources</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="notice">
+    <p><b>Read this before you rely on anything here.</b> This is researched reference material, not legal or tax advice, and no lawyer-client relationship is created by buying it. Immigration rules change without notice and are applied with discretion by individual officers. Every claim is numbered to a source you can check yourself, and each source is labelled with how much weight it carries.</p>
+    <p style="margin-bottom:0"><b>Everything here was verified on September 8, 2026.</b> Before you spend money or book a flight, confirm the specific rule against the cited source or with a licensed Vietnamese immigration adviser. USD conversions in this guide assume approximately VND 26,000 = US$1. The rate moves. Treat every dollar figure as an order of magnitude, not a quote, and check the rate on the day you move money.</p>
+  </div>
+  
+<section id="reality" class="band">
+  <h2>Start here: what is not true</h2>
+  <p class="lede">Six beliefs that cost Americans the most money on the way to Vietnam. We lead with these because the expensive mistakes happen before anyone files a form.</p>
+  
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Vietnam has a golden visa I can buy.</p>
+    <p class="myth-real"><strong>Actually:</strong> It does not, as of the verification date of this guide. A 5-to-10-year &#39;golden visa&#39; was proposed to the Prime Minister by the Tourism Advisory Board in 2025 and has been widely reported as if it were live. There is no decree number and no application channel. Some sites cite a &#39;Resolution 41/2026/QH15&#39; pilot; no Vietnamese government source confirms that resolution exists, and the outlets carrying the claim sell visa services. <span class="cite"><a href="#src-golden-visa-status" title="Vietnam golden visa reality check — proposed in 2025, no decree and no application channel as of 2026; &#39;Resolution 41/2026/QH15&#39; unconfirmed by any government source">14</a><a href="#src-golden-visa-proposal" title="Original 2025 Tourism Advisory Board golden visa proposal reporting">15</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Golden-visa search traffic is extremely valuable to agencies. Reporting a proposal as a program generates leads years before any program exists.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Americans get 45 days visa-free like the Brits and the Europeans do.</p>
+    <p class="myth-real"><strong>Actually:</strong> No. Vietnam&#39;s unilateral visa exemption covers roughly two dozen countries. The United States is not one of them. Americans need a visa for every single entry, including a weekend trip. The practical default is the 90-day e-visa. <span class="cite"><a href="#src-exemption-list" title="Vietnam visa exemption country list — the United States is not included">9</a><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Blog posts written for a UK or EU audience get syndicated and rewritten without the nationality caveat.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>There is a digital nomad visa, or a retirement visa.</p>
+    <p class="myth-real"><strong>Actually:</strong> Vietnam has neither. There is no visa category for a remote worker paid by a foreign company, and no category for a retiree living on passive income. The new UĐ1 tech visa is not a nomad visa: it runs through a Vietnamese employer, university, or research body, which excludes freelancers and remote employees of foreign firms. <span class="cite"><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Thailand, Indonesia, Malaysia, and the Philippines all launched nomad or retirement visas. Writers assume Vietnam followed. It did not.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>I&#39;ll just open a company and that gets me residency.</p>
+    <p class="myth-real"><strong>Actually:</strong> Only above a capital threshold. Contributing under VND 3 billion (roughly US$115,000) puts you in the DT4 tier, which grants a visa of up to 12 months and no temporary residence card. You will have a Vietnamese company, ongoing accounting and tax obligations, and still no residence card. The residence card starts at DT3, meaning VND 3 billion or more actually contributed. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Company formation agencies earn their fee at incorporation. The residency outcome is the customer&#39;s problem afterwards.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Working online for my US clients from a Vietnamese tourist visa is fine, everyone does it.</p>
+    <p class="myth-real"><strong>Actually:</strong> It is prohibited on paper and tolerated in practice, and those are two different risks. Article 8.2 of the 2014 Law on Entry, Exit, Transit and Residence bars foreigners from labour activities on a tourist entry; administrative fines run VND 15–25 million (roughly US$600–1,000). Enforcement against people quietly serving foreign clients has been close to nonexistent. That is a tolerance, not a right, and it can be withdrawn without notice. Decide with open eyes; do not let anyone tell you it is legal. <span class="cite"><a href="#src-law-47-2014" title="Law on Entry, Exit, Transit and Residence of Foreigners in Vietnam (2014), Article 8.2 — bars labour activity on tourist entry">6</a><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Everyone&#39;s lived experience is that nothing happened to them. Survivorship bias reads as legal advice.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>The US and Vietnam have a tax treaty, so I won&#39;t be double taxed.</p>
+    <p class="myth-real"><strong>Actually:</strong> A treaty was signed in July 2015 and Vietnam ratified it in 2017, but the US Senate never did, so it has never entered into force. There are no treaty tie-breaker rules for dual residency and no reduced withholding. Your entire defense against double taxation is the Foreign Earned Income Exclusion and the Foreign Tax Credit. <span class="cite"><a href="#src-tax-treaty-status" title="US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force">19</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> The treaty was signed with fanfare in 2015 and the announcement articles still rank well. Almost nobody publishes the non-ratification follow-up.</p>
+  </article>
+</section>
+  
+<section id="tree" class="band">
+  <h2>Your pathway, in questions</h2>
+  <p class="lede">Answer honestly rather than optimistically. Every answer narrows to exactly one route, including the routes that turn out not to exist. You can go back at any point.</p>
+  <div id="tree-app">
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+    <div id="tree-card" class="tree-card"></div>
+    <div class="tree-controls">
+      <button id="btn-back" type="button" class="btn btn-quiet">&larr; Back</button>
+      <button id="btn-restart" type="button" class="btn btn-quiet">Start over</button>
+    </div>
+  </div>
+  <noscript><p class="warn-box">This decision tree needs JavaScript. Every pathway it can reach is written out in full below, so you can also read them directly.</p></noscript>
+</section>
+  
+<section id="pathways" class="band">
+  <h2>The pathways in full</h2>
+  <p class="lede">Every legal route, whether or not the tree sent you there. Read your own first, then read the one you would fall back to.</p>
+  
+  <article class="pathway" id="pathway-evisa-90">
+    <header class="pathway-head">
+      <h3>90-Day E-Visa</h3>
+      <p class="codes"><code>EV</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">Vietnam&#39;s default entry permission for Americans: fully online, up to 90 days, available single or multiple entry. This is the tool you will use for scouting trips, and the one most long-stayers quietly live on.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Scouting trips, the gap between arriving and having a work permit approved, and anyone who has not yet triggered a long-term category.</dd>
+      <dt>You get</dt><dd>Up to 90 days</dd>
+      <dt>Renewable</dt><dd>Not extended in the ordinary case — you apply for a new one. Practice varies and in-country extension is not something to plan around.</dd>
+      <dt>Work locally</dt><dd>No. Labour activity on a tourist entry is prohibited under Article 8.2 of the 2014 Law.</dd>
+      <dt>Family</dt><dd>Each person applies separately, including children.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>3 to 5 working days standard. Apply at least two weeks before departure so you can survive one rejection and reapply.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>US passport valid at least 6 months beyond entry</strong> — Count from your intended entry date, not your application date. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li><li><strong>Passport-standard digital photo and a scan of the passport bio page</strong> — Plain white background, no glasses, face fully visible. Photo rejection is the most common cause of a failed application. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li><li><strong>A declared port of entry</strong> — You must name the checkpoint you will physically use, and it must match on arrival. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>E-visa, single entry</td><td class="amt">US$25</td><td>Official government fee. Non-refundable, including when your own typo causes the rejection. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></td></tr><tr><td>E-visa, multiple entry</td><td class="amt">US$50</td><td>Worth it for anyone who will leave and return within the 90 days. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Apply on the official government portal only</p>
+        <p>Vietnam&#39;s national e-visa portal is a government site. Dozens of commercial sites clone its look and charge US$50 to 90 for the same US$25 application. Confirm you are on a .gov.vn domain before you pay. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> 30 minutes</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Enter your name exactly as machine-readable on your passport</p>
+        <p>Surname and given names in the same fields the passport uses. A middle name in the wrong box is a rejection. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Have the passport physically in front of you.</p>
+      </li>
+      <li>
+        <p class="step-title">Choose the correct entry port</p>
+        <p>If you might fly into Tan Son Nhat but could reroute to Noi Bai, this matters. See the gotcha on port matching. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Pay and save the registration code</p>
+        <p>The code is how you retrieve the visa. Without it, recovery is painful. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Download and print the approved e-visa</p>
+        <p>Carry a paper copy. Airline check-in staff at US airports frequently ask to see it before boarding, and phone batteries die. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Applying through a lookalike commercial site</p>
+        <p class="f-conseq"><b>Consequence:</b> You pay two to four times the official fee, and sometimes get a visa-on-arrival letter you did not want.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Verify the domain ends in .gov.vn before entering card details.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Arriving at a different port than declared</p>
+        <p class="f-conseq"><b>Consequence:</b> Refused entry at the border, with the airline liable to fly you back.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If your routing changes, apply for a new e-visa with the correct port.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Treating the 90 days as renewable in-country</p>
+        <p class="f-conseq"><b>Consequence:</b> Overstay, fines, and a border record that makes every future application harder.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Book the exit before you enter.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-vec-5year">
+    <header class="pathway-head">
+      <h3>5-Year Visa Exemption Certificate</h3>
+      <p class="codes"><code>VEC</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">The best-value document in Vietnamese immigration, and the least known. For people of Vietnamese origin and the foreign spouses and children of Vietnamese citizens: five years of unlimited entries, up to 180 days per entry, no visa fee each time.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Americans with a Vietnamese parent or grandparent, former Vietnamese nationals, and foreign spouses of Vietnamese citizens who do not need to work locally.</dd>
+      <dt>You get</dt><dd>5 years, capped at 180 days per single entry. Cannot exceed remaining passport validity.</dd>
+      <dt>Renewable</dt><dd>Yes, reapply on the same basis.</dd>
+      <dt>Work locally</dt><dd>No — it is an entry exemption, not a work authorisation. Working still requires a work permit or a documented exemption.</dd>
+      <dt>Family</dt><dd>Spouse and children apply on the family relationship, each with their own certificate.</dd>
+      <dt>Toward permanent residence</dt><dd>Not directly, but it coexists with other applications and takes the pressure off completely.</dd>
+      <dt>Realistic timeline</dt><dd>Typically a few weeks once you hold the proof documents. Finding the proof documents can take months.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Passport valid at least 1 year</strong> — Longer is better; the certificate cannot outlast the passport. <span class="cite"><a href="#src-vec-5yr" title="5-year visa exemption certificate for Viet Kieu and foreign spouses and children of Vietnamese citizens — 180 days per entry">12</a></span></li><li><strong>Proof of Vietnamese origin, or proof of family relationship to a Vietnamese citizen</strong> — For Viet Kieu: a decision permitting relinquishment of Vietnamese nationality, a certificate of loss of nationality, an old Vietnamese ID card (even expired), a household registration book, or a birth records extract. For spouses and children: marriage or birth certificate plus the Vietnamese relative&#39;s identity documents. <span class="cite"><a href="#src-vec-5yr" title="5-year visa exemption certificate for Viet Kieu and foreign spouses and children of Vietnamese citizens — 180 days per entry">12</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Certificate fee</td><td class="amt">Roughly US$10 to 25</td><td>Set by the issuing mission. Confirm with the embassy or consulate handling your application. <span class="cite"><a href="#src-vec-5yr" title="5-year visa exemption certificate for Viet Kieu and foreign spouses and children of Vietnamese citizens — 180 days per entry">12</a></span></td></tr><tr><td>Document retrieval from Vietnamese archives</td><td class="amt">Highly variable</td><td>For Viet Kieu whose family left decades ago, finding the proof is the whole cost of this pathway. Budget time, not just money. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Establish which proof of origin you can actually obtain</p>
+        <p>Work backwards from what exists: a parent&#39;s Vietnamese birth certificate, an old household registration book, a relinquishment-of-nationality decision. Ask the oldest relative in the family first — this is where the documents usually are. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your family</span>
+          
+          <span><b>Takes:</b> Weeks to months</span>
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Everything downstream waits on this.</p>
+      </li>
+      <li>
+        <p class="step-title">Get foreign-issued documents apostilled</p>
+        <p>US marriage and birth certificates used as proof need authentication. From 11 September 2026 this is an apostille rather than consular legalization — see the gotcha, the timing matters right now. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Have documents translated into Vietnamese and notarised</p>
+        <p>Use a translation office that routinely serves immigration filings. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">File with the Vietnamese embassy or consulate, or with Immigration inside Vietnam</p>
+        <p>US-based applicants normally file with the Embassy in Washington DC or the Consulate General in San Francisco or Houston. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> Vietnamese diplomatic mission, or Vietnam Immigration Department</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Collect the certificate and check every field</p>
+        <p>Verify the name spelling and validity dates before you leave the counter. Corrections later are a new application. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Assuming you do not qualify because you were born in the US and speak no Vietnamese</p>
+        <p class="f-conseq"><b>Consequence:</b> You spend US$10,000 on a company you did not need.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Vietnamese origin runs through ancestry and former nationality, not language or birthplace. Check before you dismiss it.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Letting the certificate outrun the passport</p>
+        <p class="f-conseq"><b>Consequence:</b> The certificate is issued short, or invalidated when you renew the passport.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Renew the US passport first if it has under two years left.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Treating 180 days per entry as 180 days per year</p>
+        <p class="f-conseq"><b>Consequence:</b> Overstay.</p>
+        <p class="f-avoid"><b>Avoid it:</b> The clock resets on each entry, but each stay is capped. Track entry dates.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-tt-family">
+    <header class="pathway-head">
+      <h3>TT Family Visa and 3-Year Residence Card</h3>
+      <p class="codes"><code>TT</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">The residence route for foreign spouses, children, and parents of Vietnamese citizens. Produces a temporary residence card valid up to 3 years, which functions as a multiple-entry visa substitute.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Americans married to Vietnamese citizens who want a stable base rather than a rolling permission.</dd>
+      <dt>You get</dt><dd>TT residence card up to 3 years</dd>
+      <dt>Renewable</dt><dd>Yes, on continuing relationship and valid passport.</dd>
+      <dt>Work locally</dt><dd>The card itself is not work authorisation. However, being married to a Vietnamese citizen and residing in Vietnam has historically been one of the work permit exemption categories. Confirm your status under Decree 219/2025 with your employer or a licensed adviser before you start work — do not assume it carried over unchanged.</dd>
+      <dt>Family</dt><dd>Children of the marriage are covered on the same family basis.</dd>
+      <dt>Toward permanent residence</dt><dd>Permanent residence exists for spouses of Vietnamese citizens after a qualifying period of continuous temporary residence. Treat it as a long-horizon goal and take specific legal advice — the qualifying rules are strict and periodically amended.</dd>
+      <dt>Realistic timeline</dt><dd>Plan 2 to 4 months from starting document collection to card in hand. Card processing itself is 5 to 10 working days once filed.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Marriage registered and recognised in Vietnam</strong> — A marriage performed abroad must be recorded in Vietnam, or evidenced by a legalised or apostilled consular note of the registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li><li><strong>Passport with at least 13 months validity</strong> — The card must expire at least 30 days before the passport does, so short passports produce short cards. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></li><li><strong>Entry on a visa consistent with family purpose</strong> — You generally need to be in Vietnam on a TT visa, sponsored by your Vietnamese spouse, before the card application. Entering on an e-visa and converting is not reliable. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li><li><strong>Vietnamese spouse&#39;s identity and residence documents</strong> — Certified copies of the national ID or citizen identity card and household registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Temporary residence card</td><td class="amt">Roughly US$145 to 320 depending on validity</td><td>Renewals and extensions are far cheaper, around US$10. Confirm current fees at filing. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></td></tr><tr><td>Apostille or legalization plus certified translation</td><td class="amt">US$150 to 500</td><td>Depends on how many US documents you need and which state issued them. </td></tr><tr><td>Agency assistance, optional</td><td class="amt">US$300 to 800</td><td>Genuinely optional on this route if your Vietnamese spouse can attend the offices with you. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Register or record the marriage so Vietnam recognises it</p>
+        <p>If you married in the US, this is the step that gates everything else. Get the marriage certificate apostilled, translated, and recorded. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your spouse</span>
+          
+          <span><b>Takes:</b> Weeks</span>
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Nothing else can proceed until the marriage is documented Vietnamese-side.</p>
+      </li>
+      <li>
+        <p class="step-title">Your Vietnamese spouse sponsors your TT visa</p>
+        <p>The sponsorship is filed by the Vietnamese citizen, not by you. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your Vietnamese spouse</span>
+          <span><b>Where:</b> Vietnam Immigration Department</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Enter Vietnam on the TT visa</p>
+        <p>Enter on the family-purpose visa, not on an e-visa, so the residence card application is consistent. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Complete temporary residence declaration at your address</p>
+        <p>Within 12 hours of arriving at the accommodation. Your landlord or spouse files it. See the gotcha — this trips up more people than any other single rule. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Landlord or host</span>
+          
+          <span><b>Takes:</b> Same day</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">File the residence card application</p>
+        <p>Form, photos at 3x4cm on white background taken within 6 months, passport, marriage and family documents, spouse&#39;s ID and household registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, with your spouse</span>
+          <span><b>Where:</b> Provincial Immigration Department</span>
+          <span><b>Takes:</b> 5 to 10 working days</span>
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Relying on a US marriage certificate that was never recorded in Vietnam</p>
+        <p class="f-conseq"><b>Consequence:</b> Application refused; months lost.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Record the marriage first, then everything else.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Applying with a passport that has under 13 months left</p>
+        <p class="f-conseq"><b>Consequence:</b> You get a short card or a refusal, and pay again next year.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Renew the passport before you file.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Starting work on the strength of the card alone</p>
+        <p class="f-conseq"><b>Consequence:</b> Illegal employment exposure for you and your employer.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Get the work permit, or get the exemption confirmed in writing under Decree 219/2025.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-work-permit-ld">
+    <header class="pathway-head">
+      <h3>Work Permit, LĐ Visa, and 2-Year Residence Card</h3>
+      <p class="codes"><code>LĐ1</code> <code>LĐ2</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">The main road. Your employer obtains a work permit under Decree 219/2025, which supports an LĐ visa and then a temporary residence card aligned to the permit. Decree 219 made this materially faster than it was before August 2025.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Anyone with a genuine Vietnamese employer, including local subsidiaries of American companies, schools, and universities.</dd>
+      <dt>You get</dt><dd>Work permit up to 2 years; residence card aligned to it and capped at 2 years.</dd>
+      <dt>Renewable</dt><dd>Yes. Start renewal well before expiry — the card cannot outlast the permit.</dd>
+      <dt>Work locally</dt><dd>Yes, for the sponsoring employer, in the position named on the permit. The permit is job-specific and employer-specific.</dd>
+      <dt>Family</dt><dd>Yes — spouse and children under 18 on TT dependant status, sponsored by you once you hold the card.</dd>
+      <dt>Toward permanent residence</dt><dd>Not directly, but continuous lawful residence is the foundation for any later permanent residence application.</dd>
+      <dt>Realistic timeline</dt><dd>Under Decree 219/2025, the work permit itself is a single 10-working-day process, replacing the old two-stage sequence of job position approval plus permit. Realistically, 8 to 14 weeks door to door, because document authentication in the US dominates the schedule.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>A Vietnamese legal entity willing to sponsor</strong> — The entity files in its own name. No entity, no permit. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></li><li><strong>Expert test: degree or equivalent plus 2 years relevant experience</strong> — Reduced to 1 year for priority sectors — science, technology, innovation, and national digital transformation. Down from 3 years under the old Decree 152/2020 regime. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-wp-relaxed" title="Analysis of relaxed foreign worker requirements under Decree 219/2025 — expert experience cut to 2 years, 1 year in priority sectors; single 10-working-day process">4</a></span></li><li><strong>Criminal record check issued within the last 6 months</strong> — For Americans this is normally the FBI Identity History Summary. The 6-month clock is the single most common sequencing failure on this pathway. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></li><li><strong>Health certificate</strong> — Issued by a hospital recognised for this purpose. In practice, done in Vietnam after arrival, at a licensed international or provincial hospital. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></li><li><strong>Authenticated degree and professional certificates</strong> — US-issued diplomas must be authenticated and translated. From 11 September 2026, apostille replaces consular legalization for documents from the US. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Work permit state fee</td><td class="amt">Roughly US$25 to 50 equivalent</td><td>Set at provincial level and varies. Usually paid by the employer. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></td></tr><tr><td>FBI Identity History Summary plus channeler</td><td class="amt">US$18 government fee, US$50 to 100 via an approved channeler</td><td>The channeler is worth it — turnaround drops from weeks to days. </td></tr><tr><td>Apostille on degree and criminal record</td><td class="amt">US$20 to 200 depending on issuing authority and expediting</td><td>Federal documents such as the FBI summary are apostilled by the US Department of State; state-issued documents by that state&#39;s Secretary of State. </td></tr><tr><td>Certified Vietnamese translation</td><td class="amt">US$100 to 300</td><td> </td></tr><tr><td>Temporary residence card</td><td class="amt">Roughly US$145 to 320</td><td> <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></td></tr><tr><td>Immigration law firm, optional</td><td class="amt">US$800 to 2,500</td><td>Most employers with foreign staff already have a firm and absorb this. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Secure the offer and confirm the entity can sponsor</p>
+        <p>Ask directly whether the hiring entity holds a Vietnamese business registration certificate and has filed work permits before. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Everything depends on this.</p>
+      </li>
+      <li>
+        <p class="step-title">Order the FBI Identity History Summary — but time it deliberately</p>
+        <p>It must be less than 6 months old when the application is filed. Ordering it too early is as damaging as ordering it too late. Work backwards from your employer&#39;s filing date. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> Days via an approved channeler</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Authenticate your degree and criminal record</p>
+        <p>From 11 September 2026, obtain an apostille rather than going through Vietnamese consular legalization. Federal documents go to the US Department of State; state-issued documents to the relevant Secretary of State. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> 1 to 6 weeks depending on state and expediting</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Send authenticated documents to your employer for translation and filing</p>
+        <p>Your employer submits the work permit application under Decree 219/2025. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your employer</span>
+          
+          <span><b>Takes:</b> 10 working days</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Enter Vietnam and complete the health certificate</p>
+        <p>Done at a licensed hospital in Vietnam. Straightforward, half a day. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> Licensed hospital in Vietnam</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Temporary residence declaration within 12 hours of reaching your accommodation</p>
+        <p>Filed by your landlord or hotel. Confirm it was actually done. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Landlord or employer</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Convert to the LĐ visa and apply for the residence card</p>
+        <p>The card is aligned to the work permit and must expire at least 30 days before your passport. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Employer, with you</span>
+          
+          <span><b>Takes:</b> 5 to 10 working days</span>
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Getting the FBI check apostilled 7 months before the employer files</p>
+        <p class="f-conseq"><b>Consequence:</b> Rejected on document age. You reorder and re-authenticate, losing 4 to 6 weeks.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Agree the filing date with your employer, then work backwards.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the permit transfers when you change jobs</p>
+        <p class="f-conseq"><b>Consequence:</b> You are working illegally from your first day at the new employer.</p>
+        <p class="f-avoid"><b>Avoid it:</b> The permit is employer-specific. A new employer files a new permit.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Letting the residence card lapse while the permit is renewed</p>
+        <p class="f-conseq"><b>Consequence:</b> A gap in lawful residence, which complicates every future application.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Start renewal 60 days out. Do not wait for the employer to remember.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Passport with under 2 years left</p>
+        <p class="f-conseq"><b>Consequence:</b> Card issued short, so you repeat the whole exercise early.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Renew the passport in the US before you move.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-wp-exempt">
+    <header class="pathway-head">
+      <h3>Work Permit Exemption Confirmation</h3>
+      <p class="codes"><code>LĐ1</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">Not everyone who works in Vietnam needs a work permit. Decree 219/2025 sets out roughly 15 to 20 exemption categories, and an exemption still requires a written confirmation from the labour authority. Skipping the confirmation because you &#39;are exempt&#39; is itself a violation.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Intra-company transferees, company owners and board members above capital thresholds, short assignments under 90 days in a calendar year, and spouses of Vietnamese citizens residing in Vietnam.</dd>
+      <dt>You get</dt><dd>Confirmation up to 2 years, supporting a residence card of matching length.</dd>
+      <dt>Renewable</dt><dd>Yes, on the same basis.</dd>
+      <dt>Work locally</dt><dd>Yes, within the scope of the exemption category and the entity named on it.</dd>
+      <dt>Family</dt><dd>Yes, dependants on TT status once you hold a residence card.</dd>
+      <dt>Toward permanent residence</dt><dd>No direct route.</dd>
+      <dt>Realistic timeline</dt><dd>Shorter than a full work permit, but do not assume it is instant — build in 4 to 8 weeks including document authentication.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>You fall in a listed exemption category</strong> — Common ones for Americans: intra-company transfer after 12+ months with the foreign parent that has a commercial presence in Vietnam; owner or capital contributor of an LLC, or board member of a joint stock company, above the applicable capital threshold; total working time under 90 days in a calendar year; married to a Vietnamese citizen and residing in Vietnam. The list is defined by decree and was restated in Decree 219/2025 — have it checked against the current text for your exact facts. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-wp-exemptions" title="Work permit exemption categories under current Vietnamese law">5</a></span></li><li><strong>Written confirmation of exemption obtained before you start work</strong> — The exemption is a status you must be granted, not one you can assert. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Confirmation filing</td><td class="amt">Nominal state fee</td><td>Usually handled and paid by the employer. </td></tr><tr><td>Supporting document authentication</td><td class="amt">US$150 to 400</td><td>Same apostille and translation work as the full permit route, generally less of it. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Identify the exact exemption category in the current decree</p>
+        <p>Have your employer&#39;s counsel name the specific clause. &#39;We think you&#39;re exempt&#39; is not a filing. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Employer&#39;s counsel</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Assemble evidence for that specific category</p>
+        <p>Intra-company transfer needs employment history with the parent; capital-based exemptions need the investment registration and capital contribution evidence. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your employer</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">File for the written exemption confirmation</p>
+        <p>Filed by the employer with the labour authority before work begins. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your employer</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Use the confirmation to obtain the visa and residence card</p>
+        <p>The confirmation plays the same role a work permit would in the residence card application. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Employer, with you</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Working on the assumption of exemption without the confirmation</p>
+        <p class="f-conseq"><b>Consequence:</b> Illegal employment for you and a fine for the employer, regardless of whether you genuinely qualified.</p>
+        <p class="f-avoid"><b>Avoid it:</b> No work before the paper exists.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Relying on the under-90-days exemption repeatedly</p>
+        <p class="f-conseq"><b>Consequence:</b> Decree 219 frames this as total working time under 90 days in one calendar year, not per trip. Repeat short trips add up.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Track cumulative days across the calendar year.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the pre-August-2025 exemption list still applies</p>
+        <p class="f-conseq"><b>Consequence:</b> Filing under a repealed decree.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Decree 219/2025 replaced Decree 152/2020 and its Decree 70/2023 amendments from 7 August 2025.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-ud1-tech">
+    <header class="pathway-head">
+      <h3>UĐ1 Digital Technology Visa</h3>
+      <p class="codes"><code>UĐ1</code> <code>UĐ2</code>
+        <span class="diff diff-high">high</span></p>
+      <p class="summary">Vietnam&#39;s newest and longest standard visa, live since 1 July 2026 under Law 118/2025/QH15. Up to 5 years for high-quality digital technology personnel, with UĐ2 covering the spouse and children under 18.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Senior software, AI, semiconductor, and digital infrastructure professionals who can attract a Vietnamese institutional sponsor.</dd>
+      <dt>You get</dt><dd>Up to 5 years — the longest standard validity in the current framework.</dd>
+      <dt>Renewable</dt><dd>Expected, on continuing sponsorship.</dd>
+      <dt>Work locally</dt><dd>Yes, within the sponsored role.</dd>
+      <dt>Family</dt><dd>Yes — that is exactly what UĐ2 is for.</dd>
+      <dt>Toward permanent residence</dt><dd>Not yet defined. The conversion route from UĐ1 status to a temporary residence card was still awaiting implementing regulations during 2026.</dd>
+      <dt>Realistic timeline</dt><dd>Unsettled. Treat published timelines with scepticism until implementing regulations and a track record exist.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Recognised as high-quality personnel in the digital technology industry</strong> — The criteria run through an institution: a Vietnamese employer, a university, or a research body. This structurally excludes freelancers and remote employees of foreign companies. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a><a href="#src-ud1-guide" title="UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms">2</a></span></li><li><strong>An institutional sponsor in Vietnam</strong> — As with the work permit, no sponsor means no application. <span class="cite"><a href="#src-ud1-guide" title="UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms">2</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>State fees</td><td class="amt">Not yet settled in published guidance</td><td>This category is new. Verify current fees directly with the Immigration Department or through counsel before budgeting. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Confirm the category is operational for your profile today</p>
+        <p>The law took effect 1 July 2026, but detailed implementing regulations were still emerging. Ask the sponsor&#39;s counsel what has actually been granted, not what the law permits. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your sponsor</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Have the sponsoring institution assess you against the high-quality personnel criteria</p>
+        <p>This is the gate. It is an institutional judgement, not a self-assessment. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your sponsor</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Run the standard document authentication in parallel</p>
+        <p>Degrees, employment history, and criminal record will be needed on any route. Do this work regardless of which category you end on. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Keep the work permit route open as your fallback</p>
+        <p>Until UĐ1 has a visible track record, treat it as an upgrade on a work permit plan, not a replacement for one. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Reading UĐ1 as a digital nomad visa</p>
+        <p class="f-conseq"><b>Consequence:</b> Months spent pursuing a category you cannot enter without an institutional sponsor.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If no Vietnamese institution will name you, this route is closed.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Abandoning a viable work permit application to wait for UĐ1</p>
+        <p class="f-conseq"><b>Consequence:</b> You lose a working route for an unproven one.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Run them in sequence, not instead of each other.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-dt-investor">
+    <header class="pathway-head">
+      <h3>DT Investor Visa and Residence Card</h3>
+      <p class="codes"><code>DT1</code> <code>DT2</code> <code>DT3</code> <code>DT4</code>
+        <span class="diff diff-high">high</span></p>
+      <p class="summary">Four tiers keyed to how much capital you actually contribute to a Vietnamese company. The tier determines everything, and only DT3 and above produce a residence card.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>People building a real Vietnamese business with meaningful capital. A poor fit for anyone forming a shell company purely to buy residency.</dd>
+      <dt>You get</dt><dd>DT1: visa up to 5 years, residence card up to 10 years. DT2: up to 5 years, card up to 5. DT3: up to 3 years, card up to 3. DT4: visa up to 12 months, no residence card.</dd>
+      <dt>Renewable</dt><dd>Yes, while the investment and the company remain in good standing.</dd>
+      <dt>Work locally</dt><dd>In your own invested company. Note that owners and board members above capital thresholds may also fall in a work permit exemption category.</dd>
+      <dt>Family</dt><dd>Yes, dependants on TT status once you hold a residence card — which again means DT3 or above.</dd>
+      <dt>Toward permanent residence</dt><dd>DT1 is the tier most often discussed alongside a long-term permanent residence horizon. Take specific legal advice rather than relying on marketing claims.</dd>
+      <dt>Realistic timeline</dt><dd>3 to 6 months from decision to residence card, dominated by investment registration and getting capital properly contributed and evidenced.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>DT1: contributed capital of VND 100 billion or more, roughly US$3.8M</strong> — Or investment in a sector or area the government specifically encourages. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT2: VND 50 to under 100 billion, roughly US$1.9M to 3.8M</strong> <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT3: VND 3 to under 50 billion, roughly US$115k to 1.9M</strong> — The entry point for a residence card. Below this you are in DT4 and get no card. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT4: under VND 3 billion</strong> — Visa up to 12 months, no residence card. Read the reality check before choosing this. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>A real investment registration and actual capital contribution</strong> — Registered capital that is never contributed does not hold up. The capital must move and be evidenced. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Company formation and investment registration</td><td class="amt">US$1,500 to 5,000 in professional fees</td><td>Before any capital contribution. </td></tr><tr><td>The capital itself</td><td class="amt">VND 3 billion minimum for a residence card</td><td>This is contributed capital in a Vietnamese company, not an escrow deposit you get back. </td></tr><tr><td>Ongoing accounting, audit, and tax compliance</td><td class="amt">US$2,000 to 8,000 per year</td><td>The cost people forget. A Vietnamese company files monthly and annually whether or not it trades. </td></tr><tr><td>Visa and residence card</td><td class="amt">Roughly US$145 to 320 for the card</td><td> <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Decide the tier before you incorporate</p>
+        <p>The capital number drives the visa outcome. Incorporating first and discovering you are in DT4 is the classic and expensive error. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do this before spending anything.</p>
+      </li>
+      <li>
+        <p class="step-title">Obtain the investment registration certificate and enterprise registration certificate</p>
+        <p>Two separate documents. Both are needed downstream. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your Vietnamese counsel</span>
+          
+          <span><b>Takes:</b> 4 to 8 weeks</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Open the direct investment capital account and actually transfer the capital</p>
+        <p>Capital must come in through the correct account type or it will not be recognised as contributed. Get this wrong and the money is in Vietnam but not counted. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, with your bank and counsel</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> The visa application depends on evidenced contribution.</p>
+      </li>
+      <li>
+        <p class="step-title">Apply for the DT visa at the tier your contribution supports</p>
+        <p>The tier is assessed on what you actually contributed. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your company sponsors you</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply for the residence card if you are at DT3 or above</p>
+        <p>Same 5 to 10 working day processing as other card types. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Registering large capital but contributing little</p>
+        <p class="f-conseq"><b>Consequence:</b> Tier assessed on the contribution, not the registration. You paid for a company and got a 12-month visa.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Only register capital you will genuinely transfer, and transfer it through the correct account.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Ignoring ongoing compliance cost</p>
+        <p class="f-conseq"><b>Consequence:</b> A dormant company accrues filing obligations and penalties, and a struck-off company takes your visa basis with it.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Budget annual compliance from day one.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Believing an agency that says VND 3 billion is not really required</p>
+        <p class="f-conseq"><b>Consequence:</b> DT4, no card, and no refund.</p>
+        <p class="f-avoid"><b>Avoid it:</b> The tier boundaries are published. Ask the agency to point at the decree.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-student-dh">
+    <header class="pathway-head">
+      <h3>DH Student Visa</h3>
+      <p class="codes"><code>DH</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">Sponsored by the institution that admitted you. A legitimate, low-cost way to hold lawful long-term status while you build the Vietnamese language ability and network that make the other routes viable.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Younger movers, career changers, and anyone treating a first year in Vietnam as an investment in optionality.</dd>
+      <dt>You get</dt><dd>Aligned to the program, typically up to 1 year at a time, with a residence card possible for longer programs.</dd>
+      <dt>Renewable</dt><dd>Yes, while enrolled and progressing.</dd>
+      <dt>Work locally</dt><dd>No. Student status is not work authorisation, and the tourist-visa reasoning about remote work applies here too.</dd>
+      <dt>Family</dt><dd>Limited. Do not plan a family move around this route.</dd>
+      <dt>Toward permanent residence</dt><dd>No, but it builds continuous lawful residence and local credentials.</dd>
+      <dt>Realistic timeline</dt><dd>6 to 12 weeks from admission to visa in hand.</dd>
+    </dl>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Admission to an institution licensed to host foreign students</strong> — Universities and accredited full-time language programs. A part-time evening class at a private centre generally cannot sponsor you. </li><li><strong>Proof of funds and accommodation</strong> — Requirements are set by the institution and vary widely. </li><li><strong>Authenticated prior academic records</strong> — Same apostille and translation pipeline as the work permit route. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Tuition, full-time Vietnamese language program</td><td class="amt">US$1,000 to 3,000 per year</td><td>University degree programs cost more; still well below US equivalents. </td></tr><tr><td>Visa and residence card</td><td class="amt">US$145 to 320 for a card, less for visa-only status</td><td> <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Secure admission from a licensed institution</p>
+        <p>Confirm in writing that they sponsor DH visas for foreign students, and ask how many they issued last year. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Nothing proceeds without the admission letter.</p>
+      </li>
+      <li>
+        <p class="step-title">Authenticate prior academic records</p>
+        <p>Apostille and certified translation. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">The institution sponsors the visa</p>
+        <p>Filed by the school, not by you. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your institution</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Enter, declare temporary residence, and apply for the card if the program supports one</p>
+        <p>Standard 12-hour accommodation declaration on arrival. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your landlord</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Enrolling at a private language centre that cannot sponsor</p>
+        <p class="f-conseq"><b>Consequence:</b> You paid tuition and got no status.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Confirm sponsorship capability in writing before paying.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Taking paid work on student status</p>
+        <p class="f-conseq"><b>Consequence:</b> Same illegal employment exposure as the tourist visa case.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Keep income sources outside Vietnam, or convert to a work permit.</p>
+      </div>
+    </div>
+  </article>
+</section>
+  
+<section id="gotchas" class="band">
+  <h2>Ten traps</h2>
+  <p class="lede">Cross-cutting failures that belong to no single pathway. If you read only one section of this guide, read this one.</p>
+  
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">1</span>The apostille switchover lands on 11 September 2026</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Vietnam acceded to the Hague Apostille Convention on 31 December 2025, and it enters into force for Vietnam on 11 September 2026. Documents authenticated the old way and the new way are both in circulation right now, and agencies are giving out instructions written for the old regime. Getting consular legalization when an apostille is required, or the reverse, wastes 4 to 8 weeks and non-refundable fees.</p>
+    <p><strong>Do this instead.</strong> For US public documents intended for use in Vietnam from 11 September 2026 onward, obtain a single apostille: US Department of State for federal documents such as the FBI Identity History Summary, and the relevant Secretary of State for state-issued documents like degrees and marriage certificates. Before you order anything, confirm with the specific Vietnamese authority that will receive the document which form they are accepting that week. Vietnam&#39;s Ministry of Foreign Affairs — the Consular Department in Hanoi and the Department of Foreign Affairs in Ho Chi Minh City — issues apostilles on the Vietnamese side. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></p>
+    <p class="expires">Tied to a rule change — re-check this after March 11, 2027.</p>
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">2</span>The FBI criminal record check has a 6-month shelf life</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Work permit applications require a criminal record check issued within the last 6 months. Applicants order it as their very first task, then spend four months on job offers and degree authentication, and file with a document that is five and a half months old — or already expired.</p>
+    <p><strong>Do this instead.</strong> Fix the employer&#39;s filing date first. Order the FBI Identity History Summary through an approved channeler roughly 6 to 8 weeks before that date, then apostille it immediately. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">3</span>Your e-visa names one port of entry and means it</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> The e-visa carries a declared checkpoint. Arrive at a different airport or land border and you can be refused entry, with the airline liable for flying you back.</p>
+    <p><strong>Do this instead.</strong> Match the port to your actual ticket. If your routing changes — a rebooking through Hanoi instead of Ho Chi Minh City — apply for a new e-visa before you fly. US$25 is cheaper than a denied boarding. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">4</span>Your residence card must expire at least 30 days before your passport</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> People with 18 months left on a US passport apply for a 2-year residence card and receive a card truncated to about 17 months, then pay the full fee again the following year.</p>
+    <p><strong>Do this instead.</strong> Renew the US passport before applying for or renewing any Vietnamese residence card. Treat 2 years of remaining passport validity as your floor. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">5</span>Somebody must declare your address to the police within 12 hours</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> The obligation sits with the accommodation provider, so foreigners assume it is handled. Hotels do it automatically. Private landlords and friends whose spare room you are using very often do not. The declaration is free, uses form NA17, and its absence surfaces months later as a problem in a residence card application.</p>
+    <p><strong>Do this instead.</strong> Ask the landlord directly, in the first 12 hours, whether the declaration has been filed, and ask for confirmation. Repeat at every address change. Non-compliance exposes the host to fines in the millions of VND. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">6</span>The 183-day line makes you taxable on worldwide income</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Presence for 183 days in a calendar year, or across 12 consecutive months from first arrival, makes you a Vietnamese tax resident on worldwide income at rates up to 35%. A habitual residence — a registered address or a fixed-term lease — can also make you resident. Americans arriving in August often assume the first partial year is free. The rolling 12-month test says otherwise.</p>
+    <p><strong>Do this instead.</strong> Count days from your first entry stamp, and get advice before your first 183rd day, not after. With no US-Vietnam treaty in force, there are no tie-breaker rules to rescue a dual-residency position. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a><a href="#src-tax-treaty-status" title="US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force">19</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">7</span>Under VND 3 billion, the investor route gives you no residence card</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> DT4 — capital under VND 3 billion — grants a visa of up to 12 months and no temporary residence card. Formation agencies quote the incorporation fee, not the residency outcome.</p>
+    <p><strong>Do this instead.</strong> If residency is the goal, the number to clear is VND 3 billion in genuinely contributed capital, entering at DT3. If you cannot clear it, solve residence a different way and decide on the company purely as a business question. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">8</span>Nobody can sell you a Vietnamese golden visa</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> A 5-to-10-year golden visa was proposed in 2025 and has been reported worldwide as though it launched. As of this guide&#39;s verification date there is no decree and no application channel. Some sites cite a &#39;Resolution 41/2026/QH15&#39; that no government source confirms.</p>
+    <p><strong>Do this instead.</strong> If anyone offers to process a Vietnamese golden visa, ask for the decree number and the government portal. There is no correct answer they can give. Use the DT tiers or UĐ1 instead, both of which actually exist. <span class="cite"><a href="#src-golden-visa-status" title="Vietnam golden visa reality check — proposed in 2025, no decree and no application channel as of 2026; &#39;Resolution 41/2026/QH15&#39; unconfirmed by any government source">14</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">9</span>Your work permit belongs to your employer, not to you</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> The permit names one employer and one position. Changing jobs does not carry it across, and the residence card built on it falls with it.</p>
+    <p><strong>Do this instead.</strong> Before accepting a new offer, confirm the new employer will file a fresh permit and understand the gap in between. Never resign before the new filing is in motion. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">10</span>A car licence does not convert into a motorbike licence</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> Conversion produces a Vietnamese licence of the same class as the US original. Most Americans hold car-only licences, then ride a motorbike anyway. After an accident, insurers decline on the licence class, and motorbike injuries are the largest single health risk to foreigners in Vietnam.</p>
+    <p><strong>Do this instead.</strong> If you intend to ride, obtain the motorbike category properly rather than assuming your car licence converts. Confirm your health and travel policies cover motorbike use at your licence class, in writing. <span class="cite"><a href="#src-driving-2025" title="Driving licence conversion under Circular 12/2025/TT-BCA — about 3 months residence required, notarised translation, licence issued matches the class of the foreign licence">23</a></span></p>
+    
+  </article>
+</section>
+  
+<section id="checklists" class="band">
+  <h2>The move itself, phase by phase</h2>
+  <p class="lede">Eight phases, in order. These apply whichever pathway you took; items marked with a pathway only appear for that route. Your ticks are saved in this browser.</p>
+  <div class="phase-nav"><a href="#module-m-decide">Decide</a><a href="#module-m-documents">Documents</a><a href="#module-m-exit-origin">Leave United States</a><a href="#module-m-money">Money</a><a href="#module-m-arrival">Arrival</a><a href="#module-m-first90">First 90 days</a><a href="#module-m-ongoing">Ongoing</a><a href="#module-m-contingency">Contingency</a></div>
+  
+  <article class="module" id="module-m-decide">
+    <h3>Decide and pressure-test</h3>
+    <p class="window">T-180 to T-120 days</p>
+    <p class="mod-intro">Before you spend a dollar. The goal of this phase is to kill bad plans cheaply.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-decide-0" data-key="m-decide-0">
+          <label for="chk-m-decide-0">
+            <span class="task">Run the decision tree and write down your pathway id<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Everything else in this guide filters on it. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-decide-1" data-key="m-decide-1">
+          <label for="chk-m-decide-1">
+            <span class="task">Confirm your pathway is open to you on your worst-case facts</span>
+            <span class="detail">Assume the job offer falls through, the capital is 20% short, the marriage paperwork is slower than promised. Does a route still exist? </span>
+            <span class="why"><b>Why:</b> Almost all relocation failures are single-point-of-failure plans.</span>
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-decide-2" data-key="m-decide-2">
+          <label for="chk-m-decide-2">
+            <span class="task">Take a 2 to 4 week scouting trip on a 90-day e-visa</span>
+            <span class="detail">Hanoi and Ho Chi Minh City are different countries for your purposes. Da Nang is a third. Spend real time before committing. </span>
+            <span class="why"><b>Why:</b> The cost of the trip is trivial against the cost of moving to the wrong city.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-decide-3" data-key="m-decide-3">
+          <label for="chk-m-decide-3">
+            <span class="task">Check your passport expiry today<span class="tag tag-critical">critical</span></span>
+            <span class="detail">If it has under 2 years remaining, renew it before anything else. Vietnamese residence cards must expire at least 30 days before your passport, so a short passport gives you a short card. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-decide-4" data-key="m-decide-4">
+          <label for="chk-m-decide-4">
+            <span class="task">Price the real annual cost, not the blog cost</span>
+            <span class="detail">Include health insurance, visa and card renewals, flights home, and — if you are on the investor route — annual company compliance. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-decide-5" data-key="m-decide-5">
+          <label for="chk-m-decide-5">
+            <span class="task">Decide what would make you leave</span>
+            <span class="detail">Write it down now, while you are calm. A named trigger prevents both sunk-cost paralysis and panic exits. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-documents">
+    <h3>Assemble and authenticate documents</h3>
+    <p class="window">T-150 to T-60 days</p>
+    <p class="mod-intro">This phase, not the visa application, is what actually determines your timeline. US document authentication is slow, sequential, and unforgiving.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-documents-0" data-key="m-documents-0">
+          <label for="chk-m-documents-0">
+            <span class="task">Understand the apostille switchover before ordering anything<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The Hague Apostille Convention enters into force for Vietnam on 11 September 2026. From that date, US public documents need a single apostille instead of the old multi-step consular legalization through a Vietnamese mission. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></span>
+            <span class="why"><b>Why:</b> Ordering the wrong form of authentication wastes 4 to 8 weeks and the fees are not refundable.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-documents-1" data-key="m-documents-1">
+          <label for="chk-m-documents-1">
+            <span class="task">List every document your pathway needs, with its issuing authority<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Typically: degree, FBI Identity History Summary, marriage certificate, children&#39;s birth certificates. Federal documents are apostilled by the US Department of State; state-issued documents by that state&#39;s Secretary of State. </span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-documents-2" data-key="m-documents-2">
+          <label for="chk-m-documents-2">
+            <span class="task">Time the FBI Identity History Summary deliberately<span class="tag tag-critical">critical</span></span>
+            <span class="detail">It must be under 6 months old when filed. Order it via an FBI-approved channeler for a days-long turnaround rather than weeks, and work backwards from your employer&#39;s filing date. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></span>
+            <span class="why"><b>Why:</b> Ordering it too early fails exactly like ordering it too late.</span>
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-documents-3" data-key="m-documents-3">
+          <label for="chk-m-documents-3">
+            <span class="task">Order extra certified copies of everything</span>
+            <span class="detail">Two or three of each. You will need originals in more than one place, and reordering from abroad is miserable. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-documents-4" data-key="m-documents-4">
+          <label for="chk-m-documents-4">
+            <span class="task">Get certified Vietnamese translations</span>
+            <span class="detail">Use a translation office that routinely handles immigration filings — they know the formatting the authorities expect. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-documents-5" data-key="m-documents-5">
+          <label for="chk-m-documents-5">
+            <span class="task">Scan everything to encrypted cloud storage before you ship or carry it</span>
+            <span class="detail">Full colour, both sides, including the authentication certificates themselves. </span>
+            
+            
+          </label>
+        </li><li data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-documents-6" data-key="m-documents-6">
+          <label for="chk-m-documents-6">
+            <span class="task">Do not authenticate the health certificate abroad</span>
+            <span class="detail">The health check is normally done at a licensed hospital in Vietnam after arrival. </span>
+            
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-exit-origin">
+    <h3>Close out the United States</h3>
+    <p class="window">T-90 to T-0 days</p>
+    <p class="mod-intro">The US side of the move. Being a US citizen abroad is an ongoing legal relationship, not a departure.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-exit-origin-0" data-key="m-exit-origin-0">
+          <label for="chk-m-exit-origin-0">
+            <span class="task">Understand that you keep filing US taxes forever<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The US taxes citizens on worldwide income regardless of where they live. Moving to Vietnam does not end your filing obligation; it complicates it. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555, Physical Presence or Bona Fide Residence test">20</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-1" data-key="m-exit-origin-1">
+          <label for="chk-m-exit-origin-1">
+            <span class="task">Learn the FEIE and FTC basics before you pick a strategy</span>
+            <span class="detail">For tax year 2026 the Foreign Earned Income Exclusion tops out at US$132,900 per person, claimed on Form 2555, and requires either the Physical Presence Test of 330 full days abroad in a 12-month period or the Bona Fide Residence Test. It covers earned income only — not dividends, interest, rent, or capital gains. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555, Physical Presence or Bona Fide Residence test">20</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-exit-origin-2" data-key="m-exit-origin-2">
+          <label for="chk-m-exit-origin-2">
+            <span class="task">Know that there is no US-Vietnam tax treaty in force<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The 2015 treaty was signed and ratified by Vietnam but never by the US Senate. There are no tie-breaker rules for dual residency and no reduced withholding. Since Vietnam taxes residents on worldwide income at rates up to 35%, the Foreign Tax Credit is usually the stronger long-term tool for higher earners. <span class="cite"><a href="#src-tax-treaty-status" title="US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force">19</a><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-exit-origin-3" data-key="m-exit-origin-3">
+          <label for="chk-m-exit-origin-3">
+            <span class="task">Plan your FBAR compliance<span class="tag tag-critical">critical</span></span>
+            <span class="detail">FinCEN Form 114 is required if your foreign accounts together exceeded US$10,000 at any point in the year, even for a single day. A Vietnamese salary account crosses this quickly. <span class="cite"><a href="#src-fbar" title="FinCEN Form 114 (FBAR) — required when aggregate foreign accounts exceed US$10,000 at any point in the year">21</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-4" data-key="m-exit-origin-4">
+          <label for="chk-m-exit-origin-4">
+            <span class="task">Decide your state domicile deliberately</span>
+            <span class="detail">Some states keep taxing you after you leave the country if you keep ties. Handle the driver&#39;s licence, voter registration, and mailing address as one coherent decision, not three accidents. </span>
+            <span class="why"><b>Why:</b> State residency disputes are the most common unpleasant surprise for new expats.</span>
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-5" data-key="m-exit-origin-5">
+          <label for="chk-m-exit-origin-5">
+            <span class="task">Set up a mail forwarding service with scanning</span>
+            <span class="detail">A real street address, not a PO box — many financial institutions reject PO boxes. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-exit-origin-6" data-key="m-exit-origin-6">
+          <label for="chk-m-exit-origin-6">
+            <span class="task">Tell your banks and brokerages before you go<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Some close accounts on a foreign address; others freeze on foreign logins. Find out which yours is while you can still walk into a branch. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-exit-origin-7" data-key="m-exit-origin-7">
+          <label for="chk-m-exit-origin-7">
+            <span class="task">Understand that Medicare does not cover you in Vietnam<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Medicare generally does not pay for care outside the US. Budget for international or local health insurance from day one. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-8" data-key="m-exit-origin-8">
+          <label for="chk-m-exit-origin-8">
+            <span class="task">Confirm Social Security payments abroad if relevant</span>
+            <span class="detail">Benefits are generally payable to US citizens in Vietnam, but the reporting and direct deposit setup differ. Handle it before you leave. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-9" data-key="m-exit-origin-9">
+          <label for="chk-m-exit-origin-9">
+            <span class="task">Register for absentee voting</span>
+            <span class="detail">Through the Federal Voting Assistance Program, using your last US voting address. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-10" data-key="m-exit-origin-10">
+          <label for="chk-m-exit-origin-10">
+            <span class="task">Sort pets early if you have them</span>
+            <span class="detail">Import requirements, airline crate rules, and summer heat embargoes each independently kill moves. Start 4 to 6 months out. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-exit-origin-11" data-key="m-exit-origin-11">
+          <label for="chk-m-exit-origin-11">
+            <span class="task">Decide between shipping and replacing</span>
+            <span class="detail">Sea freight to Vietnam runs 6 to 10 weeks. Most household goods are cheaper to rebuy locally; ship what is irreplaceable, not what is expensive. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-money">
+    <h3>Money and banking</h3>
+    <p class="window">T-60 to T+30 days</p>
+    <p class="mod-intro">Vietnam is substantially a cash economy in daily life and a heavily documented one in official life. Both facts matter.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-money-0" data-key="m-money-0">
+          <label for="chk-m-money-0">
+            <span class="task">Keep a US bank account open, permanently<span class="tag tag-critical">critical</span></span>
+            <span class="detail">You will need it for US tax refunds, brokerage links, and card payments to US services. Closing it is very hard to reverse from abroad. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-money-1" data-key="m-money-1">
+          <label for="chk-m-money-1">
+            <span class="task">Get cards with no foreign transaction fee before you leave</span>
+            <span class="detail">Applying for US credit from a Vietnamese address is close to impossible. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-money-2" data-key="m-money-2">
+          <label for="chk-m-money-2">
+            <span class="task">Plan how you will move money and at what cost</span>
+            <span class="detail">Compare a specialist transfer service against your bank&#39;s wire on a realistic monthly amount. The spread matters more than the fee. </span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="dt-investor">
+          <input type="checkbox" id="chk-m-money-3" data-key="m-money-3">
+          <label for="chk-m-money-3">
+            <span class="task">Understand the investor capital account rule if you are on the DT route<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Investment capital must enter through the correct direct investment capital account or it may not count as contributed. Do not wire it to a personal account. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></span>
+            
+            <span class="scope">Applies to: DT Investor Visa and Residence Card</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-money-4" data-key="m-money-4">
+          <label for="chk-m-money-4">
+            <span class="task">Open a Vietnamese bank account once you have status and an address</span>
+            <span class="detail">Requirements tighten and loosen; a residence card and a lease make it straightforward, a tourist visa often does not. </span>
+            
+            
+          </label>
+        </li><li data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-money-5" data-key="m-money-5">
+          <label for="chk-m-money-5">
+            <span class="task">Budget the compulsory insurance cost if you are employed locally</span>
+            <span class="detail">Foreign employees on local contracts of 12 months or more with a valid work permit fall under compulsory social insurance. Total contributions run about 30% of salary, with roughly 20.5% from the employer and 9.5% from the employee. Foreigners do not pay unemployment insurance, which is why the total is 2 points below the Vietnamese rate. <span class="cite"><a href="#src-si-2026" title="Compulsory social and health insurance for foreign employees — roughly 30% total, 20.5% employer and 9.5% employee, under Social Insurance Law 41/2024 and Decree 158/2025">18</a></span></span>
+            
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-arrival">
+    <h3>Arrival week</h3>
+    <p class="window">T-0 to T+7 days</p>
+    <p class="mod-intro">A short list, but one item on it has a 12-hour deadline.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-arrival-0" data-key="m-arrival-0">
+          <label for="chk-m-arrival-0">
+            <span class="task">Enter at the exact port named on your e-visa<span class="tag tag-critical">critical</span></span>
+            <span class="detail">If your routing changed, you needed a new e-visa before boarding. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-arrival-1" data-key="m-arrival-1">
+          <label for="chk-m-arrival-1">
+            <span class="task">Confirm your temporary residence declaration was actually filed<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The accommodation provider — hotel, landlord, or employer — must declare your presence to local police within 12 hours of your arrival at the accommodation, 24 hours in remote areas, using form NA17. Registration is free. Hotels do it automatically; private landlords often do not. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></span>
+            <span class="why"><b>Why:</b> Failure exposes the host to fines of several million VND, and a missing declaration surfaces later as a gap when you apply for a residence card.</span>
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-arrival-2" data-key="m-arrival-2">
+          <label for="chk-m-arrival-2">
+            <span class="task">Get a local SIM with a proper registration</span>
+            <span class="detail">Bring your passport. An unregistered number will fail verification for banking and government apps. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-arrival-3" data-key="m-arrival-3">
+          <label for="chk-m-arrival-3">
+            <span class="task">Do not sign a 12-month lease in your first week</span>
+            <span class="detail">Take a month somewhere serviced. Neighbourhood mistakes are expensive and hard to unwind. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-arrival-4" data-key="m-arrival-4">
+          <label for="chk-m-arrival-4">
+            <span class="task">Photograph your entry stamp</span>
+            <span class="detail">It is the start date for your permitted stay and for tax residency counting. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-arrival-5" data-key="m-arrival-5">
+          <label for="chk-m-arrival-5">
+            <span class="task">Start counting days for tax residency from arrival<span class="tag tag-critical">critical</span></span>
+            <span class="detail">183 days in a calendar year, or in 12 consecutive months from your first arrival, makes you a Vietnamese tax resident on worldwide income. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a></span></span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-first90">
+    <h3>First 90 days</h3>
+    <p class="window">T+7 to T+90 days</p>
+    <p class="mod-intro">Converting arrival into residence. Most of this runs in parallel; start all of it in week two.</p>
+    <ul class="checklist">
+      <li data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-first90-0" data-key="m-first90-0">
+          <label for="chk-m-first90-0">
+            <span class="task">Complete the Vietnamese health certificate</span>
+            <span class="detail">At a licensed hospital. Half a day. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></span>
+            
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-first90-1" data-key="m-first90-1">
+          <label for="chk-m-first90-1">
+            <span class="task">File the residence card application<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Processing is typically 5 to 10 working days, with online submission available since 2025. Fees run roughly US$145 to 320 depending on validity. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-first90-2" data-key="m-first90-2">
+          <label for="chk-m-first90-2">
+            <span class="task">Sign a lease with your name on it and get the landlord&#39;s tax and ownership documents</span>
+            <span class="detail">You need a lease in your own name for banking, residence registration, and often the residence card itself. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-first90-3" data-key="m-first90-3">
+          <label for="chk-m-first90-3">
+            <span class="task">Confirm the landlord re-files your temporary residence declaration for the new address<span class="tag tag-critical">critical</span></span>
+            <span class="detail">It is per-accommodation, not once per country. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-first90-4" data-key="m-first90-4">
+          <label for="chk-m-first90-4">
+            <span class="task">Convert your US driver&#39;s licence<span class="tag tag-critical">critical</span></span>
+            <span class="detail">You may convert once you have been resident about three months and hold a residence card or equivalent with at least 3 months validity. You need a notarised Vietnamese translation of the US licence plus passport and visa copies. The Vietnamese licence issued matches the class of the US one — a car-only US licence will not convert into a motorbike licence. <span class="cite"><a href="#src-driving-2025" title="Driving licence conversion under Circular 12/2025/TT-BCA — about 3 months residence required, notarised translation, licence issued matches the class of the foreign licence">23</a></span></span>
+            <span class="why"><b>Why:</b> Riding without a valid licence voids most travel and health insurance after an accident. Motorbike accidents are the single largest health risk to foreigners in Vietnam.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-first90-5" data-key="m-first90-5">
+          <label for="chk-m-first90-5">
+            <span class="task">Buy health insurance that actually covers medical evacuation<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Serious trauma and complex surgery are frequently handled by evacuation to Bangkok or Singapore. Check the evacuation limit, not just the annual maximum. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-first90-6" data-key="m-first90-6">
+          <label for="chk-m-first90-6">
+            <span class="task">Open the Vietnamese bank account</span>
+            <span class="detail">Bring passport, residence card, and lease. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-first90-7" data-key="m-first90-7">
+          <label for="chk-m-first90-7">
+            <span class="task">Register with the US Embassy or Consulate</span>
+            <span class="detail">Through the Smart Traveler Enrollment Program, so you receive alerts and can be contacted in an emergency. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-first90-8" data-key="m-first90-8">
+          <label for="chk-m-first90-8">
+            <span class="task">Start Vietnamese lessons in month one</span>
+            <span class="detail">The gap between foreigners who are content in Vietnam long term and those who leave at eighteen months correlates with this more than with income. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-ongoing">
+    <h3>Staying legal, year after year</h3>
+    <p class="window">Continuous</p>
+    <p class="mod-intro">Vietnamese status is a renewal treadmill. Build a calendar in your first month and never rely on an employer to remember for you.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-m-ongoing-0" data-key="m-ongoing-0">
+          <label for="chk-m-ongoing-0">
+            <span class="task">Calendar every expiry with a 90-day and 60-day alert<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Passport, visa, residence card, work permit, driving licence, insurance. Put them in one place. </span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-ongoing-1" data-key="m-ongoing-1">
+          <label for="chk-m-ongoing-1">
+            <span class="task">Start work permit and residence card renewals 60 to 90 days out<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The residence card cannot outlast the work permit, and both must clear before the current card expires. </span>
+            
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-ongoing-2" data-key="m-ongoing-2">
+          <label for="chk-m-ongoing-2">
+            <span class="task">Renew your US passport when it hits 2 years remaining<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Because the residence card must expire at least 30 days before the passport, a short passport truncates your card at every renewal. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-ongoing-3" data-key="m-ongoing-3">
+          <label for="chk-m-ongoing-3">
+            <span class="task">File your Vietnamese personal income tax<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Residents are taxed on worldwide employment income at progressive rates from 5% to 35% under the five-bracket schedule applying from the 2026 tax year, with a personal deduction of VND 15.5 million per month and VND 6.2 million per dependant. Non-residents pay a flat 20% on Vietnam-sourced employment income. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-ongoing-4" data-key="m-ongoing-4">
+          <label for="chk-m-ongoing-4">
+            <span class="task">File your US return and FBAR every year<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Expats get an automatic extension to 15 June, but interest still runs from April. FBAR is separate from the tax return. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555, Physical Presence or Bona Fide Residence test">20</a><a href="#src-fbar" title="FinCEN Form 114 (FBAR) — required when aggregate foreign accounts exceed US$10,000 at any point in the year">21</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-m-ongoing-5" data-key="m-ongoing-5">
+          <label for="chk-m-ongoing-5">
+            <span class="task">Coordinate the two tax systems deliberately, once, with a professional<span class="tag tag-critical">critical</span></span>
+            <span class="detail">With no treaty in force, the interaction of Vietnamese worldwide taxation and US citizenship taxation is genuinely complex. One session with an accountant who handles both is the highest-return money in this guide. <span class="cite"><a href="#src-tax-treaty-status" title="US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force">19</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-ongoing-6" data-key="m-ongoing-6">
+          <label for="chk-m-ongoing-6">
+            <span class="task">Re-declare temporary residence whenever you move address</span>
+            <span class="detail">Every new accommodation, every time, within 12 hours. <span class="cite"><a href="#src-tamtru" title="Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider">22</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-ongoing-7" data-key="m-ongoing-7">
+          <label for="chk-m-ongoing-7">
+            <span class="task">Keep a document folder that a lawyer could pick up cold</span>
+            <span class="detail">Entry stamps, every visa and card, leases, tax filings, work permits. Continuity of lawful residence is proven with paper. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-m-contingency">
+    <h3>Contingency and exit</h3>
+    <p class="window">Have this before you need it</p>
+    <p class="mod-intro">Written while things are going well, so that it exists when they are not.</p>
+    <ul class="checklist">
+      <li class="critical" data-pathways="work-permit-ld wp-exempt">
+          <input type="checkbox" id="chk-m-contingency-0" data-key="m-contingency-0">
+          <label for="chk-m-contingency-0">
+            <span class="task">Know what happens to your status if you lose your job<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Your work permit and residence card are tied to the sponsoring employer. Losing the job starts a clock. Ask your employer&#39;s HR exactly what that clock is before you need the answer. </span>
+            
+            <span class="scope">Applies to: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-contingency-1" data-key="m-contingency-1">
+          <label for="chk-m-contingency-1">
+            <span class="task">Keep 3 months of expenses plus a one-way flight home, liquid</span>
+            <span class="detail">In an account you can reach from either country. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-contingency-2" data-key="m-contingency-2">
+          <label for="chk-m-contingency-2">
+            <span class="task">Know the overstay process before you ever overstay</span>
+            <span class="detail">Overstay is resolved with fines and an exit procedure, and it leaves a record that makes future applications harder. It is not the end of the world, and it is also not nothing. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-contingency-3" data-key="m-contingency-3">
+          <label for="chk-m-contingency-3">
+            <span class="task">Keep US documents current while abroad</span>
+            <span class="detail">Passport, and a valid US driver&#39;s licence if you might return. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-m-contingency-4" data-key="m-contingency-4">
+          <label for="chk-m-contingency-4">
+            <span class="task">Write your plan B pathway id</span>
+            <span class="detail">If your current pathway closes, which node of the tree do you re-enter at? Answer it now. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+</section>
+  
+<section id="sources" class="band">
+  <h2>Sources, and how much to trust each one</h2>
+  <p class="lede">Every factual claim above is numbered to this list. Tiers are marked honestly: a law firm's summary of a decree is not the decree, and we do not pretend otherwise. Verify anything that will cost you money before you act on it.</p>
+  <ol class="sources">
+    
+    <li id="src-law-118-2025">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.vietnamvisanews.com/blog/from-1-july-2026-vietnam-adds-two-new-visa-types-for-foreigners.html" rel="noopener noreferrer" target="_blank">Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Secondary reporting on the statute. Verify against the official Vietnamese text before relying on it for a filing.</span>
+    </li>
+    <li id="src-ud1-guide">
+      <span class="tier tier-community">community</span>
+      <a href="https://www.shareuhack.com/en/posts/vietnam-digital-nomad-visa-guide-2026" rel="noopener noreferrer" target="_blank">UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-decree-219-2025">
+      <span class="tier tier-primary-law">primary law</span>
+      <a href="https://english.luatvietnam.vn/decree-no-219-2025-nd-cp-dated-august-07-2025-of-the-government-on-foreign-workers-in-vietnam-407607-doc1.html" rel="noopener noreferrer" target="_blank">Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-wp-relaxed">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.tilleke.com/insights/vietnam-relaxes-requirements-for-foreign-workers/" rel="noopener noreferrer" target="_blank">Analysis of relaxed foreign worker requirements under Decree 219/2025 — expert experience cut to 2 years, 1 year in priority sectors; single 10-working-day process</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-wp-exemptions">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://letranlaw.com/insights/work-permit-exemptions-in-vietnam-who-qualifies/" rel="noopener noreferrer" target="_blank">Work permit exemption categories under current Vietnamese law</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Counts vary between 15 and 20 depending on how sub-cases are grouped. Always check the current decree text for your exact facts.</span>
+    </li>
+    <li id="src-law-47-2014">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://kpmg.com/vn/en/home/insights/2023/07/amended-immigration-law-affecting-foreigners-entering-and-staying-in-vietnam.html" rel="noopener noreferrer" target="_blank">Law on Entry, Exit, Transit and Residence of Foreigners in Vietnam (2014), Article 8.2 — bars labour activity on tourist entry</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-hcch-apostille">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.hcch.net/en/news-archive/details/?varevent=1132" rel="noopener noreferrer" target="_blank">HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Germany, Austria and the Czech Republic objected, so the Convention does not apply between Vietnam and those three states. This does not affect US documents.</span>
+    </li>
+    <li id="src-evisa-us">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.vietnam-visa.com/guide/united-states/" rel="noopener noreferrer" target="_blank">Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Apply only through the official Vietnamese government portal on a .gov.vn domain.</span>
+    </li>
+    <li id="src-exemption-list">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.myvietnamvisa.com/vietnam-visa-exemption.html" rel="noopener noreferrer" target="_blank">Vietnam visa exemption country list — the United States is not included</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-trc-rules">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://residentvietnam.com/vietnam-residence-cards-trc-explained/" rel="noopener noreferrer" target="_blank">Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-tt-trc">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://emerhub.com/vietnam/visas/tt-spouse-family-visa/" rel="noopener noreferrer" target="_blank">TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-vec-5yr">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.vietnam-visa.com/vietnam-5-year-visa-exemption/" rel="noopener noreferrer" target="_blank">5-year visa exemption certificate for Viet Kieu and foreign spouses and children of Vietnamese citizens — 180 days per entry</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-dt-tiers">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://emerhub.com/vietnam/visas/dt-investor-visa/" rel="noopener noreferrer" target="_blank">DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-golden-visa-status">
+      <span class="tier tier-community">community</span>
+      <a href="https://rumavi.com/en/property-guides/vietnam-golden-visa" rel="noopener noreferrer" target="_blank">Vietnam golden visa reality check — proposed in 2025, no decree and no application channel as of 2026; &#39;Resolution 41/2026/QH15&#39; unconfirmed by any government source</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-golden-visa-proposal">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.vietnam-briefing.com/news/vietnam-visa-policy-2025-reforms.html/" rel="noopener noreferrer" target="_blank">Original 2025 Tourism Advisory Board golden visa proposal reporting</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-nomad-status">
+      <span class="tier tier-community">community</span>
+      <a href="https://www.expatden.com/vietnam/vietnam-digital-nomad-visa/" rel="noopener noreferrer" target="_blank">No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-pit-2026">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://vietnam.acclime.com/guides/personal-income-tax/" rel="noopener noreferrer" target="_blank">Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-si-2026">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://indochinalink.com/vietnam-social-insurance-rates-exemptions/" rel="noopener noreferrer" target="_blank">Compulsory social and health insurance for foreign employees — roughly 30% total, 20.5% employer and 9.5% employee, under Social Insurance Law 41/2024 and Decree 158/2025</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-tax-treaty-status">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.amchamhanoi.com/tax-treaty-july2023/" rel="noopener noreferrer" target="_blank">US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-feie-2026">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion" rel="noopener noreferrer" target="_blank">IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555, Physical Presence or Bona Fide Residence test</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">The 2026 figure comes from published inflation-adjustment reporting; confirm on the IRS page for the filing year.</span>
+    </li>
+    <li id="src-fbar">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.taxesforexpats.com/articles/tax-saving-strategies/foreign-earned-income-exclusion.html" rel="noopener noreferrer" target="_blank">FinCEN Form 114 (FBAR) — required when aggregate foreign accounts exceed US$10,000 at any point in the year</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-tamtru">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://tanvanlang.com/en/failure-to-register-temporary-residence-for-foreigners/" rel="noopener noreferrer" target="_blank">Temporary residence declaration (khai báo tạm trú) — form NA17, within 12 hours of arrival at the accommodation, 24 hours in remote areas, free, obligation on the accommodation provider</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-driving-2025">
+      <span class="tier tier-government">government</span>
+      <a href="https://vietnamnews.vn/life-style/expat-corner/1719797/navigating-driver-s-licence-conversion-a-guide-for-foreigners-in-viet-nam.html" rel="noopener noreferrer" target="_blank">Driving licence conversion under Circular 12/2025/TT-BCA — about 3 months residence required, notarised translation, licence issued matches the class of the foreign licence</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Vietnam News is state media reporting on the Ministry of Public Security circular.</span>
+    </li>
+  </ol>
+</section>
+  <footer>
+    <p>Vietnam Relocation Guide, edition v1.0.0, verified September 8, 2026. Built on the Relocation OS country-pack format.</p>
+    <p>Licensed for personal use by the purchaser. Not legal, immigration, or tax advice.</p>
+  </footer>
+</div>
+
+<script>
+const PACK = {"tree":{"entry":"q-purpose","nodes":[{"id":"q-purpose","type":"question","question":"How long do you need to be in Vietnam, and will you be paid by a Vietnamese entity?","help":"Answer for the stay you actually want, not the one you think you can get. Almost every expensive mistake in Vietnamese immigration comes from someone entering on a short-stay permission and then trying to convert it into a life.","answers":[{"label":"90 days or less, and no Vietnamese employer or Vietnamese clients","next":"out-evisa","note":"This is a visit, and the answer is simple."},{"label":"Longer than 90 days, or I will be paid by a Vietnamese entity","next":"q-family","note":"This is a move. Keep going."}]},{"id":"q-family","type":"question","question":"Do you have a Vietnamese family connection?","help":"This is the first question for a reason. A Vietnamese family connection is by a wide margin the cheapest and most durable route, and many Americans with a Vietnamese parent or grandparent do not realise they qualify for anything. Check this before you consider paying for a company.","answers":[{"label":"I held Vietnamese nationality, or I have a Vietnamese parent or grandparent","next":"out-vec","note":"You are 'Viet Kieu' for these purposes."},{"label":"I am married to a Vietnamese citizen","next":"out-tt","note":"Two options open up: the 5-year exemption certificate and the TT residence card."},{"label":"No Vietnamese family connection","next":"q-joboffer"}]},{"id":"q-joboffer","type":"question","question":"Do you have a Vietnamese employer — or the Vietnamese entity of a foreign employer — willing to sponsor you?","help":"Sponsorship is not a favour, it is paperwork the company must file in its own name. A company with no Vietnamese legal entity cannot sponsor you no matter how much it wants to. Ask specifically: 'Does the entity that will file my work permit have a Vietnamese business registration certificate?'","answers":[{"label":"Yes, sponsorship is secured","next":"q-wp-qualify"},{"label":"No, but I am a senior digital-technology professional who could be sponsored by a Vietnamese company, university, or research institute","next":"out-ud1","note":"A route that only opened on 1 July 2026."},{"label":"No sponsor","next":"q-capital"}]},{"id":"q-wp-qualify","type":"question","question":"Do you meet the expert test — a university degree or equivalent, plus relevant experience of 2 years, or 1 year in priority technology, innovation, and digital-transformation sectors?","help":"Decree 219/2025 cut the standard experience requirement from 3 years to 2, and to 1 year in priority sectors. Your degree does not have to match the job title exactly, but the closer it matches the job description your employer files, the smoother the approval.","answers":[{"label":"Yes, degree plus qualifying experience","next":"out-work-permit"},{"label":"No, but I am an intra-company transferee — employed by the foreign parent 12+ months and moving to its Vietnamese presence","next":"out-wp-exempt"},{"label":"No, or I am not sure","next":"q-capital","note":"Have your employer check the exemption list before you give up on this branch — there are roughly 15 to 20 exemption categories."}]},{"id":"q-capital","type":"question","question":"How much capital can you contribute to a Vietnamese company in your own name, and leave in place?","help":"This is contributed charter capital that is actually transferred and registered, not a bank balance you show once and take home. The tier you land in determines whether you get a residence card at all. Assume roughly VND 26,000 to US$1.","answers":[{"label":"VND 100 billion or more (about US$3.8M)","next":"out-dt1"},{"label":"VND 50 to 100 billion (about US$1.9M to 3.8M)","next":"out-dt2"},{"label":"VND 3 to 50 billion (about US$115k to 1.9M)","next":"out-dt3","note":"This is the lowest tier that produces a residence card."},{"label":"Under VND 3 billion","next":"out-dt4"},{"label":"None","next":"q-study"}]},{"id":"q-study","type":"question","question":"Are you enrolling in a Vietnamese university, degree program, or full-time accredited language program?","help":"Full-time enrolment at an institution licensed to host foreign students. A part-time evening Vietnamese class at a private language centre generally will not sponsor a DH visa.","answers":[{"label":"Yes, I have or can get an admission letter","next":"out-student"},{"label":"No","next":"q-remote"}]},{"id":"q-remote","type":"question","question":"Which of these describes you?","help":"You have reached the part of the tree where Vietnam has no category built for you. What follows is the honest answer, not a workaround dressed up as a pathway.","answers":[{"label":"I am retired or living on passive income","next":"dead-retirement"},{"label":"I work remotely for a non-Vietnamese employer or clients","next":"dead-nomad"},{"label":"Neither","next":"dead-none"}]},{"id":"out-evisa","type":"outcome","pathwayId":"evisa-90"},{"id":"out-vec","type":"outcome","pathwayId":"vec-5year"},{"id":"out-tt","type":"outcome","pathwayId":"tt-family"},{"id":"out-work-permit","type":"outcome","pathwayId":"work-permit-ld"},{"id":"out-wp-exempt","type":"outcome","pathwayId":"wp-exempt"},{"id":"out-ud1","type":"outcome","pathwayId":"ud1-tech"},{"id":"out-dt1","type":"outcome","pathwayId":"dt-investor"},{"id":"out-dt2","type":"outcome","pathwayId":"dt-investor"},{"id":"out-dt3","type":"outcome","pathwayId":"dt-investor"},{"id":"out-student","type":"outcome","pathwayId":"student-dh"},{"id":"out-dt4","type":"deadend","verdict":"Under VND 3 billion you are in the DT4 tier: a visa of up to 12 months and no temporary residence card. You will hold a Vietnamese company with real accounting, tax, and reporting duties, and you will still be renewing short-term permission to stay. This is the single most common way Americans waste US$5,000 to 15,000 in agency and formation fees in Vietnam.","alternatives":["Reach VND 3 billion in genuinely contributed capital and enter at DT3, which does carry a residence card of up to 3 years.","Use the company as a business decision on its own merits, and solve residence separately through employment.","If your business does not actually need to be Vietnamese, keep the entity at home and reconsider whether you need long-term residence at all."]},{"id":"dead-retirement","type":"deadend","verdict":"Vietnam has no retirement visa. There is no category based on age, pension, passive income, or property purchase. Buying an apartment grants you no immigration status whatsoever.","alternatives":["Rolling 90-day e-visas with exits. Legal for presence, but it is a permanent state of leaving, and each new e-visa is a fresh discretionary decision by immigration.","If you have a Vietnamese spouse or Vietnamese ancestry, go back to the family branch — it is the only stable low-cost route.","Invest at DT3 level or above if you have the capital and want the company anyway.","Compare against neighbours before committing: Thailand, Malaysia, and the Philippines all run retirement categories Vietnam does not."]},{"id":"dead-nomad","type":"deadend","verdict":"There is no visa in Vietnam for a remote worker paid from abroad. The 90-day multiple-entry e-visa is what almost every remote worker in Vietnam actually uses, and doing paid work on it is prohibited by Article 8.2 of the 2014 Law with fines of VND 15–25 million. Enforcement against people serving foreign clients has been close to nonexistent, but you are relying on tolerance, not on a right.","alternatives":["Rolling 90-day e-visas, with a clear understanding of the legal position you are accepting.","Get hired by a Vietnamese entity, including a local subsidiary of a foreign firm, and take the work permit route — the only clean answer.","Contribute VND 3 billion or more to your own Vietnamese company and take DT3 with a residence card, if the business is real.","If you are senior in digital technology, look hard at whether a Vietnamese employer, university, or research institute would sponsor you for UĐ1."]},{"id":"dead-none","type":"deadend","verdict":"On the facts you have given, no long-term Vietnamese immigration category currently fits you. That is a real answer and it is better to have it now than after spending money.","alternatives":["Change one input rather than looking for a loophole: acquire a sponsor, acquire capital, or enrol in a program.","Use 90-day e-visas to spend real time in Vietnam and build the connection that produces a sponsor.","Re-run this tree after any change in employment, marriage, or capital — the answer flips entirely on those inputs."]}]},"pathways":[{"id":"evisa-90","name":"90-Day E-Visa","summary":"Vietnam's default entry permission for Americans: fully online, up to 90 days, available single or multiple entry. This is the tool you will use for scouting trips, and the one most long-stayers quietly live on.","difficulty":"low"},{"id":"vec-5year","name":"5-Year Visa Exemption Certificate","summary":"The best-value document in Vietnamese immigration, and the least known. For people of Vietnamese origin and the foreign spouses and children of Vietnamese citizens: five years of unlimited entries, up to 180 days per entry, no visa fee each time.","difficulty":"moderate"},{"id":"tt-family","name":"TT Family Visa and 3-Year Residence Card","summary":"The residence route for foreign spouses, children, and parents of Vietnamese citizens. Produces a temporary residence card valid up to 3 years, which functions as a multiple-entry visa substitute.","difficulty":"moderate"},{"id":"work-permit-ld","name":"Work Permit, LĐ Visa, and 2-Year Residence Card","summary":"The main road. Your employer obtains a work permit under Decree 219/2025, which supports an LĐ visa and then a temporary residence card aligned to the permit. Decree 219 made this materially faster than it was before August 2025.","difficulty":"moderate"},{"id":"wp-exempt","name":"Work Permit Exemption Confirmation","summary":"Not everyone who works in Vietnam needs a work permit. Decree 219/2025 sets out roughly 15 to 20 exemption categories, and an exemption still requires a written confirmation from the labour authority. Skipping the confirmation because you 'are exempt' is itself a violation.","difficulty":"moderate"},{"id":"ud1-tech","name":"UĐ1 Digital Technology Visa","summary":"Vietnam's newest and longest standard visa, live since 1 July 2026 under Law 118/2025/QH15. Up to 5 years for high-quality digital technology personnel, with UĐ2 covering the spouse and children under 18.","difficulty":"high"},{"id":"dt-investor","name":"DT Investor Visa and Residence Card","summary":"Four tiers keyed to how much capital you actually contribute to a Vietnamese company. The tier determines everything, and only DT3 and above produce a residence card.","difficulty":"high"},{"id":"student-dh","name":"DH Student Visa","summary":"Sponsored by the institution that admitted you. A legitimate, low-cost way to hold lawful long-term status while you build the Vietnamese language ability and network that make the other routes viable.","difficulty":"low"}]};
+
+/* ---- decision tree ---- */
+(function () {
+  const nodes = new Map(PACK.tree.nodes.map(n => [n.id, n]));
+  const pathways = new Map(PACK.pathways.map(p => [p.id, p]));
+  const card = document.getElementById('tree-card');
+  const crumbs = document.getElementById('breadcrumb');
+  const back = document.getElementById('btn-back');
+  const restart = document.getElementById('btn-restart');
+  if (!card) return;
+
+  let path = [PACK.tree.entry];   // node ids
+  let picks = [];                 // answer labels
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function scopeChecklists(pathwayId) {
+    document.querySelectorAll('.checklist li[data-pathways]').forEach(li => {
+      li.hidden = pathwayId ? !li.dataset.pathways.split(' ').includes(pathwayId) : false;
+    });
+    try { pathwayId ? localStorage.setItem('vn-pathway', pathwayId) : localStorage.removeItem('vn-pathway'); } catch (e) {}
+  }
+
+  function render() {
+    const node = nodes.get(path[path.length - 1]);
+    crumbs.innerHTML = picks.map(p => '<li>' + esc(p) + '</li>').join('');
+    back.hidden = path.length < 2;
+
+    if (node.type === 'question') {
+      scopeChecklists(null);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="q-text">' + esc(node.question) + '</p>' +
+        (node.help ? '<p class="q-help">' + esc(node.help) + '</p>' : '') +
+        '<div class="answers">' + node.answers.map((a, i) =>
+          '<button type="button" class="answer" data-i="' + i + '"><b>' + esc(a.label) + '</b>' +
+          (a.note ? '<i>' + esc(a.note) + '</i>' : '') + '</button>').join('') + '</div>';
+      card.querySelectorAll('.answer').forEach(btn => btn.addEventListener('click', () => {
+        const a = node.answers[+btn.dataset.i];
+        picks.push(a.label);
+        path.push(a.next);
+        render();
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }));
+      return;
+    }
+
+    if (node.type === 'outcome') {
+      const p = pathways.get(node.pathwayId);
+      scopeChecklists(p.id);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="result-kicker">Your pathway</p>' +
+        '<p class="q-text">' + esc(p.name) + '</p>' +
+        '<p class="q-help">' + esc(p.summary) + '</p>' +
+        '<p><a class="btn" href="#pathway-' + p.id + '">Read the full pathway &rarr;</a></p>' +
+        '<p class="q-help" style="margin-top:1rem">The phase checklists below are now filtered to this pathway.</p>';
+      return;
+    }
+
+    scopeChecklists(null);
+    card.className = 'tree-card result-dead';
+    card.innerHTML =
+      '<p class="result-kicker">No pathway fits &mdash; here is the honest answer</p>' +
+      '<p class="q-help" style="font-size:1rem;color:var(--ink)">' + esc(node.verdict) + '</p>' +
+      (node.alternatives && node.alternatives.length
+        ? '<p style="font-weight:650;margin-top:1rem">What to actually consider:</p><ul class="alts">' +
+          node.alternatives.map(a => '<li>' + esc(a) + '</li>').join('') + '</ul>'
+        : '');
+  }
+
+  back.addEventListener('click', () => { if (path.length > 1) { path.pop(); picks.pop(); render(); } });
+  restart.addEventListener('click', () => { path = [PACK.tree.entry]; picks = []; render(); });
+  render();
+})();
+
+/* ---- checklist persistence ---- */
+(function () {
+  const KEY = 'vn-guide-progress';
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  document.querySelectorAll('.checklist input[data-key]').forEach(box => {
+    if (saved[box.dataset.key]) box.checked = true;
+    box.addEventListener('change', () => {
+      saved[box.dataset.key] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+})();
+</script>
