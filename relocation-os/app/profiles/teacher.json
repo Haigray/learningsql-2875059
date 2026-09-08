@@ -1,0 +1,12 @@
+{
+  "label": "International school teacher with an offer in hand",
+  "age": 29, "retired": false,
+  "annualIncomeUsd": 42000, "passiveIncomeUsd": 0,
+  "liquidSavingsUsd": 6000, "investableCapitalUsd": 1000, "netWorthUsd": 20000,
+  "familyTie": "none",
+  "hasLocalJobOffer": true, "employerIsLocalEntity": true, "employerIsLargeEnough": true,
+  "enrollingInStudy": false, "remoteWorkForForeignEmployer": false,
+  "hasDegree": true, "yearsExperience": 5, "sector": "education",
+  "needsWorkAuthorization": true, "needsLocalBanking": true,
+  "bringingFamily": false, "wantsPermanence": false, "maxStayMonths": 48
+}

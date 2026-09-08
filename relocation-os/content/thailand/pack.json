@@ -10,7 +10,18 @@
     "fxNote": "Baht figures assume roughly THB 32 to US$1. The rate moves; treat dollar conversions as order-of-magnitude. Note that Thai immigration and tax thresholds are set in baht, so a weakening dollar quietly raises the bar in dollar terms.",
     "priceUsd": 30,
     "edition": "navigator",
-    "tagline": "Eight ways to live in Thailand legally, priced from free to five million baht. Written the week five separate rules changed."
+    "tagline": "Eight ways to live in Thailand legally, priced from free to five million baht. Written the week five separate rules changed.",
+    "comparables": {
+      "taxResidencyDays": 180,
+      "taxesResidentWorldwideIncome": "yes",
+      "usTaxTreatyInForce": "yes",
+      "documentAuthentication": "consular-legalization",
+      "documentAuthenticationChangesOn": "2027-02-28",
+      "hasRetirementRoute": true,
+      "hasRemoteWorkRoute": true,
+      "permanenceRoute": "long-residence",
+      "localBankingNeedsNonTouristVisa": true
+    }
   },
   "realityCheck": [
     {
@@ -385,7 +396,17 @@
           "consequence": "Refusal of entry at the border, which is discretionary and not appealable in the moment.",
           "avoid": "If you are living in Thailand, get a visa that says so."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "maxStayMonths",
+            "op": "lte",
+            "value": 1,
+            "because": "visa-free entry drops to 30 days for Americans from 15 September 2026"
+          }
+        ]
+      }
     },
     {
       "id": "dtv",
@@ -558,7 +579,23 @@
           "consequence": "That is work in Thailand without a work permit, on a visa classified as tourist.",
           "avoid": "Foreign employers and foreign clients only. If you want to work locally, you want Non-B."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "liquidSavingsUsd",
+            "op": "gte",
+            "value": 16000,
+            "because": "THB 500,000, and it must have been sitting in the account three months"
+          },
+          {
+            "field": "needsLocalBanking",
+            "op": "isFalse",
+            "because": "the DTV is classified as a Tourist visa, and Thai banks now refuse accounts to tourist-classified holders"
+          }
+        ],
+        "note": "From 31 August 2026 you must apply in a country where you are a national or permanent resident, and supply a criminal record certificate."
+      }
     },
     {
       "id": "ltr",
@@ -711,7 +748,84 @@
           "consequence": "A Thai tax assessment you did not budget for.",
           "avoid": "Confirm in writing, by income type."
         }
-      ]
+      ],
+      "criteria": {
+        "any": [
+          {
+            "label": "Wealthy Global Citizen",
+            "all": [
+              {
+                "field": "netWorthUsd",
+                "op": "gte",
+                "value": 1000000
+              },
+              {
+                "field": "investableCapitalUsd",
+                "op": "gte",
+                "value": 500000,
+                "because": "a US$500,000 investment in Thailand is required"
+              }
+            ]
+          },
+          {
+            "label": "Wealthy Pensioner",
+            "all": [
+              {
+                "field": "age",
+                "op": "gte",
+                "value": 50
+              },
+              {
+                "field": "passiveIncomeUsd",
+                "op": "gte",
+                "value": 80000,
+                "because": "US$80,000 a year in passive income, or US$40,000 with extra conditions"
+              }
+            ]
+          },
+          {
+            "label": "Work-from-Thailand Professional",
+            "all": [
+              {
+                "field": "annualIncomeUsd",
+                "op": "gte",
+                "value": 80000,
+                "because": "US$80,000 from a well-established overseas employer"
+              },
+              {
+                "field": "yearsExperience",
+                "op": "gte",
+                "value": 5
+              },
+              {
+                "field": "remoteWorkForForeignEmployer",
+                "op": "isTrue"
+              }
+            ]
+          },
+          {
+            "label": "Highly-Skilled Professional",
+            "all": [
+              {
+                "field": "hasLocalJobOffer",
+                "op": "isTrue",
+                "because": "you must work for a Thai entity, institution, or government agency in a targeted industry"
+              },
+              {
+                "field": "sector",
+                "op": "in",
+                "value": [
+                  "tech",
+                  "healthcare",
+                  "education",
+                  "finance"
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "Ten years for THB 50,000, with a work permit, family inclusion, and — for three of the four categories — exemption from Thai tax on foreign income. Check this before considering Privilege, which costs about thirty times more for less."
+      }
     },
     {
       "id": "privilege",
@@ -854,7 +968,18 @@
           "consequence": "A very large, unrecoverable transfer.",
           "avoid": "Verify with the operator first."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "investableCapitalUsd",
+            "op": "gte",
+            "value": 20300,
+            "because": "Bronze is THB 650,000 and closes 30 September 2026; Gold is THB 900,000"
+          }
+        ],
+        "note": "No income test, no age limit, no financial disclosure — that is the entire product. It is not a work permit."
+      }
     },
     {
       "id": "retirement",
@@ -1030,7 +1155,42 @@
           "consequence": "Refusal at the next renewal, when the officer reviews the year's statements.",
           "avoid": "Understand the maintenance requirement, not just the application-day figure."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "age",
+            "op": "gte",
+            "value": 50,
+            "because": "all three Thai retirement routes are gated at 50"
+          }
+        ],
+        "any": [
+          {
+            "label": "Bank deposit route",
+            "all": [
+              {
+                "field": "liquidSavingsUsd",
+                "op": "gte",
+                "value": 25000,
+                "because": "THB 800,000 in a Thai bank"
+              }
+            ]
+          },
+          {
+            "label": "Monthly income route",
+            "all": [
+              {
+                "field": "passiveIncomeUsd",
+                "op": "gte",
+                "value": 24000,
+                "because": "THB 65,000 a month"
+              }
+            ]
+          }
+        ],
+        "note": "Which of the three routes you take decides whether US$100,000 of health insurance is mandatory. The in-country Non-O extension has no insurance requirement; the O-A does."
+      }
     },
     {
       "id": "work-nonb",
@@ -1209,7 +1369,24 @@
           "consequence": "Neither does. Both are employer-specific.",
           "avoid": "Never resign before the new employer's filing is underway."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "hasLocalJobOffer",
+            "op": "isTrue"
+          },
+          {
+            "field": "employerIsLocalEntity",
+            "op": "isTrue"
+          },
+          {
+            "field": "employerIsLargeEnough",
+            "op": "isTrue",
+            "because": "the employer must maintain four Thai employees per foreign one and THB 2,000,000 of registered capital per foreign worker, which rules out startups entirely"
+          }
+        ]
+      }
     },
     {
       "id": "marriage",
@@ -1347,7 +1524,18 @@
           "consequence": "Complications with the pending extension.",
           "avoid": "Ask the office before booking travel."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "familyTie",
+            "op": "eq",
+            "value": "spouse",
+            "because": "the extension is based on marriage to a Thai national"
+          }
+        ],
+        "note": "THB 400,000 seasoned two months, or THB 40,000 monthly income — half the retirement threshold, with no age gate."
+      }
     },
     {
       "id": "education-ed",
@@ -1457,7 +1645,16 @@
           "consequence": "The school loses its licence and your visa support disappears with your money.",
           "avoid": "Verify first, pay second."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "enrollingInStudy",
+            "op": "isTrue"
+          }
+        ],
+        "note": "Legitimate if you genuinely study. Roughly 10,000 student visas were revoked in 2026 under continuous database cross-checking."
+      }
     }
   ],
   "modules": [

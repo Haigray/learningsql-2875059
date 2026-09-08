@@ -10,7 +10,17 @@
     "fxNote": "Cambodia is effectively dollarized. US dollars are the working currency for rent, salaries, visas, and most retail; Cambodian riel is used mainly as small change at roughly 4,000 KHR to US$1. This removes an entire category of currency friction that Vietnam has, and it is one of the genuine practical advantages of moving here. Note the flip side: worn, torn, or pre-2009 US notes are routinely refused.",
     "priceUsd": 30,
     "edition": "navigator",
-    "tagline": "The easiest country in the region to stay in legally, and the one where that is changing fastest. Every route, with the 2026 enforcement shift built in."
+    "tagline": "The easiest country in the region to stay in legally, and the one where that is changing fastest. Every route, with the 2026 enforcement shift built in.",
+    "comparables": {
+      "taxResidencyDays": 182,
+      "taxesResidentWorldwideIncome": "contested",
+      "usTaxTreatyInForce": "no",
+      "documentAuthentication": "consular-legalization",
+      "hasRetirementRoute": true,
+      "hasRemoteWorkRoute": false,
+      "permanenceRoute": "investment",
+      "localBankingNeedsNonTouristVisa": false
+    }
   },
   "realityCheck": [
     {
@@ -289,7 +299,17 @@
           "consequence": "Overstay, at a daily fine, plus an exit problem.",
           "avoid": "One extension only. Diarise the exit date on arrival."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "maxStayMonths",
+            "op": "lte",
+            "value": 2,
+            "because": "the tourist class extends exactly once, then you must leave"
+          }
+        ]
+      }
     },
     {
       "id": "ordinary-e",
@@ -414,7 +434,11 @@
           "consequence": "Rushed agent fees, or an overstay if documents are missing.",
           "avoid": "Start the extension at around day 20."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [],
+        "note": "Open to essentially everyone — this is the gateway visa, and almost every long-stay route in Cambodia starts here."
+      }
     },
     {
       "id": "employed-eb",
@@ -595,7 +619,21 @@
           "consequence": "Documents rejected outright; four to eight weeks lost and the fees are not recoverable.",
           "avoid": "Cambodia is not in the Apostille Convention. Three-step chain, every time."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "hasLocalJobOffer",
+            "op": "isTrue"
+          },
+          {
+            "field": "employerIsLocalEntity",
+            "op": "isTrue",
+            "because": "the work permit is filed by a registered Cambodian entity"
+          }
+        ],
+        "note": "The binding constraint is usually the employer's Foreign Manpower Quota, applied for a year in advance. Ask before signing."
+      }
     },
     {
       "id": "selfsponsor-eb",
@@ -732,7 +770,18 @@
           "consequence": "No work permit next year, from your own company.",
           "avoid": "It is an annual calendar item. Set it the day you incorporate."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "investableCapitalUsd",
+            "op": "gte",
+            "value": 5000,
+            "because": "company formation plus first-year compliance runs to a few thousand dollars — far below Vietnam's investor thresholds"
+          }
+        ],
+        "note": "Cambodia has no capital tier for residency, unlike Vietnam. The real cost is permanent annual compliance, not the formation fee."
+      }
     },
     {
       "id": "retirement-er",
@@ -868,7 +917,23 @@
           "consequence": "Refusal, because no official figure is published and the assessment is discretionary.",
           "avoid": "Over-evidence. Bring more documentation than you think is needed."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "age",
+            "op": "gte",
+            "value": 55,
+            "because": "the ER extension is age-gated at 55"
+          },
+          {
+            "field": "retired",
+            "op": "isTrue",
+            "because": "you must evidence that you are retired and not working locally"
+          }
+        ],
+        "note": "No official minimum income is published, so over-evidence rather than aiming at a rumoured threshold."
+      }
     },
     {
       "id": "jobseek-eg",
@@ -1003,7 +1068,17 @@
           "consequence": "Increasing scrutiny at each renewal, and no accumulated status to show for the time.",
           "avoid": "Use EG as a bridge with a decision date attached."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "needsWorkAuthorization",
+            "op": "isFalse",
+            "because": "EG permits you to stay while seeking work, not to work"
+          }
+        ],
+        "note": "Short 1 and 3-month EG extensions need no sponsor, which makes this the most accessible long-stay mechanism in the region — and the closest thing to a remote-worker route. Whether it covers remote work is contested."
+      }
     },
     {
       "id": "student-es",
@@ -1095,7 +1170,15 @@
           "consequence": "Illegal employment exposure.",
           "avoid": "Keep income sources outside Cambodia, or move to the EB and work permit route."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "enrollingInStudy",
+            "op": "isTrue"
+          }
+        ]
+      }
     },
     {
       "id": "citizenship-investment",
@@ -1219,7 +1302,18 @@
           "consequence": "It does not. US citizens are taxed on worldwide income regardless of other nationalities held.",
           "avoid": "Take US tax advice before, not after."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "investableCapitalUsd",
+            "op": "gte",
+            "value": 330000,
+            "because": "the US$245,000 donation is the entry ticket; all-in costs commonly reach US$330,000 or more per applicant"
+          }
+        ],
+        "note": "The only published route to permanence anywhere in this catalogue."
+      }
     }
   ],
   "modules": [

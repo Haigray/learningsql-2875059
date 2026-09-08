@@ -1,0 +1,10 @@
+{
+  "label": "Selling a business, wants somewhere permanent",
+  "age": 52, "retired": false,
+  "annualIncomeUsd": 40000, "passiveIncomeUsd": 90000,
+  "liquidSavingsUsd": 300000, "investableCapitalUsd": 600000, "netWorthUsd": 2400000,
+  "familyTie": "none", "hasLocalJobOffer": false, "enrollingInStudy": false,
+  "remoteWorkForForeignEmployer": false,
+  "needsWorkAuthorization": false, "needsLocalBanking": true,
+  "bringingFamily": true, "wantsPermanence": true, "maxStayMonths": 240
+}

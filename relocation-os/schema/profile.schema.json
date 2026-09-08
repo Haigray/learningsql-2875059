@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://relocation-os/schema/profile.schema.json",
+  "title": "Mover Profile",
+  "description": "One person's situation, in a vocabulary shared by every country pack. This is what makes heterogeneous decision trees comparable: each pathway declares machine-evaluable criteria against these fields, so the same profile can be run against every country at once. Every field is optional — an absent field yields 'check' rather than a false negative, because guessing on someone's behalf is worse than telling them what to confirm.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "label":        { "type": "string", "description": "Human name for this profile, e.g. 'Retiring couple, modest pension'." },
+
+    "age":          { "type": "number", "minimum": 0, "description": "Years. Gates retirement routes in Thailand (50) and Cambodia (55)." },
+    "retired":      { "type": "boolean", "description": "Not working, and able to evidence it. Retirement routes require this as well as age." },
+
+    "annualIncomeUsd":     { "type": "number", "minimum": 0, "description": "Earned income, from employment or self-employment." },
+    "passiveIncomeUsd":    { "type": "number", "minimum": 0, "description": "Pension, benefits, dividends, rent. Distinct from earned income because retirement routes test this specifically." },
+    "liquidSavingsUsd":    { "type": "number", "minimum": 0, "description": "Cash you can park and evidence, e.g. Thailand's THB 500,000 DTV requirement." },
+    "investableCapitalUsd":{ "type": "number", "minimum": 0, "description": "Capital you would genuinely commit and leave in place. Not the same as savings." },
+    "netWorthUsd":         { "type": "number", "minimum": 0, "description": "Total assets, for wealth-tested routes such as Thailand's LTR Wealthy Global Citizen." },
+
+    "familyTie": {
+      "enum": ["none", "spouse", "ancestry", "child"],
+      "description": "'spouse' of a citizen, 'ancestry' meaning heritage or former nationality, 'child' meaning a citizen child. By a wide margin the cheapest routes in the region, and the most commonly overlooked."
+    },
+
+    "hasLocalJobOffer":       { "type": "boolean" },
+    "employerIsLocalEntity":  { "type": "boolean", "description": "Whether the hiring entity is actually registered in the destination country. A foreign company with no local entity cannot sponsor anyone." },
+    "employerIsLargeEnough":  { "type": "boolean", "description": "Whether the employer clears local headcount and capital tests — Thailand's 4:1 Thai-to-foreign ratio, Cambodia's Foreign Manpower Quota. Rules out startups." },
+    "intraCompanyTransfer":   { "type": "boolean" },
+
+    "remoteWorkForForeignEmployer": { "type": "boolean" },
+    "isEmployee": { "type": "boolean", "description": "Employee rather than freelancer or business owner. Several remote-work routes in the region exclude freelancers outright." },
+
+    "hasDegree":       { "type": "boolean" },
+    "yearsExperience": { "type": "number", "minimum": 0 },
+    "sector":          { "enum": ["tech", "finance", "education", "healthcare", "other"] },
+
+    "enrollingInStudy": { "type": "boolean" },
+
+    "needsWorkAuthorization": { "type": "boolean", "description": "Whether you need to work legally for a local employer. Many long-stay routes permit residence but not work." },
+    "needsLocalBanking":      { "type": "boolean", "description": "Whether you need a local bank account. Now decisive in Thailand, where the DTV's tourist classification blocks it." },
+    "bringingFamily":         { "type": "boolean" },
+    "wantsPermanence":        { "type": "boolean", "description": "Whether permanent residence or citizenship is the actual objective, as opposed to indefinite renewable stay." },
+    "maxStayMonths":          { "type": "number", "minimum": 0, "description": "How long you want to stay. Separates a visit from a move." }
+  }
+}

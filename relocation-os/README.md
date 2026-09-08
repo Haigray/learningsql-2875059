@@ -17,7 +17,10 @@ build/validate.mjs            structural + referential integrity, and a freshnes
 build/render.mjs              pack -> the standalone HTML product that gets sold
 build/watch.mjs               what needs re-checking today, across every pack
 build/diff.mjs                what changed between editions, + the buyer update email
-app/engine/                   the app's plan engine — packs to a dated, dependency-ordered plan
+schema/profile.schema.json    the shared vocabulary that makes countries comparable
+app/engine/                   plan engine (one country) + comparison engine (all of them)
+app/profiles/                 example mover profiles
+build/render-compare.mjs      packs -> the interactive comparison product
 dist/                         build output
 business/                     business plan and app specification
 AUTHORING.md                  how to add the next country
@@ -32,6 +35,9 @@ node build/watch.mjs                                    # content operations que
 node build/diff.mjs --git HEAD content/vietnam/pack.json --email
 
 node --test app/engine/plan.test.mjs                    # 22 tests
+node --test app/engine/compare.test.mjs                 # 21 tests
+node app/engine/compare-cli.mjs --profile app/profiles/retiree.json --facts
+node build/render-compare.mjs dist/southeast-asia-comparison.html
 node app/engine/cli.mjs --country vietnam --pathway work-permit-ld --move 2027-06-01
 ```
 

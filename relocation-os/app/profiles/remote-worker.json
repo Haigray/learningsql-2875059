@@ -1,0 +1,11 @@
+{
+  "label": "Remote software engineer, US$70k, employed",
+  "age": 34, "retired": false,
+  "annualIncomeUsd": 70000, "passiveIncomeUsd": 0,
+  "liquidSavingsUsd": 22000, "investableCapitalUsd": 8000, "netWorthUsd": 120000,
+  "familyTie": "none", "hasLocalJobOffer": false, "enrollingInStudy": false,
+  "remoteWorkForForeignEmployer": true, "isEmployee": true,
+  "hasDegree": true, "yearsExperience": 8, "sector": "tech",
+  "needsWorkAuthorization": false, "needsLocalBanking": true,
+  "bringingFamily": false, "wantsPermanence": false, "maxStayMonths": 36
+}

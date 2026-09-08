@@ -75,6 +75,69 @@
         "reviewedBy": {
           "type": "string",
           "description": "Required when edition is 'reviewed'. Who reviewed it and when."
+        },
+        "comparables": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Cross-country comparison facts. These drive the comparison product and the app's country-choice screen. Anything derivable from the pack body is cross-checked by the validator so the two cannot drift apart.",
+          "properties": {
+            "taxResidencyDays": {
+              "type": "number",
+              "description": "Days of presence that make you a tax resident. Cross-checked against the arrival module's dayCounter."
+            },
+            "taxesResidentWorldwideIncome": {
+              "enum": [
+                "yes",
+                "no",
+                "contested"
+              ],
+              "description": "'contested' when the law and the enforcement pattern point different ways — Cambodia's case."
+            },
+            "usTaxTreatyInForce": {
+              "enum": [
+                "yes",
+                "no",
+                "signed-not-ratified"
+              ],
+              "description": "Whether a US income tax treaty is actually in force. Verify on the IRS treaty table."
+            },
+            "documentAuthentication": {
+              "enum": [
+                "apostille",
+                "consular-legalization"
+              ],
+              "description": "What US public documents need today."
+            },
+            "documentAuthenticationChangesOn": {
+              "type": "string",
+              "format": "date",
+              "description": "When that flips, if it is scheduled to."
+            },
+            "hasRetirementRoute": {
+              "type": "boolean",
+              "description": "Whether a dedicated retirement category exists at all."
+            },
+            "hasRemoteWorkRoute": {
+              "type": "boolean",
+              "description": "Whether a category exists for someone paid by a foreign employer."
+            },
+            "permanenceRoute": {
+              "enum": [
+                "none",
+                "investment",
+                "long-residence",
+                "marriage"
+              ],
+              "description": "The realistic route to permanent residence or citizenship, if any."
+            },
+            "localBankingNeedsNonTouristVisa": {
+              "type": "boolean"
+            },
+            "minimumCapitalForResidenceUsd": {
+              "type": "number",
+              "description": "Cheapest capital-based route to a residence card, or omitted where none exists."
+            }
+          }
         }
       }
     },
@@ -427,6 +490,111 @@
                     "type": "string"
                   }
                 }
+              }
+            }
+          },
+          "criteria": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Machine-evaluable eligibility, in the shared profile vocabulary. This is what lets one person's situation be run against every country at once. It never replaces the prose eligibility — it is a filter for comparison and triage, and an absent profile field yields 'check', never a false rejection.",
+            "properties": {
+              "all": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "field",
+                    "op"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "type": "string",
+                      "description": "A field name from profile.schema.json. The validator rejects anything else."
+                    },
+                    "op": {
+                      "enum": [
+                        "gte",
+                        "lte",
+                        "gt",
+                        "lt",
+                        "eq",
+                        "ne",
+                        "in",
+                        "notIn",
+                        "isTrue",
+                        "isFalse"
+                      ],
+                      "description": "isTrue/isFalse take no value."
+                    },
+                    "value": {},
+                    "because": {
+                      "type": "string",
+                      "description": "Why this gate exists, in the buyer's language. Shown verbatim when a pathway is ruled out, so write it as an explanation rather than a restatement."
+                    }
+                  }
+                },
+                "description": "Every condition must hold."
+              },
+              "any": {
+                "type": "array",
+                "minItems": 1,
+                "description": "At least one group must hold. Used where a pathway has genuinely distinct categories, such as Thailand's four LTR routes.",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "all"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "all": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "field",
+                          "op"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "field": {
+                            "type": "string",
+                            "description": "A field name from profile.schema.json. The validator rejects anything else."
+                          },
+                          "op": {
+                            "enum": [
+                              "gte",
+                              "lte",
+                              "gt",
+                              "lt",
+                              "eq",
+                              "ne",
+                              "in",
+                              "notIn",
+                              "isTrue",
+                              "isFalse"
+                            ],
+                            "description": "isTrue/isFalse take no value."
+                          },
+                          "value": {},
+                          "because": {
+                            "type": "string",
+                            "description": "Why this gate exists, in the buyer's language. Shown verbatim when a pathway is ruled out, so write it as an explanation rather than a restatement."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "note": {
+                "type": "string",
+                "description": "Caveat shown alongside a match — typically the thing the criteria cannot express."
               }
             }
           }

@@ -22,13 +22,13 @@ The reality-check section is the marketing. Give it away free — it converts pr
 
 ## Unit economics
 
-| | Guide | Pro | App | Done-with-you |
+| | Guide | Comparison | Pro | App |
 |---|---|---|---|---|
-| Price | $30 one-time | $79 one-time | $12/mo | $499 one-time |
-| What it is | One country pack | Guide + worksheets + 12 months of updates | Cross-country planner, deadline tracking, doc vault | Live pathway audit + document sequencing plan |
-| COGS | ~$0 | ~$0 | ~$1.50/mo | 2 hrs of your time |
-| Gross margin | ~94% after fees | ~95% | ~85% | ~70% |
-| Refund rate to model | 5% | 5% | n/a | 8% |
+| Price | $30 one-time | $49 one-time | $79 one-time | $12/mo |
+| What it is | One country pack | All three guides plus the live cross-country comparison | Guide + worksheets + 12 months of updates | Deadline tracking, shelf-life scheduling, document vault |
+| COGS | ~$0 | ~$0 | ~$0 | ~$1.50/mo |
+| Gross margin | ~94% after fees | ~95% | ~95% | ~85% |
+| Refund rate to model | 5% | 5% | 5% | n/a |
 
 Payment processing plus platform runs 5–8%. Model 6%.
 
@@ -39,6 +39,8 @@ Payment processing plus platform runs 5–8%. Model 6%.
 **Route B — ladder across few countries.** Raise revenue per buyer instead of buyer count. A $30 buyer who takes Pro and six months of app is worth ~$160. 6,250 such buyers is $1M. Far more reachable, and the app subscription is what makes it compound.
 
 **Route C — breadth.** Twenty country packs, each earning $50k/year. This is where the schema pays off: pack #12 costs a fraction of pack #1 because the format, renderer, validator, and checkout are already built. Marginal cost per new country is research time, not engineering.
+
+The comparison SKU is now built (`build/render-compare.mjs`) and is the natural top of the funnel: it answers the question people actually search — *"Vietnam or Thailand?"* — and every answer it gives points at a guide.
 
 **Pick B, then C.** Prove the ladder on Vietnam, then replicate the format across countries. A is a consequence of doing B and C well, not a strategy.
 

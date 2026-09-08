@@ -1,0 +1,11 @@
+{
+  "label": "Vietnamese mother, born in the US, no Vietnamese spoken",
+  "age": 41, "retired": false,
+  "annualIncomeUsd": 55000, "passiveIncomeUsd": 0,
+  "liquidSavingsUsd": 9000, "investableCapitalUsd": 2000, "netWorthUsd": 80000,
+  "familyTie": "ancestry", "hasLocalJobOffer": false, "enrollingInStudy": false,
+  "remoteWorkForForeignEmployer": true, "isEmployee": false,
+  "hasDegree": true, "yearsExperience": 15, "sector": "other",
+  "needsWorkAuthorization": false, "needsLocalBanking": false,
+  "bringingFamily": true, "wantsPermanence": false, "maxStayMonths": 60
+}

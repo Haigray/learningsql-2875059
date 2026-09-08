@@ -7,6 +7,7 @@
 
 import { readFileSync } from 'node:fs';
 import { parseWindow, buildPlan } from '../app/engine/plan.mjs';
+import { PROFILE_FIELDS } from '../app/engine/match.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 
@@ -239,6 +240,56 @@ function checkIntegrity(pack) {
           'is a pathway-changing rumour that no reality-check or gotcha entry warns about — buyers will meet this claim in the wild and must be told it is unconfirmed');
       }
     }
+  }
+
+  // --- Comparison criteria --------------------------------------------------
+  // Criteria are only comparable across countries if every country uses the same
+  // vocabulary, so an unknown field name is an error rather than a silent no-match.
+  const checkConds = (conds, at) => {
+    for (const c of conds ?? []) {
+      if (!PROFILE_FIELDS.has(c.field)) {
+        err(at, `criteria reference "${c.field}", which is not a field in profile.schema.json`);
+      }
+      const needsValue = !['isTrue', 'isFalse'].includes(c.op);
+      if (needsValue && c.value === undefined) err(at, `criteria condition on "${c.field}" uses ${c.op} with no value`);
+      if (!needsValue && c.value !== undefined) err(at, `criteria condition on "${c.field}" uses ${c.op}, which takes no value`);
+      if (['in', 'notIn'].includes(c.op) && !Array.isArray(c.value)) {
+        err(at, `criteria condition on "${c.field}" uses ${c.op} but value is not an array`);
+      }
+    }
+  };
+  for (const pw of pack.pathways ?? []) {
+    const at = `pathways[${pw.id}].criteria`;
+    if (!pw.criteria) { warn(at, 'has no machine-evaluable criteria, so it cannot appear in a cross-country comparison'); continue; }
+    checkConds(pw.criteria.all, at);
+    for (const g of pw.criteria.any ?? []) checkConds(g.all, `${at}.any["${g.label}"]`);
+    if (!pw.criteria.all?.length && !pw.criteria.any?.length && !pw.criteria.note) {
+      warn(at, 'is empty and carries no note — say explicitly that the pathway is open to everyone');
+    }
+  }
+
+  // --- Comparables, cross-checked against the body -------------------------
+  const cmp = pack.meta?.comparables;
+  if (cmp) {
+    const counters = (pack.modules ?? []).flatMap(m => m.items)
+      .map(i => i.schedule?.dayCounter?.threshold).filter(Boolean);
+    if (cmp.taxResidencyDays && counters.length && !counters.includes(cmp.taxResidencyDays)) {
+      err('meta.comparables.taxResidencyDays',
+        `says ${cmp.taxResidencyDays} but the pack's dayCounter says ${counters.join('/')} — these must not drift apart`);
+    }
+    // An age gate is what makes a route a retirement route. Requiring proof of
+    // retirement on top is a Cambodian nuance, not a universal one — Thailand
+    // gates on age and money and never asks whether you stopped working.
+    const retirementish = (pack.pathways ?? []).some(pw =>
+      (pw.criteria?.all ?? []).some(c => c.field === 'age' && ['gte', 'gt'].includes(c.op)));
+    if (cmp.hasRetirementRoute === true && !retirementish) {
+      warn('meta.comparables.hasRetirementRoute', 'claims a retirement route but no pathway gates on age plus retired status');
+    }
+    if (cmp.hasRetirementRoute === false && retirementish) {
+      err('meta.comparables.hasRetirementRoute', 'says false, but a pathway gates on age plus retired status');
+    }
+  } else {
+    warn('meta.comparables', 'absent — this pack cannot appear in a cross-country comparison');
   }
 
   // --- Scheduling metadata -------------------------------------------------

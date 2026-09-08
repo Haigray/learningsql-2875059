@@ -10,7 +10,19 @@
     "fxNote": "USD conversions in this guide assume approximately VND 26,000 = US$1. The rate moves. Treat every dollar figure as an order of magnitude, not a quote, and check the rate on the day you move money.",
     "priceUsd": 30,
     "tagline": "Every legal route from the USA to Vietnam, as one decision tree. Including the routes that do not exist.",
-    "edition": "navigator"
+    "edition": "navigator",
+    "comparables": {
+      "taxResidencyDays": 183,
+      "taxesResidentWorldwideIncome": "yes",
+      "usTaxTreatyInForce": "signed-not-ratified",
+      "documentAuthentication": "apostille",
+      "documentAuthenticationChangesOn": "2026-09-11",
+      "hasRetirementRoute": false,
+      "hasRemoteWorkRoute": false,
+      "permanenceRoute": "marriage",
+      "localBankingNeedsNonTouristVisa": false,
+      "minimumCapitalForResidenceUsd": 115000
+    }
   },
   "realityCheck": [
     {
@@ -434,7 +446,17 @@
           "url": "https://evisa.gov.vn",
           "expectAnswer": "An exact match. If your itinerary later changes airports, you need a new e-visa, not an amendment."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "maxStayMonths",
+            "op": "lte",
+            "value": 3,
+            "because": "the e-visa caps each stay at 90 days"
+          }
+        ]
+      }
     },
     {
       "id": "vec-5year",
@@ -545,7 +567,22 @@
           "authority": "The same mission",
           "how": "Ask in the same email. Fees are set per mission and the published figures online are frequently stale."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "familyTie",
+            "op": "in",
+            "value": [
+              "spouse",
+              "ancestry",
+              "child"
+            ],
+            "because": "the 5-year exemption certificate exists only for people of Vietnamese origin and the immediate family of Vietnamese citizens"
+          }
+        ],
+        "note": "Vietnamese origin runs through ancestry and former nationality, not language or birthplace — check before dismissing it."
+      }
     },
     {
       "id": "tt-family",
@@ -690,7 +727,17 @@
           "expectAnswer": "An article reference. See the contested-claims section — do not act on a verbal yes.",
           "url": "https://xuatnhapcanh.gov.vn"
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "familyTie",
+            "op": "eq",
+            "value": "spouse",
+            "because": "the TT residence card is built on marriage to a Vietnamese citizen"
+          }
+        ]
+      }
     },
     {
       "id": "work-permit-ld",
@@ -883,7 +930,32 @@
           "how": "Have your employer confirm the job title on the dossier and ask whether your degree field is accepted for it, and whether your sector qualifies for the reduced one-year experience threshold.",
           "expectAnswer": "Confirmation against the filed job title, not against your CV in general."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "hasLocalJobOffer",
+            "op": "isTrue",
+            "because": "the employer files the work permit in its own name; you cannot apply alone"
+          },
+          {
+            "field": "employerIsLocalEntity",
+            "op": "isTrue",
+            "because": "a company with no Vietnamese business registration cannot sponsor anyone"
+          },
+          {
+            "field": "hasDegree",
+            "op": "isTrue",
+            "because": "the expert test requires a degree or equivalent"
+          },
+          {
+            "field": "yearsExperience",
+            "op": "gte",
+            "value": 2,
+            "because": "Decree 219/2025 requires 2 years of relevant experience, or 1 in priority tech sectors"
+          }
+        ]
+      }
     },
     {
       "id": "wp-exempt",
@@ -990,7 +1062,50 @@
           "authority": "Provincial labour authority",
           "how": "If relying on the under-90-days category, total every working day in Vietnam this calendar year, across all trips, and confirm the count is measured cumulatively rather than per trip."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "hasLocalJobOffer",
+            "op": "isTrue",
+            "because": "an exemption still attaches to work for a specific entity"
+          }
+        ],
+        "any": [
+          {
+            "label": "Intra-company transfer",
+            "all": [
+              {
+                "field": "intraCompanyTransfer",
+                "op": "isTrue",
+                "because": "12+ months with the foreign parent, moving to its Vietnamese presence"
+              }
+            ]
+          },
+          {
+            "label": "Owner or board member above the capital threshold",
+            "all": [
+              {
+                "field": "investableCapitalUsd",
+                "op": "gte",
+                "value": 115000,
+                "because": "the capital-based exemptions sit above roughly VND 3 billion"
+              }
+            ]
+          },
+          {
+            "label": "Spouse of a Vietnamese citizen residing in Vietnam",
+            "all": [
+              {
+                "field": "familyTie",
+                "op": "eq",
+                "value": "spouse"
+              }
+            ]
+          }
+        ],
+        "note": "Whether the spouse category survived Decree 219/2025 unchanged is contested — see the contested claims. An exemption always requires written confirmation before you start work."
+      }
     },
     {
       "id": "ud1-tech",
@@ -1083,7 +1198,27 @@
           "authority": "Vietnam Immigration Department, via your sponsor",
           "how": "Ask whether a UĐ1 holder can currently be issued a temporary residence card, and under which instrument."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "sector",
+            "op": "eq",
+            "value": "tech",
+            "because": "UĐ1 is for high-quality digital technology personnel specifically"
+          },
+          {
+            "field": "hasLocalJobOffer",
+            "op": "isTrue",
+            "because": "the criteria run through a Vietnamese employer, university, or research body, which excludes freelancers and remote employees of foreign firms"
+          },
+          {
+            "field": "hasDegree",
+            "op": "isTrue"
+          }
+        ],
+        "note": "Live since 1 July 2026 but with implementing detail still emerging. Treat it as an upgrade on a work permit plan, not a replacement for one."
+      }
     },
     {
       "id": "dt-investor",
@@ -1231,7 +1366,18 @@
           "how": "Ask the bank to confirm in writing that the account you are wiring into is a direct investment capital account and that transfers to it will count as contributed charter capital.",
           "expectAnswer": "Written confirmation naming the account type. Money in the wrong account type can fail to count."
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "investableCapitalUsd",
+            "op": "gte",
+            "value": 115000,
+            "because": "below roughly VND 3 billion you land in DT4, which grants a 12-month visa and no residence card at all"
+          }
+        ],
+        "note": "The figure is capital genuinely contributed and left in place, not a balance you show once."
+      }
     },
     {
       "id": "student-dh",
@@ -1331,7 +1477,16 @@
           "expectAnswer": "A number and a contact. Vagueness here usually means they cannot sponsor and expect you to arrange your own status.",
           "url": "https://xuatnhapcanh.gov.vn"
         }
-      ]
+      ],
+      "criteria": {
+        "all": [
+          {
+            "field": "enrollingInStudy",
+            "op": "isTrue",
+            "because": "the institution sponsors the visa"
+          }
+        ]
+      }
     }
   ],
   "modules": [

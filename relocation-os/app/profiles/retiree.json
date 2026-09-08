@@ -1,0 +1,10 @@
+{
+  "label": "Retiring on Social Security, age 62",
+  "age": 62, "retired": true,
+  "annualIncomeUsd": 0, "passiveIncomeUsd": 30000,
+  "liquidSavingsUsd": 40000, "investableCapitalUsd": 15000, "netWorthUsd": 260000,
+  "familyTie": "none", "hasLocalJobOffer": false, "enrollingInStudy": false,
+  "remoteWorkForForeignEmployer": false,
+  "needsWorkAuthorization": false, "needsLocalBanking": true,
+  "bringingFamily": true, "wantsPermanence": false, "maxStayMonths": 120
+}
