@@ -154,7 +154,7 @@ const moduleSection = `
     ${m.intro ? `<p class="mod-intro">${esc(m.intro)}</p>` : ''}
     <ul class="checklist">
       ${m.items.map((it, i) => {
-        const id = `${m.id}-${i}`;
+        const id = it.key ?? `${m.id}-${i}`;
         const scoped = (it.appliesTo ?? []).filter(x => x !== '*');
         return `<li${it.critical ? ' class="critical"' : ''}${scoped.length ? ` data-pathways="${esc(scoped.join(' '))}"` : ''}>
           <input type="checkbox" id="chk-${esc(id)}" data-key="${esc(id)}">

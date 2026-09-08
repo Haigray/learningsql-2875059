@@ -17,6 +17,7 @@ build/validate.mjs            structural + referential integrity, and a freshnes
 build/render.mjs              pack -> the standalone HTML product that gets sold
 build/watch.mjs               what needs re-checking today, across every pack
 build/diff.mjs                what changed between editions, + the buyer update email
+app/engine/                   the app's plan engine — packs to a dated, dependency-ordered plan
 dist/                         build output
 business/                     business plan and app specification
 AUTHORING.md                  how to add the next country
@@ -29,7 +30,14 @@ node build/validate.mjs content/vietnam/pack.json
 node build/render.mjs   content/vietnam/pack.json dist/vietnam-relocation-guide.html
 node build/watch.mjs                                    # content operations queue
 node build/diff.mjs --git HEAD content/vietnam/pack.json --email
+
+node --test app/engine/plan.test.mjs                    # 22 tests
+node app/engine/cli.mjs --country vietnam --pathway work-permit-ld --move 2027-06-01
 ```
+
+The same packs drive the guide and the app. See `app/README.md` — the engine's
+distinguishing feature is telling someone *not* to order a document yet, because
+it would expire before the day it is used.
 
 No dependencies, no install step. The rendered guide is a single self-contained HTML file that works offline.
 

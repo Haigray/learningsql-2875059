@@ -1363,7 +1363,11 @@
           "critical": true,
           "sourceIds": [
             "trc-rules"
-          ]
+          ],
+          "key": "vn.passport",
+          "schedule": {
+            "durationDays": 45
+          }
         },
         {
           "task": "Price the real annual cost, not the blog cost",
@@ -1389,12 +1393,37 @@
           "critical": true,
           "sourceIds": [
             "hcch-apostille"
-          ]
+          ],
+          "key": "vn.apostille-decision",
+          "schedule": {
+            "durationDays": 1
+          }
+        },
+        {
+          "task": "Your employer files the work permit dossier",
+          "detail": "Ask HR literally: \"On what date will you submit my work permit dossier?\" Every document deadline before this one is computed backwards from that date, so a vague answer turns the whole schedule into guesswork.",
+          "why": "The criminal record check has a six-month shelf life. Without a filing date you cannot know when to order it, and ordering too early fails exactly like ordering too late.",
+          "critical": true,
+          "key": "vn.wp-filing",
+          "appliesTo": [
+            "work-permit-ld",
+            "wp-exempt"
+          ],
+          "sourceIds": [
+            "decree-219-2025"
+          ],
+          "schedule": {
+            "durationDays": 14
+          }
         },
         {
           "task": "List every document your pathway needs, with its issuing authority",
           "detail": "Typically: degree, FBI Identity History Summary, marriage certificate, children's birth certificates. Federal documents are apostilled by the US Department of State; state-issued documents by that state's Secretary of State.",
-          "critical": true
+          "critical": true,
+          "key": "vn.doc-list",
+          "schedule": {
+            "durationDays": 3
+          }
         },
         {
           "task": "Time the FBI Identity History Summary deliberately",
@@ -1407,7 +1436,13 @@
           ],
           "sourceIds": [
             "decree-219-2025"
-          ]
+          ],
+          "key": "vn.fbi-check",
+          "schedule": {
+            "durationDays": 10,
+            "shelfLifeDays": 180,
+            "consumedBy": "vn.wp-filing"
+          }
         },
         {
           "task": "Order extra certified copies of everything",
@@ -1415,7 +1450,14 @@
         },
         {
           "task": "Get certified Vietnamese translations",
-          "detail": "Use a translation office that routinely handles immigration filings — they know the formatting the authorities expect."
+          "detail": "Use a translation office that routinely handles immigration filings — they know the formatting the authorities expect.",
+          "key": "vn.translations",
+          "schedule": {
+            "durationDays": 10,
+            "dependsOn": [
+              "vn.fbi-check"
+            ]
+          }
         },
         {
           "task": "Scan everything to encrypted cloud storage before you ship or carry it",
@@ -1597,7 +1639,15 @@
           "critical": true,
           "sourceIds": [
             "pit-2026"
-          ]
+          ],
+          "key": "vn.tax-residency",
+          "schedule": {
+            "dayCounter": {
+              "threshold": 183,
+              "warnBefore": 30,
+              "label": "You reach 183 days in Vietnam — from here you are taxable on worldwide income at rates up to 35%, with no US treaty to fall back on."
+            }
+          }
         }
       ]
     },
@@ -1625,7 +1675,14 @@
           "critical": true,
           "sourceIds": [
             "trc-rules"
-          ]
+          ],
+          "key": "vn.trc-application",
+          "schedule": {
+            "durationDays": 10,
+            "dependsOn": [
+              "vn.passport"
+            ]
+          }
         },
         {
           "task": "Sign a lease with your name on it and get the landlord's tax and ownership documents",
@@ -1694,7 +1751,11 @@
           "critical": true,
           "sourceIds": [
             "trc-rules"
-          ]
+          ],
+          "key": "vn.passport-renewal",
+          "schedule": {
+            "durationDays": 45
+          }
         },
         {
           "task": "File your Vietnamese personal income tax",
@@ -1702,7 +1763,14 @@
           "critical": true,
           "sourceIds": [
             "pit-2026"
-          ]
+          ],
+          "key": "vn.vn-tax-return",
+          "schedule": {
+            "absoluteWindow": {
+              "from": "01-01",
+              "to": "03-31"
+            }
+          }
         },
         {
           "task": "File your US return and FBAR every year",

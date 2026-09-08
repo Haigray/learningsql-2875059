@@ -1278,7 +1278,11 @@
           "sourceIds": [
             "kh-legalization",
             "kh-embassy-dc"
-          ]
+          ],
+          "key": "kh.no-apostille",
+          "schedule": {
+            "durationDays": 1
+          }
         },
         {
           "task": "Confirm which documents actually need legalizing before paying for any",
@@ -1286,7 +1290,11 @@
           "critical": true,
           "sourceIds": [
             "kh-legalization"
-          ]
+          ],
+          "key": "kh.doc-list",
+          "schedule": {
+            "durationDays": 3
+          }
         },
         {
           "task": "Have multi-page documents bound correctly",
@@ -1298,7 +1306,15 @@
         },
         {
           "task": "Budget six to ten weeks for the full chain",
-          "detail": "Three sequential authorities, each with its own queue and courier legs between them."
+          "detail": "Three sequential authorities, each with its own queue and courier legs between them.",
+          "key": "kh.legalization",
+          "schedule": {
+            "durationDays": 50,
+            "consumedBy": "kh.wp-filing",
+            "dependsOn": [
+              "kh.doc-list"
+            ]
+          }
         },
         {
           "task": "Order extra certified copies",
@@ -1445,7 +1461,15 @@
           "critical": true,
           "sourceIds": [
             "kh-tax-acclime"
-          ]
+          ],
+          "key": "kh.tax-residency",
+          "schedule": {
+            "dayCounter": {
+              "threshold": 182,
+              "warnBefore": 30,
+              "label": "You reach 182 days in Cambodia and become a tax resident. Read the contested claim on worldwide versus territorial taxation before this date, not after."
+            }
+          }
         },
         {
           "task": "Get a local SIM with your passport",
@@ -1498,7 +1522,11 @@
           "critical": true,
           "sourceIds": [
             "kh-fwcms"
-          ]
+          ],
+          "key": "kh.wp-filing",
+          "schedule": {
+            "durationDays": 14
+          }
         },
         {
           "task": "Obtain a certificate of residence from your Sangkat",
@@ -1515,7 +1543,11 @@
           "sourceIds": [
             "kh-mpwt",
             "kh-driving"
-          ]
+          ],
+          "key": "kh.driving-licence",
+          "schedule": {
+            "durationDays": 14
+          }
         },
         {
           "task": "Buy health insurance with a real evacuation limit",
@@ -1554,7 +1586,14 @@
           "sourceIds": [
             "kh-fwcms",
             "kh-work-2026"
-          ]
+          ],
+          "key": "kh.wp-renewal",
+          "schedule": {
+            "absoluteWindow": {
+              "from": "01-01",
+              "to": "03-31"
+            }
+          }
         },
         {
           "task": "Diarise the Foreign Manpower Quota window",
@@ -1566,7 +1605,14 @@
           "critical": true,
           "sourceIds": [
             "kh-fmq"
-          ]
+          ],
+          "key": "kh.fmq-quota",
+          "schedule": {
+            "absoluteWindow": {
+              "from": "09-01",
+              "to": "11-30"
+            }
+          }
         },
         {
           "task": "Renew your extension before expiry",

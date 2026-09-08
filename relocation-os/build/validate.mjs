@@ -6,6 +6,7 @@
 // Usage: node build/validate.mjs content/vietnam/pack.json
 
 import { readFileSync } from 'node:fs';
+import { parseWindow, buildPlan } from '../app/engine/plan.mjs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join } from 'node:path';
 
@@ -237,6 +238,73 @@ function checkIntegrity(pack) {
         err(`watchlist["${w.title}"]`,
           'is a pathway-changing rumour that no reality-check or gotcha entry warns about — buyers will meet this claim in the wild and must be told it is unconfirmed');
       }
+    }
+  }
+
+  // --- Scheduling metadata -------------------------------------------------
+  // The app's plan engine reads this. A dangling reference here becomes a task
+  // that silently never appears on someone's plan.
+  const allItems = (pack.modules ?? []).flatMap(m =>
+    m.items.map((it, i) => ({ ...it, _at: `modules[${m.id}].items[${i}]`, _module: m })));
+  const itemKeys = new Set(allItems.filter(i => i.key).map(i => i.key));
+
+  const seenKeys = new Set();
+  for (const it of allItems) {
+    if (!it.key) continue;
+    if (seenKeys.has(it.key)) err(it._at, `duplicate item key "${it.key}"`);
+    seenKeys.add(it.key);
+  }
+
+  for (const it of allItems) {
+    const s = it.schedule;
+    if (!s) continue;
+    if (!it.key) err(it._at, 'has a schedule but no key — nothing can reference it and it cannot be tracked across edits');
+
+    for (const dep of s.dependsOn ?? []) {
+      if (!itemKeys.has(dep)) err(it._at, `schedule.dependsOn references unknown key "${dep}"`);
+    }
+    if (s.consumedBy && !itemKeys.has(s.consumedBy)) {
+      err(it._at, `schedule.consumedBy references unknown key "${s.consumedBy}"`);
+    }
+    if (s.shelfLifeDays && !s.consumedBy) {
+      err(it._at, 'has shelfLifeDays but no consumedBy — the engine cannot time it without knowing when it is used');
+    }
+    if (s.consumedBy === it.key) err(it._at, 'is consumed by itself');
+
+    // A shelf life shorter than the time it takes to obtain can never be satisfied.
+    if (s.shelfLifeDays && s.durationDays && s.durationDays >= s.shelfLifeDays) {
+      err(it._at, `takes ${s.durationDays} days to obtain but is valid for only ${s.shelfLifeDays} — impossible to use`);
+    }
+
+    // Scheduling only reaches a plan if the item and its consumer share a pathway.
+    if (s.consumedBy) {
+      const consumer = allItems.find(x => x.key === s.consumedBy);
+      const scopeOf = x => x.appliesTo?.filter(p => p !== '*') ?? [];
+      const a = scopeOf(it), b = consumer ? scopeOf(consumer) : [];
+      if (a.length && b.length && !a.some(p => b.includes(p))) {
+        err(it._at, `shares no pathway with its consumer "${s.consumedBy}", so it will never be scheduled`);
+      }
+    }
+  }
+
+  // The module windows must actually parse, or nothing in them gets a date.
+  for (const m of pack.modules ?? []) {
+    const dated = !['ongoing', 'contingency'].includes(m.phase);
+    if (dated && !parseWindow(m.window)) {
+      err(`modules[${m.id}].window`, `"${m.window ?? ''}" is not a parsable window like "T-90 to T-30 days" — its items cannot be placed on a plan`);
+    }
+  }
+
+  // Finally: build a real plan for every pathway. Catches cycles and anything
+  // the static checks above miss.
+  for (const pw of pack.pathways ?? []) {
+    try {
+      const plan = buildPlan(pack, { pathwayId: pw.id, targetMoveDate: '2027-06-01', today: '2026-09-08' });
+      for (const t of plan.tasks) {
+        for (const w of t.warnings) warn(`plan[${pw.id}].${t.key}`, w);
+      }
+    } catch (e) {
+      err(`plan[${pw.id}]`, `plan engine cannot build a plan: ${e.message}`);
     }
   }
 

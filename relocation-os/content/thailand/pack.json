@@ -1528,7 +1528,28 @@
           "critical": true,
           "sourceIds": [
             "th-apostille"
-          ]
+          ],
+          "key": "th.no-apostille"
+        },
+        {
+          "task": "Run the three-step consular legalization chain for your degree and supporting documents",
+          "detail": "State certification where applicable, then US Department of State authentication, then Royal Thai Embassy legalization. Three sequential authorities with courier legs between them — this is the long pole in the whole timeline.",
+          "why": "Your employer cannot file the work permit without it, and it takes six weeks in a good month.",
+          "critical": true,
+          "key": "th.legalization",
+          "appliesTo": [
+            "work-nonb"
+          ],
+          "sourceIds": [
+            "th-apostille"
+          ],
+          "schedule": {
+            "durationDays": 45,
+            "consumedBy": "th.wp-filing",
+            "dependsOn": [
+              "th.doc-list"
+            ]
+          }
         },
         {
           "task": "If your filing lands near February 2027, plan the timing deliberately",
@@ -1549,11 +1570,19 @@
           "critical": true,
           "sourceIds": [
             "th-dtv-changes"
-          ]
+          ],
+          "key": "th.fbi-dtv",
+          "schedule": {
+            "durationDays": 10
+          }
         },
         {
           "task": "Confirm which documents actually need legalizing",
-          "detail": "Ask the employer, school, or mission for a specific list before paying for anything."
+          "detail": "Ask the employer, school, or mission for a specific list before paying for anything.",
+          "key": "th.doc-list",
+          "schedule": {
+            "durationDays": 3
+          }
         },
         {
           "task": "Order extra certified copies",
@@ -1657,7 +1686,11 @@
           "sourceIds": [
             "th-retirement",
             "th-marriage"
-          ]
+          ],
+          "key": "th.seasoning",
+          "schedule": {
+            "durationDays": 90
+          }
         },
         {
           "task": "For a condo purchase, bring the money in correctly",
@@ -1720,7 +1753,15 @@
           "critical": true,
           "sourceIds": [
             "th-tax-residency"
-          ]
+          ],
+          "key": "th.tax-residency",
+          "schedule": {
+            "dayCounter": {
+              "threshold": 180,
+              "warnBefore": 30,
+              "label": "You reach 180 days in Thailand and become a tax resident. From here, foreign income you remit is assessable under Por. 161."
+            }
+          }
         },
         {
           "task": "Get a local SIM with your passport"
@@ -1743,7 +1784,11 @@
           "critical": true,
           "sourceIds": [
             "th-tm30-90"
-          ]
+          ],
+          "key": "th.first-90day",
+          "schedule": {
+            "durationDays": 1
+          }
         },
         {
           "task": "Buy a re-entry permit before any travel abroad",
@@ -1757,7 +1802,28 @@
           ],
           "sourceIds": [
             "th-immigration"
-          ]
+          ],
+          "key": "th.reentry-permit",
+          "schedule": {
+            "dependsOn": [
+              "th.extension"
+            ]
+          }
+        },
+        {
+          "task": "Obtain the work permit through your employer",
+          "detail": "Filed by the employer with the Department of Employment once you are in Thailand on the Non-B. The one-year extension of stay is granted on the strength of it.",
+          "critical": true,
+          "key": "th.wp-filing",
+          "appliesTo": [
+            "work-nonb"
+          ],
+          "sourceIds": [
+            "th-doe"
+          ],
+          "schedule": {
+            "durationDays": 21
+          }
         },
         {
           "task": "Complete your extension of stay application",
@@ -1767,7 +1833,14 @@
             "marriage",
             "work-nonb"
           ],
-          "critical": true
+          "critical": true,
+          "key": "th.extension",
+          "schedule": {
+            "durationDays": 30,
+            "dependsOn": [
+              "th.seasoning"
+            ]
+          }
         },
         {
           "task": "Get a Thai tax identification number if you will cross 180 days",
@@ -1814,7 +1887,15 @@
           "critical": true,
           "sourceIds": [
             "th-tm30-90"
-          ]
+          ],
+          "key": "th.90day-report",
+          "schedule": {
+            "recurrence": {
+              "everyDays": 90,
+              "windowDays": 15,
+              "from": "entry"
+            }
+          }
         },
         {
           "task": "File a new TM30 after every single re-entry",
@@ -1840,7 +1921,15 @@
             "marriage",
             "work-nonb"
           ],
-          "critical": true
+          "critical": true,
+          "key": "th.annual-extension",
+          "schedule": {
+            "recurrence": {
+              "everyDays": 365,
+              "windowDays": 45,
+              "from": "entry"
+            }
+          }
         },
         {
           "task": "Maintain the bank balance, not just the application-day figure",

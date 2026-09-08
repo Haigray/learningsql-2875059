@@ -514,6 +514,102 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "key": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9.-]{1,63}$",
+                  "description": "Stable identifier, required for any item another item schedules against. Index-based references break the moment content is edited, so scheduling always goes through keys."
+                },
+                "schedule": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "description": "Scheduling metadata consumed by the app plan engine. Content without it still renders in the guide; it simply is not placed on a dated plan.",
+                  "properties": {
+                    "durationDays": {
+                      "type": "number",
+                      "minimum": 0,
+                      "description": "How long the task itself takes once started — processing, courier, queueing."
+                    },
+                    "shelfLifeDays": {
+                      "type": "number",
+                      "minimum": 1,
+                      "description": "How long the resulting document stays valid from issue. Requires consumedBy: a shelf life is meaningless without knowing the day it is used."
+                    },
+                    "consumedBy": {
+                      "type": "string",
+                      "description": "Key of the task that consumes this document. The engine schedules backwards from it so the document is still valid on the day it is needed."
+                    },
+                    "dependsOn": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keys that must finish first."
+                    },
+                    "absoluteWindow": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "from",
+                        "to"
+                      ],
+                      "description": "A fixed annual calendar window (MM-DD), for obligations tied to the calendar rather than to the mover — work permit renewals, quota filings.",
+                      "properties": {
+                        "from": {
+                          "type": "string",
+                          "pattern": "^[0-1][0-9]-[0-3][0-9]$"
+                        },
+                        "to": {
+                          "type": "string",
+                          "pattern": "^[0-1][0-9]-[0-3][0-9]$"
+                        }
+                      }
+                    },
+                    "recurrence": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "everyDays"
+                      ],
+                      "properties": {
+                        "everyDays": {
+                          "type": "number",
+                          "minimum": 1
+                        },
+                        "windowDays": {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        "from": {
+                          "enum": [
+                            "entry",
+                            "move"
+                          ]
+                        }
+                      }
+                    },
+                    "dayCounter": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "threshold"
+                      ],
+                      "description": "A day-count threshold that changes the mover's legal position — tax residency, cumulative work days.",
+                      "properties": {
+                        "threshold": {
+                          "type": "number",
+                          "minimum": 1
+                        },
+                        "warnBefore": {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        "label": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
