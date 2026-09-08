@@ -21,7 +21,8 @@ schema/profile.schema.json    the shared vocabulary that makes countries compara
 app/engine/                   plan engine (one country) + comparison engine (all of them)
 app/profiles/                 example mover profiles
 build/render-compare.mjs      packs -> the interactive comparison product
-build/bundle-packs.mjs        packs -> content bundled into the mobile app
+build/bundle-app.mjs          packs, profiles and engines -> bundled into the mobile app
+build/serve.mjs               serve dist/ on the local network, to open on a phone
 build/check.sh                validate, test, and rebuild everything
 app/mobile/                   the Expo / React Native app
 dist/                         build output
@@ -42,7 +43,8 @@ node --test app/engine/compare.test.mjs                 # 21 tests
 node app/engine/compare-cli.mjs --profile app/profiles/retiree.json --facts
 node build/render-compare.mjs dist/southeast-asia-comparison.html
 
-sh build/check.sh                                       # everything: 70 tests + full rebuild
+sh build/check.sh                                       # everything: 75 tests + full rebuild
+node build/serve.mjs                                    # open the guides on your phone
 node app/engine/cli.mjs --country vietnam --pathway work-permit-ld --move 2027-06-01
 ```
 
@@ -51,6 +53,8 @@ distinguishing feature is telling someone *not* to order a document yet, because
 it would expire before the day it is used.
 
 No dependencies, no install step. The rendered guide is a single self-contained HTML file that works offline.
+
+Trying it on a Mac and an iPhone: **[TESTING.md](TESTING.md)**.
 
 ## Assurance: the navigator edition
 

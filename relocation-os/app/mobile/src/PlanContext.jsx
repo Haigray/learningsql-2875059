@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { reducer, INITIAL, selectPlanInputs, pendingPackUpdate } from './state/store';
-import { buildPlan, todayView } from '../../engine/plan.mjs';
+import { buildPlan, todayView } from './engine/plan.generated.mjs';
 import { deriveNotifications } from './notifications/schedule';
 import { PACKS, MANIFEST, byCode } from './data/packs.generated';
 

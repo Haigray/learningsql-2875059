@@ -18,4 +18,4 @@ for c in content/*/; do
   node build/render.mjs "$c/pack.json" "dist/$name-relocation-guide.html"
 done
 node build/render-compare.mjs dist/southeast-asia-comparison.html
-node build/bundle-packs.mjs
+node build/bundle-app.mjs

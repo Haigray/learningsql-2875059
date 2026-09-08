@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import { reducer, INITIAL, createPlan, selectPlanInputs, isComplete,
          pendingPackUpdate, selectActivePlan } from './state/store.js';
 import { deriveNotifications, upcoming } from './notifications/schedule.js';
-import { buildPlan } from '../../engine/plan.mjs';
+import { buildPlan } from './engine/plan.generated.mjs';
 import { PACKS, MANIFEST, byCode } from './data/packs.generated.js';
 
 const NEW_PLAN = {

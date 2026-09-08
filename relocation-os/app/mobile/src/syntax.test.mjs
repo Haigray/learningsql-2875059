@@ -103,3 +103,62 @@ test('the app declares every runtime dependency it imports', () => {
     assert.ok(declared.has(name), `"${name}" is imported but not in package.json dependencies`);
   }
 });
+
+/* ------------------------------------- the bundled engines are the same engines */
+
+test('bundled engines carry no Node-only code onto the device', () => {
+  for (const f of ['plan', 'match', 'compare']) {
+    const src = readFileSync(`${ROOT}/src/engine/${f}.generated.mjs`, 'utf8');
+    assert.equal(/node:fs|readFileSync|process\./.test(src), false,
+      `${f}.generated.mjs would crash on a phone`);
+  }
+});
+
+test('the bundled plan engine is byte-identical to its source', () => {
+  const bundled = readFileSync(`${ROOT}/src/engine/plan.generated.mjs`, 'utf8');
+  const source = readFileSync('app/engine/plan.mjs', 'utf8');
+  const withoutBanner = bundled.slice(bundled.indexOf('\n\n') + 2);
+  assert.equal(withoutBanner, source, 'run: node build/bundle-app.mjs');
+});
+
+test('the bundled match engine inlines exactly the schema fields, and nothing else changed', () => {
+  const bundled = readFileSync(`${ROOT}/src/engine/match.generated.mjs`, 'utf8');
+  const fields = Object.keys(
+    JSON.parse(readFileSync('schema/profile.schema.json', 'utf8')).properties);
+  for (const f of fields) assert.ok(bundled.includes(`"${f}"`), `${f} missing from the bundle`);
+
+  // Everything after the PROFILE_FIELDS line must match the source verbatim.
+  const source = readFileSync('app/engine/match.mjs', 'utf8');
+  const tail = s => s.slice(s.indexOf('const OPS = {'));
+  assert.equal(tail(bundled), tail(source), 'run: node build/bundle-app.mjs');
+});
+
+test('the bundled engines behave identically to the tested ones', async () => {
+  const [bundledCompare, sourceCompare, profiles] = await Promise.all([
+    import(`../../../${ROOT}/src/engine/compare.generated.mjs`),
+    import('../../engine/compare.mjs'),
+    import('./data/profiles.js'),
+  ]);
+  const { PACKS } = await import('./data/packs.generated.js');
+  const onDisk = readdirSync('content')
+    .map(c => JSON.parse(readFileSync(`content/${c}/pack.json`, 'utf8')));
+
+  for (const profile of profiles.default) {
+    const a = bundledCompare.compareCountries(PACKS, profile);
+    const b = sourceCompare.compareCountries(onDisk, profile);
+    assert.equal(a.verdict.recommended, b.verdict.recommended, `${profile.label}: verdict differs`);
+    assert.deepEqual(
+      a.countries.map(c => [c.code, c.open.map(p => p.pathwayId)]),
+      b.countries.map(c => [c.code, c.open.map(p => p.pathwayId)]),
+      `${profile.label}: open pathways differ`);
+  }
+});
+
+test('package.json targets an Expo SDK that Expo Go can actually open', () => {
+  const pkg = JSON.parse(readFileSync(`${ROOT}/package.json`, 'utf8'));
+  const sdk = Number(pkg.dependencies.expo.replace(/[^0-9.]/g, '').split('.')[0]);
+  // Expo Go on the App Store ships only the current SDK. Falling far behind is
+  // not a cosmetic problem — the app simply will not launch on a phone.
+  assert.ok(sdk >= 57, `expo ~${sdk} is too old for current Expo Go; bump the SDK`);
+  assert.equal(pkg.main, 'index.js', 'SDK 52+ expects an explicit entry point');
+});

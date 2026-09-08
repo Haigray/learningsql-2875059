@@ -3,7 +3,7 @@ import { ScrollView, View, Text, Pressable, StyleSheet } from 'react-native';
 import { usePlan } from '../PlanContext';
 import { Screen, Header, Section, Card, Pill, Empty } from '../components/ui';
 import { useTheme, space, type, radius } from '../theme';
-import { compareCountries } from '../../../engine/compare.mjs';
+import { compareCountries } from '../engine/compare.generated.mjs';
 import PROFILES from '../data/profiles';
 
 /** Answers the question that comes before a plan: which country at all? */
