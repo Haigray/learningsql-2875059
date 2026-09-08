@@ -1,0 +1,2323 @@
+<title>Thailand Relocation Guide</title>
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#fff; --ink:#1c1a17; --muted:#5f5a52; --faint:#8a837a;
+  --line:#e3ded6; --line-strong:#cfc7bb; --accent:#8a3324; --accent-soft:#f5ebe8;
+  --ok:#2f6a4a; --warn:#8a6a1f; --warn-soft:#fbf3e0; --danger:#a3301f; --danger-soft:#fbeceb;
+  --radius:10px; --measure:none;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}}
+:root[data-theme="dark"]{
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;
+  font:16px/1.65 ui-serif,Georgia,'Iowan Old Style','Times New Roman',serif;}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.012em}
+h2{font-size:1.75rem;margin:0 0 .35rem}
+h3{font-size:1.2rem;margin:2rem 0 .3rem}
+h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
+  margin:1.75rem 0 .5rem;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+p{margin:0 0 .8rem}
+a{color:var(--accent)}
+code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);
+  color:var(--accent);padding:.1em .4em;border-radius:4px}
+.lede{color:var(--muted);font-size:1.05rem;margin-bottom:1.5rem;max-width:42rem}
+
+/* header */
+header.top{border-bottom:1px solid var(--line-strong);background:var(--surface);padding:3.5rem 0 2.25rem}
+.eyebrow{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:0 0 .6rem}
+.tagline{font-size:1.15rem;color:var(--muted);max-width:38rem;margin-bottom:1.5rem}
+.stamp{display:flex;flex-wrap:wrap;gap:.5rem;font:.78rem/1.4 ui-sans-serif,system-ui,sans-serif}
+.stamp span{border:1px solid var(--line-strong);border-radius:999px;padding:.3rem .75rem;color:var(--muted)}
+.stamp b{color:var(--ink);font-weight:650}
+
+/* trust notice */
+.notice{background:var(--warn-soft);border:1px solid var(--line-strong);border-left:3px solid var(--warn);
+  border-radius:var(--radius);padding:1rem 1.15rem;margin:2rem 0;
+  font:.9rem/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+.notice b{color:var(--ink)}
+.warn-box{background:var(--warn-soft);border:1px solid var(--line-strong);border-radius:var(--radius);padding:1rem}
+
+/* bands */
+.band{padding:3rem 0;border-bottom:1px solid var(--line)}
+.band:last-of-type{border-bottom:0}
+
+/* reality check */
+.myth{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin-bottom:.85rem}
+.myth-claim{font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.myth-why{color:var(--muted);font-size:.92rem;margin-bottom:0}
+.tag{display:inline-block;font:600 .66rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.07em;
+  text-transform:uppercase;padding:.28em .55em;border-radius:4px;margin-right:.55rem;vertical-align:.12em}
+.tag-false{background:var(--danger-soft);color:var(--danger)}
+.tag-critical{background:var(--danger-soft);color:var(--danger);margin-left:.5rem;margin-right:0}
+
+/* decision tree */
+.tree-card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.5rem;min-height:12rem}
+.q-text{font-size:1.3rem;font-weight:600;margin-bottom:.5rem}
+.q-help{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.answers{display:flex;flex-direction:column;gap:.6rem}
+.answer{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line-strong);
+  border-radius:var(--radius);padding:.85rem 1rem;cursor:pointer;font:inherit;color:inherit;
+  transition:border-color .12s,background .12s}
+.answer:hover{border-color:var(--accent);background:var(--accent-soft)}
+.answer b{display:block;margin-bottom:.15rem}
+.answer i{font-style:normal;color:var(--muted);font-size:.88rem}
+.breadcrumb{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0 0 .9rem;
+  font:.8rem/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.breadcrumb li::after{content:" ›";color:var(--line-strong)}
+.breadcrumb li:last-child::after{content:""}
+.tree-controls{display:flex;gap:.6rem;margin-top:.9rem}
+.btn{font:600 .85rem ui-sans-serif,system-ui,sans-serif;padding:.5rem .9rem;border-radius:8px;
+  border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[hidden]{display:none}
+.result-kicker{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.result-dead .result-kicker{color:var(--danger)}
+.alts{margin:.6rem 0 0;padding-left:1.1rem}
+.alts li{margin-bottom:.35rem}
+
+/* pathways */
+.pathway{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem;margin-bottom:1.25rem}
+.pathway-head h3{margin-top:0}
+.codes{font:.8rem ui-sans-serif,system-ui,sans-serif;margin-bottom:.6rem}
+.diff{display:inline-block;margin-left:.4rem;padding:.25em .6em;border-radius:999px;
+  font:600 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.diff-low{background:#e7f2ec;color:var(--ok)} .diff-moderate{background:var(--warn-soft);color:var(--warn)}
+.diff-high,.diff-very-high{background:var(--danger-soft);color:var(--danger)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .diff-low{background:#1d2b24}}
+.summary{color:var(--muted)}
+.facts{display:grid;grid-template-columns:minmax(9rem,auto) 1fr;gap:.35rem .9rem;margin:1.1rem 0;
+  padding:1rem;background:var(--bg);border-radius:var(--radius);font-size:.93rem}
+.facts dt{font:650 .78rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--faint)}
+.facts dd{margin:0}
+.reqs{padding-left:1.1rem} .reqs li{margin-bottom:.5rem}
+.costs{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:.5rem}
+.costs th{text-align:left;font:650 .72rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--faint);border-bottom:1px solid var(--line-strong);padding:.4rem .5rem}
+.costs td{border-bottom:1px solid var(--line);padding:.55rem .5rem;vertical-align:top}
+.costs .amt{white-space:nowrap;font-weight:600}
+.steps{padding-left:1.3rem} .steps li{margin-bottom:1.1rem}
+.step-title{font-weight:650;margin-bottom:.2rem}
+.step-meta{font:.82rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:0}
+.step-blocker{font-size:.88rem;color:var(--warn);margin:.35rem 0 0}
+.failures{display:grid;gap:.7rem}
+.failure{border-left:3px solid var(--danger);background:var(--danger-soft);
+  border-radius:0 var(--radius) var(--radius) 0;padding:.85rem 1rem}
+.failure p{margin-bottom:.3rem;font-size:.93rem} .failure p:last-child{margin-bottom:0}
+.f-mistake{font-weight:650}
+
+/* checklists */
+.phase-nav{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.phase-nav a{font:600 .78rem ui-sans-serif,system-ui,sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line-strong);border-radius:999px;padding:.35rem .8rem}
+.phase-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.module{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem;scroll-margin-top:1rem}
+.module h3{margin-top:0}
+.window{font:600 .78rem ui-sans-serif,system-ui,sans-serif;color:var(--accent);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.mod-intro{color:var(--muted);font-size:.95rem}
+.checklist{list-style:none;padding:0;margin:1rem 0 0}
+.checklist li{display:flex;gap:.7rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.checklist li.critical{border-left:3px solid var(--danger);padding-left:.7rem;margin-left:-.7rem}
+.checklist input{margin-top:.35rem;width:1.05rem;height:1.05rem;flex-shrink:0;accent-color:var(--accent)}
+.checklist label{display:block;cursor:pointer}
+.checklist .task{display:block;font-weight:600}
+.checklist .detail,.checklist .why,.checklist .scope{display:block;color:var(--muted);font-size:.9rem;margin-top:.2rem}
+.checklist .scope{font:.8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.checklist input:checked + label .task{text-decoration:line-through;color:var(--faint)}
+.checklist li[hidden]{display:none}
+
+/* gotchas */
+.gotcha{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.2rem 1.35rem;margin-bottom:.85rem}
+.gotcha.sev-expensive{border-left-color:var(--warn)}
+.gotcha.sev-trip-ending{border-left-color:var(--danger)}
+.gotcha h3{margin:0 0 .15rem;font-size:1.12rem}
+.gnum{display:inline-block;min-width:1.6rem;color:var(--faint);font-family:ui-sans-serif,system-ui,sans-serif}
+.sev-label{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--faint);margin:0 0 .7rem 1.6rem}
+.gotcha p{font-size:.95rem}
+.expires{color:var(--warn);font-size:.86rem;margin-bottom:0}
+
+/* sources */
+.sources{padding-left:1.5rem;font-size:.9rem}
+.sources li{margin-bottom:.75rem;padding-left:.25rem}
+.tier{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;padding:.28em .5em;border-radius:4px;margin-right:.5rem;vertical-align:.1em}
+.tier-primary-law{background:var(--accent-soft);color:var(--accent)}
+.tier-government{background:#e7f2ec;color:var(--ok)}
+.tier-professional{background:var(--warn-soft);color:var(--warn)}
+.tier-community{background:var(--bg);color:var(--faint);border:1px solid var(--line-strong)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tier-government{background:#1d2b24}}
+.checked,.src-note{display:block;color:var(--faint);font-size:.8rem;margin-top:.15rem}
+.cite{font-size:.7em;vertical-align:super;white-space:nowrap}
+.cite a{text-decoration:none;padding:0 .12em;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+
+
+/* verify-it-yourself — the block that replaces "trust us" */
+.verify{background:var(--accent-soft);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin:1.25rem 0}
+.verify-h{margin:0 0 .2rem;color:var(--accent)}
+.verify-lede{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.verify-item{border-top:1px solid var(--line-strong);padding-top:.8rem;margin-top:.8rem}
+.verify-item:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.verify-item p{font-size:.93rem;margin-bottom:.3rem}
+.v-check{font-weight:650}
+.v-who{color:var(--muted)}
+.v-expect{color:var(--muted);font-style:italic;margin-bottom:0}
+.v-how a{word-break:break-all}
+
+/* contested claims */
+.contested{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem}
+.contested h3{margin-top:0}
+.positions{display:grid;gap:.7rem;margin:1rem 0}
+@media(min-width:44rem){.positions{grid-template-columns:1fr 1fr}}
+.position{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem}
+.pos-num{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint);margin-bottom:.45rem}
+.pos-text{font-size:.93rem}
+.pos-who{font-size:.84rem;color:var(--faint);margin-bottom:0}
+.c-effect{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;
+  padding:.8rem 1rem;font-size:.95rem}
+.c-resolve{font-size:.95rem;margin-bottom:0}
+
+/* watchlist */
+.watch{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+.watch.impact-significant{border-left-color:var(--warn)}
+.watch.impact-pathway-changing{border-left-color:var(--danger)}
+.watch h3{margin:0 0 .5rem;font-size:1.08rem}
+.watch-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;
+  font:600 .7rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.watch-meta span{border:1px solid var(--line-strong);border-radius:999px;padding:.35em .7em;color:var(--muted)}
+.wstatus{background:var(--warn-soft);color:var(--warn)!important;border-color:transparent!important}
+.watch p{font-size:.94rem}
+.waffects{color:var(--faint);font-size:.85rem;margin-bottom:0}
+
+/* changelog */
+.release{border-left:2px solid var(--line-strong);padding:0 0 .5rem 1.1rem;margin-bottom:1.2rem}
+.release h3{margin:0 0 .3rem;font-size:1.05rem}
+.rel-date{font:400 .8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);margin-left:.4rem}
+.rel-sum{color:var(--muted);font-size:.94rem}
+.rel-changes{list-style:none;padding:0;margin:.5rem 0 0}
+.rel-changes li{font-size:.92rem;margin-bottom:.6rem}
+.ckind{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;background:var(--bg);border:1px solid var(--line-strong);color:var(--faint);
+  padding:.3em .5em;border-radius:4px;margin-right:.45rem;vertical-align:.1em}
+.c-action{display:block;color:var(--accent);margin-top:.25rem}
+
+/* edition badge */
+.stamp .ed{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:650}
+
+footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,system-ui,sans-serif}
+@media print{
+  .tree-controls,.phase-nav,#tree-app .answers{display:none}
+  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module,.contested,.watch{page-break-inside:avoid}
+  body{background:#fff;color:#000;font-size:11pt}
+}
+@media (max-width:34rem){ .facts{grid-template-columns:1fr;gap:.1rem .5rem} .facts dt{margin-top:.5rem} }
+</style>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">United States &rarr; Thailand</p>
+  <h1>The Thailand Relocation Guide</h1>
+  <p class="tagline">Eight ways to live in Thailand legally, priced from free to five million baht. Written the week five separate rules changed.</p>
+  <div class="stamp">
+    <span>Edition <b>v1.0.0</b></span>
+    <span>Verified <b>September 8, 2026</b></span>
+    <span>Next review <b>November 8, 2026</b></span>
+    <span><b>8</b> pathways</span>
+    <span><b>24</b> cited sources</span>
+    <span class="ed">Navigator edition</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="notice">
+    <p><b>Read this before you rely on anything here.</b> This is researched reference material, not legal or tax advice, and no lawyer-client relationship is created by buying it. Immigration rules change without notice and are applied with discretion by individual officers. Every claim is numbered to a source you can check yourself, and each source is labelled with how much weight it carries.</p>
+    <p><b>Navigator edition.</b> This guide was researched against public primary and government sources by its publisher. No licensed practitioner in Thailand has reviewed it, and we do not pretend otherwise. That is exactly why every pathway carries its own <a href="#pathways">verify-this-yourself</a> steps, naming the office that can answer, the question to ask, and what a real answer sounds like. Run them. They cost an hour and they are worth more than our assurance.</p>
+    <p style="margin-bottom:0"><b>Everything here was verified on September 8, 2026.</b> Before you spend money or book a flight, confirm the specific rule against the cited source or with a licensed Vietnamese immigration adviser. Baht figures assume roughly THB 32 to US$1. The rate moves; treat dollar conversions as order-of-magnitude. Note that Thai immigration and tax thresholds are set in baht, so a weakening dollar quietly raises the bar in dollar terms.</p>
+  </div>
+  
+<section id="reality" class="band">
+  <h2>Start here: what is not true</h2>
+  <p class="lede">Six beliefs that cost Americans the most money on the way to Thailand. We lead with these because the expensive mistakes happen before anyone files a form.</p>
+  
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Americans get 60 days visa-free in Thailand.</p>
+    <p class="myth-real"><strong>Actually:</strong> Not from 15 September 2026. The regulation cutting visa-free entry from 60 days back to 30, for Americans and 59 other nationalities, was published on 31 August 2026 and applies to entries from 15 September. Anyone admitted before that date keeps the stay they were granted. The 60-day scheme ran from July 2024 and was always labelled exceptional. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Two years of blog posts, videos, and airline guidance say 60 days, and the change was published with fifteen days&#39; notice. Almost nothing on the internet has caught up.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>The DTV is Thailand&#39;s digital nomad visa, so it lets you live there.</p>
+    <p class="myth-real"><strong>Actually:</strong> It is a five-year multiple-entry visa, but each permitted stay is capped at 180 days, and — the part almost nobody mentions — it is legally classified as a Tourist visa under the Immigration Act. That classification is not academic: it is precisely why Thai banks now refuse DTV holders accounts, and why some accounts opened in 2024 are being frozen or closed. <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> &#39;Five-year visa&#39; is what the headline says. &#39;Five-year multiple-entry tourist visa with 180-day stays and no banking access&#39; is what it is.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>You can hop to Vientiane or Penang and pick up a DTV there.</p>
+    <p class="myth-real"><strong>Actually:</strong> Dead as of 31 August 2026. Applicants must now be a national or a permanent resident of the country where they apply. Being physically present in a third country is no longer enough. A criminal record clearance certificate is also now required. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> The &#39;apply from a neighbouring country&#39; route was the single most repeated piece of advice in the entire Thai nomad ecosystem for two years. Every guide, forum thread, and video recommending it is now wrong.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Thailand only taxes foreign income if you bring it in the same year you earned it.</p>
+    <p class="myth-real"><strong>Actually:</strong> That rule died on 1 January 2024. Under Departmental Instruction Por. 161/2566, foreign income earned from that date is taxable when a Thai tax resident remits it, regardless of which year it was earned. A 2025 proposal to exempt income remitted within two tax years was still not law as of mid-2026. Plan around the strict rule, not the relief. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> The old same-year rule was true for decades, and the proposed relief has been reported repeatedly as though it had passed.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Get an education visa at a language school and you can stay indefinitely.</p>
+    <p class="myth-real"><strong>Actually:</strong> Roughly 10,000 student visas were revoked in 2026. Schools now report enrolment monthly into a centralised database that Immigration cross-checks continuously, officers make spot checks, and extension interviews can include being addressed in Thai to see whether you actually studied. This is a structural enforcement change, not a campaign. If you genuinely attend, you are fine. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> The ED visa was a well-known workaround for fifteen years, and the schools selling it have every incentive not to mention the database.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>An apostille will work for my US documents in Thailand.</p>
+    <p class="myth-real"><strong>Actually:</strong> Not yet. Thailand deposited its instrument of accession on 30 June 2026 and the Convention enters into force for Thailand on 28 February 2027. Until then the old consular legalization chain still applies. If you are comparing countries: Vietnam switched to apostilles on 11 September 2026, Cambodia has not joined at all, and Thailand switches next February. Three neighbours, three different answers, all in the same year. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Cabinet approval in December 2025 was widely reported as though the change had taken effect. Accession and entry into force are fourteen months apart.</p>
+  </article>
+</section>
+  
+<section id="tree" class="band">
+  <h2>Your pathway, in questions</h2>
+  <p class="lede">Answer honestly rather than optimistically. Every answer narrows to exactly one route, including the routes that turn out not to exist. You can go back at any point.</p>
+  <div id="tree-app">
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+    <div id="tree-card" class="tree-card"></div>
+    <div class="tree-controls">
+      <button id="btn-back" type="button" class="btn btn-quiet">&larr; Back</button>
+      <button id="btn-restart" type="button" class="btn btn-quiet">Start over</button>
+    </div>
+  </div>
+  <noscript><p class="warn-box">This decision tree needs JavaScript. Every pathway it can reach is written out in full below, so you can also read them directly.</p></noscript>
+</section>
+  
+<section id="pathways" class="band">
+  <h2>The pathways in full</h2>
+  <p class="lede">Every legal route, whether or not the tree sent you there. Read your own first, then read the one you would fall back to.</p>
+  
+  <article class="pathway" id="pathway-visa-exempt">
+    <header class="pathway-head">
+      <h3>Visa Exemption and Tourist E-Visa</h3>
+      <p class="codes"><code>Exempt</code> <code>TR</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">The short-stay options, and the one changing in September 2026. Visa-exempt entry drops from 60 days to 30 for Americans on 15 September 2026; the 60-day tourist e-visa, extendable by 30 days, becomes the longer option.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Holidays, scouting trips, and the gap while a long-stay application is in progress.</dd>
+      <dt>You get</dt><dd>30 days visa-exempt from 15 September 2026, or 60 days on a tourist e-visa, extendable by 30 days at an immigration office</dd>
+      <dt>Renewable</dt><dd>Extensions are limited and discretionary. Repeated back-to-back entries attract questions at the border.</dd>
+      <dt>Work locally</dt><dd>No.</dd>
+      <dt>Family</dt><dd>Each traveller individually.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>Immediate on arrival, or a few business days for the e-visa.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">How many days you will actually be granted on arrival</p>
+        <p class="v-who"><b>Ask:</b> Thai Immigration Bureau, or the Royal Thai Embassy in Washington DC</p>
+        <p class="v-how">Ask, naming your nationality and your exact arrival date: &#39;As a US citizen arriving on [date], how many days of visa-exempt stay will I be granted?&#39; <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number of days tied to your date. If the answer is 60 and your arrival is on or after 15 September 2026, the person answering has not seen the 31 August regulation — ask again.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That you are on the official e-visa portal and paying the official fee</p>
+        <p class="v-who"><b>Ask:</b> Thai Ministry of Foreign Affairs</p>
+        <p class="v-how">Type the official portal address directly rather than arriving from a search result, and compare the checkout total against the published fee. <a href="https://www.thaievisa.go.th" target="_blank" rel="noopener noreferrer">www.thaievisa.go.th</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A .go.th domain and a fee around US$40. Resellers charge two to three times this.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>US passport valid at least 6 months</strong> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></li><li><strong>Thailand Digital Arrival Card completed before arrival</strong> — The TDAC replaced the paper arrival card. Complete it online in the days before you fly. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></li><li><strong>Onward ticket and proof of accommodation</strong> — Asked for inconsistently on visa-exempt entry and more often on repeat entries. </li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Visa-exempt entry</td><td class="amt">Free</td><td> </td></tr><tr><td>Tourist e-visa</td><td class="amt">About US$40</td><td>Confirm on the official Thai e-visa portal — never a reseller. <span class="cite"><a href="#src-th-evisa-portal" title="Thailand official e-visa portal, Ministry of Foreign Affairs">2</a></span></td></tr><tr><td>30-day extension at an immigration office</td><td class="amt">THB 1,900</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Check which rule applies to your arrival date</p>
+        <p>Entries from 15 September 2026 get 30 days visa-exempt. Anyone admitted before that date keeps the 60 days they were granted. If your trip straddles the date, the date of entry is what counts. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">If you need more than 30 days, apply for the tourist e-visa before flying</p>
+        <p>60 days, extendable by 30 at an immigration office for THB 1,900, giving 90 total. <span class="cite"><a href="#src-th-evisa-portal" title="Thailand official e-visa portal, Ministry of Foreign Affairs">2</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Complete the Thailand Digital Arrival Card</p>
+        <p>Online, before departure. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Do not plan a life on repeated exempt entries</p>
+        <p>Border officers see your entry history and repeated back-to-back exempt entries are the classic trigger for refusal. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Booking a 45-day trip on the assumption of 60 days visa-exempt</p>
+        <p class="f-conseq"><b>Consequence:</b> Overstay, at THB 500 per day, and a record that follows you.</p>
+        <p class="f-avoid"><b>Avoid it:</b> From 15 September 2026, budget 30 days or buy the tourist e-visa.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Repeated exempt entries as a de facto residence strategy</p>
+        <p class="f-conseq"><b>Consequence:</b> Refusal of entry at the border, which is discretionary and not appealable in the moment.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If you are living in Thailand, get a visa that says so.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-dtv">
+    <header class="pathway-head">
+      <h3>Destination Thailand Visa (DTV)</h3>
+      <p class="codes"><code>DTV</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">Five years of multiple entries at 180 days a stay, for remote workers and for people doing qualifying Thai cultural activities. Genuinely useful, widely misunderstood, and materially harder to get than it was a month ago.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Remote workers under the LTR income threshold who can evidence THB 500,000 in savings, and people on genuine Muay Thai, Thai cooking, or medical programmes.</dd>
+      <dt>You get</dt><dd>5-year validity, multiple entry, 180 days per entry (one 180-day extension per entry is possible at an immigration office)</dd>
+      <dt>Renewable</dt><dd>The visa itself runs five years. Each stay is capped at 180 days and reset by leaving.</dd>
+      <dt>Work locally</dt><dd>No Thai employer, no Thai clients. It covers remote work for foreign employers and clients only.</dd>
+      <dt>Family</dt><dd>Yes — spouse and children under 20 apply in the Dependent category.</dd>
+      <dt>Toward permanent residence</dt><dd>No. It is classified as a Tourist visa.</dd>
+      <dt>Realistic timeline</dt><dd>Two to six weeks, plus however long your criminal record check takes. Apply well ahead of any travel.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether your specific Thai mission is applying the 31 August rules, and what it accepts as proof of residence</p>
+        <p class="v-who"><b>Ask:</b> The Royal Thai Embassy or Consulate covering your US state</p>
+        <p class="v-how">Email asking: &#39;Under the rules effective 31 August 2026, what do you accept as evidence that I am a national or permanent resident of the United States, and what form of criminal record certificate do you require?&#39; <a href="https://www.thaievisa.go.th" target="_blank" rel="noopener noreferrer">www.thaievisa.go.th</a> <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named document list. Missions differ in practice, and the answer from the one handling your application is the only one that matters.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether any Thai bank will open an account for a DTV holder right now</p>
+        <p class="v-who"><b>Ask:</b> The retail branches you would actually use, asked directly</p>
+        <p class="v-how">Before relying on Thai banking, email or visit two banks and ask: &#39;Do you currently open accounts for holders of the Destination Thailand Visa?&#39; Ask a branch, not a call centre.  <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Probably no, or a request for documents you cannot produce. Enforcement varies by bank and branch, so a yes from one branch is not a policy.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your soft-power programme is on the qualifying list</p>
+        <p class="v-who"><b>Ask:</b> The Thai mission handling your application</p>
+        <p class="v-how">Send the institution&#39;s name and programme details and ask whether it qualifies before paying any tuition or deposit.  <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A yes or no naming the programme. General language schools have been excluded, so do not assume a language course qualifies.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>THB 500,000 (about US$16,000) in a bank account, seasoned three months</strong> — It does not have to be a Thai account or in baht — a US account in dollars is accepted. It does have to have been sitting there for three months, and this is now strictly enforced. <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></li><li><strong>You must apply in a country where you are a national or a permanent resident</strong> — New from 31 August 2026. Being physically present in a third country is no longer sufficient. This closed the neighbouring-country application route entirely. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></li><li><strong>A criminal record clearance certificate</strong> — Also new from 31 August 2026. For Americans this is normally the FBI Identity History Summary. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></li><li><strong>Aged 20 or over, and physically outside Thailand when you apply</strong> <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></li><li><strong>Category evidence</strong> — Workcation: an employment contract or certificate from a foreign employer, a letter confirming remote work and salary, and roughly six months of payslips or statements. Soft power: an acceptance letter from a registered Thai institution stating programme, duration, schedule and fee — note that general language schools are not on the qualifying list. Dependent: relationship documents. <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Application fee</td><td class="amt">THB 10,000 (about US$310)</td><td> <span class="cite"><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></td></tr><tr><td>FBI Identity History Summary plus channeler</td><td class="amt">US$18 government fee, US$50 to 100 via an approved channeler</td><td> </td></tr><tr><td>180-day extension inside Thailand</td><td class="amt">THB 1,900</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Season the money first</p>
+        <p>Three months in the account before you apply. If you have just moved the funds, wait — applying early is a wasted fee. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Everything else waits on this.</p>
+      </li>
+      <li>
+        <p class="step-title">Order your FBI criminal record check</p>
+        <p>Via an approved channeler for a days-long turnaround. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply from the US, at a Thai mission covering your state</p>
+        <p>You must apply where you are a national or permanent resident. Most missions now accept e-visa applications only. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a><a href="#src-th-evisa-portal" title="Thailand official e-visa portal, Ministry of Foreign Affairs">2</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Plan your banking before you arrive, not after</p>
+        <p>Assume you will not be able to open a Thai bank account on a DTV. Arrange US cards with no foreign transaction fee and a transfer service you trust. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Track your 180-day clock from each entry</p>
+        <p>Each entry starts a fresh 180 days. Leaving and returning resets it — and also triggers a fresh TM30 filing. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Applying from Laos, Vietnam, or Malaysia</p>
+        <p class="f-conseq"><b>Consequence:</b> Refused since 31 August 2026, and the THB 10,000 is gone.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Apply in the US. The old advice is dead.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Moving THB 500,000 into an account and applying the same week</p>
+        <p class="f-conseq"><b>Consequence:</b> Refused on seasoning.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Three months, strictly enforced.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Planning your finances around a Thai bank account</p>
+        <p class="f-conseq"><b>Consequence:</b> You arrive for a 180-day stay with no local banking and, increasingly, a frozen account if you had one.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Treat Thai banking as unavailable on this visa and plan accordingly.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Taking Thai clients or a Thai employer</p>
+        <p class="f-conseq"><b>Consequence:</b> That is work in Thailand without a work permit, on a visa classified as tourist.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Foreign employers and foreign clients only. If you want to work locally, you want Non-B.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-ltr">
+    <header class="pathway-head">
+      <h3>Long-Term Resident Visa (LTR)</h3>
+      <p class="codes"><code>LTR</code>
+        <span class="diff diff-high">high</span></p>
+      <p class="summary">Thailand&#39;s best long-stay product by a distance, and the most overlooked. Ten years, a digital work permit, exemption from the four-Thais-per-foreigner employment ratio, and — for three of its four categories — exemption from Thai tax on foreign income. Administered by the Board of Investment rather than Immigration.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Remote workers earning US$80,000+, retirees with US$80,000 of passive income, wealthy investors, and specialists in targeted industries.</dd>
+      <dt>You get</dt><dd>10 years, issued as 5 years renewable for a further 5</dd>
+      <dt>Renewable</dt><dd>Yes, on continuing qualification.</dd>
+      <dt>Work locally</dt><dd>Yes, via the digital work permit, and free of the standard 4:1 Thai-to-foreigner ratio.</dd>
+      <dt>Family</dt><dd>Yes — spouse and dependants are included, which is a major advantage over the DTV.</dd>
+      <dt>Toward permanent residence</dt><dd>Not directly, but it is the longest standard status Thailand issues.</dd>
+      <dt>Realistic timeline</dt><dd>Typically 8 to 20 weeks. The Board of Investment reviews qualification documents carefully and comes back with questions.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Which category you actually qualify under, before you assemble evidence</p>
+        <p class="v-who"><b>Ask:</b> Thailand Board of Investment, LTR unit</p>
+        <p class="v-how">Use the BOI&#39;s own qualification enquiry with your real numbers, and ask which category they would assess you under and what evidence they require for it. <a href="https://ltr.boi.go.th" target="_blank" rel="noopener noreferrer">ltr.boi.go.th</a> <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named category and a document list. If you are told to just apply and see, ask again with specifics — the fee and the months are yours to lose.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether the foreign-income tax exemption applies to your category and your income type</p>
+        <p class="v-who"><b>Ask:</b> Thai Revenue Department, and a Thai tax adviser</p>
+        <p class="v-how">Ask specifically whether the exemption covers your kind of income — employment, dividends, capital gains, pension — and get it in writing. Do not rely on a summary that says &#39;foreign income is exempt&#39;. <a href="https://www.rd.go.th" target="_blank" rel="noopener noreferrer">www.rd.go.th</a> <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> An answer that distinguishes income types. This exemption is the main reason to choose LTR and is worth an hour of professional time to confirm.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Wealthy Global Citizen: US$1,000,000 in assets plus a US$500,000 investment in Thailand</strong> — The income test for this category was removed in February 2025. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-boi-ltr" title="Thailand Board of Investment — Long-Term Resident visa unit and qualification enquiry">4</a></span></li><li><strong>Wealthy Pensioner: aged 50+, with US$80,000 a year in passive income</strong> — Or US$40,000 with additional investment conditions. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a></span></li><li><strong>Work-from-Thailand Professional: US$80,000 a year from a well-established overseas employer, with 5+ years of relevant experience</strong> — Or US$40,000 with additional conditions. This is the category most high-earning remote workers should be looking at instead of the DTV. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a></span></li><li><strong>Highly-Skilled Professional: working in a targeted industry for a Thai entity, institution, or government agency</strong> — This category carries a flat 17% personal income tax rate on Thai employment income instead of progressive rates to 35%. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a></span></li><li><strong>Health insurance or evidenced medical cover</strong> — Requirements vary by category; confirm the current threshold with the Board of Investment. </li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Visa fee</td><td class="amt">THB 50,000 (about US$1,560) for ten years</td><td>Roughly US$156 a year — dramatically cheaper than Privilege and cheaper per year than annual retirement extensions once agent fees are counted. </td></tr><tr><td>Digital work permit</td><td class="amt">THB 3,000 per year</td><td>Only if you need to work. </td></tr><tr><td>Qualifying investment, where the category requires one</td><td class="amt">US$500,000 for Wealthy Global Citizen</td><td> </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Identify your category before assembling anything</p>
+        <p>The four categories have almost nothing in common in their evidence requirements. Applying under the wrong one wastes months. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-boi-ltr" title="Thailand Board of Investment — Long-Term Resident visa unit and qualification enquiry">4</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do this first.</p>
+      </li>
+      <li>
+        <p class="step-title">Assemble income or asset evidence in the form the BOI wants</p>
+        <p>Employment contracts, tax returns, audited statements, and for the Wealthy Global Citizen category, asset valuations. This is a document exercise, not a form. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> Several weeks</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply online through the Board of Investment</p>
+        <p>The LTR is not an Immigration Bureau product and does not go through a Thai embassy in the usual way. <span class="cite"><a href="#src-th-boi-ltr" title="Thailand Board of Investment — Long-Term Resident visa unit and qualification enquiry">4</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Collect the visa at a Thai mission or at an immigration office in Thailand</p>
+        <p>Once endorsed by the BOI. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Understand your tax position deliberately</p>
+        <p>Three of the four categories carry an exemption from Thai tax on foreign income, which is the single largest financial difference between LTR and every other route in this guide. Get it confirmed in writing for your category. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and a Thai tax adviser</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Defaulting to the DTV without checking LTR eligibility</p>
+        <p class="f-conseq"><b>Consequence:</b> You take a five-year tourist-classified visa with no banking and 180-day stays, when you qualified for ten years, a work permit, family inclusion, and a tax exemption for less money per year.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If you earn US$80,000+, price the LTR before anything else. This is the most valuable single check in this guide.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Applying under the wrong category</p>
+        <p class="f-conseq"><b>Consequence:</b> Months lost and a re-application.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Confirm the category with the BOI before assembling evidence.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the tax exemption is automatic and universal</p>
+        <p class="f-conseq"><b>Consequence:</b> A Thai tax assessment you did not budget for.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Confirm in writing, by income type.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-privilege">
+    <header class="pathway-head">
+      <h3>Thailand Privilege (formerly Elite)</h3>
+      <p class="codes"><code>PE</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">Buy your way past the paperwork. A one-time membership fee to a state-owned company, in exchange for a long-stay Privilege Entry visa with one-year stays, airport fast track, and a concierge who files your immigration paperwork for you. No income proof, no age limit, no financial disclosure.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>People with money who value not dealing with immigration offices, and people who do not qualify for anything else but can afford to skip the question.</dd>
+      <dt>You get</dt><dd>5 to 20 years depending on tier, with one-year stays and multiple entry</dd>
+      <dt>Renewable</dt><dd>The membership runs its term; renewal means buying again.</dd>
+      <dt>Work locally</dt><dd>No. Privilege is not a work permit and does not entitle you to work in Thailand.</dd>
+      <dt>Family</dt><dd>Family members can be added at additional cost, depending on tier.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>Weeks. It is a purchase with background screening, not an application on merit.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The current price and term of the tier you want, and whether Bronze is still available</p>
+        <p class="v-who"><b>Ask:</b> Thailand Privilege Card Co., Ltd., the state-owned operator</p>
+        <p class="v-how">Check prices on the official operator site rather than an agent&#39;s, and confirm the Bronze end date if that is the tier you want. <a href="https://thailandprivilege.co.th" target="_blank" rel="noopener noreferrer">thailandprivilege.co.th</a> <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A published fee and term. Agents sometimes quote outdated tiers or add fees to a product that has none.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That the agent you are dealing with is authorised</p>
+        <p class="v-who"><b>Ask:</b> The official operator</p>
+        <p class="v-how">Ask the operator directly whether the agent is authorised before transferring a six-figure baht sum. <a href="https://thailandprivilege.co.th" target="_blank" rel="noopener noreferrer">thailandprivilege.co.th</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Confirmation from the operator, not from the agent&#39;s own website.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>The membership fee, and a clean background</strong> — There is no income test, no asset test, and no age requirement. That is the entire product. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Bronze</td><td class="amt">THB 650,000 (about US$20,300), 5 years</td><td>Scheduled to end on 30 September 2026 — if you want this tier, the window is closing. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></td></tr><tr><td>Gold</td><td class="amt">THB 900,000 (about US$28,100), 5 years</td><td>Adds 20 service points a year. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></td></tr><tr><td>Platinum</td><td class="amt">THB 1,500,000 (about US$46,900), 10 years</td><td> <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></td></tr><tr><td>Diamond</td><td class="amt">THB 2,500,000 (about US$78,100), 15 years</td><td> <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></td></tr><tr><td>Reserve</td><td class="amt">THB 5,000,000 (about US$156,000), 20 years</td><td>Invitation only. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Price it against the LTR first</p>
+        <p>The LTR costs THB 50,000 for ten years. Privilege Platinum costs THB 1,500,000 for ten. If you qualify for LTR on income or assets, Privilege is thirty times the price for less — no work permit, no tax exemption, no family inclusion as standard. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do this comparison before paying anything.</p>
+      </li>
+      <li>
+        <p class="step-title">Apply through the official operator or an authorised agent</p>
+        <p>Thailand Privilege Card Co., Ltd. is a state-owned enterprise. Verify any agent is authorised before transferring money. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Pass background screening and pay the one-time fee</p>
+        <p>There are no annual fees. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Remember you still have Thai admin obligations</p>
+        <p>Privilege members still file 90-day reports and TM30 notifications like everyone else. The concierge helps; the obligation is still yours. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Buying Privilege when you qualified for LTR</p>
+        <p class="f-conseq"><b>Consequence:</b> Roughly thirty times the cost for a weaker product.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Run the LTR check first. Always.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Believing Privilege permits you to work</p>
+        <p class="f-conseq"><b>Consequence:</b> Working without a permit.</p>
+        <p class="f-avoid"><b>Avoid it:</b> It is a long-stay membership. Work requires Non-B and a work permit, or an LTR digital work permit.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Paying an unauthorised agent</p>
+        <p class="f-conseq"><b>Consequence:</b> A very large, unrecoverable transfer.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Verify with the operator first.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-retirement">
+    <header class="pathway-head">
+      <h3>Retirement: Non-O extension, O-A, and O-X</h3>
+      <p class="codes"><code>Non-O</code> <code>O-A</code> <code>O-X</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">Three routes that look identical on money and differ enormously on insurance. Everyone calls them &#39;the retirement visa&#39;; choosing between them is the most consequential decision a retiring American makes in Thailand.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Anyone 50 or over with THB 800,000 in a Thai bank or THB 65,000 a month in income.</dd>
+      <dt>You get</dt><dd>One year at a time for Non-O and O-A; O-X runs longer on much higher financials</dd>
+      <dt>Renewable</dt><dd>Yes, annually, indefinitely.</dd>
+      <dt>Work locally</dt><dd>No.</dd>
+      <dt>Family</dt><dd>A spouse can generally accompany on a dependent basis. Confirm for your circumstances.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>O-A: several weeks from the US. In-country Non-O conversion: a few weeks after arrival, plus a 30-day under-consideration period on the extension.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether your local immigration office requires insurance on an in-country Non-O retirement extension</p>
+        <p class="v-who"><b>Ask:</b> The immigration office for the province you will live in</p>
+        <p class="v-how">Ask in person or by phone: &#39;For a one-year extension of stay based on retirement, applied for at this office on a Non-O, do you require health insurance?&#39; Ask the office you will actually use — practice varies by province. <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A clear yes or no from that office. National rules and provincial practice are not always the same thing, and this office&#39;s answer is the one that governs you.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">The current bank deposit seasoning period and how it is measured</p>
+        <p class="v-who"><b>Ask:</b> The same immigration office</p>
+        <p class="v-how">Ask how many months the THB 800,000 must be in the account before applying, and how much must remain after the extension is granted. <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number of months and a maintenance requirement. Getting this wrong is the most common cause of a refused retirement extension.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your insurer&#39;s policy is accepted, if you go the O-A route</p>
+        <p class="v-who"><b>Ask:</b> The Royal Thai Embassy handling your O-A application</p>
+        <p class="v-how">Send the policy schedule and ask whether it meets the US$100,000 requirement in the form they need it certified.  <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Acceptance of that specific policy. Do not buy insurance before asking.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Aged 50 or over</strong> <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></li><li><strong>THB 800,000 in a Thai bank, or THB 65,000 a month in pension or income, or a combination totalling THB 800,000 a year</strong> — The same threshold applies across Non-O and O-A. Seasoning rules apply to the bank deposit — confirm the current period with your immigration office. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></li><li><strong>O-A only: health insurance of US$100,000 or THB 3,000,000 per policy year</strong> — Foreign insurance is accepted for the O-A. This requirement is the single biggest practical difference between the routes. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></li><li><strong>In-country Non-O extension: no legal insurance requirement</strong> — If you enter Thailand and convert to a Non-O, then extend annually inside the country, there is no insurance mandate. Many retirees do not know this route exists. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></li><li><strong>O-X: THB 3,000,000 fixed deposit, or THB 1,800,000 in Thailand plus THB 1,200,000 annual income, and Thai-issued insurance</strong> — Much higher financials and, unlike the O-A, foreign insurance is not accepted. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Visa or extension fee</td><td class="amt">THB 1,900 to 5,000 depending on route</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr><tr><td>Health insurance, O-A</td><td class="amt">US$1,500 to 6,000+ per year</td><td>Rises steeply with age and pre-existing conditions. Price it before choosing the O-A. </td></tr><tr><td>Re-entry permit</td><td class="amt">THB 1,000 single, THB 3,800 multiple</td><td>Essential. See the gotcha — leaving without one cancels your extension. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr><tr><td>Agent assistance, optional</td><td class="amt">THB 5,000 to 20,000 per year</td><td> </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Choose your route on insurance, not on convenience</p>
+        <p>If health insurance at US$100,000 cover is expensive or unobtainable for you — which becomes common past 70 or with pre-existing conditions — the in-country Non-O extension route avoids the mandate entirely. Work this out before you apply for anything. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> This decision is hard to reverse once you have entered on an O-A.</p>
+      </li>
+      <li>
+        <p class="step-title">If going the in-country route, enter and convert</p>
+        <p>Enter Thailand, apply to convert to a Non-O, then apply for the one-year extension based on retirement. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> Thai immigration office</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Open a Thai bank account and season the deposit</p>
+        <p>The THB 800,000 route requires the money in a Thai account in your name for a set period before applying. Retirement-class visas do open accounts, unlike the DTV. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Buy a re-entry permit before any trip abroad</p>
+        <p>Without one, leaving Thailand cancels your extension of stay outright. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Set up your 90-day reporting routine</p>
+        <p>Every 90 consecutive days in Thailand, for as long as you live there. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Applying for the O-A from the US without pricing the insurance</p>
+        <p class="f-conseq"><b>Consequence:</b> You are locked into an annual insurance mandate that can cost thousands and becomes harder to satisfy with age.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Price it first, and compare against the in-country Non-O route which has no mandate.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Leaving Thailand without a re-entry permit</p>
+        <p class="f-conseq"><b>Consequence:</b> Your extension of stay is cancelled. You return as a tourist and start again.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Buy the multiple re-entry permit at the same time as the extension.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Dropping the bank balance after the extension is granted</p>
+        <p class="f-conseq"><b>Consequence:</b> Refusal at the next renewal, when the officer reviews the year&#39;s statements.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Understand the maintenance requirement, not just the application-day figure.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-work-nonb">
+    <header class="pathway-head">
+      <h3>Non-Immigrant B and Work Permit</h3>
+      <p class="codes"><code>Non-B</code>
+        <span class="diff diff-high">high</span></p>
+      <p class="summary">The employment route. Two documents again: the Non-B visa to enter and stay, and a work permit from the Department of Employment to work. The binding constraint is not you — it is whether your employer is large enough to be allowed to hire you.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Anyone with a Thai employer of real size: multinationals, established Thai companies, international schools.</dd>
+      <dt>You get</dt><dd>Non-B for 90 days initially, then one-year extensions of stay tied to the work permit</dd>
+      <dt>Renewable</dt><dd>Yes, annually, while employed.</dd>
+      <dt>Work locally</dt><dd>Yes, for the sponsoring employer, in the permitted role.</dd>
+      <dt>Family</dt><dd>Yes, dependants on Non-O.</dd>
+      <dt>Toward permanent residence</dt><dd>It is the only route that realistically leads there, after at least three consecutive years of extensions with matching tax filings — against a quota of roughly 100 per nationality per year.</dd>
+      <dt>Realistic timeline</dt><dd>6 to 12 weeks, dominated by employer documentation and US document legalization.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That your prospective employer meets the 4:1 ratio and the capital requirement</p>
+        <p class="v-who"><b>Ask:</b> The employer&#39;s HR, and the Department of Employment</p>
+        <p class="v-how">Ask HR for the current Thai headcount, foreign headcount, and registered capital, and ask how many work permits they have obtained in the past year. <a href="https://www.doe.go.th" target="_blank" rel="noopener noreferrer">www.doe.go.th</a> <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Three numbers and a track record. A company that has never obtained a work permit before is a serious risk, however good the job is.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your job title is not on the restricted occupations list</p>
+        <p class="v-who"><b>Ask:</b> Department of Employment</p>
+        <p class="v-how">Give the exact title that will appear on the permit application and ask whether it is permitted for a foreign national. <a href="https://www.doe.go.th" target="_blank" rel="noopener noreferrer">www.doe.go.th</a> <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A clear yes or no against that title. Titles matter more than duties here.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Which document authentication your employer needs, given the February 2027 switch</p>
+        <p class="v-who"><b>Ask:</b> The employer, and the Royal Thai Embassy in Washington DC</p>
+        <p class="v-how">Ask whether they need consular legalization now or can wait for apostille acceptance from 28 February 2027.  <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A clear instruction tied to the filing date. If your filing is close to the switch, the timing is worth planning.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Your employer must maintain a 4:1 ratio of Thai to foreign employees</strong> — Four Thai employees for every foreign one. This is the constraint that rules out small companies and startups entirely. <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></li><li><strong>Your employer must hold registered capital of THB 2,000,000 per foreign worker</strong> — Some sources cite THB 2 to 3 million. Two foreign staff means at least THB 4,000,000 of registered capital. <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></li><li><strong>The role must not be on the Ministry of Labour&#39;s restricted occupations list</strong> — A list of professions reserved for Thai nationals. Check it against your actual job title. <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></li><li><strong>Degree and supporting documents, legalized</strong> — Until 28 February 2027 this means consular legalization, not an apostille. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Non-B visa</td><td class="amt">About US$80 to 200 depending on entries</td><td> <span class="cite"><a href="#src-th-evisa-portal" title="Thailand official e-visa portal, Ministry of Foreign Affairs">2</a></span></td></tr><tr><td>Work permit</td><td class="amt">THB 3,000 to 6,000 per year</td><td>Usually paid by the employer. <span class="cite"><a href="#src-th-doe" title="Thai Department of Employment — work permits and the WP.32 process">3</a></span></td></tr><tr><td>One-year extension of stay</td><td class="amt">THB 1,900</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr><tr><td>US document legalization</td><td class="amt">US$200 to 600</td><td>Falls once the apostille takes effect on 28 February 2027. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Before accepting the offer, ask the ratio and capital questions</p>
+        <p>Ask HR directly: how many Thai employees does the entity have, how many foreign staff, and what is its registered capital? If the arithmetic fails, no permit can be issued regardless of your qualifications. <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> This is the whole gate.</p>
+      </li>
+      <li>
+        <p class="step-title">Employer obtains the WP.32 pre-approval</p>
+        <p>Filed with the Labour Department before you apply for the visa. <span class="cite"><a href="#src-th-nonb" title="Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval">16</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your employer</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Legalize your degree and supporting documents</p>
+        <p>Consular legalization until 28 February 2027, when apostilles take over. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> 4 to 8 weeks</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply for the Non-B at a Thai mission in the US</p>
+        <p>Applied for at the Thai mission covering your state, with the WP.32 pre-approval and employer documents. Most missions accept e-visa applications only. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Enter, obtain the work permit, then extend the stay to one year</p>
+        <p>The extension is granted on the strength of the work permit and employer documents. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your employer</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Set up TM30, 90-day reporting, and a re-entry permit</p>
+        <p>All three apply from the moment you have a long stay. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Joining a small company or startup</p>
+        <p class="f-conseq"><b>Consequence:</b> The 4:1 ratio and capital requirement cannot be met, and no permit can be issued.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Ask the numbers before you resign from anything.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Working before the permit is issued</p>
+        <p class="f-conseq"><b>Consequence:</b> Illegal employment, with exposure for you and your employer.</p>
+        <p class="f-avoid"><b>Avoid it:</b> No work — including remote work for the Thai entity — before the permit exists.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the permit and visa move with you to a new job</p>
+        <p class="f-conseq"><b>Consequence:</b> Neither does. Both are employer-specific.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Never resign before the new employer&#39;s filing is underway.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-marriage">
+    <header class="pathway-head">
+      <h3>Marriage Visa (Non-O, spouse of a Thai national)</h3>
+      <p class="codes"><code>Non-O</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">The cheapest durable route into Thailand, at half the financial threshold of retirement and with no age requirement. Annual extensions, sometimes with a home visit.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Foreign spouses of Thai citizens.</dd>
+      <dt>You get</dt><dd>Enter on a 90-day Non-O, then one-year extensions inside Thailand</dd>
+      <dt>Renewable</dt><dd>Yes, annually, while married.</dd>
+      <dt>Work locally</dt><dd>The marriage extension is not a work permit, but it does support obtaining one on easier terms than Non-B. Confirm for your situation.</dd>
+      <dt>Family</dt><dd>Children of the marriage are covered on a family basis.</dd>
+      <dt>Toward permanent residence</dt><dd>Marriage is one of the categories under which permanent residency can eventually be sought. Treat it as a long-horizon possibility, not a plan.</dd>
+      <dt>Realistic timeline</dt><dd>Two to four months including the 30-day under-consideration period on the extension.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">What your local immigration office requires to recognise a US marriage</p>
+        <p class="v-who"><b>Ask:</b> The immigration office and the district office (amphur) where your spouse is registered</p>
+        <p class="v-how">Ask what form of certification and translation of a US marriage certificate they accept, and whether the marriage must be re-registered at the amphur. <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named process. Provincial practice varies more on this than on almost anything else in Thai immigration.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">The seasoning period and whose name the account must be in</p>
+        <p class="v-who"><b>Ask:</b> The same immigration office</p>
+        <p class="v-how">Ask how long the THB 400,000 must be in the account, and confirm it must be a sole account in your name. <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number of months and a clear statement about account ownership.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>THB 400,000 in a Thai bank in your name for two months before applying, or THB 40,000 a month in income</strong> — Half the retirement threshold. Confirm the seasoning period with your local office. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></li><li><strong>A marriage registered at a Thai district office, or registered abroad and recognised</strong> — A US marriage must be certified, translated, and recognised by Thai authorities. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></li><li><strong>Your Thai spouse attends the appointment</strong> — Offices expect it, and their absence is a common cause of a wasted trip. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Non-O visa and one-year extension</td><td class="amt">THB 2,000 to 5,000</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr><tr><td>Document certification and translation</td><td class="amt">US$200 to 500</td><td> </td></tr><tr><td>Re-entry permit</td><td class="amt">THB 1,000 single, THB 3,800 multiple</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Get the marriage recognised Thai-side</p>
+        <p>If you married in the US, this gates everything else. Certification, translation, and recognition. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your spouse</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Nothing proceeds without it.</p>
+      </li>
+      <li>
+        <p class="step-title">Enter on a Non-O based on marriage</p>
+        <p>Applied for at a Thai mission, or converted in-country from a qualifying entry. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Season THB 400,000 in a Thai account in your own name</p>
+        <p>Two months before applying for the extension. The account must be yours, not joint and not your spouse&#39;s. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply for the one-year extension with your spouse present</p>
+        <p>Expect a roughly 30-day under-consideration stamp, and possibly a home visit or a call to your spouse before the full year is granted. <span class="cite"><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your spouse</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Buy a re-entry permit, and set up TM30 and 90-day reporting</p>
+        <p>The re-entry permit protects the extension you just spent months obtaining; the reporting obligations start immediately and run for as long as you live there. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Holding the money in a joint account or your spouse&#39;s account</p>
+        <p class="f-conseq"><b>Consequence:</b> Refused.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Sole account, your name.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Attending the extension appointment without your spouse</p>
+        <p class="f-conseq"><b>Consequence:</b> A wasted trip, and sometimes a wasted month.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Bring them.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Leaving Thailand during the 30-day under-consideration period without checking</p>
+        <p class="f-conseq"><b>Consequence:</b> Complications with the pending extension.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Ask the office before booking travel.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-education-ed">
+    <header class="pathway-head">
+      <h3>Education Visa (ED)</h3>
+      <p class="codes"><code>ED</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">Legitimate if you genuinely study, and a closing door if you do not. Roughly 10,000 student visas were revoked in 2026 as enforcement moved to continuous database cross-checking.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>People actually enrolling in a Thai university, or genuinely committing to learning Thai at an accredited school.</dd>
+      <dt>You get</dt><dd>Tied to the programme, extended in blocks</dd>
+      <dt>Renewable</dt><dd>Yes while genuinely enrolled and attending. After about a year you are generally expected to progress to a different course or level.</dd>
+      <dt>Work locally</dt><dd>No.</dd>
+      <dt>Family</dt><dd>Limited. Do not plan a family move around this.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>4 to 10 weeks from enrolment.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That the school is currently approved and its students&#39; visas are not at risk</p>
+        <p class="v-who"><b>Ask:</b> Thai Immigration Bureau, and the school</p>
+        <p class="v-how">Ask the school how many ED visas they supported last year, whether any of their students were affected by the 2026 revocations, and ask to speak to a current student. Then confirm the school&#39;s standing with immigration. <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer">www.immigration.go.th</a> <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Numbers and a student contact. Evasiveness about the 2026 revocations is the answer.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">What attendance level is actually required to keep the visa</p>
+        <p class="v-who"><b>Ask:</b> The school and your local immigration office</p>
+        <p class="v-how">Ask for the attendance percentage they report and what happens at the extension interview.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A specific percentage and a description of the interview. &#39;Don&#39;t worry about it&#39; means you are buying a visa, not a course — which is exactly what was revoked at scale.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Enrolment at an institution approved by the Ministry of Higher Education, Science, Research and Innovation</strong> — Schools now report enrolment monthly into a centralised database that Immigration cross-checks. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></li><li><strong>Genuine attendance</strong> — Not a formality. Officers make spot checks, extension interviews can include being addressed in Thai, and students who skip class are refused extensions. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Thai language course, one year</td><td class="amt">THB 25,000 to 60,000 (about US$780 to 1,900)</td><td> </td></tr><tr><td>Visa and extensions</td><td class="amt">THB 2,000 to 5,000 per year</td><td> <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Verify the school is accredited and currently in good standing</p>
+        <p>Schools that lose their licence take their students&#39; visas with them. This happened at scale in 2026. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do this before paying tuition.</p>
+      </li>
+      <li>
+        <p class="step-title">Enrol and obtain the school&#39;s visa support documents</p>
+        <p>The school issues the visa support letter and is recorded as your sponsor in the centralised database that Immigration cross-checks. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and the school</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply for the ED visa</p>
+        <p>At the Thai mission covering your state, with the school’s support documents. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Actually attend</p>
+        <p>Attendance is reported monthly and cross-checked. This is the whole compliance model now. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Buying an ED visa from a school as a stay-in-Thailand product</p>
+        <p class="f-conseq"><b>Consequence:</b> This is precisely what the 2026 revocations targeted. Roughly 10,000 visas were cancelled.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If you are not going to attend, choose a different route.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Paying a year of tuition before checking the school&#39;s standing</p>
+        <p class="f-conseq"><b>Consequence:</b> The school loses its licence and your visa support disappears with your money.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Verify first, pay second.</p>
+      </div>
+    </div>
+  </article>
+</section>
+  
+<section id="gotchas" class="band">
+  <h2>Ten traps</h2>
+  <p class="lede">Cross-cutting failures that belong to no single pathway. If you read only one section of this guide, read this one.</p>
+  
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">1</span>Visa-free entry drops to 30 days on 15 September 2026</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> The regulation cutting visa-exempt stay from 60 days to 30 for Americans and 59 other nationalities was published on 31 August 2026 and applies to entries from 15 September. Anyone admitted before that date keeps what they were granted. Two years of guides, videos, and airline pages still say 60.</p>
+    <p><strong>Do this instead.</strong> If you arrive on or after 15 September 2026, budget 30 days, or buy the 60-day tourist e-visa before flying and extend it by 30 at an immigration office for THB 1,900. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></p>
+    <p class="expires">Tied to a rule change — re-check this after December 15, 2026.</p>
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">2</span>The DTV is legally a tourist visa, and Thai banks now act on that</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> The DTV is classified as Tourist under the Immigration Act. Since 2026, major Thai banks have refused new accounts to tourist-classified visa holders, and some accounts opened in 2024 have been frozen or closed on compliance review. Enforcement varies by bank and branch, which is why the forums disagree.</p>
+    <p><strong>Do this instead.</strong> Plan on having no Thai bank account on a DTV. If Thai banking matters, that is a reason to price the LTR or a Non-Immigrant route instead — make it part of the pathway choice, not a discovery after you arrive. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">3</span>You can no longer get a DTV from a neighbouring country</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> From 31 August 2026, applicants must be a national or a permanent resident of the country where they apply. The Vientiane and Penang runs that dominated two years of advice are finished. A criminal record certificate is now required as well.</p>
+    <p><strong>Do this instead.</strong> Apply in the United States, at the mission covering your state, and order your FBI Identity History Summary before you start. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">4</span>TM30 must be re-filed after every single re-entry</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> The address notification is due within 24 hours of arriving at a residence — and a new one is required every time you re-enter Thailand, even returning to the exact same apartment you left. A weekend trip to Singapore restarts the clock. The duty sits with the property owner, so tenants assume it is handled and it often is not.</p>
+    <p><strong>Do this instead.</strong> Agree with your landlord at the start who files it and how, and get confirmation each time. Keep every receipt — a missing TM30 surfaces at your next extension appointment. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">5</span>Leaving Thailand without a re-entry permit cancels your extension</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> An extension of stay is not a multiple-entry visa. Exit the country without a re-entry permit and the extension you spent months and money obtaining is void. You return as a tourist and start over.</p>
+    <p><strong>Do this instead.</strong> Buy the multiple re-entry permit at THB 3,800 at the same time as your extension, every year, without thinking about it. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">6</span>90-day reporting applies to you, whatever you paid</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> Every foreigner present more than 90 consecutive days must report, including Privilege members who assumed the concierge fee bought them out of it. The counter resets on re-entry. And if you have left Thailand since your last report, the online system will not accept you — you must file in person.</p>
+    <p><strong>Do this instead.</strong> Diarise it from your entry stamp, file online when eligible, and expect to go in person after any trip abroad. The fine is THB 2,000, or THB 5,000 if you are caught rather than volunteering. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">7</span>The same-year remittance rule died in 2024, and the relief never passed</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> For decades, foreign income was only taxable if remitted in the year it was earned. Departmental Instruction Por. 161/2566 ended that for income earned from 1 January 2024 — now it is taxable whenever a tax resident brings it in. A 2025 proposal for a two-year exemption window has been widely reported as though it passed. As of mid-2026 it is not law.</p>
+    <p><strong>Do this instead.</strong> Plan around the strict rule. If you are moving a large sum, get advice on timing relative to your Thai tax residency before you transfer, not after. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">8</span>The DTV&#39;s THB 500,000 must have been sitting there three months</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> The money need not be in Thailand or in baht — a US dollar account counts — but the three-month seasoning is now strictly enforced. Applicants who move funds and apply the same week are refused, and the THB 10,000 fee is not refundable.</p>
+    <p><strong>Do this instead.</strong> Get the balance in place, then wait three months, then apply. If you are close, waiting is free and refusal is not. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">9</span>The retirement route you pick decides whether insurance is mandatory</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> The O-A, applied for from the US, requires health insurance of US$100,000 or THB 3,000,000 per policy year. The in-country Non-O extension has no legal insurance requirement at all. Most guides describe both as &#39;the retirement visa&#39; and never mention the difference, which is worth thousands a year and becomes decisive with age or pre-existing conditions.</p>
+    <p><strong>Do this instead.</strong> Get an insurance quote at your actual age before choosing. If it is expensive or you are declined, enter Thailand and convert to a Non-O in-country instead, then extend annually. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">10</span>Thailand Privilege Bronze ends on 30 September 2026</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> The cheapest tier at THB 650,000 for five years is scheduled to close. Agents will keep advertising it after it goes.</p>
+    <p><strong>Do this instead.</strong> If Bronze is the tier you want, confirm availability directly with the state-owned operator, not with an agent. And run the LTR comparison first — it may make the question moot. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+    <p class="expires">Tied to a rule change — re-check this after November 1, 2026.</p>
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">11</span>Apostilles do not work in Thailand until 28 February 2027</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Thailand&#39;s cabinet approved accession in December 2025 and the instrument was deposited on 30 June 2026, but entry into force is 28 February 2027. Until then the consular legalization chain still applies. The December announcement was widely reported as though the change was live.</p>
+    <p><strong>Do this instead.</strong> Use consular legalization now: state certification where applicable, US Department of State authentication, then Royal Thai Embassy legalization. If comparing the region — Vietnam accepts apostilles from 11 September 2026, Cambodia has not joined at all, Thailand joins in February 2027. Three neighbours, three different answers. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></p>
+    <p class="expires">Tied to a rule change — re-check this after April 1, 2027.</p>
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">12</span>Buying Privilege when you qualified for LTR costs about thirty times more</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Thailand Privilege Platinum is THB 1,500,000 for ten years. The LTR is THB 50,000 for ten years and adds a digital work permit, family inclusion, exemption from the 4:1 employment ratio, and — for three of its four categories — exemption from Thai tax on foreign income. Privilege is sold hard by agents on commission; the LTR is administered by the Board of Investment and sold by nobody.</p>
+    <p><strong>Do this instead.</strong> Check LTR eligibility before you consider Privilege. If you earn US$80,000, hold US$1,000,000 in assets, or are 50+ with US$80,000 of passive income, you are probably in LTR territory. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+    
+  </article>
+</section>
+  
+<section id="contested" class="band">
+  <h2>Where the sources disagree</h2>
+  <p class="lede">Questions credible sources answer differently. We publish the disagreement rather than picking a side and hoping — a guide that hides a genuine conflict is more dangerous than one that names it.</p>
+  
+  <article class="contested">
+    <h3>Can a DTV holder open a Thai bank account?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">No, in practice. The DTV is classified as Tourist under the Immigration Act, banks have tightened enforcement against tourist-classified visas since 2026, and existing accounts are being frozen or closed on review. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+        <p class="pos-who">Held by: Banking and immigration practitioners reporting through 2026</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">Sometimes, depending on the bank and the branch. Enforcement is inconsistent, and holders continue to report successful openings, particularly with a Thai address, a long lease, and an introduction. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+        <p class="pos-who">Held by: Ongoing expat community reports</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Both are true, which is why the forums look contradictory. A success at one branch is not a policy, and an account opened today can be closed at the next compliance review. The planning question is not whether it is possible but whether you can afford to be wrong.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Do not resolve it — design around it. Assume no Thai banking on a DTV, and if that is unacceptable, choose LTR or a Non-Immigrant route instead. If you want to try anyway, ask two branches directly before you rely on it. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a><a href="#src-th-dtv-siam" title="DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories">11</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Is Thailand about to tax worldwide income, or relax the remittance rule?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Relief is coming. A 2025 Revenue Department draft would exempt foreign income remitted within two tax years of being earned, which would substantially soften Por. 161. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></p>
+        <p class="pos-who">Held by: Widely reported since mid-2025</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">Tightening is coming. A separate proposal would move Thailand to taxing residents on worldwide income regardless of remittance, which would be a far bigger change in the opposite direction. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></p>
+        <p class="pos-who">Held by: Also reported, less widely</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Neither has been enacted. Two contradictory proposals are circulating and both are regularly described as though they had passed. The only safe planning basis is the rule actually in force: foreign income earned from 1 January 2024 is taxable when a tax resident remits it.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Plan on the current rule and treat either change as a reason to revisit, not a reason to wait. If you hold or expect an LTR in one of the three exempt categories, get the exemption&#39;s scope confirmed in writing for your income type — that is a stronger position than any proposal. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Does the in-country Non-O retirement extension really have no insurance requirement?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Correct, there is no legal insurance requirement for a retirement extension applied for inside Thailand on a Non-O. The mandate attaches to the O-A and, in a stricter Thai-issued form, to the O-X. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></p>
+        <p class="pos-who">Held by: The prevailing reading of the rules</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">In practice it depends on your province. Immigration offices apply discretion, some ask for insurance regardless, and requirements have been known to differ between offices in the same year. </p>
+        <p class="pos-who">Held by: Reports from applicants across different provinces</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> The national rule and your local office&#39;s practice are not the same thing, and it is your local office that decides. This is the single most consequential provincial variation in Thai immigration.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Ask the immigration office for the province you will actually live in, before you commit to a location. The answer from Chiang Mai does not bind Jomtien, and vice versa. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></p>
+  </article>
+</section>
+  
+<section id="checklists" class="band">
+  <h2>The move itself, phase by phase</h2>
+  <p class="lede">Eight phases, in order. These apply whichever pathway you took; items marked with a pathway only appear for that route. Your ticks are saved in this browser.</p>
+  <div class="phase-nav"><a href="#module-th-decide">Decide</a><a href="#module-th-documents">Documents</a><a href="#module-th-exit">Leave United States</a><a href="#module-th-money">Money</a><a href="#module-th-arrival">Arrival</a><a href="#module-th-first90">First 90 days</a><a href="#module-th-ongoing">Ongoing</a><a href="#module-th-contingency">Contingency</a></div>
+  
+  <article class="module" id="module-th-decide">
+    <h3>Decide and pressure-test</h3>
+    <p class="window">T-120 to T-60 days</p>
+    <p class="mod-intro">Thailand has eight products at wildly different prices. Ten minutes of comparison here is worth more than anything else in this guide.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-decide-0" data-key="th-decide-0">
+          <label for="chk-th-decide-0">
+            <span class="task">Run the decision tree and write down your pathway<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-decide-1" data-key="th-decide-1">
+          <label for="chk-th-decide-1">
+            <span class="task">If you earn US$80,000 or more, price the LTR before anything else<span class="tag tag-critical">critical</span></span>
+            <span class="detail">THB 50,000 for ten years, with a work permit, family inclusion, and foreign-income tax exemption. Compare against the DTV at THB 10,000 for five tourist-classified years, and against Privilege Platinum at THB 1,500,000 for ten. <span class="cite"><a href="#src-th-ltr-hlb" title="LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals">13</a><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></span>
+            <span class="why"><b>Why:</b> This single comparison is the largest money decision in Thai immigration and most people never make it.</span>
+            
+          </label>
+        </li><li class="critical" data-pathways="retirement">
+          <input type="checkbox" id="chk-th-decide-2" data-key="th-decide-2">
+          <label for="chk-th-decide-2">
+            <span class="task">If you are 50 or over, decide the retirement route on insurance<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The O-A carries a US$100,000 health insurance mandate. The in-country Non-O extension does not. Price insurance at your age before choosing. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a></span></span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-decide-3" data-key="th-decide-3">
+          <label for="chk-th-decide-3">
+            <span class="task">Check your arrival date against the 15 September 2026 change<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Visa-exempt entry drops from 60 days to 30 for Americans from that date. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-decide-4" data-key="th-decide-4">
+          <label for="chk-th-decide-4">
+            <span class="task">Scout Bangkok, Chiang Mai, and the islands separately</span>
+            <span class="detail">They differ enormously in cost, medical access, air quality, and immigration office culture. Chiang Mai&#39;s burning season alone changes some people&#39;s decision. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-decide-5" data-key="th-decide-5">
+          <label for="chk-th-decide-5">
+            <span class="task">Price real health insurance with evacuation cover</span>
+            <span class="detail">Thai private hospitals are excellent and expensive. Check the evacuation limit as well as the annual maximum. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-decide-6" data-key="th-decide-6">
+          <label for="chk-th-decide-6">
+            <span class="task">Write down what would make you leave</span>
+            
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-documents">
+    <h3>Assemble and legalize documents</h3>
+    <p class="window">T-120 to T-45 days</p>
+    <p class="mod-intro">Thailand switches to apostilles on 28 February 2027. Until then, the old chain applies — and getting this backwards costs weeks.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-documents-0" data-key="th-documents-0">
+          <label for="chk-th-documents-0">
+            <span class="task">Do not order an apostille before 28 February 2027<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Thailand deposited its accession on 30 June 2026 and the Convention enters into force on 28 February 2027. Until then, US documents need the consular legalization chain: state certification where applicable, US Department of State authentication, then Royal Thai Embassy legalization. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></span>
+            <span class="why"><b>Why:</b> Cabinet approval in December 2025 was reported as though the change had happened. It had not.</span>
+            
+          </label>
+        </li><li data-pathways="work-nonb">
+          <input type="checkbox" id="chk-th-documents-1" data-key="th-documents-1">
+          <label for="chk-th-documents-1">
+            <span class="task">If your filing lands near February 2027, plan the timing deliberately</span>
+            <span class="detail">An apostille is faster and cheaper than the legalization chain. If your work permit filing is flexible by a few weeks, the switch is worth waiting for. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></span>
+            
+            <span class="scope">Applies to: Non-Immigrant B and Work Permit</span>
+          </label>
+        </li><li class="critical" data-pathways="dtv">
+          <input type="checkbox" id="chk-th-documents-2" data-key="th-documents-2">
+          <label for="chk-th-documents-2">
+            <span class="task">Order the FBI Identity History Summary if you need a DTV<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Required from 31 August 2026. Use an approved channeler for a days-long turnaround. <span class="cite"><a href="#src-th-dtv-changes" title="DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category">10</a></span></span>
+            
+            <span class="scope">Applies to: Destination Thailand Visa (DTV)</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-documents-3" data-key="th-documents-3">
+          <label for="chk-th-documents-3">
+            <span class="task">Confirm which documents actually need legalizing</span>
+            <span class="detail">Ask the employer, school, or mission for a specific list before paying for anything. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-documents-4" data-key="th-documents-4">
+          <label for="chk-th-documents-4">
+            <span class="task">Order extra certified copies</span>
+            <span class="detail">Two or three of each. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-documents-5" data-key="th-documents-5">
+          <label for="chk-th-documents-5">
+            <span class="task">Scan everything to encrypted storage, including the legalization certificates</span>
+            
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-exit">
+    <h3>Close out the United States</h3>
+    <p class="window">T-90 to T-0 days</p>
+    <p class="mod-intro">Standard US departure admin, with one Thailand-specific difference worth checking yourself.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-exit-0" data-key="th-exit-0">
+          <label for="chk-th-exit-0">
+            <span class="task">Understand you keep filing US taxes forever<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-exit-1" data-key="th-exit-1">
+          <label for="chk-th-exit-1">
+            <span class="task">Learn the FEIE and FTC basics</span>
+            <span class="detail">For tax year 2026 the Foreign Earned Income Exclusion tops out at US$132,900 per person on Form 2555, requiring the Physical Presence Test of 330 full days abroad or the Bona Fide Residence Test. Earned income only. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">7</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-exit-2" data-key="th-exit-2">
+          <label for="chk-th-exit-2">
+            <span class="task">Check the IRS treaty table for Thailand yourself<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Unlike Vietnam and Cambodia, Thailand appears on the US treaty list. Do not take this guide&#39;s word for it — open the IRS table and confirm, then read the article that covers your income type before assuming relief applies to you. <span class="cite"><a href="#src-irs-treaty-table" title="IRS — United States income tax treaties A to Z. Check Thailand&#39;s entry and the relevant article yourself.">6</a></span></span>
+            <span class="why"><b>Why:</b> Treaty relief is article-specific. &#39;There is a treaty&#39; and &#39;the treaty helps me&#39; are different statements.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-exit-3" data-key="th-exit-3">
+          <label for="chk-th-exit-3">
+            <span class="task">Plan FBAR compliance<span class="tag tag-critical">critical</span></span>
+            <span class="detail">FinCEN Form 114 if foreign accounts together exceeded US$10,000 at any point in the year. Filed free on the BSA E-Filing system. <span class="cite"><a href="#src-fincen-efile" title="FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate">8</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-exit-4" data-key="th-exit-4">
+          <label for="chk-th-exit-4">
+            <span class="task">Decide your state domicile deliberately</span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-exit-5" data-key="th-exit-5">
+          <label for="chk-th-exit-5">
+            <span class="task">Set up mail forwarding with scanning</span>
+            <span class="detail">A real street address, not a PO box. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-exit-6" data-key="th-exit-6">
+          <label for="chk-th-exit-6">
+            <span class="task">Tell your banks and brokerages before you go<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-exit-7" data-key="th-exit-7">
+          <label for="chk-th-exit-7">
+            <span class="task">Understand Medicare does not cover you in Thailand<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-exit-8" data-key="th-exit-8">
+          <label for="chk-th-exit-8">
+            <span class="task">Register for absentee voting</span>
+            
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-money">
+    <h3>Money and banking</h3>
+    <p class="window">T-60 to T+60 days</p>
+    <p class="mod-intro">In Thailand your visa class determines your banking access. This is new, it is enforced, and it should influence which pathway you choose.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-money-0" data-key="th-money-0">
+          <label for="chk-th-money-0">
+            <span class="task">Understand that banking access follows visa class<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Non-Immigrant visas, LTR, and Privilege open accounts. The DTV is classified as Tourist under the Immigration Act, and most DTV holders now cannot open an account — with some accounts opened in 2024 being frozen or closed on review. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></span>
+            <span class="why"><b>Why:</b> If Thai banking matters to you, it is an argument for LTR or a Non-Immigrant route over the DTV, and it should be part of the pathway decision rather than a surprise afterwards.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-money-1" data-key="th-money-1">
+          <label for="chk-th-money-1">
+            <span class="task">Keep a US bank account open permanently<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-money-2" data-key="th-money-2">
+          <label for="chk-th-money-2">
+            <span class="task">Get no-foreign-transaction-fee cards before leaving</span>
+            <span class="detail">Thai ATMs charge a flat fee of around THB 220 per withdrawal on top of your own bank&#39;s charges. </span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="retirement marriage">
+          <input type="checkbox" id="chk-th-money-3" data-key="th-money-3">
+          <label for="chk-th-money-3">
+            <span class="task">If your route needs a seasoned Thai deposit, open the account early<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Retirement needs THB 800,000 and marriage THB 400,000, each seasoned before application. The clock starts when the money lands. <span class="cite"><a href="#src-th-retirement" title="Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension">15</a><a href="#src-th-marriage" title="Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period">17</a></span></span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X, Marriage Visa (Non-O, spouse of a Thai national)</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-money-4" data-key="th-money-4">
+          <label for="chk-th-money-4">
+            <span class="task">For a condo purchase, bring the money in correctly<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Funds for a freehold condo must be transferred into Thailand in foreign currency and recorded on a Foreign Exchange Transaction form, which is required at registration. Get this wrong and you cannot register the transfer. <span class="cite"><a href="#src-th-condo" title="Condominium foreign ownership — 49% of registered floor area per building, verified against a national database at registration; Foreign Exchange Transaction form required; no freehold land ownership; 75% quota proposal not law">23</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-money-5" data-key="th-money-5">
+          <label for="chk-th-money-5">
+            <span class="task">Understand the remittance tax question before moving large sums<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Foreign income earned from 1 January 2024 is taxable when a Thai tax resident remits it. Timing large transfers around your residency status is a real planning decision. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-arrival">
+    <h3>Arrival week</h3>
+    <p class="window">T-0 to T+7 days</p>
+    <p class="mod-intro">One 24-hour deadline, and one clock that starts the moment you are stamped in.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-arrival-0" data-key="th-arrival-0">
+          <label for="chk-th-arrival-0">
+            <span class="task">Complete the Thailand Digital Arrival Card before you fly<span class="tag tag-critical">critical</span></span>
+            <span class="detail">It replaced the paper arrival card. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-arrival-1" data-key="th-arrival-1">
+          <label for="chk-th-arrival-1">
+            <span class="task">Check the stamp you were actually given<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Photograph it. The number of days written there is what governs you, whatever you expected. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-arrival-2" data-key="th-arrival-2">
+          <label for="chk-th-arrival-2">
+            <span class="task">Make sure a TM30 is filed within 24 hours<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The address notification is the property owner&#39;s legal duty — hotels do it automatically, private landlords and condo owners often do not. It must be filed within 24 hours of your arrival at the address. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></span>
+            <span class="why"><b>Why:</b> A missing TM30 surfaces later at an extension appointment, when it is much more expensive to fix.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-arrival-3" data-key="th-arrival-3">
+          <label for="chk-th-arrival-3">
+            <span class="task">Start your 90-day counter from the entry stamp<span class="tag tag-critical">critical</span></span>
+            <span class="detail">90 consecutive days in Thailand triggers a report, whatever visa you hold. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-arrival-4" data-key="th-arrival-4">
+          <label for="chk-th-arrival-4">
+            <span class="task">Start counting toward 180 days for tax residency<span class="tag tag-critical">critical</span></span>
+            <span class="detail">180 days or more in a calendar year makes you a Thai tax resident. Any part of a day counts as a full day. <span class="cite"><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-arrival-5" data-key="th-arrival-5">
+          <label for="chk-th-arrival-5">
+            <span class="task">Get a local SIM with your passport</span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-arrival-6" data-key="th-arrival-6">
+          <label for="chk-th-arrival-6">
+            <span class="task">Do not sign a one-year lease in week one</span>
+            
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-first90">
+    <h3>First 90 days</h3>
+    <p class="window">T+7 to T+90 days</p>
+    <p class="mod-intro">Converting arrival into a stable status, and setting up the admin rhythm you will keep for years.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-first90-0" data-key="th-first90-0">
+          <label for="chk-th-first90-0">
+            <span class="task">File your first 90-day report<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Online via the immigration portal, in person, or by post using form TM47. You can file in a window around the 90-day mark rather than exactly on it. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="retirement marriage work-nonb education-ed">
+          <input type="checkbox" id="chk-th-first90-1" data-key="th-first90-1">
+          <label for="chk-th-first90-1">
+            <span class="task">Buy a re-entry permit before any travel abroad<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Leaving Thailand without one cancels your extension of stay outright. THB 1,000 single, THB 3,800 multiple — buy the multiple. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X, Marriage Visa (Non-O, spouse of a Thai national), Non-Immigrant B and Work Permit, Education Visa (ED)</span>
+          </label>
+        </li><li class="critical" data-pathways="retirement marriage work-nonb">
+          <input type="checkbox" id="chk-th-first90-2" data-key="th-first90-2">
+          <label for="chk-th-first90-2">
+            <span class="task">Complete your extension of stay application<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Retirement, marriage, and work routes all convert an initial 90-day entry into a one-year extension inside Thailand. </span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X, Marriage Visa (Non-O, spouse of a Thai national), Non-Immigrant B and Work Permit</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-first90-3" data-key="th-first90-3">
+          <label for="chk-th-first90-3">
+            <span class="task">Get a Thai tax identification number if you will cross 180 days<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Obtained from your local Revenue Department office. You must file a return if taxable income exceeds THB 120,000 a year individually, or THB 220,000 for a married couple. <span class="cite"><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-first90-4" data-key="th-first90-4">
+          <label for="chk-th-first90-4">
+            <span class="task">Convert your US driving licence<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Thailand issues its own licence to residents on the strength of a foreign licence, a residence certificate, and a medical certificate. Riding a motorbike on a car-only licence voids most insurance after an accident. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-first90-5" data-key="th-first90-5">
+          <label for="chk-th-first90-5">
+            <span class="task">Buy health insurance with evacuation cover<span class="tag tag-critical">critical</span></span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-first90-6" data-key="th-first90-6">
+          <label for="chk-th-first90-6">
+            <span class="task">Register with the US Embassy</span>
+            <span class="detail">Through the Smart Traveler Enrollment Program. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-first90-7" data-key="th-first90-7">
+          <label for="chk-th-first90-7">
+            <span class="task">Do not buy property in your first year<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Foreigners cannot own land. Condos are possible within a 49% per-building foreign quota, verified against a national database at registration. Nominee company structures were the subject of a 2026 crackdown. <span class="cite"><a href="#src-th-condo" title="Condominium foreign ownership — 49% of registered floor area per building, verified against a national database at registration; Foreign Exchange Transaction form required; no freehold land ownership; 75% quota proposal not law">23</a><a href="#src-th-property-nominee" title="2026 nominee company crackdown and its implications for foreign property holders">24</a></span></span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-ongoing">
+    <h3>Staying legal, year after year</h3>
+    <p class="window">Continuous</p>
+    <p class="mod-intro">Thailand has more recurring obligations than either Vietnam or Cambodia. Build the calendar once and it becomes routine; ignore it and it compounds.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-0" data-key="th-ongoing-0">
+          <label for="chk-th-ongoing-0">
+            <span class="task">File a 90-day report every 90 consecutive days<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Applies to every foreigner staying over 90 days, including Privilege members. The counter resets when you re-enter Thailand. Note that if you have left Thailand since your last report, online filing is not available and you must file in person. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-1" data-key="th-ongoing-1">
+          <label for="chk-th-ongoing-1">
+            <span class="task">File a new TM30 after every single re-entry<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Even returning to the same address you left from. A weekend in Singapore triggers a fresh 24-hour filing window on return. This surprises long-term residents more than any other rule. <span class="cite"><a href="#src-th-tm30-90" title="TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000">19</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-2" data-key="th-ongoing-2">
+          <label for="chk-th-ongoing-2">
+            <span class="task">Never leave Thailand without a valid re-entry permit<span class="tag tag-critical">critical</span></span>
+            <span class="detail">It cancels your extension of stay. <span class="cite"><a href="#src-th-immigration" title="Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30">1</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="retirement marriage work-nonb">
+          <input type="checkbox" id="chk-th-ongoing-3" data-key="th-ongoing-3">
+          <label for="chk-th-ongoing-3">
+            <span class="task">Start your annual extension 30 to 45 days before expiry<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Extensions often carry a 30-day under-consideration period before the full year is stamped. </span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X, Marriage Visa (Non-O, spouse of a Thai national), Non-Immigrant B and Work Permit</span>
+          </label>
+        </li><li class="critical" data-pathways="retirement marriage">
+          <input type="checkbox" id="chk-th-ongoing-4" data-key="th-ongoing-4">
+          <label for="chk-th-ongoing-4">
+            <span class="task">Maintain the bank balance, not just the application-day figure<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Officers review the year&#39;s statements at renewal. Dropping the balance after approval is a common cause of a refused second year. </span>
+            
+            <span class="scope">Applies to: Retirement: Non-O extension, O-A, and O-X, Marriage Visa (Non-O, spouse of a Thai national)</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-5" data-key="th-ongoing-5">
+          <label for="chk-th-ongoing-5">
+            <span class="task">File your Thai tax return if resident<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Thai tax residents file on income remitted into Thailand. Late filing carries fines up to THB 2,000 plus 1.5% monthly interest, and persistent non-compliance can affect visa renewals. <span class="cite"><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-6" data-key="th-ongoing-6">
+          <label for="chk-th-ongoing-6">
+            <span class="task">File your US return and FBAR every year<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Automatic extension to 15 June for expats; interest still runs from April. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">7</a><a href="#src-fincen-efile" title="FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate">8</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-ongoing-7" data-key="th-ongoing-7">
+          <label for="chk-th-ongoing-7">
+            <span class="task">Coordinate the two tax systems once, with a professional<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Thailand&#39;s remittance rule interacts with US citizenship-based taxation in ways worth an hour of paid advice. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-ongoing-8" data-key="th-ongoing-8">
+          <label for="chk-th-ongoing-8">
+            <span class="task">Keep a folder a lawyer could pick up cold</span>
+            <span class="detail">Entry stamps, every extension, TM30 receipts, 90-day report slips, tax filings. Thai extensions are granted on documented history. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-th-contingency">
+    <h3>Contingency and exit</h3>
+    <p class="window">Have this before you need it</p>
+    <p class="mod-intro">Written while things are going well.</p>
+    <ul class="checklist">
+      <li class="critical" data-pathways="work-nonb">
+          <input type="checkbox" id="chk-th-contingency-0" data-key="th-contingency-0">
+          <label for="chk-th-contingency-0">
+            <span class="task">Know what happens to your status if you lose your job<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The Non-B extension and work permit are employer-specific and fall together. Ask HR what the clock is before you need to know. </span>
+            
+            <span class="scope">Applies to: Non-Immigrant B and Work Permit</span>
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-th-contingency-1" data-key="th-contingency-1">
+          <label for="chk-th-contingency-1">
+            <span class="task">Understand overstay<span class="tag tag-critical">critical</span></span>
+            <span class="detail">THB 500 per day up to a cap, plus a record. Extended overstay carries entry bans measured in years, which is a different order of problem. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-contingency-2" data-key="th-contingency-2">
+          <label for="chk-th-contingency-2">
+            <span class="task">Keep three months of expenses plus a flight home, liquid</span>
+            
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-contingency-3" data-key="th-contingency-3">
+          <label for="chk-th-contingency-3">
+            <span class="task">Keep US documents current</span>
+            <span class="detail">Passport, and a US driving licence if you might return. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-th-contingency-4" data-key="th-contingency-4">
+          <label for="chk-th-contingency-4">
+            <span class="task">Write down your fallback pathway</span>
+            <span class="detail">If your current route closes, which node of the tree do you re-enter at? For most people under 50 the honest answer in Thailand is &#39;none&#39;, which is worth knowing in advance. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+</section>
+  
+<section id="watchlist" class="band">
+  <h2>What we are watching</h2>
+  <p class="lede">Rules that are moving, or expected to. Each carries the date we next check it. When one lands, this guide is updated and you get the new edition — that is what your purchase actually buys beyond the first read.</p>
+  
+  <article class="watch impact-significant">
+    <h3>Visa-exempt stay cut from 60 days to 30</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Passed, not yet in force</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by September 20, 2026</span>
+    </p>
+    <p>Once in force, the reality-check entry and the short-stay pathway both simplify to a plain 30-day statement, and the transition warning can be retired. <span class="cite"><a href="#src-th-exempt-30" title="Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026">9</a></span></p>
+    <p class="waffects">Affects: Visa Exemption and Tourist E-Visa</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>Apostille Convention enters into force for Thailand</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Passed, not yet in force</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by January 15, 2027</span>
+    </p>
+    <p>The entire documents module switches from consular legalization to a single apostille, cutting cost and weeks from the work permit pathway. Existing Contracting States had until around 30 December 2026 to object. <span class="cite"><a href="#src-th-apostille" title="Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then">22</a></span></p>
+    <p class="waffects">Affects: Non-Immigrant B and Work Permit, Marriage Visa (Non-O, spouse of a Thai national), Education Visa (ED)</p>
+  </article>
+  <article class="watch impact-pathway-changing">
+    <h3>Two contradictory foreign-income tax proposals</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Proposed only</span>
+      <span class="wimpact">Impact if it lands: pathway changing</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>One proposal would exempt income remitted within two tax years; another would move Thailand to worldwide taxation regardless of remittance. Either would require rewriting the money and ongoing modules, in opposite directions. <span class="cite"><a href="#src-th-tax-por161" title="Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026">20</a><a href="#src-th-tax-residency" title="Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest">21</a></span></p>
+    
+  </article>
+  <article class="watch impact-pathway-changing">
+    <h3>Bank enforcement against tourist-classified visas</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Enforcement shifting</span>
+      <span class="wimpact">Impact if it lands: pathway changing</span>
+      <span class="wcheck">We re-check by November 15, 2026</span>
+    </p>
+    <p>If banks extend or relax the tourist-class exclusion, the DTV&#39;s practical value changes substantially, as does the case for choosing LTR over it. <span class="cite"><a href="#src-th-dtv-bank" title="DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones">12</a></span></p>
+    <p class="waffects">Affects: Destination Thailand Visa (DTV)</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>Education visa enforcement via the centralised database</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Enforcement shifting</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>Roughly 10,000 student visas were revoked in 2026 and the database now runs continuously. Further tightening would move the ED pathway toward a dead end for anyone not genuinely studying. <span class="cite"><a href="#src-th-ed-crackdown" title="Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension">18</a></span></p>
+    <p class="waffects">Affects: Education Visa (ED)</p>
+  </article>
+  <article class="watch impact-minor">
+    <h3>Thailand Privilege Bronze tier closing</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Passed, not yet in force</span>
+      <span class="wimpact">Impact if it lands: minor</span>
+      <span class="wcheck">We re-check by October 5, 2026</span>
+    </p>
+    <p>The cheapest Privilege tier disappears from the cost table, raising the effective entry price of the pathway to THB 900,000. <span class="cite"><a href="#src-th-privilege-pricing" title="Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation">14</a></span></p>
+    <p class="waffects">Affects: Thailand Privilege (formerly Elite)</p>
+  </article>
+  <article class="watch impact-minor">
+    <h3>Proposed increase of the condominium foreign quota to 75%</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Proposed only</span>
+      <span class="wimpact">Impact if it lands: minor</span>
+      <span class="wcheck">We re-check by February 1, 2027</span>
+    </p>
+    <p>Would ease condo purchases in buildings currently at their 49% cap. None of the proposed quota or leasehold reforms had been enacted as of 2026. <span class="cite"><a href="#src-th-condo" title="Condominium foreign ownership — 49% of registered floor area per building, verified against a national database at registration; Foreign Exchange Transaction form required; no freehold land ownership; 75% quota proposal not law">23</a></span></p>
+    
+  </article>
+</section>
+  
+<section id="sources" class="band">
+  <h2>Sources, and how much to trust each one</h2>
+  <p class="lede">Every factual claim above is numbered to this list. Tiers are marked honestly: a law firm's summary of a decree is not the decree, and we do not pretend otherwise. Verify anything that will cost you money before you act on it.</p>
+  <ol class="sources">
+    
+    <li id="src-th-immigration">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.immigration.go.th" rel="noopener noreferrer" target="_blank">Thai Immigration Bureau — extensions of stay, re-entry permits, 90-day reporting, TM30</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-evisa-portal">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.thaievisa.go.th" rel="noopener noreferrer" target="_blank">Thailand official e-visa portal, Ministry of Foreign Affairs</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Type the address directly. Reseller sites charge two to three times the official fee.</span>
+    </li>
+    <li id="src-th-doe">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.doe.go.th" rel="noopener noreferrer" target="_blank">Thai Department of Employment — work permits and the WP.32 process</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-boi-ltr">
+      <span class="tier tier-government">government</span>
+      <a href="https://ltr.boi.go.th" rel="noopener noreferrer" target="_blank">Thailand Board of Investment — Long-Term Resident visa unit and qualification enquiry</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">The LTR is a BOI product, not an Immigration Bureau one, which is part of why it is so widely overlooked.</span>
+    </li>
+    <li id="src-th-revenue">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.rd.go.th" rel="noopener noreferrer" target="_blank">Thai Revenue Department — tax identification numbers, personal income tax, remittance rules</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-irs-treaty-table">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z" rel="noopener noreferrer" target="_blank">IRS — United States income tax treaties A to Z. Check Thailand&#39;s entry and the relevant article yourself.</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-feie-2026">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion" rel="noopener noreferrer" target="_blank">IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Confirm the figure on the IRS page for your filing year.</span>
+    </li>
+    <li id="src-fincen-efile">
+      <span class="tier tier-government">government</span>
+      <a href="https://bsaefiling.fincen.treas.gov" rel="noopener noreferrer" target="_blank">FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-exempt-30">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://visasnews.com/en/thailand-to-officially-cut-visa-free-stay-to-30-days-on-september-15-2026/" rel="noopener noreferrer" target="_blank">Visa-free stay for US citizens cut from 60 days to 30, published 31 August 2026, applying to entries from 15 September 2026</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Reporting on a published regulation. Confirm with the Thai Immigration Bureau or the embassy for your arrival date — this changed days before this pack was written.</span>
+    </li>
+    <li id="src-th-dtv-changes">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://onestophuahin.com/thailand-updates-dtv-visa-rules-new-application-restrictions-and-criminal-record-checks-from-31-august-2026/" rel="noopener noreferrer" target="_blank">DTV rules tightened from 31 August 2026 — country-of-application restriction and mandatory criminal record check; THB 500,000 seasoning strictly enforced; language schools excluded from the soft power category</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-dtv-siam">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.siam-legal.com/thailand-visa/dtv-visa-thailand.php" rel="noopener noreferrer" target="_blank">DTV requirements — five-year multiple entry, 180 days per stay, THB 500,000 seasoned three months, THB 10,000 fee, three categories</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-dtv-bank">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.thailandelitevisas.com/news-events-post/why-tourist-dtv-visa-cannot-open-thai-bank-account-2026/" rel="noopener noreferrer" target="_blank">DTV classified as Tourist under the Immigration Act; Thai banks refusing accounts to tourist-classified visa holders and freezing existing ones</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Published by a company selling a competing product, so read with that in mind — but the underlying visa classification is verifiable and the effect is widely corroborated.</span>
+    </li>
+    <li id="src-th-ltr-hlb">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.hlbthai.com/thailand-long-term-resident-ltr-visa/" rel="noopener noreferrer" target="_blank">LTR visa — four categories, ten years, digital work permit, exemption from the 4:1 ratio, foreign-income exemption for three categories, 17% flat rate for Highly-Skilled Professionals</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-privilege-pricing">
+      <span class="tier tier-community">community</span>
+      <a href="https://www.thailandelite.net/pricing" rel="noopener noreferrer" target="_blank">Thailand Privilege tiers and 2026 pricing — Bronze THB 650,000 ending 30 September 2026, Gold 900,000, Platinum 1,500,000, Diamond 2,500,000, Reserve 5,000,000 by invitation</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">An agent site. Verify current pricing on the state-owned operator&#39;s own site before paying.</span>
+    </li>
+    <li id="src-th-retirement">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://expatvisaexpertthailand.com/visas/retirement" rel="noopener noreferrer" target="_blank">Thai retirement routes compared — Non-O, O-A and O-X; THB 800,000 or THB 65,000 a month; O-A insurance mandate of US$100,000; no insurance requirement on the in-country Non-O extension</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-nonb">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.issacompass.com/insights/non-immigrant-b-visa-thailand-2026-the-complete-eligibility-guide-for-foreign-wo" rel="noopener noreferrer" target="_blank">Non-Immigrant B and work permit — 4:1 Thai to foreign employee ratio, THB 2,000,000 registered capital per foreign worker, restricted occupations list, WP.32 pre-approval</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-marriage">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.thailandlawonline.com/miscellaneous/visa-q-a-essentials-marriage-visa-non-o-for-foreigners" rel="noopener noreferrer" target="_blank">Thai marriage visa (Non-O) — THB 400,000 seasoned two months or THB 40,000 monthly income, marriage registered or recognised in Thailand, spouse attendance, 30-day under-consideration period</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-ed-crackdown">
+      <span class="tier tier-community">community</span>
+      <a href="https://www.thailandelite.net/thailand-student-visa-crackdown-2026" rel="noopener noreferrer" target="_blank">Approximately 10,000 student visas revoked in 2026; centralised database with monthly school reporting, spot checks, and language testing at extension</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Published by a competing visa product. Corroborate the revocation figure before relying on the number; the enforcement mechanism is widely reported.</span>
+    </li>
+    <li id="src-th-tm30-90">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.issacompass.com/insights/thailand-address-registration-tm30-and-90-day-reporting-the-residency-admin-chec" rel="noopener noreferrer" target="_blank">TM30 within 24 hours and after every re-entry; 90-day reporting for all foreigners over 90 consecutive days including Privilege holders; online filing unavailable after leaving Thailand; fines THB 2,000 or THB 5,000</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-tax-por161">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.expattaxthailand.com/understanding-assessable-foreign-sourced-income-in-thailand/" rel="noopener noreferrer" target="_blank">Departmental Instruction Por. 161/2566 — foreign income earned from 1 January 2024 taxable on remittance by a Thai tax resident; 2025 two-year relief proposal not enacted as of mid-2026</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-tax-residency">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.expattaxthailand.com/thailand-tax-residency-rules/" rel="noopener noreferrer" target="_blank">Thai tax residency — 180 days in a calendar year, any part of a day counting as a full day; TIN required; filing threshold THB 120,000 individual and THB 220,000 married; penalties up to THB 2,000 plus 1.5% monthly interest</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-apostille">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://aimbangkok.com/apostille-thailand-2026-status/" rel="noopener noreferrer" target="_blank">Thailand&#39;s Apostille Convention accession — cabinet approval 9 December 2025, instrument deposited 30 June 2026, entry into force 28 February 2027; consular legalization applies until then</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">The underlying accession and dates are verifiable on the HCCH status table.</span>
+    </li>
+    <li id="src-th-condo">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://terms.law/Thai/property/condo-foreign-quota.html" rel="noopener noreferrer" target="_blank">Condominium foreign ownership — 49% of registered floor area per building, verified against a national database at registration; Foreign Exchange Transaction form required; no freehold land ownership; 75% quota proposal not law</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-th-property-nominee">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://globallawexperts.com/how-foreign-property-owners-can-protect-themselves-in-thailand-after-the-2026-nominee-company-crackdown/" rel="noopener noreferrer" target="_blank">2026 nominee company crackdown and its implications for foreign property holders</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+  </ol>
+</section>
+  
+<section id="changelog" class="band">
+  <h2>What has changed</h2>
+  <p class="lede">Every edition of this guide, and what moved in it.</p>
+  
+  <article class="release">
+    <h3>v1.0.0 <span class="rel-date">September 8, 2026</span></h3>
+    <p class="rel-sum">First edition, written in the week five separate Thai rules changed or were scheduled to change.</p>
+    <ul class="rel-changes">
+      <li><span class="ckind">new content</span> Eight pathways, three contested claims, twelve traps, seven watchlist items, and per-pathway self-verification steps.
+        </li>
+    </ul>
+  </article>
+</section>
+  <footer>
+    <p>Thailand Relocation Guide, edition v1.0.0, verified September 8, 2026. Built on the Relocation OS country-pack format.</p>
+    <p>Licensed for personal use by the purchaser. Not legal, immigration, or tax advice.</p>
+  </footer>
+</div>
+
+<script>
+const PACK = {"tree":{"entry":"q-purpose","nodes":[{"id":"q-purpose","type":"question","question":"Is this a visit, or are you moving?","help":"Thailand is unusual in that the honest answer for a great many people is a series of long visits rather than a move. Decide which you are actually doing, because the two have almost nothing in common administratively.","answers":[{"label":"A visit of a month or less","next":"out-exempt","note":"Note the 15 September 2026 change before you book."},{"label":"I want to live there, or spend a large part of each year there","next":"q-basis"}]},{"id":"q-basis","type":"question","question":"Which of these describes you best?","help":"Thailand sorts people by money and by relationship more than by skill. There is no single main road here the way there is in Vietnam — there are eight roads at wildly different prices, and picking the wrong one costs years.","answers":[{"label":"I am 50 or older and retiring","next":"q-retire-route"},{"label":"I have, or expect, a Thai employer","next":"out-work"},{"label":"I am married to a Thai citizen","next":"out-marriage"},{"label":"I work remotely for a foreign employer or foreign clients","next":"q-remote-income"},{"label":"I have serious wealth and want the least paperwork possible","next":"q-wealth"},{"label":"I will genuinely enrol and study in Thailand","next":"out-ed","note":"Read the reality check on education visas first."},{"label":"I want permanent residency or citizenship","next":"dead-pr"}]},{"id":"q-retire-route","type":"question","question":"Two questions decide which retirement route is yours: where will you apply from, and do you want to be forced to buy health insurance?","help":"This is the most consequential and least understood fork in Thai immigration. The three retirement routes look identical on money and differ enormously on insurance — and almost every guide treats them as one thing called 'the retirement visa'.","answers":[{"label":"I will apply from the US before flying, and I accept mandatory health insurance","next":"out-retirement","note":"That is the O-A, which requires US$100,000 of cover."},{"label":"I would rather arrive first and convert in-country, with no insurance mandate","next":"out-retirement","note":"That is the in-country Non-O extension — the route with no legal insurance requirement."},{"label":"I have real money and want to skip annual immigration paperwork altogether","next":"q-wealth"}]},{"id":"q-remote-income","type":"question","question":"What can you actually evidence: your income, or your savings?","help":"Thailand offers remote workers two completely different products at two completely different tiers. The gap between them is the single biggest fork in this guide — one gives you ten years and a tax exemption, the other gives you five years of tourist-classified stays with no bank account.","answers":[{"label":"US$80,000+ a year from an established foreign employer, with 5+ years of relevant experience","next":"out-ltr","note":"You are in LTR territory. Do not default to the DTV without reading this."},{"label":"Under that, but I can show THB 500,000 (about US$16,000) that has been sitting in an account for three months","next":"out-dtv"},{"label":"Neither","next":"dead-nomad"}]},{"id":"q-wealth","type":"question","question":"Which of these can you evidence?","help":"Thailand's premium routes split between qualifying on wealth, which is cheaper but requires proof, and simply buying a membership, which requires no financial proof at all but costs a large one-time fee.","answers":[{"label":"US$1,000,000 in assets, and I can invest US$500,000 in Thailand","next":"out-ltr","note":"LTR Wealthy Global Citizen."},{"label":"US$80,000 a year in passive income, and I am 50 or over","next":"out-ltr","note":"LTR Wealthy Pensioner — ten years, and foreign income exempt."},{"label":"I would rather pay a one-time fee and prove nothing about my finances","next":"out-privilege"},{"label":"None of these","next":"dead-none"}]},{"id":"out-exempt","type":"outcome","pathwayId":"visa-exempt"},{"id":"out-dtv","type":"outcome","pathwayId":"dtv"},{"id":"out-ltr","type":"outcome","pathwayId":"ltr"},{"id":"out-privilege","type":"outcome","pathwayId":"privilege"},{"id":"out-retirement","type":"outcome","pathwayId":"retirement"},{"id":"out-work","type":"outcome","pathwayId":"work-nonb"},{"id":"out-marriage","type":"outcome","pathwayId":"marriage"},{"id":"out-ed","type":"outcome","pathwayId":"education-ed"},{"id":"dead-pr","type":"deadend","verdict":"Thai permanent residency exists, and it is close to unobtainable by design. The annual quota is capped at roughly 100 grants per nationality, and you generally need at least three consecutive years of extensions on a work permit with tax filings to match before you can even apply. Citizenship sits further still, beyond permanent residency. Nobody should move to Thailand on the assumption of getting either.","alternatives":["Reframe: Thailand's premium products are explicitly long-stay, not permanence. An LTR runs ten years and Privilege Reserve runs twenty. That is the actual offer, and for most people it is enough.","If you are working for a Thai employer with a work permit and filing Thai tax anyway, permanent residency becomes a long-shot option you can pursue from a position you already occupy — treat it as an upside, never as a plan.","Marriage to a Thai citizen changes the calculus and has its own route. Take specific advice if it applies.","If a second passport is genuinely the requirement, Thailand is the wrong country in this region. Cambodia publishes an investment route; Thailand does not."]},{"id":"dead-nomad","type":"deadend","verdict":"Without US$80,000 of income or THB 500,000 in seasoned savings, Thailand has no long-stay product for a remote worker. What is left is 30-day visa-exempt entries from 15 September 2026, or 60-day tourist e-visas extendable by 30 days — in other words, a life of leaving. Thailand has spent two years deliberately pricing this tier out, and the 2026 changes accelerated it.","alternatives":["Season the money. The DTV's THB 500,000 need not be in Thailand or in baht — a US account in dollars counts — but it must sit for three months. If you can get there, wait the three months rather than applying and being refused.","Look hard at Vietnam and Cambodia, which are covered by their own guides in this series and both of which are meaningfully cheaper to stay in legally at this income level.","Get a Thai employer. It is the only route at this tier that does not depend on capital.","Reconsider the premise: rolling 30-day entries is not a life, and the direction of travel in Thai policy is against you."]},{"id":"dead-none","type":"deadend","verdict":"On the facts you have given, none of Thailand's long-stay products fits. That is a real answer and it is worth having before you spend money on an agent who will tell you otherwise.","alternatives":["Change one input rather than hunting for a loophole: age past 50, a Thai employer, marriage, or capital. Those are the four levers and there is no fifth.","Re-run this tree after any change in employment or finances — the answer flips entirely on those inputs.","Compare against Vietnam and Cambodia before assuming Thailand is the goal. Thailand is the most expensive of the three to stay in legally."]}]},"pathways":[{"id":"visa-exempt","name":"Visa Exemption and Tourist E-Visa","summary":"The short-stay options, and the one changing in September 2026. Visa-exempt entry drops from 60 days to 30 for Americans on 15 September 2026; the 60-day tourist e-visa, extendable by 30 days, becomes the longer option.","difficulty":"low"},{"id":"dtv","name":"Destination Thailand Visa (DTV)","summary":"Five years of multiple entries at 180 days a stay, for remote workers and for people doing qualifying Thai cultural activities. Genuinely useful, widely misunderstood, and materially harder to get than it was a month ago.","difficulty":"moderate"},{"id":"ltr","name":"Long-Term Resident Visa (LTR)","summary":"Thailand's best long-stay product by a distance, and the most overlooked. Ten years, a digital work permit, exemption from the four-Thais-per-foreigner employment ratio, and — for three of its four categories — exemption from Thai tax on foreign income. Administered by the Board of Investment rather than Immigration.","difficulty":"high"},{"id":"privilege","name":"Thailand Privilege (formerly Elite)","summary":"Buy your way past the paperwork. A one-time membership fee to a state-owned company, in exchange for a long-stay Privilege Entry visa with one-year stays, airport fast track, and a concierge who files your immigration paperwork for you. No income proof, no age limit, no financial disclosure.","difficulty":"low"},{"id":"retirement","name":"Retirement: Non-O extension, O-A, and O-X","summary":"Three routes that look identical on money and differ enormously on insurance. Everyone calls them 'the retirement visa'; choosing between them is the most consequential decision a retiring American makes in Thailand.","difficulty":"moderate"},{"id":"work-nonb","name":"Non-Immigrant B and Work Permit","summary":"The employment route. Two documents again: the Non-B visa to enter and stay, and a work permit from the Department of Employment to work. The binding constraint is not you — it is whether your employer is large enough to be allowed to hire you.","difficulty":"high"},{"id":"marriage","name":"Marriage Visa (Non-O, spouse of a Thai national)","summary":"The cheapest durable route into Thailand, at half the financial threshold of retirement and with no age requirement. Annual extensions, sometimes with a home visit.","difficulty":"moderate"},{"id":"education-ed","name":"Education Visa (ED)","summary":"Legitimate if you genuinely study, and a closing door if you do not. Roughly 10,000 student visas were revoked in 2026 as enforcement moved to continuous database cross-checking.","difficulty":"moderate"}]};
+
+/* ---- decision tree ---- */
+(function () {
+  const nodes = new Map(PACK.tree.nodes.map(n => [n.id, n]));
+  const pathways = new Map(PACK.pathways.map(p => [p.id, p]));
+  const card = document.getElementById('tree-card');
+  const crumbs = document.getElementById('breadcrumb');
+  const back = document.getElementById('btn-back');
+  const restart = document.getElementById('btn-restart');
+  if (!card) return;
+
+  let path = [PACK.tree.entry];   // node ids
+  let picks = [];                 // answer labels
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function scopeChecklists(pathwayId) {
+    document.querySelectorAll('.checklist li[data-pathways]').forEach(li => {
+      li.hidden = pathwayId ? !li.dataset.pathways.split(' ').includes(pathwayId) : false;
+    });
+    try { pathwayId ? localStorage.setItem('vn-pathway', pathwayId) : localStorage.removeItem('vn-pathway'); } catch (e) {}
+  }
+
+  function render() {
+    const node = nodes.get(path[path.length - 1]);
+    crumbs.innerHTML = picks.map(p => '<li>' + esc(p) + '</li>').join('');
+    back.hidden = path.length < 2;
+
+    if (node.type === 'question') {
+      scopeChecklists(null);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="q-text">' + esc(node.question) + '</p>' +
+        (node.help ? '<p class="q-help">' + esc(node.help) + '</p>' : '') +
+        '<div class="answers">' + node.answers.map((a, i) =>
+          '<button type="button" class="answer" data-i="' + i + '"><b>' + esc(a.label) + '</b>' +
+          (a.note ? '<i>' + esc(a.note) + '</i>' : '') + '</button>').join('') + '</div>';
+      card.querySelectorAll('.answer').forEach(btn => btn.addEventListener('click', () => {
+        const a = node.answers[+btn.dataset.i];
+        picks.push(a.label);
+        path.push(a.next);
+        render();
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }));
+      return;
+    }
+
+    if (node.type === 'outcome') {
+      const p = pathways.get(node.pathwayId);
+      scopeChecklists(p.id);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="result-kicker">Your pathway</p>' +
+        '<p class="q-text">' + esc(p.name) + '</p>' +
+        '<p class="q-help">' + esc(p.summary) + '</p>' +
+        '<p><a class="btn" href="#pathway-' + p.id + '">Read the full pathway &rarr;</a></p>' +
+        '<p class="q-help" style="margin-top:1rem">The phase checklists below are now filtered to this pathway.</p>';
+      return;
+    }
+
+    scopeChecklists(null);
+    card.className = 'tree-card result-dead';
+    card.innerHTML =
+      '<p class="result-kicker">No pathway fits &mdash; here is the honest answer</p>' +
+      '<p class="q-help" style="font-size:1rem;color:var(--ink)">' + esc(node.verdict) + '</p>' +
+      (node.alternatives && node.alternatives.length
+        ? '<p style="font-weight:650;margin-top:1rem">What to actually consider:</p><ul class="alts">' +
+          node.alternatives.map(a => '<li>' + esc(a) + '</li>').join('') + '</ul>'
+        : '');
+  }
+
+  back.addEventListener('click', () => { if (path.length > 1) { path.pop(); picks.pop(); render(); } });
+  restart.addEventListener('click', () => { path = [PACK.tree.entry]; picks = []; render(); });
+  render();
+})();
+
+/* ---- checklist persistence ---- */
+(function () {
+  const KEY = 'vn-guide-progress';
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  document.querySelectorAll('.checklist input[data-key]').forEach(box => {
+    if (saved[box.dataset.key]) box.checked = true;
+    box.addEventListener('change', () => {
+      saved[box.dataset.key] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+})();
+</script>

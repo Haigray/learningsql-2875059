@@ -352,6 +352,10 @@
                 "url": {
                   "type": "string",
                   "description": "Official portal for this step, where one exists."
+                },
+                "critical": {
+                  "type": "boolean",
+                  "description": "True when skipping or mis-sequencing this step breaks the pathway."
                 }
               }
             }

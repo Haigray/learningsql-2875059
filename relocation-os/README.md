@@ -2,7 +2,7 @@
 
 A country-pack format, validator, and renderer for building relocation guides that are structured identically across every country — sold as $30 digital products and consumed by a companion app.
 
-**Packs: United States → Vietnam, United States → Cambodia.**
+**Packs: United States → Vietnam, Cambodia, and Thailand.**
 
 ## Why a format instead of a document
 
@@ -46,12 +46,33 @@ Neither pack has been reviewed by a licensed practitioner, and both say so in th
 - **29 cited sources**, each tiered by how much weight it carries, six of them official portals.
 - **3 contested claims** and a **5-item watchlist** of rules in motion.
 
+## What is in the Thailand pack
+
+- **8 pathways** — visa exemption, DTV, LTR (four categories), Thailand Privilege (five tiers), retirement (Non-O / O-A / O-X), Non-B plus work permit, marriage, and education.
+- **The widest price range in the catalogue**: free, to THB 50,000 for a ten-year LTR, to THB 5,000,000 for Privilege Reserve. The single most valuable page compares LTR against Privilege, which most buyers never do — they are thirty times apart in price for a weaker product.
+- **12 traps**, including visa-free entry dropping from 60 days to 30 on 15 September 2026, the DTV's Tourist classification that costs holders their bank accounts, and TM30 needing a fresh filing after every single re-entry.
+- **3 contested claims** and a **7-item watchlist** — the fastest-moving country in the catalogue, which is why its review clock is 60 days rather than 90.
+
 ## What is in the Cambodia pack
 
 - **8 pathways** — tourist, the ordinary E-class gateway, employed EB plus work permit, self-sponsored company, ER retirement, EG job-seeker, ES student, citizenship by investment.
 - **A real retirement route**, which Vietnam does not have, and **no apostille**, which Vietnam now does — the two packs are a deliberate contrast.
 - **10 traps**, including the five-dollar decision at the airport counter, the work permit that expires on 31 December whenever it was issued, and the Foreign Manpower Quota applied for a year in advance.
 - **3 contested claims**, including whether Cambodia actually taxes foreign-sourced income — where the law and the enforcement pattern point in different directions.
+
+## Why three countries, and these three
+
+They are the three destinations Americans actually compare against each other in mainland Southeast Asia — and they answer the same questions differently, which is what makes holding all three worth more than the sum of the parts. Document authentication is the clearest example:
+
+| | Apostille accepted? |
+|---|---|
+| **Vietnam** | Yes, from 11 September 2026 |
+| **Cambodia** | No — not a Convention member; full consular legalization |
+| **Thailand** | Not until 28 February 2027 |
+
+Three neighbours, three different answers, all within one year. A buyer comparing them will get this wrong from any other source.
+
+Retirement splits the same way: Cambodia has a real retirement extension from age 55, Thailand has three different retirement routes that differ enormously on insurance, and Vietnam has none at all.
 
 ## Content principles
 

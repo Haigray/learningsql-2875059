@@ -26,8 +26,8 @@ Static PDFs die on churn. This product eats it. The only real limit is your own 
 
 | # | Country | Demand | Complex | Gap | Verify | Churn | Verdict |
 |---|---|---|---|---|---|---|---|
-| 3 | **Thailand** | 5 | 5 | 5 | 4 | 5 | **Build next.** Only Asian country in the top 10 most-searched US relocation destinations, the richest pathway tree available, and an August 2026 rule change that just made everyone else's content wrong. |
-| 4 | Japan | 5 | 3 | 3 | 4 | 2 | Different flavour, higher willingness to pay, stable rules and therefore cheap to maintain. Narrower funnel: the nomad visa is 6 months non-renewable at ¥10M income, so most buyers need employer sponsorship. |
+| 3 | **Thailand** | 5 | 5 | 5 | 4 | 5 | **Built, v1.0.0.** Only Asian country in the top 10 most-searched US relocation destinations, the richest pathway tree available, and an August 2026 rule change that just made everyone else's content wrong. |
+| 4 | Japan (next) | 5 | 3 | 3 | 4 | 2 | Different flavour, higher willingness to pay, stable rules and therefore cheap to maintain. Narrower funnel: the nomad visa is 6 months non-renewable at ¥10M income, so most buyers need employer sponsorship. |
 | 5 | Philippines | 3 | 4 | 5 | 5 | 3 | The sleeper. English-speaking authorities make verification trivial, huge US family and military ties, SRRV restructured in September 2025, and a proposed nomad visa that does not exist yet — a reality-check entry waiting to be written. |
 | 6 | Malaysia | 3 | 5 | 4 | 4 | 4 | MM2H's 2026 rebuild — four tiers, compulsory property purchase, ten-year resale lock, mandatory licensed agent — is a genuinely complex product. Smaller audience, wealthier. Better as a premium SKU than a $30 guide. |
 | 7 | Indonesia | 4 | 2 | 3 | 3 | 3 | Large Bali audience but a thin tree: the E33G needs US$60k income, excludes freelancers and business owners entirely, and has a hard two-year cap. Short guide, narrow eligibility. |
