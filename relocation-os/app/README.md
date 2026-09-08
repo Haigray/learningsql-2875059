@@ -12,6 +12,7 @@ app/engine/*.test.mjs         43 tests, covering every shipped pathway
 app/engine/cli.mjs            the plan, from the terminal
 app/engine/compare-cli.mjs    the comparison, from the terminal
 app/profiles/                 five example mover profiles
+app/mobile/                   the Expo / React Native app (see its own README)
 ```
 
 ```bash
@@ -145,3 +146,17 @@ Reachability is measured against **where the person stands**, not against the ta
 `build/render-compare.mjs` produces a single self-contained HTML page: a short form, and live results as it is filled in. Nothing is sent anywhere.
 
 The engine is **not reimplemented for the browser**. It is inlined from the same tested source, with the one filesystem read replaced at build time, and the build refuses to emit if any Node-only code survives. A test then runs the shipped bundle's own code against all five example profiles and asserts it produces identical verdicts, open pathways, and unlocks to the Node engine. Without that guard the two would drift, and the product would quietly start lying.
+
+---
+
+# The mobile app
+
+`app/mobile/` is an Expo / React Native shell over these engines. It imports them directly rather than copying them, and bundles the packs so it works offline from first launch.
+
+```bash
+cd app/mobile && npm install && npm start
+```
+
+**What is tested without a simulator:** every reducer path, every notification's date and wording across all 24 pathways, that all JSX parses, that every relative import resolves, that no screen reaches for a Node API, and that the bundled content is not stale. 27 tests.
+
+**What is not:** the rendered UI. There is no simulator in this environment, so layout and navigation have never been run. See `app/mobile/README.md`.

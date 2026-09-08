@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Relocation OS",
+    "slug": "relocation-os",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.relocationos.app" },
+    "android": { "package": "com.relocationos.app" },
+    "plugins": ["expo-notifications"],
+    "extra": {
+      "note": "Content is bundled at build time from content/*/pack.json. A rule change ships as a new build, never as a silent mutation of an existing plan."
+    }
+  }
+}

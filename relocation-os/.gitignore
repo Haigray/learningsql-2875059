@@ -1,0 +1,6 @@
+# Local tooling for syntax checks — not part of the product.
+.tooling/
+
+# Expo/RN install output.
+app/mobile/node_modules/
+app/mobile/.expo/
