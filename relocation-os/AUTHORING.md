@@ -30,7 +30,21 @@ Order the questions by how many people each answer removes:
 
 **Write real dead ends.** A tree where every branch reaches a pathway is a lie, and the dead ends are what buyers quote to their friends.
 
-## 4. Validate, render, review
+## 4. Write the verification steps — this is not optional
+
+The validator rejects a pathway without them, because they are what makes the pack sellable without a professional reviewer. For each pathway, at least one entry naming the office that can actually answer, the question phrased so it can be copied verbatim, and what a real answer sounds like as opposed to a brush-off.
+
+Point at government portals wherever one exists, and mark those sources `isOfficialPortal`. The validator warns when a pathway's verification links no official page.
+
+## 5. Publish what you could not resolve
+
+If two credible sources conflict on something expensive, do not adjudicate it. Put it in `contested` with both positions, who holds each, the practical effect, and how the buyer settles it for their own facts. This is the safest and most useful treatment of exactly the claims that would otherwise need a lawyer.
+
+## 6. Open the watchlist
+
+Every country has rules in motion. Log each with a status, an impact, what would change, and a `checkBy` date. `build/watch.mjs` turns these into the work queue. A pathway-changing rumour must also be warned about in the reality check — the validator enforces that, because buyers will meet the claim in the wild.
+
+## 7. Validate, render, review
 
 ```bash
 node build/validate.mjs content/<country>/pack.json
@@ -41,6 +55,6 @@ The validator fails on dangling tree edges, unreachable pathways, unknown source
 
 Then read the rendered guide end to end as a buyer would. Ask of every claim: *would I act on this if it were my $6,000 and my move?*
 
-## 5. Set the review clock
+## 8. Set the review clock
 
 Set `meta.reviewDue` to 90 days out and put it in a calendar. The validator refuses to build an overdue pack — that is deliberate, and it is the mechanism that keeps the catalogue honest as it grows.

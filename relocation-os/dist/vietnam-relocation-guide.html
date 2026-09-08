@@ -169,10 +169,67 @@ h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:0 0 .6rem}
 .cite{font-size:.7em;vertical-align:super;white-space:nowrap}
 .cite a{text-decoration:none;padding:0 .12em;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
 
+
+/* verify-it-yourself — the block that replaces "trust us" */
+.verify{background:var(--accent-soft);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin:1.25rem 0}
+.verify-h{margin:0 0 .2rem;color:var(--accent)}
+.verify-lede{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.verify-item{border-top:1px solid var(--line-strong);padding-top:.8rem;margin-top:.8rem}
+.verify-item:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.verify-item p{font-size:.93rem;margin-bottom:.3rem}
+.v-check{font-weight:650}
+.v-who{color:var(--muted)}
+.v-expect{color:var(--muted);font-style:italic;margin-bottom:0}
+.v-how a{word-break:break-all}
+
+/* contested claims */
+.contested{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem}
+.contested h3{margin-top:0}
+.positions{display:grid;gap:.7rem;margin:1rem 0}
+@media(min-width:44rem){.positions{grid-template-columns:1fr 1fr}}
+.position{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem}
+.pos-num{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint);margin-bottom:.45rem}
+.pos-text{font-size:.93rem}
+.pos-who{font-size:.84rem;color:var(--faint);margin-bottom:0}
+.c-effect{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;
+  padding:.8rem 1rem;font-size:.95rem}
+.c-resolve{font-size:.95rem;margin-bottom:0}
+
+/* watchlist */
+.watch{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+.watch.impact-significant{border-left-color:var(--warn)}
+.watch.impact-pathway-changing{border-left-color:var(--danger)}
+.watch h3{margin:0 0 .5rem;font-size:1.08rem}
+.watch-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;
+  font:600 .7rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.watch-meta span{border:1px solid var(--line-strong);border-radius:999px;padding:.35em .7em;color:var(--muted)}
+.wstatus{background:var(--warn-soft);color:var(--warn)!important;border-color:transparent!important}
+.watch p{font-size:.94rem}
+.waffects{color:var(--faint);font-size:.85rem;margin-bottom:0}
+
+/* changelog */
+.release{border-left:2px solid var(--line-strong);padding:0 0 .5rem 1.1rem;margin-bottom:1.2rem}
+.release h3{margin:0 0 .3rem;font-size:1.05rem}
+.rel-date{font:400 .8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);margin-left:.4rem}
+.rel-sum{color:var(--muted);font-size:.94rem}
+.rel-changes{list-style:none;padding:0;margin:.5rem 0 0}
+.rel-changes li{font-size:.92rem;margin-bottom:.6rem}
+.ckind{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;background:var(--bg);border:1px solid var(--line-strong);color:var(--faint);
+  padding:.3em .5em;border-radius:4px;margin-right:.45rem;vertical-align:.1em}
+.c-action{display:block;color:var(--accent);margin-top:.25rem}
+
+/* edition badge */
+.stamp .ed{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:650}
+
 footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,system-ui,sans-serif}
 @media print{
   .tree-controls,.phase-nav,#tree-app .answers{display:none}
-  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module{page-break-inside:avoid}
+  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module,.contested,.watch{page-break-inside:avoid}
   body{background:#fff;color:#000;font-size:11pt}
 }
 @media (max-width:34rem){ .facts{grid-template-columns:1fr;gap:.1rem .5rem} .facts dt{margin-top:.5rem} }
@@ -183,17 +240,19 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
   <h1>The Vietnam Relocation Guide</h1>
   <p class="tagline">Every legal route from the USA to Vietnam, as one decision tree. Including the routes that do not exist.</p>
   <div class="stamp">
-    <span>Edition <b>v1.0.0</b></span>
+    <span>Edition <b>v1.1.0</b></span>
     <span>Verified <b>September 8, 2026</b></span>
     <span>Next review <b>December 8, 2026</b></span>
     <span><b>8</b> pathways</span>
-    <span><b>23</b> cited sources</span>
+    <span><b>29</b> cited sources</span>
+    <span class="ed">Navigator edition</span>
   </div>
 </div></header>
 
 <div class="wrap">
   <div class="notice">
     <p><b>Read this before you rely on anything here.</b> This is researched reference material, not legal or tax advice, and no lawyer-client relationship is created by buying it. Immigration rules change without notice and are applied with discretion by individual officers. Every claim is numbered to a source you can check yourself, and each source is labelled with how much weight it carries.</p>
+    <p><b>Navigator edition.</b> This guide was researched against public primary and government sources by its publisher. No licensed practitioner in Vietnam has reviewed it, and we do not pretend otherwise. That is exactly why every pathway carries its own <a href="#pathways">verify-this-yourself</a> steps, naming the office that can answer, the question to ask, and what a real answer sounds like. Run them. They cost an hour and they are worth more than our assurance.</p>
     <p style="margin-bottom:0"><b>Everything here was verified on September 8, 2026.</b> Before you spend money or book a flight, confirm the specific rule against the cited source or with a licensed Vietnamese immigration adviser. USD conversions in this guide assume approximately VND 26,000 = US$1. The rate moves. Treat every dollar figure as an order of magnitude, not a quote, and check the rate on the day you move money.</p>
   </div>
   
@@ -269,16 +328,35 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>3 to 5 working days standard. Apply at least two weeks before departure so you can survive one rejection and reapply.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That you are on the official portal, and that the fee is US$25 single or US$50 multiple</p>
+        <p class="v-who"><b>Ask:</b> Vietnam Immigration Department</p>
+        <p class="v-how">Type evisa.gov.vn into the address bar directly — never arrive from a search ad. Check the fee at the payment screen before entering card details. <a href="https://evisa.gov.vn" target="_blank" rel="noopener noreferrer">evisa.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> The domain ends in .gov.vn and the total matches US$25 or US$50. Anything higher means you are on a reseller and should close the tab.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your declared port of entry matches the airport on your ticket</p>
+        <p class="v-who"><b>Ask:</b> Vietnam Immigration Department</p>
+        <p class="v-how">Put your booking confirmation next to the application form and compare the arrival airport against the port you select. <a href="https://evisa.gov.vn" target="_blank" rel="noopener noreferrer">evisa.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> An exact match. If your itinerary later changes airports, you need a new e-visa, not an amendment.</p>
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
-      <li><strong>US passport valid at least 6 months beyond entry</strong> — Count from your intended entry date, not your application date. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li><li><strong>Passport-standard digital photo and a scan of the passport bio page</strong> — Plain white background, no glasses, face fully visible. Photo rejection is the most common cause of a failed application. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li><li><strong>A declared port of entry</strong> — You must name the checkpoint you will physically use, and it must match on arrival. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li>
+      <li><strong>US passport valid at least 6 months beyond entry</strong> — Count from your intended entry date, not your application date. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a><a href="#src-evisa-portal" title="Vietnam National E-Visa Portal — the only official site for e-visa applications">24</a></span></li><li><strong>Passport-standard digital photo and a scan of the passport bio page</strong> — Plain white background, no glasses, face fully visible. Photo rejection is the most common cause of a failed application. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li><li><strong>A declared port of entry</strong> — You must name the checkpoint you will physically use, and it must match on arrival. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></li>
     </ul>
 
     
     <h4>What it costs</h4>
     <table class="costs">
       <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
-      <tbody><tr><td>E-visa, single entry</td><td class="amt">US$25</td><td>Official government fee. Non-refundable, including when your own typo causes the rejection. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></td></tr><tr><td>E-visa, multiple entry</td><td class="amt">US$50</td><td>Worth it for anyone who will leave and return within the 90 days. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></td></tr></tbody>
+      <tbody><tr><td>E-visa, single entry</td><td class="amt">US$25</td><td>Official government fee. Non-refundable, including when your own typo causes the rejection. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a><a href="#src-evisa-portal" title="Vietnam National E-Visa Portal — the only official site for e-visa applications">24</a></span></td></tr><tr><td>E-visa, multiple entry</td><td class="amt">US$50</td><td>Worth it for anyone who will leave and return within the 90 days. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></td></tr></tbody>
     </table>
 
     <h4>Step by step</h4>
@@ -286,7 +364,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       
       <li>
         <p class="step-title">Apply on the official government portal only</p>
-        <p>Vietnam&#39;s national e-visa portal is a government site. Dozens of commercial sites clone its look and charge US$50 to 90 for the same US$25 application. Confirm you are on a .gov.vn domain before you pay. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a></span></p>
+        <p>Vietnam&#39;s national e-visa portal is a government site. Dozens of commercial sites clone its look and charge US$50 to 90 for the same US$25 application. Confirm you are on a .gov.vn domain before you pay. <span class="cite"><a href="#src-evisa-us" title="Vietnam e-visa for US citizens — 90 days, single US$25 or multiple US$50, 3 to 5 working days, declared port of entry must match">8</a><a href="#src-evisa-portal" title="Vietnam National E-Visa Portal — the only official site for e-visa applications">24</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> You</span>
           
@@ -374,6 +452,25 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Toward permanent residence</dt><dd>Not directly, but it coexists with other applications and takes the pressure off completely.</dd>
       <dt>Realistic timeline</dt><dd>Typically a few weeks once you hold the proof documents. Finding the proof documents can take months.</dd>
     </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether the specific proof of Vietnamese origin you hold is sufficient</p>
+        <p class="v-who"><b>Ask:</b> Vietnamese Embassy in Washington DC, or the Consulate General in San Francisco or Houston</p>
+        <p class="v-how">Email the consular section listing exactly what you have — for example &quot;my mother’s Vietnamese birth certificate and her expired Vietnamese ID, but no relinquishment-of-nationality decision&quot; — and ask whether that set supports a 5-year visa exemption certificate. <a href="https://vietnamembassy-usa.org" target="_blank" rel="noopener noreferrer">vietnamembassy-usa.org</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A yes or no that names your documents. &quot;Bring whatever you have&quot; is not an answer — reply asking them to confirm the specific set.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">The current fee and processing time at the mission handling your case</p>
+        <p class="v-who"><b>Ask:</b> The same mission</p>
+        <p class="v-how">Ask in the same email. Fees are set per mission and the published figures online are frequently stale.  </p>
+        
+      </div>
+    </div>
 
     <h4>Hard requirements</h4>
     <ul class="reqs">
@@ -481,6 +578,25 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>Plan 2 to 4 months from starting document collection to card in hand. Card processing itself is 5 to 10 working days once filed.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether your US marriage must be recorded in Vietnam before you can apply</p>
+        <p class="v-who"><b>Ask:</b> The People’s Committee (Ủy ban nhân dân) of your spouse’s district</p>
+        <p class="v-how">Have your Vietnamese spouse attend or phone their district office and ask what is required to record a marriage registered abroad, and what the recorded certificate is called.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named document and a list of what to bring. This is the step that gates everything else, so get it in concrete terms.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether marriage to a Vietnamese citizen still exempts you from a work permit under Decree 219/2025</p>
+        <p class="v-who"><b>Ask:</b> Your provincial labour authority, via a written enquiry</p>
+        <p class="v-how">Ask, in writing, which article of Decree 219/2025 covers spouses of Vietnamese citizens, and whether a written exemption confirmation is still required before starting work. <a href="https://xuatnhapcanh.gov.vn" target="_blank" rel="noopener noreferrer">xuatnhapcanh.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> An article reference. See the contested-claims section — do not act on a verbal yes.</p>
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       <li><strong>Marriage registered and recognised in Vietnam</strong> — A marriage performed abroad must be recorded in Vietnam, or evidenced by a legalised or apostilled consular note of the registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li><li><strong>Passport with at least 13 months validity</strong> — The card must expire at least 30 days before the passport does, so short passports produce short cards. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></li><li><strong>Entry on a visa consistent with family purpose</strong> — You generally need to be in Vietnam on a TT visa, sponsored by your Vietnamese spouse, before the card application. Entering on an e-visa and converting is not reliable. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li><li><strong>Vietnamese spouse&#39;s identity and residence documents</strong> — Certified copies of the national ID or citizen identity card and household registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></li>
@@ -508,7 +624,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       </li>
       <li>
         <p class="step-title">Your Vietnamese spouse sponsors your TT visa</p>
-        <p>The sponsorship is filed by the Vietnamese citizen, not by you. </p>
+        <p>The sponsorship is filed by the Vietnamese citizen, not by you. <span class="cite"><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> Your Vietnamese spouse</span>
           <span><b>Where:</b> Vietnam Immigration Department</span>
@@ -538,7 +654,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       </li>
       <li>
         <p class="step-title">File the residence card application</p>
-        <p>Form, photos at 3x4cm on white background taken within 6 months, passport, marriage and family documents, spouse&#39;s ID and household registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a></span></p>
+        <p>Form, photos at 3x4cm on white background taken within 6 months, passport, marriage and family documents, spouse&#39;s ID and household registration. <span class="cite"><a href="#src-tt-trc" title="TT visa and residence card for foreign spouses of Vietnamese citizens — up to 3 years, 13 months passport validity, marriage recorded in Vietnam">11</a><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> You, with your spouse</span>
           <span><b>Where:</b> Provincial Immigration Department</span>
@@ -586,6 +702,31 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Toward permanent residence</dt><dd>Not directly, but continuous lawful residence is the foundation for any later permanent residence application.</dd>
       <dt>Realistic timeline</dt><dd>Under Decree 219/2025, the work permit itself is a single 10-working-day process, replacing the old two-stage sequence of job position approval plus permit. Realistically, 8 to 14 weeks door to door, because document authentication in the US dominates the schedule.</dd>
     </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The exact date your employer will submit the work permit dossier</p>
+        <p class="v-who"><b>Ask:</b> Your employer’s HR or immigration counsel</p>
+        <p class="v-how">Ask literally: &quot;On what date will you file my work permit dossier?&quot; Then order your FBI check six to eight weeks before that date.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A calendar date. &quot;Soon&quot; is not usable — the criminal record check has a six-month shelf life and needs an anchor.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Which form of document authentication the receiving office is accepting this month</p>
+        <p class="v-who"><b>Ask:</b> The provincial office that will receive the dossier, and the Vietnam MOFA Consular Department</p>
+        <p class="v-how">Ask whether they are accepting apostilles under the Convention that entered into force for Vietnam on 11 September 2026, or still requiring consular legalization for US documents. <a href="https://lanhsuvietnam.gov.vn" target="_blank" rel="noopener noreferrer">lanhsuvietnam.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A clear statement of one or the other. During a transition, ask again a week before you order anything.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your degree and experience satisfy the expert test for the job title being filed</p>
+        <p class="v-who"><b>Ask:</b> Provincial labour authority, via your employer</p>
+        <p class="v-how">Have your employer confirm the job title on the dossier and ask whether your degree field is accepted for it, and whether your sector qualifies for the reduced one-year experience threshold.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Confirmation against the filed job title, not against your CV in general.</p>
+      </div>
+    </div>
 
     <h4>Hard requirements</h4>
     <ul class="reqs">
@@ -718,6 +859,25 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>Shorter than a full work permit, but do not assume it is instant — build in 4 to 8 weeks including document authentication.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The exact article and clause of Decree 219/2025 you are exempt under</p>
+        <p class="v-who"><b>Ask:</b> Your employer’s immigration counsel, confirmed with the provincial labour authority</p>
+        <p class="v-how">Ask counsel to name the article and clause in writing. Then have the employer file for the written exemption confirmation citing it. <a href="https://xuatnhapcanh.gov.vn" target="_blank" rel="noopener noreferrer">xuatnhapcanh.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A specific article number. &quot;You should be fine&quot; is the answer that gets people fined.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether your cumulative days this calendar year still fit the short-assignment exemption</p>
+        <p class="v-who"><b>Ask:</b> Provincial labour authority</p>
+        <p class="v-how">If relying on the under-90-days category, total every working day in Vietnam this calendar year, across all trips, and confirm the count is measured cumulatively rather than per trip.  </p>
+        
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       <li><strong>You fall in a listed exemption category</strong> — Common ones for Americans: intra-company transfer after 12+ months with the foreign parent that has a commercial presence in Vietnam; owner or capital contributor of an LLC, or board member of a joint stock company, above the applicable capital threshold; total working time under 90 days in a calendar year; married to a Vietnamese citizen and residing in Vietnam. The list is defined by decree and was restated in Decree 219/2025 — have it checked against the current text for your exact facts. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-wp-exemptions" title="Work permit exemption categories under current Vietnamese law">5</a></span></li><li><strong>Written confirmation of exemption obtained before you start work</strong> — The exemption is a status you must be granted, not one you can assert. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></li>
@@ -755,7 +915,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       </li>
       <li>
         <p class="step-title">File for the written exemption confirmation</p>
-        <p>Filed by the employer with the labour authority before work begins. </p>
+        <p>Filed by the employer with the labour authority before work begins. <span class="cite"><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> Your employer</span>
           
@@ -814,6 +974,25 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>Unsettled. Treat published timelines with scepticism until implementing regulations and a track record exist.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether UĐ1 visas are actually being granted yet, as opposed to merely legislated</p>
+        <p class="v-who"><b>Ask:</b> Your sponsoring institution, and the Vietnam Immigration Department</p>
+        <p class="v-how">Ask the sponsor: &quot;How many UĐ1 visas has this institution obtained, and what was the issue date of the most recent one?&quot; <a href="https://xuatnhapcanh.gov.vn" target="_blank" rel="noopener noreferrer">xuatnhapcanh.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number and a date. &quot;We are looking into it&quot; means this route is not yet operational for you — keep the work permit plan running.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether the route from UĐ1 to a residence card has implementing regulations yet</p>
+        <p class="v-who"><b>Ask:</b> Vietnam Immigration Department, via your sponsor</p>
+        <p class="v-how">Ask whether a UĐ1 holder can currently be issued a temporary residence card, and under which instrument.  </p>
+        
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       <li><strong>Recognised as high-quality personnel in the digital technology industry</strong> — The criteria run through an institution: a Vietnamese employer, a university, or a research body. This structurally excludes freelancers and remote employees of foreign companies. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a><a href="#src-ud1-guide" title="UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms">2</a></span></li><li><strong>An institutional sponsor in Vietnam</strong> — As with the work permit, no sponsor means no application. <span class="cite"><a href="#src-ud1-guide" title="UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms">2</a></span></li>
@@ -831,7 +1010,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       
       <li>
         <p class="step-title">Confirm the category is operational for your profile today</p>
-        <p>The law took effect 1 July 2026, but detailed implementing regulations were still emerging. Ask the sponsor&#39;s counsel what has actually been granted, not what the law permits. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a></span></p>
+        <p>The law took effect 1 July 2026, but detailed implementing regulations were still emerging. Ask the sponsor&#39;s counsel what has actually been granted, not what the law permits. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> You and your sponsor</span>
           
@@ -905,6 +1084,25 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>3 to 6 months from decision to residence card, dominated by investment registration and getting capital properly contributed and evidenced.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Which capital tier your planned contribution actually lands in</p>
+        <p class="v-who"><b>Ask:</b> The Department of Planning and Investment (Sở Kế hoạch và Đầu tư) of the province you will register in</p>
+        <p class="v-how">Present your intended contributed capital figure and ask which DT tier it supports and whether a temporary residence card is available at that tier. <a href="https://xuatnhapcanh.gov.vn" target="_blank" rel="noopener noreferrer">xuatnhapcanh.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A tier and a yes or no on the residence card. Get this before you incorporate, not after.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That your capital will be recognised as contributed</p>
+        <p class="v-who"><b>Ask:</b> Your Vietnamese bank</p>
+        <p class="v-how">Ask the bank to confirm in writing that the account you are wiring into is a direct investment capital account and that transfers to it will count as contributed charter capital.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Written confirmation naming the account type. Money in the wrong account type can fail to count.</p>
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       <li><strong>DT1: contributed capital of VND 100 billion or more, roughly US$3.8M</strong> — Or investment in a sector or area the government specifically encourages. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT2: VND 50 to under 100 billion, roughly US$1.9M to 3.8M</strong> <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT3: VND 3 to under 50 billion, roughly US$115k to 1.9M</strong> — The entry point for a residence card. Below this you are in DT4 and get no card. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>DT4: under VND 3 billion</strong> — Visa up to 12 months, no residence card. Read the reality check before choosing this. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li><li><strong>A real investment registration and actual capital contribution</strong> — Registered capital that is never contributed does not hold up. The capital must move and be evidenced. <span class="cite"><a href="#src-dt-tiers" title="DT investor visa tiers — DT1 from VND 100bn, DT2 VND 50 to 100bn, DT3 VND 3 to 50bn, DT4 under VND 3bn with no residence card">13</a></span></li>
@@ -962,7 +1160,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       </li>
       <li>
         <p class="step-title">Apply for the residence card if you are at DT3 or above</p>
-        <p>Same 5 to 10 working day processing as other card types. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a></span></p>
+        <p>Same 5 to 10 working day processing as other card types. <span class="cite"><a href="#src-trc-rules" title="Temporary residence card validity, fees and processing — 2 years for work permit holders, must expire 30+ days before passport, roughly US$145 to 320, 5 to 10 working days">10</a><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> You</span>
           
@@ -1011,6 +1209,19 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <dt>Realistic timeline</dt><dd>6 to 12 weeks from admission to visa in hand.</dd>
     </dl>
 
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That the institution can actually sponsor a DH visa</p>
+        <p class="v-who"><b>Ask:</b> The institution’s international office</p>
+        <p class="v-how">Ask how many DH student visas they sponsored in the last year, and ask to be put in contact with a current foreign student. <a href="https://xuatnhapcanh.gov.vn" target="_blank" rel="noopener noreferrer">xuatnhapcanh.gov.vn</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number and a contact. Vagueness here usually means they cannot sponsor and expect you to arrange your own status.</p>
+      </div>
+    </div>
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       <li><strong>Admission to an institution licensed to host foreign students</strong> — Universities and accredited full-time language programs. A part-time evening class at a private centre generally cannot sponsor you. </li><li><strong>Proof of funds and accommodation</strong> — Requirements are set by the institution and vary widely. </li><li><strong>Authenticated prior academic records</strong> — Same apostille and translation pipeline as the work permit route. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></li>
@@ -1048,7 +1259,7 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       </li>
       <li>
         <p class="step-title">The institution sponsors the visa</p>
-        <p>Filed by the school, not by you. </p>
+        <p>Filed by the school, not by you. <span class="cite"><a href="#src-immigration-dept" title="Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration">25</a></span></p>
         <p class="step-meta">
           <span><b>Who:</b> Your institution</span>
           
@@ -1159,6 +1370,66 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
     <p><strong>The trap.</strong> Conversion produces a Vietnamese licence of the same class as the US original. Most Americans hold car-only licences, then ride a motorbike anyway. After an accident, insurers decline on the licence class, and motorbike injuries are the largest single health risk to foreigners in Vietnam.</p>
     <p><strong>Do this instead.</strong> If you intend to ride, obtain the motorbike category properly rather than assuming your car licence converts. Confirm your health and travel policies cover motorbike use at your licence class, in writing. <span class="cite"><a href="#src-driving-2025" title="Driving licence conversion under Circular 12/2025/TT-BCA — about 3 months residence required, notarised translation, licence issued matches the class of the foreign licence">23</a></span></p>
     
+  </article>
+</section>
+  
+<section id="contested" class="band">
+  <h2>Where the sources disagree</h2>
+  <p class="lede">Questions credible sources answer differently. We publish the disagreement rather than picking a side and hoping — a guide that hides a genuine conflict is more dangerous than one that names it.</p>
+  
+  <article class="contested">
+    <h3>Does marriage to a Vietnamese citizen still exempt you from needing a work permit?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">It remains an exemption category. Being married to a Vietnamese citizen and residing in Vietnam was a listed work permit exemption under the previous Decree 152/2020 regime, and commentary on Decree 219/2025 generally treats the exemption list as carried over and clarified rather than narrowed. <span class="cite"><a href="#src-wp-exemptions" title="Work permit exemption categories under current Vietnamese law">5</a><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a></span></p>
+        <p class="pos-who">Held by: Most law firm commentary on Decree 219/2025</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">It cannot be assumed. Decree 219/2025 replaced Decree 152/2020 outright on 7 August 2025 and restated the exemption list; sources differ on whether there are roughly 15 or roughly 20 categories, which means the list was not simply copied across. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-wp-relaxed" title="Analysis of relaxed foreign worker requirements under Decree 219/2025 — expert experience cut to 2 years, 1 year in priority sectors; single 10-working-day process">4</a></span></p>
+        <p class="pos-who">Held by: A conservative reading of the replacement decree</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Do not start work on the assumption that you are exempt. Whichever reading is right, an exemption still requires a written confirmation before you begin — so the safe action is identical either way.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Have your employer submit a written enquiry to the provincial labour authority asking which article of Decree 219/2025 covers spouses of Vietnamese citizens, then file for the written exemption confirmation citing it. <span class="cite"><a href="#src-decree-219-2025" title="Decree No. 219/2025/ND-CP on foreign workers in Vietnam — issued and effective 7 August 2025, replacing Decree 152/2020 as amended by Decree 70/2023">3</a><a href="#src-wp-exemptions" title="Work permit exemption categories under current Vietnamese law">5</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Is remote work for a foreign employer on a Vietnamese e-visa illegal, or merely unpermitted?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">It is prohibited. Article 8.2 of the 2014 Law bars foreigners on a tourist entry from labour activities, and administrative fines of VND 15 to 25 million are provided for illegal employment. <span class="cite"><a href="#src-law-47-2014" title="Law on Entry, Exit, Transit and Residence of Foreigners in Vietnam (2014), Article 8.2 — bars labour activity on tourist entry">6</a></span></p>
+        <p class="pos-who">Held by: The statute, read plainly</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">It is a tolerated grey zone. Multiple long-running expat sources report effectively no enforcement against foreigners working online for clients outside Vietnam, and describe it as tolerated but not permitted. <span class="cite"><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a></span></p>
+        <p class="pos-who">Held by: Expat community reporting and practitioner commentary</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Both readings agree on the facts and disagree only on the risk. You are relying on non-enforcement, not on a right, and non-enforcement can end without notice or transition. Decide with that stated plainly, and do not describe yourself as working when dealing with immigration.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> This one cannot be resolved by asking an official — no authority will confirm a tolerance in writing. If the risk is unacceptable to you, the resolution is structural: get a work permit, or invest at DT3 and above. <span class="cite"><a href="#src-law-47-2014" title="Law on Entry, Exit, Transit and Residence of Foreigners in Vietnam (2014), Article 8.2 — bars labour activity on tourist entry">6</a><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Will Vietnam tax your worldwide income once you pass 183 days?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Yes. Tax residents are subject to Vietnamese personal income tax on worldwide employment income at progressive rates up to 35%, regardless of where the income is paid. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a></span></p>
+        <p class="pos-who">Held by: Professional tax guidance on the regime applying from the 2026 tax year</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">In practice, enforcement against foreign-sourced salary paid offshore to individuals with no Vietnamese employer is inconsistent, and many long-stayers have never been assessed. <span class="cite"><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a></span></p>
+        <p class="pos-who">Held by: Widespread expat experience</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Plan on the legal position, not the enforcement position. The cost of being wrong is back taxes and penalties in a country you live in, and with no US-Vietnam treaty in force there are no tie-breaker rules to fall back on.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Take one paid session with an accountant who handles both US and Vietnamese filings, before your first 183rd day. This is the single highest-return professional spend of the whole move. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a><a href="#src-tax-treaty-status" title="US-Vietnam income tax treaty signed July 2015, ratified by Vietnam 2017, never ratified by the US Senate and never in force">19</a></span></p>
   </article>
 </section>
   
@@ -1705,6 +1976,62 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
   </article>
 </section>
   
+<section id="watchlist" class="band">
+  <h2>What we are watching</h2>
+  <p class="lede">Rules that are moving, or expected to. Each carries the date we next check it. When one lands, this guide is updated and you get the new edition — that is what your purchase actually buys beyond the first read.</p>
+  
+  <article class="watch impact-significant">
+    <h3>Apostille replaces consular legalization for US documents</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Passed, not yet in force</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by October 1, 2026</span>
+    </p>
+    <p>Every document-authentication instruction in this pack switches from consular legalization to a single apostille. Once offices are demonstrably accepting apostilles in practice, the transition warning can be reduced to a plain instruction. <span class="cite"><a href="#src-hcch-apostille" title="HCCH — Viet Nam accedes to the 1961 Apostille Convention; acceded 31 December 2025, in force for Viet Nam 11 September 2026">7</a></span></p>
+    <p class="waffects">Affects: Work Permit, LĐ Visa, and 2-Year Residence Card, Work Permit Exemption Confirmation, TT Family Visa and 3-Year Residence Card, 5-Year Visa Exemption Certificate, DH Student Visa</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>UĐ1 and UĐ2 implementing regulations, including conversion to a residence card</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by November 1, 2026</span>
+    </p>
+    <p>If a clear UĐ1-to-residence-card route is published, UĐ1 becomes a genuine primary pathway rather than an upgrade on a work permit, and its position in the decision tree moves ahead of the capital questions. <span class="cite"><a href="#src-law-118-2025" title="Law No. 118/2025/QH15 amending 10 laws on security and public order — in force 1 July 2026; introduces UĐ1 and UĐ2 visas">1</a><a href="#src-ud1-guide" title="UĐ1 visa scope — institutional sponsorship requirement excludes freelancers and remote employees of foreign firms">2</a></span></p>
+    <p class="waffects">Affects: UĐ1 Digital Technology Visa</p>
+  </article>
+  <article class="watch impact-pathway-changing">
+    <h3>The proposed 5-to-10 year golden visa</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Rumoured — no traceable instrument</span>
+      <span class="wimpact">Impact if it lands: pathway changing</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>If an actual decree with an application channel appears, this becomes a new pathway and a major reality-check entry is retired. Until a decree number exists, it stays in the reality check as a thing that does not exist. <span class="cite"><a href="#src-golden-visa-status" title="Vietnam golden visa reality check — proposed in 2025, no decree and no application channel as of 2026; &#39;Resolution 41/2026/QH15&#39; unconfirmed by any government source">14</a><a href="#src-golden-visa-proposal" title="Original 2025 Tourism Advisory Board golden visa proposal reporting">15</a></span></p>
+    
+  </article>
+  <article class="watch impact-pathway-changing">
+    <h3>Enforcement posture toward remote workers on e-visas</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Enforcement shifting</span>
+      <span class="wimpact">Impact if it lands: pathway changing</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>The dead-end advice for remote workers is calibrated to near-zero enforcement. Any visible enforcement action would change that from a tolerated risk to an unacceptable one, and the dead end would need rewriting. <span class="cite"><a href="#src-nomad-status" title="No digital nomad visa in Vietnam; remote work on a tourist e-visa is prohibited under Article 8.2 with fines of VND 15 to 25 million, and largely unenforced">16</a><a href="#src-law-47-2014" title="Law on Entry, Exit, Transit and Residence of Foreigners in Vietnam (2014), Article 8.2 — bars labour activity on tourist entry">6</a></span></p>
+    
+  </article>
+  <article class="watch impact-minor">
+    <h3>Personal income tax five-bracket schedule bedding in for the 2026 tax year</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: minor</span>
+      <span class="wcheck">We re-check by February 1, 2027</span>
+    </p>
+    <p>Bracket boundaries and the VND 15.5 million monthly personal deduction should be reconfirmed against a filed return once the first full year under the new schedule has been assessed. <span class="cite"><a href="#src-pit-2026" title="Vietnam personal income tax from the 2026 tax year — 183-day residency, worldwide income for residents, five brackets from 5% to 35%, personal deduction VND 15.5m per month, 20% flat for non-residents">17</a></span></p>
+    
+  </article>
+</section>
+  
 <section id="sources" class="band">
   <h2>Sources, and how much to trust each one</h2>
   <p class="lede">Every factual claim above is numbered to this list. Tiers are marked honestly: a law firm's summary of a decree is not the decree, and we do not pretend otherwise. Verify anything that will cost you money before you act on it.</p>
@@ -1848,10 +2175,71 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
       <span class="checked">checked September 8, 2026</span>
       <span class="src-note">Vietnam News is state media reporting on the Ministry of Public Security circular.</span>
     </li>
+    <li id="src-evisa-portal">
+      <span class="tier tier-government">government</span>
+      <a href="https://evisa.gov.vn" rel="noopener noreferrer" target="_blank">Vietnam National E-Visa Portal — the only official site for e-visa applications</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Type this address in directly. Search ads for &quot;Vietnam evisa&quot; are dominated by resellers charging two to four times the official fee.</span>
+    </li>
+    <li id="src-immigration-dept">
+      <span class="tier tier-government">government</span>
+      <a href="https://xuatnhapcanh.gov.vn" rel="noopener noreferrer" target="_blank">Vietnam Immigration Department (Cục Quản lý xuất nhập cảnh) — visas, residence cards, temporary residence declaration</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-mofa-consular">
+      <span class="tier tier-government">government</span>
+      <a href="https://lanhsuvietnam.gov.vn" rel="noopener noreferrer" target="_blank">Vietnam Ministry of Foreign Affairs, Consular Department — legalization and, from 11 September 2026, apostille</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-us-authentications">
+      <span class="tier tier-government">government</span>
+      <a href="https://travel.state.gov/content/travel/en/records-and-authentications.html" rel="noopener noreferrer" target="_blank">US Department of State — Office of Authentications, apostilles on federal documents</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-fincen-efile">
+      <span class="tier tier-government">government</span>
+      <a href="https://bsaefiling.fincen.treas.gov" rel="noopener noreferrer" target="_blank">FinCEN BSA E-Filing — where the FBAR (Form 114) is actually filed, free</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-vn-embassy-us">
+      <span class="tier tier-government">government</span>
+      <a href="https://vietnamembassy-usa.org" rel="noopener noreferrer" target="_blank">Embassy of Vietnam in the United States — consular section</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
   </ol>
 </section>
+  
+<section id="changelog" class="band">
+  <h2>What has changed</h2>
+  <p class="lede">Every edition of this guide, and what moved in it.</p>
+  
+  <article class="release">
+    <h3>v1.1.0 <span class="rel-date">September 8, 2026</span></h3>
+    <p class="rel-sum">Adds buyer self-verification, publishes three contested questions rather than picking sides, and opens the rule-change watchlist.</p>
+    <ul class="rel-changes">
+      <li><span class="ckind">new content</span> Every pathway now carries &quot;verify it yourself&quot; steps naming the office that can answer, what to ask, and what a real answer sounds like.
+        <span class="c-action"><b>What to do:</b> Before spending money on any pathway, run its verification steps. They take under an hour and they are the check that matters.</span></li><li><span class="ckind">clarification</span> Three questions where credible sources genuinely conflict are now published as contested, with the practical effect of each reading.
+        <span class="c-action"><b>What to do:</b> If you are a spouse of a Vietnamese citizen planning to work, read the contested section before starting any job.</span></li><li><span class="ckind">new content</span> A watchlist of five pending or unsettled rule changes, each with the date we will next check it.
+        </li><li><span class="ckind">source upgrade</span> Six official government portals added, so verification points at authorities rather than at commentary.
+        </li>
+    </ul>
+  </article>
+  <article class="release">
+    <h3>v1.0.0 <span class="rel-date">September 8, 2026</span></h3>
+    <p class="rel-sum">First edition.</p>
+    <ul class="rel-changes">
+      <li><span class="ckind">new content</span> Eight pathways, twenty-one decision-tree nodes, eight phase modules, ten traps, twenty-three cited sources.
+        </li>
+    </ul>
+  </article>
+</section>
   <footer>
-    <p>Vietnam Relocation Guide, edition v1.0.0, verified September 8, 2026. Built on the Relocation OS country-pack format.</p>
+    <p>Vietnam Relocation Guide, edition v1.1.0, verified September 8, 2026. Built on the Relocation OS country-pack format.</p>
     <p>Licensed for personal use by the purchaser. Not legal, immigration, or tax advice.</p>
   </footer>
 </div>

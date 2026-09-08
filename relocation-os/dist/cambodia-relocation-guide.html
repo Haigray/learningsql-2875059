@@ -1,0 +1,2170 @@
+<title>Cambodia Relocation Guide</title>
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#fff; --ink:#1c1a17; --muted:#5f5a52; --faint:#8a837a;
+  --line:#e3ded6; --line-strong:#cfc7bb; --accent:#8a3324; --accent-soft:#f5ebe8;
+  --ok:#2f6a4a; --warn:#8a6a1f; --warn-soft:#fbf3e0; --danger:#a3301f; --danger-soft:#fbeceb;
+  --radius:10px; --measure:none;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}}
+:root[data-theme="dark"]{
+  --bg:#16151a; --surface:#1e1d23; --ink:#eceaf0; --muted:#a8a3b0; --faint:#7d7889;
+  --line:#2e2c36; --line-strong:#413e4c; --accent:#e08a72; --accent-soft:#2c2020;
+  --ok:#7fc4a0; --warn:#e0bd72; --warn-soft:#2b2519; --danger:#f0897a; --danger-soft:#2e1e1c;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);margin:0;
+  font:16px/1.65 ui-serif,Georgia,'Iowan Old Style','Times New Roman',serif;}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.012em}
+h2{font-size:1.75rem;margin:0 0 .35rem}
+h3{font-size:1.2rem;margin:2rem 0 .3rem}
+h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
+  margin:1.75rem 0 .5rem;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+p{margin:0 0 .8rem}
+a{color:var(--accent)}
+code{font:.85em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);
+  color:var(--accent);padding:.1em .4em;border-radius:4px}
+.lede{color:var(--muted);font-size:1.05rem;margin-bottom:1.5rem;max-width:42rem}
+
+/* header */
+header.top{border-bottom:1px solid var(--line-strong);background:var(--surface);padding:3.5rem 0 2.25rem}
+.eyebrow{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:0 0 .6rem}
+.tagline{font-size:1.15rem;color:var(--muted);max-width:38rem;margin-bottom:1.5rem}
+.stamp{display:flex;flex-wrap:wrap;gap:.5rem;font:.78rem/1.4 ui-sans-serif,system-ui,sans-serif}
+.stamp span{border:1px solid var(--line-strong);border-radius:999px;padding:.3rem .75rem;color:var(--muted)}
+.stamp b{color:var(--ink);font-weight:650}
+
+/* trust notice */
+.notice{background:var(--warn-soft);border:1px solid var(--line-strong);border-left:3px solid var(--warn);
+  border-radius:var(--radius);padding:1rem 1.15rem;margin:2rem 0;
+  font:.9rem/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+.notice b{color:var(--ink)}
+.warn-box{background:var(--warn-soft);border:1px solid var(--line-strong);border-radius:var(--radius);padding:1rem}
+
+/* bands */
+.band{padding:3rem 0;border-bottom:1px solid var(--line)}
+.band:last-of-type{border-bottom:0}
+
+/* reality check */
+.myth{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin-bottom:.85rem}
+.myth-claim{font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+.myth-why{color:var(--muted);font-size:.92rem;margin-bottom:0}
+.tag{display:inline-block;font:600 .66rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.07em;
+  text-transform:uppercase;padding:.28em .55em;border-radius:4px;margin-right:.55rem;vertical-align:.12em}
+.tag-false{background:var(--danger-soft);color:var(--danger)}
+.tag-critical{background:var(--danger-soft);color:var(--danger);margin-left:.5rem;margin-right:0}
+
+/* decision tree */
+.tree-card{background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.5rem;min-height:12rem}
+.q-text{font-size:1.3rem;font-weight:600;margin-bottom:.5rem}
+.q-help{color:var(--muted);font-size:.94rem;margin-bottom:1.2rem}
+.answers{display:flex;flex-direction:column;gap:.6rem}
+.answer{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line-strong);
+  border-radius:var(--radius);padding:.85rem 1rem;cursor:pointer;font:inherit;color:inherit;
+  transition:border-color .12s,background .12s}
+.answer:hover{border-color:var(--accent);background:var(--accent-soft)}
+.answer b{display:block;margin-bottom:.15rem}
+.answer i{font-style:normal;color:var(--muted);font-size:.88rem}
+.breadcrumb{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0 0 .9rem;
+  font:.8rem/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.breadcrumb li::after{content:" ›";color:var(--line-strong)}
+.breadcrumb li:last-child::after{content:""}
+.tree-controls{display:flex;gap:.6rem;margin-top:.9rem}
+.btn{font:600 .85rem ui-sans-serif,system-ui,sans-serif;padding:.5rem .9rem;border-radius:8px;
+  border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);cursor:pointer}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn[hidden]{display:none}
+.result-kicker{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.result-dead .result-kicker{color:var(--danger)}
+.alts{margin:.6rem 0 0;padding-left:1.1rem}
+.alts li{margin-bottom:.35rem}
+
+/* pathways */
+.pathway{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem;margin-bottom:1.25rem}
+.pathway-head h3{margin-top:0}
+.codes{font:.8rem ui-sans-serif,system-ui,sans-serif;margin-bottom:.6rem}
+.diff{display:inline-block;margin-left:.4rem;padding:.25em .6em;border-radius:999px;
+  font:600 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.diff-low{background:#e7f2ec;color:var(--ok)} .diff-moderate{background:var(--warn-soft);color:var(--warn)}
+.diff-high,.diff-very-high{background:var(--danger-soft);color:var(--danger)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .diff-low{background:#1d2b24}}
+.summary{color:var(--muted)}
+.facts{display:grid;grid-template-columns:minmax(9rem,auto) 1fr;gap:.35rem .9rem;margin:1.1rem 0;
+  padding:1rem;background:var(--bg);border-radius:var(--radius);font-size:.93rem}
+.facts dt{font:650 .78rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--faint)}
+.facts dd{margin:0}
+.reqs{padding-left:1.1rem} .reqs li{margin-bottom:.5rem}
+.costs{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:.5rem}
+.costs th{text-align:left;font:650 .72rem/1.5 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--faint);border-bottom:1px solid var(--line-strong);padding:.4rem .5rem}
+.costs td{border-bottom:1px solid var(--line);padding:.55rem .5rem;vertical-align:top}
+.costs .amt{white-space:nowrap;font-weight:600}
+.steps{padding-left:1.3rem} .steps li{margin-bottom:1.1rem}
+.step-title{font-weight:650;margin-bottom:.2rem}
+.step-meta{font:.82rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:0}
+.step-blocker{font-size:.88rem;color:var(--warn);margin:.35rem 0 0}
+.failures{display:grid;gap:.7rem}
+.failure{border-left:3px solid var(--danger);background:var(--danger-soft);
+  border-radius:0 var(--radius) var(--radius) 0;padding:.85rem 1rem}
+.failure p{margin-bottom:.3rem;font-size:.93rem} .failure p:last-child{margin-bottom:0}
+.f-mistake{font-weight:650}
+
+/* checklists */
+.phase-nav{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.phase-nav a{font:600 .78rem ui-sans-serif,system-ui,sans-serif;text-decoration:none;color:var(--muted);
+  border:1px solid var(--line-strong);border-radius:999px;padding:.35rem .8rem}
+.phase-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.module{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem;scroll-margin-top:1rem}
+.module h3{margin-top:0}
+.window{font:600 .78rem ui-sans-serif,system-ui,sans-serif;color:var(--accent);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.mod-intro{color:var(--muted);font-size:.95rem}
+.checklist{list-style:none;padding:0;margin:1rem 0 0}
+.checklist li{display:flex;gap:.7rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.checklist li.critical{border-left:3px solid var(--danger);padding-left:.7rem;margin-left:-.7rem}
+.checklist input{margin-top:.35rem;width:1.05rem;height:1.05rem;flex-shrink:0;accent-color:var(--accent)}
+.checklist label{display:block;cursor:pointer}
+.checklist .task{display:block;font-weight:600}
+.checklist .detail,.checklist .why,.checklist .scope{display:block;color:var(--muted);font-size:.9rem;margin-top:.2rem}
+.checklist .scope{font:.8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint)}
+.checklist input:checked + label .task{text-decoration:line-through;color:var(--faint)}
+.checklist li[hidden]{display:none}
+
+/* gotchas */
+.gotcha{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.2rem 1.35rem;margin-bottom:.85rem}
+.gotcha.sev-expensive{border-left-color:var(--warn)}
+.gotcha.sev-trip-ending{border-left-color:var(--danger)}
+.gotcha h3{margin:0 0 .15rem;font-size:1.12rem}
+.gnum{display:inline-block;min-width:1.6rem;color:var(--faint);font-family:ui-sans-serif,system-ui,sans-serif}
+.sev-label{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--faint);margin:0 0 .7rem 1.6rem}
+.gotcha p{font-size:.95rem}
+.expires{color:var(--warn);font-size:.86rem;margin-bottom:0}
+
+/* sources */
+.sources{padding-left:1.5rem;font-size:.9rem}
+.sources li{margin-bottom:.75rem;padding-left:.25rem}
+.tier{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;padding:.28em .5em;border-radius:4px;margin-right:.5rem;vertical-align:.1em}
+.tier-primary-law{background:var(--accent-soft);color:var(--accent)}
+.tier-government{background:#e7f2ec;color:var(--ok)}
+.tier-professional{background:var(--warn-soft);color:var(--warn)}
+.tier-community{background:var(--bg);color:var(--faint);border:1px solid var(--line-strong)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tier-government{background:#1d2b24}}
+.checked,.src-note{display:block;color:var(--faint);font-size:.8rem;margin-top:.15rem}
+.cite{font-size:.7em;vertical-align:super;white-space:nowrap}
+.cite a{text-decoration:none;padding:0 .12em;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
+
+
+/* verify-it-yourself — the block that replaces "trust us" */
+.verify{background:var(--accent-soft);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin:1.25rem 0}
+.verify-h{margin:0 0 .2rem;color:var(--accent)}
+.verify-lede{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.verify-item{border-top:1px solid var(--line-strong);padding-top:.8rem;margin-top:.8rem}
+.verify-item:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.verify-item p{font-size:.93rem;margin-bottom:.3rem}
+.v-check{font-weight:650}
+.v-who{color:var(--muted)}
+.v-expect{color:var(--muted);font-style:italic;margin-bottom:0}
+.v-how a{word-break:break-all}
+
+/* contested claims */
+.contested{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem}
+.contested h3{margin-top:0}
+.positions{display:grid;gap:.7rem;margin:1rem 0}
+@media(min-width:44rem){.positions{grid-template-columns:1fr 1fr}}
+.position{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem}
+.pos-num{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint);margin-bottom:.45rem}
+.pos-text{font-size:.93rem}
+.pos-who{font-size:.84rem;color:var(--faint);margin-bottom:0}
+.c-effect{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;
+  padding:.8rem 1rem;font-size:.95rem}
+.c-resolve{font-size:.95rem;margin-bottom:0}
+
+/* watchlist */
+.watch{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+.watch.impact-significant{border-left-color:var(--warn)}
+.watch.impact-pathway-changing{border-left-color:var(--danger)}
+.watch h3{margin:0 0 .5rem;font-size:1.08rem}
+.watch-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;
+  font:600 .7rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.watch-meta span{border:1px solid var(--line-strong);border-radius:999px;padding:.35em .7em;color:var(--muted)}
+.wstatus{background:var(--warn-soft);color:var(--warn)!important;border-color:transparent!important}
+.watch p{font-size:.94rem}
+.waffects{color:var(--faint);font-size:.85rem;margin-bottom:0}
+
+/* changelog */
+.release{border-left:2px solid var(--line-strong);padding:0 0 .5rem 1.1rem;margin-bottom:1.2rem}
+.release h3{margin:0 0 .3rem;font-size:1.05rem}
+.rel-date{font:400 .8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);margin-left:.4rem}
+.rel-sum{color:var(--muted);font-size:.94rem}
+.rel-changes{list-style:none;padding:0;margin:.5rem 0 0}
+.rel-changes li{font-size:.92rem;margin-bottom:.6rem}
+.ckind{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;background:var(--bg);border:1px solid var(--line-strong);color:var(--faint);
+  padding:.3em .5em;border-radius:4px;margin-right:.45rem;vertical-align:.1em}
+.c-action{display:block;color:var(--accent);margin-top:.25rem}
+
+/* edition badge */
+.stamp .ed{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:650}
+
+footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,system-ui,sans-serif}
+@media print{
+  .tree-controls,.phase-nav,#tree-app .answers{display:none}
+  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module,.contested,.watch{page-break-inside:avoid}
+  body{background:#fff;color:#000;font-size:11pt}
+}
+@media (max-width:34rem){ .facts{grid-template-columns:1fr;gap:.1rem .5rem} .facts dt{margin-top:.5rem} }
+</style>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">United States &rarr; Cambodia</p>
+  <h1>The Cambodia Relocation Guide</h1>
+  <p class="tagline">The easiest country in the region to stay in legally, and the one where that is changing fastest. Every route, with the 2026 enforcement shift built in.</p>
+  <div class="stamp">
+    <span>Edition <b>v1.0.0</b></span>
+    <span>Verified <b>September 8, 2026</b></span>
+    <span>Next review <b>December 8, 2026</b></span>
+    <span><b>8</b> pathways</span>
+    <span><b>23</b> cited sources</span>
+    <span class="ed">Navigator edition</span>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="notice">
+    <p><b>Read this before you rely on anything here.</b> This is researched reference material, not legal or tax advice, and no lawyer-client relationship is created by buying it. Immigration rules change without notice and are applied with discretion by individual officers. Every claim is numbered to a source you can check yourself, and each source is labelled with how much weight it carries.</p>
+    <p><b>Navigator edition.</b> This guide was researched against public primary and government sources by its publisher. No licensed practitioner in Cambodia has reviewed it, and we do not pretend otherwise. That is exactly why every pathway carries its own <a href="#pathways">verify-this-yourself</a> steps, naming the office that can answer, the question to ask, and what a real answer sounds like. Run them. They cost an hour and they are worth more than our assurance.</p>
+    <p style="margin-bottom:0"><b>Everything here was verified on September 8, 2026.</b> Before you spend money or book a flight, confirm the specific rule against the cited source or with a licensed Vietnamese immigration adviser. Cambodia is effectively dollarized. US dollars are the working currency for rent, salaries, visas, and most retail; Cambodian riel is used mainly as small change at roughly 4,000 KHR to US$1. This removes an entire category of currency friction that Vietnam has, and it is one of the genuine practical advantages of moving here. Note the flip side: worn, torn, or pre-2009 US notes are routinely refused.</p>
+  </div>
+  
+<section id="reality" class="band">
+  <h2>Start here: what is not true</h2>
+  <p class="lede">Six beliefs that cost Americans the most money on the way to Cambodia. We lead with these because the expensive mistakes happen before anyone files a form.</p>
+  
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>An apostille will work for my documents, like it does everywhere else.</p>
+    <p class="myth-real"><strong>Actually:</strong> No. Cambodia is not a party to the Hague Apostille Convention, so an apostille is not accepted. US documents need the full three-step chain: Secretary of State certification for state-issued documents, then US Department of State authentication, then legalization by the Cambodian Embassy. This is the single most expensive misunderstanding on this list, because getting an apostille feels like doing it right. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a><a href="#src-kh-embassy-dc" title="Royal Embassy of Cambodia in Washington DC — consular legalization and licence guidance">5</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Most countries joined the Convention and most guidance is written for them. Vietnam itself joined with effect from 11 September 2026, which makes the contrast even more confusing for anyone comparing the two.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>The business visa lets me work.</p>
+    <p class="myth-real"><strong>Actually:</strong> It does not. Cambodia runs a two-document system: the EB extension from the Ministry of Interior gives you the right to stay, and a separate work permit from the Ministry of Labour and Vocational Training gives you the right to work. Holding EB while working without a permit is illegal employment, and 2026 has brought more frequent compliance checks at businesses and substantial fines. <span class="cite"><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a><a href="#src-kh-wp-emerhub" title="Cambodia work permit requirements and process for foreigners">12</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> It is called a business visa, everyone calls it a business visa, and for years nobody checked.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Cambodia is the place where you just show up forever and nobody asks questions.</p>
+    <p class="myth-real"><strong>Actually:</strong> That was substantially true and is becoming less so. The ordinary E-class visa really is extendable indefinitely, which is genuinely rare. But in 2026 extensions increasingly require real supporting documents — employment proof, company papers, accommodation records — and twelve-month extensions require a sponsor. The mechanism is still the most permissive in the region; the paperwork behind it is no longer optional. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> The reputation was earned over fifteen years and reputations lag reality by several years.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>I can buy land or a house in Cambodia.</p>
+    <p class="myth-real"><strong>Actually:</strong> Foreigners cannot own land. You can own a condominium unit under a strata title, but only on the first floor or above, and only within a cap of 70% of the units in that building. For landed property the routes are a long-term lease, a Cambodian-majority company, or a licensed trustee under the 2019 Trust Law. Nominee arrangements — putting the land in a Cambodian friend&#39;s name — are common, and they are exactly as risky as they sound. <span class="cite"><a href="#src-kh-property" title="Foreign property ownership in Cambodia — no land ownership, strata title above ground floor, 70% foreign cap per building, 2019 Trust Law alternatives">20</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Property is marketed hard to foreigners, and the distinction between a strata-titled condo and everything else is not something a sales agent volunteers.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Cambodia doesn&#39;t tax foreign income, so I&#39;m free and clear.</p>
+    <p class="myth-real"><strong>Actually:</strong> This is genuinely disputed, and this guide will not pretend otherwise. Professional sources state that residents — anyone present more than 182 days — are taxed on worldwide salary at progressive rates up to 20%. Other sources describe a system that in practice reaches only Cambodian-sourced income. See the contested-claims section: the law and the enforcement pattern point in different directions, and the honest answer is that you are choosing which risk to accept. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a><a href="#src-kh-tax-pwc" title="PwC Worldwide Tax Summaries — Cambodia, taxes on personal income">17</a><a href="#src-kh-tax-territorial" title="Commentary describing Cambodian taxation as territorial in practice for foreign-payroll individuals">18</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Both descriptions are repeated confidently by people who have never been assessed either way.</p>
+  </article>
+  <article class="myth">
+    <p class="myth-claim"><span class="tag tag-false">Widely believed</span>Citizenship by investment is a $245,000 fast track and basically a formality.</p>
+    <p class="myth-real"><strong>Actually:</strong> The program is real, unlike Vietnam&#39;s much-hyped golden visa — but the headline number is not the cost. A US$245,000 donation to the government or a US$305,000 qualifying investment is the entry ticket; all-in costs including fees run to roughly US$330,000 or more per applicant, and you must travel to Cambodia three times during the process. The regulatory framework is also actively evolving. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></p>
+    <p class="myth-why"><strong>Why the myth persists:</strong> Citizenship-by-investment marketing quotes the donation and omits the fees, exactly as property marketing quotes the unit price and omits the taxes.</p>
+  </article>
+</section>
+  
+<section id="tree" class="band">
+  <h2>Your pathway, in questions</h2>
+  <p class="lede">Answer honestly rather than optimistically. Every answer narrows to exactly one route, including the routes that turn out not to exist. You can go back at any point.</p>
+  <div id="tree-app">
+    <ol id="breadcrumb" class="breadcrumb"></ol>
+    <div id="tree-card" class="tree-card"></div>
+    <div class="tree-controls">
+      <button id="btn-back" type="button" class="btn btn-quiet">&larr; Back</button>
+      <button id="btn-restart" type="button" class="btn btn-quiet">Start over</button>
+    </div>
+  </div>
+  <noscript><p class="warn-box">This decision tree needs JavaScript. Every pathway it can reach is written out in full below, so you can also read them directly.</p></noscript>
+</section>
+  
+<section id="pathways" class="band">
+  <h2>The pathways in full</h2>
+  <p class="lede">Every legal route, whether or not the tree sent you there. Read your own first, then read the one you would fall back to.</p>
+  
+  <article class="pathway" id="pathway-tourist-t">
+    <header class="pathway-head">
+      <h3>Tourist (T-class) Visa</h3>
+      <p class="codes"><code>T</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">Thirty days, extendable once by thirty days, then you must leave. Cheaper than the ordinary visa and a dead end by design. Correct for a holiday, wrong for anything else.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Genuine tourism of under two months, with no intention to return long-term.</dd>
+      <dt>You get</dt><dd>30 days, extendable once by 30 days</dd>
+      <dt>Renewable</dt><dd>No — a single 30-day extension, then exit.</dd>
+      <dt>Work locally</dt><dd>No.</dd>
+      <dt>Family</dt><dd>Each traveller applies individually.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>On arrival at the counter, or roughly 3 business days for the e-visa.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The current tourist visa fee and whether your nationality can get it on arrival</p>
+        <p class="v-who"><b>Ask:</b> Cambodian General Department of Immigration</p>
+        <p class="v-how">Open the official e-visa portal directly and read the fee and eligibility page before booking flights. <a href="https://www.evisa.gov.kh" target="_blank" rel="noopener noreferrer">www.evisa.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A published fee on a .gov.kh domain. Any site charging a large &#39;service fee&#39; on top is a reseller.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>US passport valid at least 6 months with a blank page</strong> — Standard across all Cambodian visa classes. <span class="cite"><a href="#src-kh-evisa-portal" title="Cambodia official e-visa portal — Ministry of Foreign Affairs and International Cooperation">1</a></span></li><li><strong>Passport photo</strong> — Bring physical photos as well as digital — on-arrival counters still ask for paper. </li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Tourist visa on arrival or e-visa</td><td class="amt">About US$30 plus e-visa processing</td><td>Confirm the current figure on the official portal; on-arrival and online prices differ slightly. <span class="cite"><a href="#src-kh-evisa-portal" title="Cambodia official e-visa portal — Ministry of Foreign Affairs and International Cooperation">1</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Decide honestly whether you are a tourist</p>
+        <p>If there is any chance you will stay past two months, buy the ordinary E-class visa instead. The price difference is about five dollars and it is the difference between a dead end and an open door. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply online or on arrival</p>
+        <p>The official e-visa portal is a government site. As in Vietnam, search results are full of resellers. <span class="cite"><a href="#src-kh-evisa-portal" title="Cambodia official e-visa portal — Ministry of Foreign Affairs and International Cooperation">1</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Extend once if you need to, then leave</p>
+        <p>A single 30-day extension is available. After that the class is exhausted. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> General Department of Immigration</span>
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Taking the tourist visa to save a few dollars, then deciding to stay</p>
+        <p class="f-conseq"><b>Consequence:</b> You must exit the country and re-enter on an ordinary visa. A flight and two days lost, for a five-dollar saving.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If in any doubt, take the ordinary E-class visa. It is the single most consequential five dollars in this guide.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the tourist visa extends indefinitely like the ordinary one</p>
+        <p class="f-conseq"><b>Consequence:</b> Overstay, at a daily fine, plus an exit problem.</p>
+        <p class="f-avoid"><b>Avoid it:</b> One extension only. Diarise the exit date on arrival.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-ordinary-e">
+    <header class="pathway-head">
+      <h3>Ordinary (E-class) Visa — the gateway</h3>
+      <p class="codes"><code>E</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">The most useful document in Cambodian immigration and the reason people call this the easiest country in the region. Thirty days on arrival, and then — uniquely — convertible into an extension of stay that can be renewed indefinitely. Almost every long-term route in this guide starts here.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Everyone staying beyond a month, including people who have not yet decided what they are doing.</dd>
+      <dt>You get</dt><dd>30 days on entry, then converted to an EB, EG, ER, or ES extension of 1, 3, 6, or 12 months</dd>
+      <dt>Renewable</dt><dd>Yes, indefinitely, through repeated extensions.</dd>
+      <dt>Work locally</dt><dd>The visa and extension give the right to stay. Work requires a separate work permit.</dd>
+      <dt>Family</dt><dd>Each person needs their own visa and extension, including children.</dd>
+      <dt>Toward permanent residence</dt><dd>No — indefinite temporary stay is not permanence. See the dead end on that question.</dd>
+      <dt>Realistic timeline</dt><dd>Immediate on arrival. Extensions take a few business days, and are usually handled through an agent.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That the ordinary E-class visa is still being issued on arrival at your entry point</p>
+        <p class="v-who"><b>Ask:</b> Cambodian General Department of Immigration</p>
+        <p class="v-how">Check the official portal&#39;s visa-on-arrival page for your intended airport or land border, and confirm the class list includes the ordinary visa. <a href="https://www.evisa.gov.kh" target="_blank" rel="noopener noreferrer">www.evisa.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> The ordinary or business class listed by name, with a fee. Land borders sometimes differ from airports.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">What supporting documents your chosen extension class currently requires</p>
+        <p class="v-who"><b>Ask:</b> General Department of Immigration, or a reputable local visa agent</p>
+        <p class="v-how">Ask specifically: &#39;For a twelve-month EB extension in 2026, what supporting documents do you require from me and from my sponsor?&#39; <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A concrete document list. Enforcement tightened in 2026, so an answer from 2023 forums is not reliable.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>US passport valid at least 6 months</strong> <span class="cite"><a href="#src-kh-evisa-portal" title="Cambodia official e-visa portal — Ministry of Foreign Affairs and International Cooperation">1</a></span></li><li><strong>Ask for the ordinary or business visa at the counter, not the tourist one</strong> — They are different classes at different prices and the counter will issue whichever you ask for. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Ordinary E-class visa on arrival</td><td class="amt">About US$35</td><td>Five dollars more than the tourist visa, and the only version that leads anywhere. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Extension of stay, 1 month</td><td class="amt">About US$45</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Extension of stay, 3 months</td><td class="amt">About US$80</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Extension of stay, 6 months</td><td class="amt">About US$155</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Extension of stay, 12 months</td><td class="amt">About US$285 to 300</td><td>Requires a sponsor, and increasingly requires real supporting documents. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Ask for the ordinary visa at the airport counter</p>
+        <p>Say &#39;ordinary visa&#39; or &#39;business visa&#39;, not &#39;tourist visa&#39;. This is the whole decision. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> Minutes</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Work out which extension class you qualify for before day 25</p>
+        <p>EB for business and employment, EG while job-hunting, ER for retirement, ES for study. The class determines what documents you need. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do this in your first two weeks, not your last two days.</p>
+      </li>
+      <li>
+        <p class="step-title">Apply for the extension before the 30 days expire</p>
+        <p>Most people use an agent; the immigration office also handles it directly. Have accommodation details and supporting documents ready. <span class="cite"><a href="#src-kh-immigration" title="Cambodian General Department of Immigration — visas, extensions of stay, foreigner registration">2</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, usually via an agent</span>
+          <span><b>Where:</b> General Department of Immigration</span>
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Being given a tourist visa because you did not specify</p>
+        <p class="f-conseq"><b>Consequence:</b> You are on the dead-end class and will have to exit and re-enter.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Say the words &#39;ordinary visa&#39; at the counter and check the sticker before you walk away.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Leaving the extension to the last few days</p>
+        <p class="f-conseq"><b>Consequence:</b> Rushed agent fees, or an overstay if documents are missing.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Start the extension at around day 20.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-employed-eb">
+    <header class="pathway-head">
+      <h3>EB Extension plus Work Permit — employed</h3>
+      <p class="codes"><code>EB</code>
+        <span class="diff diff-moderate">moderate</span></p>
+      <p class="summary">The standard route for anyone working for a Cambodian employer. Two documents from two ministries: the EB extension to stay, and the work permit to work. Both are required, and the calendar around them is unforgiving in a way that catches almost everyone once.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Anyone with a Cambodian employer, including local offices of foreign organisations, schools, and NGOs.</dd>
+      <dt>You get</dt><dd>EB extension up to 12 months; work permit valid to 31 December of the year of issue</dd>
+      <dt>Renewable</dt><dd>Yes, annually — but inside a fixed renewal window, not on your own anniversary.</dd>
+      <dt>Work locally</dt><dd>Yes, with the work permit. The EB extension alone is not work authorisation.</dd>
+      <dt>Family</dt><dd>Dependants extend on the EB class, sponsored by the same employer.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>Work permits run on an annual cycle rather than a per-person one. Realistically 4 to 10 weeks from arrival to both documents in hand, dominated by US document legalization if any is needed.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That your employer holds a current Foreign Manpower Quota with capacity</p>
+        <p class="v-who"><b>Ask:</b> Ministry of Labour and Vocational Training, via your employer&#39;s FWCMS account</p>
+        <p class="v-how">Ask HR to open their FWCMS account and show you the quota for the current year and how many places remain. Ask before you sign anything. <a href="https://www.fwcms.mlvt.gov.kh" target="_blank" rel="noopener noreferrer">www.fwcms.mlvt.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number of approved places and a number used. &#39;We&#39;ll sort it out&#39; means they may not have applied in the September-to-November window.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">The exact work permit renewal deadline for the coming year</p>
+        <p class="v-who"><b>Ask:</b> Ministry of Labour and Vocational Training</p>
+        <p class="v-how">Confirm on the FWCMS portal that the renewal window is still 1 January to 31 March, and whether the permit expiry is still fixed at 31 December. <a href="https://www.fwcms.mlvt.gov.kh" target="_blank" rel="noopener noreferrer">www.fwcms.mlvt.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Published dates. These are administrative deadlines that can move between years, so check annually rather than assuming.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Which of your US documents actually need legalization</p>
+        <p class="v-who"><b>Ask:</b> Royal Embassy of Cambodia in Washington DC, and your employer</p>
+        <p class="v-how">Ask the employer which documents the labour ministry is requiring this year, then ask the embassy what the current legalization fee and turnaround is for that set. <a href="https://www.embassyofcambodiadc.org" target="_blank" rel="noopener noreferrer">www.embassyofcambodiadc.org</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A document list from the employer and a fee schedule from the embassy. Do not order legalization for documents nobody asked for.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>A Cambodian employer to sponsor both documents</strong> — The employer files the work permit; you cannot obtain one on your own behalf as an employee. <span class="cite"><a href="#src-kh-wp-emerhub" title="Cambodia work permit requirements and process for foreigners">12</a></span></li><li><strong>Your employer holds a Foreign Manpower Quota for the year</strong> — Companies apply for the quota between 1 September and 30 November for the following year, capped at 10% of the Cambodian workforce. If your employer missed that window, your permit cannot be issued no matter how qualified you are. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></li><li><strong>Passport, recent patent tax certificate from the employer, health certificate, and a 4x6cm photo</strong> — The health check is done in Cambodia. The patent tax certificate is the employer&#39;s, not yours. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></li><li><strong>Legalized supporting documents where required</strong> — Degrees and background documents need the full three-step consular chain, not an apostille. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>EB extension, 12 months</td><td class="amt">About US$285</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Work permit and employment card</td><td class="amt">About US$100 to 200 per year</td><td>Usually paid by the employer. Confirm on the FWCMS portal at application time. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></td></tr><tr><td>US document legalization, three-step chain</td><td class="amt">US$200 to 600</td><td>Per document set, including embassy fees and courier. Materially more than an apostille would cost. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></td></tr><tr><td>Health check in Cambodia</td><td class="amt">US$20 to 50</td><td> </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Before accepting the job, ask about the quota</p>
+        <p>Ask the employer directly whether they hold a Foreign Manpower Quota for the current year with room on it. This one question prevents the worst outcome on this pathway. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Everything depends on this and it cannot be fixed mid-year.</p>
+      </li>
+      <li>
+        <p class="step-title">Enter on the ordinary E-class visa</p>
+        <p>Not the tourist visa. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Convert to the EB extension</p>
+        <p>Your employer sponsors it. Twelve months is the usual target. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Employer, with you</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Complete the health check in Cambodia</p>
+        <p>Quick and inexpensive, at a recognised clinic. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> Cambodia</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Employer files the work permit on FWCMS</p>
+        <p>All work permit and employment card applications run through the Foreign Workers Centralized Management System. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your employer</span>
+          <span><b>Where:</b> fwcms.mlvt.gov.kh</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Diarise the renewal window immediately</p>
+        <p>Permits are valid to 31 December regardless of when they were issued, and renewals are filed between 1 January and 31 March. Put both dates in your calendar the day you receive the permit. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> Two minutes now, saves the year</span>
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Joining an employer with no Foreign Manpower Quota</p>
+        <p class="f-conseq"><b>Consequence:</b> You cannot be issued a work permit at all this year. Either you work illegally or you wait until the next quota cycle.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Ask before signing. This is the highest-value question on this entire pathway.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming the work permit runs twelve months from issue</p>
+        <p class="f-conseq"><b>Consequence:</b> A permit issued in October expires on 31 December, ten weeks later, and you file a renewal in January having barely used it.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Understand that the permit year is a calendar year, not a personal one.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Missing the 31 March renewal deadline</p>
+        <p class="f-conseq"><b>Consequence:</b> Penalties, and a period working without a valid permit during a year of increased compliance checks.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Calendar it in January, not March.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Getting an apostille instead of consular legalization</p>
+        <p class="f-conseq"><b>Consequence:</b> Documents rejected outright; four to eight weeks lost and the fees are not recoverable.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Cambodia is not in the Apostille Convention. Three-step chain, every time.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-selfsponsor-eb">
+    <header class="pathway-head">
+      <h3>Own Company plus Self-Sponsored EB</h3>
+      <p class="codes"><code>EB</code>
+        <span class="diff diff-high">high</span></p>
+      <p class="summary">Register a Cambodian company, and it becomes the sponsor for your own extension and work permit. Cambodia&#39;s company formation thresholds are far lower than Vietnam&#39;s investor tiers, which makes this the realistic self-directed route in the region — at the cost of real, permanent compliance obligations.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Consultants, small business owners, and remote workers who want a clean legal basis and are willing to run a real entity to get it.</dd>
+      <dt>You get</dt><dd>EB extension up to 12 months, renewable indefinitely</dd>
+      <dt>Renewable</dt><dd>Yes, while the company remains compliant and the patent tax is current.</dd>
+      <dt>Work locally</dt><dd>Yes, with a work permit sponsored by your own company.</dd>
+      <dt>Family</dt><dd>Dependants extend on the EB class sponsored by your company.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>6 to 12 weeks to a registered company, then the normal EB and work permit cycle on top.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The genuine all-in annual running cost of the company, not the formation quote</p>
+        <p class="v-who"><b>Ask:</b> Two or three Cambodian corporate service providers, independently</p>
+        <p class="v-how">Ask each for a written annual figure covering patent tax, monthly filings, annual return, and audit if applicable. Compare the three.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Three comparable annual figures. A provider who will only quote formation is quoting you the cheap half.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">That a company of your size can obtain a Foreign Manpower Quota covering its own foreign director</p>
+        <p class="v-who"><b>Ask:</b> Ministry of Labour and Vocational Training</p>
+        <p class="v-how">Ask your provider to confirm how the 10%-of-Cambodian-workforce cap is applied to a company whose only foreign worker is its owner, and what minimum local headcount that implies. <a href="https://www.fwcms.mlvt.gov.kh" target="_blank" rel="noopener noreferrer">www.fwcms.mlvt.gov.kh</a> <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A concrete answer about local headcount. This is the detail that decides whether a one-person company works.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>A registered Cambodian company in good standing</strong> — With a current patent tax certificate — that certificate is a required document for the work permit application. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></li><li><strong>A Foreign Manpower Quota for your own company</strong> — The quota rule applies to your company too. Apply in the 1 September to 30 November window for the following year. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></li><li><strong>Ongoing monthly and annual tax filings</strong> — A Cambodian company files whether or not it trades. This is the real cost of the pathway and it never stops. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Company registration</td><td class="amt">US$700 to 2,500 in professional fees</td><td>Varies widely by provider and structure. Get more than one quote. </td></tr><tr><td>Patent tax, annual</td><td class="amt">From about US$100 per year</td><td>Scales with declared turnover band. Required annually and required for the work permit. </td></tr><tr><td>Accounting and compliance, annual</td><td class="amt">US$1,000 to 4,000 per year</td><td>The cost people forget when comparing this against Vietnam&#39;s investor route. </td></tr><tr><td>EB extension plus work permit</td><td class="amt">About US$400 to 500 per year combined</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Decide whether you want a company or only want a visa</p>
+        <p>If the answer is only a visa, price three years of accounting and filings before proceeding. A dormant company is a recurring bill and a recurring obligation. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Make this decision before spending anything.</p>
+      </li>
+      <li>
+        <p class="step-title">Register the company and obtain the patent tax certificate</p>
+        <p>The patent tax certificate is what the work permit application actually needs. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your local corporate services provider</span>
+          
+          <span><b>Takes:</b> 4 to 8 weeks</span>
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply for your company&#39;s Foreign Manpower Quota in the correct window</p>
+        <p>1 September to 30 November, for the following calendar year. Miss it and you cannot sponsor yourself next year. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, as the company</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Sponsor your own EB extension and work permit</p>
+        <p>Same FWCMS process as any employer. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your company</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Set up real bookkeeping from month one</p>
+        <p>Retrospective bookkeeping in Cambodia is expensive and unpleasant. Start correctly. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You and your accountant</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Forming the company without checking the quota arithmetic for a one-person business</p>
+        <p class="f-conseq"><b>Consequence:</b> A registered company that cannot lawfully sponsor its own owner.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Run the verification step above before registering, not after.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Treating the company as a visa product and ignoring the filings</p>
+        <p class="f-conseq"><b>Consequence:</b> Penalties accumulate quietly, and the patent tax certificate you need for the work permit becomes unobtainable.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Budget annual compliance from day one and pay it like rent.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Missing the September-to-November quota window</p>
+        <p class="f-conseq"><b>Consequence:</b> No work permit next year, from your own company.</p>
+        <p class="f-avoid"><b>Avoid it:</b> It is an annual calendar item. Set it the day you incorporate.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-retirement-er">
+    <header class="pathway-head">
+      <h3>ER Retirement Extension</h3>
+      <p class="codes"><code>ER</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">A genuine retirement route, which most of Cambodia&#39;s neighbours in this guide do not offer. Age 55 and over, evidence of retirement income, no local work. Renewable indefinitely in 1, 3, 6, or 12-month blocks.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Americans 55 and over living on Social Security, a pension, or savings, who want a low-cost base with genuinely simple paperwork.</dd>
+      <dt>You get</dt><dd>Extensions of 1, 3, 6, or 12 months</dd>
+      <dt>Renewable</dt><dd>Yes, indefinitely.</dd>
+      <dt>Work locally</dt><dd>No. The ER extension carries no right to work, and taking local work on it is illegal employment.</dd>
+      <dt>Family</dt><dd>A spouse generally extends on a dependant basis. Confirm the class for your circumstances.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>A few weeks from arrival, most of which is assembling income evidence.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">What income evidence the immigration office is actually accepting this year, and whether any minimum figure is applied</p>
+        <p class="v-who"><b>Ask:</b> Cambodian General Department of Immigration, or the Cambodian embassy in Washington DC before you travel</p>
+        <p class="v-how">Ask: &#39;For an ER extension in 2026, what documents do you accept as proof of retirement income, and is there a minimum monthly figure?&#39; Take the answer in writing if you can. <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> <span class="cite"><a href="#src-kh-er-mfaic" title="Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)">6</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A document list. If they decline to state a minimum figure, that is itself the answer — see the contested section — and you should over-evidence rather than aim at a rumoured threshold.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether your spouse can extend alongside you and on what class</p>
+        <p class="v-who"><b>Ask:</b> General Department of Immigration</p>
+        <p class="v-how">Ask specifically about a spouse under 55, since the age gate applies to the ER holder. <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named extension class for the spouse. Do not assume it is automatic.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Aged 55 or older</strong> — The core gate. Exceptional cases are sometimes described, but plan on the age rule. <span class="cite"><a href="#src-kh-er-mfaic" title="Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)">6</a><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></li><li><strong>Evidence you can support yourself without local employment</strong> — Pension statements, a Social Security benefit letter, or bank statements showing regular deposits. Commonly cited benchmarks sit around US$1,500 per month, but Cambodia does not publish an official minimum the way some neighbours do — see the contested claims section. <span class="cite"><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a><a href="#src-kh-er-mfaic" title="Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)">6</a></span></li><li><strong>Evidence you are retired and not employed</strong> — A pension statement or Social Security entitlement letter usually serves both purposes. <span class="cite"><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></li><li><strong>Entry on the ordinary E-class visa</strong> — You enter on the ordinary visa and convert. You do not arrive on a retirement visa. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>ER extension of stay, 12 months</td><td class="amt">About US$275</td><td> <span class="cite"><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></td></tr><tr><td>Ordinary E-class visa on entry</td><td class="amt">About US$35</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>Agent assistance, optional</td><td class="amt">US$50 to 150</td><td>Widely used and genuinely useful for this class, given how little official written guidance exists. </td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Assemble income evidence before you fly</p>
+        <p>A Social Security benefit letter, recent pension statements, and several months of bank statements. Get them in the US where obtaining them is easy. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          <span><b>Takes:</b> 1 to 3 weeks</span>
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Far easier to obtain before you leave than after.</p>
+      </li>
+      <li>
+        <p class="step-title">Enter on the ordinary E-class visa</p>
+        <p>Ask for the ordinary visa at the counter. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Apply to convert to the ER extension</p>
+        <p>Through the immigration office or a local agent, within your first 30 days. <span class="cite"><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          <span><b>Where:</b> General Department of Immigration</span>
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Renew before expiry, indefinitely</p>
+        <p>Twelve months at a time is usual once established. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Arriving on the tourist visa</p>
+        <p class="f-conseq"><b>Consequence:</b> You cannot convert to ER and must exit and re-enter.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Ordinary E-class at the counter, always.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Taking casual local work — teaching a few hours, helping at a friend&#39;s bar</p>
+        <p class="f-conseq"><b>Consequence:</b> Illegal employment during a year of increased compliance checks, with your extension class contradicting your activity.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If you want to work, you want the EB and work permit route instead, whatever your age.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Aiming exactly at a rumoured income threshold</p>
+        <p class="f-conseq"><b>Consequence:</b> Refusal, because no official figure is published and the assessment is discretionary.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Over-evidence. Bring more documentation than you think is needed.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-jobseek-eg">
+    <header class="pathway-head">
+      <h3>EG Extension — job seekers and remote workers</h3>
+      <p class="codes"><code>EG</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">The extension class for people who are not yet employed. Short EG extensions of 1 and 3 months do not require a sponsor, which makes this the most accessible long-stay mechanism in the region — and the closest thing Cambodia has to a remote worker route, with an important legal caveat.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Job hunters on the ground, people deciding whether to commit to Cambodia, and remote workers who understand the caveat below.</dd>
+      <dt>You get</dt><dd>1, 3, or 6 months; 12-month extensions require a sponsor</dd>
+      <dt>Renewable</dt><dd>Yes in practice, though repeated renewal without ever taking employment attracts more questions than it used to.</dd>
+      <dt>Work locally</dt><dd>No. EG is a permission to stay while seeking work, not to work. Whether it covers remote work for foreign clients is genuinely contested — read the contested section before relying on it.</dd>
+      <dt>Family</dt><dd>Each person extends individually.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>Days, through an agent.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">Whether short EG extensions are still being granted without a sponsor</p>
+        <p class="v-who"><b>Ask:</b> General Department of Immigration, or two independent local visa agents</p>
+        <p class="v-how">Ask two agents separately: &#39;Can I get a one-month and a three-month EG extension in 2026 with no sponsor, and what documents do you need from me?&#39; Compare the answers. <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> <span class="cite"><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a></span></p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Consistent answers from both. Divergence means the practice is shifting and you should assume the stricter version.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether working remotely for foreign clients requires a Cambodian work permit</p>
+        <p class="v-who"><b>Ask:</b> Ministry of Labour and Vocational Training</p>
+        <p class="v-how">Ask whether a foreign national residing in Cambodia and performing services solely for clients outside Cambodia, paid outside Cambodia, requires a work permit. <a href="https://www.fwcms.mlvt.gov.kh" target="_blank" rel="noopener noreferrer">www.fwcms.mlvt.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Probably not a clean answer — which is exactly why this is in the contested section. Record whatever you are told and who told you.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Entry on the ordinary E-class visa</strong> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></li><li><strong>For 1 and 3-month extensions, no sponsor required</strong> — This is the unusual feature. Longer extensions require a Cambodian employer or a locally registered company. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a></span></li><li><strong>For 12-month extensions, a sponsor</strong> — Either an employer or a registered company. Umbrella arrangements through agents exist and vary in quality and legality — treat them with care. <span class="cite"><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>EG extension, 1 month</td><td class="amt">About US$45</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>EG extension, 3 months</td><td class="amt">About US$80</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>EG extension, 6 months</td><td class="amt">About US$155</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr><tr><td>EG extension, 12 months</td><td class="amt">About US$285 to 300, plus whatever a sponsor costs</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Enter on the ordinary E-class visa</p>
+        <p>As always, not the tourist class. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Take a short EG extension while you establish yourself</p>
+        <p>One or three months, no sponsor needed. This buys you time to find either a job or a clearer basis. <span class="cite"><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a><a href="#src-kh-immigration" title="Cambodian General Department of Immigration — visas, extensions of stay, foreigner registration">2</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Decide within that window what your real basis will be</p>
+        <p>EG is a bridge, not a destination. Employment, your own company, or retirement if you qualify. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do not drift on repeated short extensions for years without deciding.</p>
+      </li>
+      <li>
+        <p class="step-title">Read the contested claim on remote work before relying on EG for it</p>
+        <p>This is the specific point where Cambodia&#39;s reputation for permissiveness and its actual law diverge. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Treating EG as a de facto digital nomad visa with no further thought</p>
+        <p class="f-conseq"><b>Consequence:</b> You may be working without a permit, in a year when compliance checks have increased.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Read the contested claim, decide deliberately, and revisit it as enforcement changes.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Buying a 12-month sponsored extension from an agent without asking who the sponsor is</p>
+        <p class="f-conseq"><b>Consequence:</b> Your legal status depends on a company you have never seen, which may not be compliant itself.</p>
+        <p class="f-avoid"><b>Avoid it:</b> If you are being sponsored, know exactly which registered entity is sponsoring you.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Rolling short EG extensions for years</p>
+        <p class="f-conseq"><b>Consequence:</b> Increasing scrutiny at each renewal, and no accumulated status to show for the time.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Use EG as a bridge with a decision date attached.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-student-es">
+    <header class="pathway-head">
+      <h3>ES Student Extension</h3>
+      <p class="codes"><code>ES</code>
+        <span class="diff diff-low">low</span></p>
+      <p class="summary">For enrolment at a recognised Cambodian institution, including Khmer language programs. Inexpensive, low-friction, and a legitimate way to hold clear status while you work out whether Cambodia is right for you.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>Younger movers, language learners, and anyone who wants an unambiguous basis for a first year.</dd>
+      <dt>You get</dt><dd>Aligned to the program, in the usual 1, 3, 6, or 12-month extension blocks</dd>
+      <dt>Renewable</dt><dd>Yes, while enrolled.</dd>
+      <dt>Work locally</dt><dd>No.</dd>
+      <dt>Family</dt><dd>Limited. Do not plan a family move around this class.</dd>
+      <dt>Toward permanent residence</dt><dd>No.</dd>
+      <dt>Realistic timeline</dt><dd>Weeks, once enrolled.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">That the school actually sponsors ES extensions</p>
+        <p class="v-who"><b>Ask:</b> The institution, and the General Department of Immigration</p>
+        <p class="v-how">Ask the school how many ES extensions they supported in the past year and ask to speak to a current foreign student. Then confirm with immigration that the school is recognised for this purpose. <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A number and a student contact. Vagueness means they expect you to arrange your own status, in which case you are really on the EG pathway.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Enrolment at a recognised institution</strong> — Universities and established language schools. Ask the school directly whether they sponsor ES extensions and how many they did last year. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></li><li><strong>Entry on the ordinary E-class visa</strong> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Khmer language program tuition</td><td class="amt">US$300 to 1,500 per year</td><td>Varies enormously. Universities cost more. </td></tr><tr><td>ES extension</td><td class="amt">Same schedule as other extensions, about US$80 for 3 months to US$285 for 12</td><td> <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Confirm the school can sponsor before paying tuition</p>
+        <p>This is the whole risk on this pathway. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do not pay first.</p>
+      </li>
+      <li>
+        <p class="step-title">Enter on the ordinary E-class visa</p>
+        <p>Ask for the ordinary or business visa at the counter, never the tourist class — the ES conversion needs it. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Convert to the ES extension with the school&#39;s enrolment documents</p>
+        <p>Bring the school’s enrolment letter and your accommodation details. Do this inside your first 30 days. <span class="cite"><a href="#src-kh-immigration" title="Cambodian General Department of Immigration — visas, extensions of stay, foreigner registration">2</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, with the school</span>
+          <span><b>Where:</b> General Department of Immigration</span>
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Paying a year of tuition to a school that cannot sponsor</p>
+        <p class="f-conseq"><b>Consequence:</b> Tuition spent and no status gained.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Confirm sponsorship in writing before paying.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Taking paid work on ES status</p>
+        <p class="f-conseq"><b>Consequence:</b> Illegal employment exposure.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Keep income sources outside Cambodia, or move to the EB and work permit route.</p>
+      </div>
+    </div>
+  </article>
+  <article class="pathway" id="pathway-citizenship-investment">
+    <header class="pathway-head">
+      <h3>Citizenship by Investment or Donation</h3>
+      <p class="codes">
+        <span class="diff diff-very-high">very high</span></p>
+      <p class="summary">Cambodia runs a real, published citizenship-by-investment program — a meaningful contrast with the regional trend of announcing golden visas that never launch. It is expensive, it is faster than most, and the headline figure is not the real cost.</p>
+    </header>
+
+    <dl class="facts">
+      <dt>Best for</dt><dd>People for whom a second passport, not merely residence, is the actual objective, and for whom roughly a third of a million dollars is a considered expense.</dd>
+      <dt>You get</dt><dd>Citizenship, with dual nationality permitted</dd>
+      <dt>Renewable</dt><dd>Not applicable.</dd>
+      <dt>Work locally</dt><dd>Yes, as a citizen.</dd>
+      <dt>Family</dt><dd>Family applications are contemplated; costs are per applicant and add up quickly.</dd>
+      <dt>Toward permanent residence</dt><dd>It is the only published route in this guide that leads to permanence.</dd>
+      <dt>Realistic timeline</dt><dd>Commonly reported at 3 to 6 months from submission to passport.</dd>
+    </dl>
+
+    
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      
+      <div class="verify-item">
+        <p class="v-check">The current legal instrument, thresholds, and whether the program is open today</p>
+        <p class="v-who"><b>Ask:</b> Independent Cambodian counsel you retain directly — not the agent selling you the program</p>
+        <p class="v-how">Ask them to name the law or sub-decree the program operates under and confirm the current donation and investment figures in writing. <a href="https://www.immigration.gov.kh" target="_blank" rel="noopener noreferrer">www.immigration.gov.kh</a> </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> A named instrument and current figures. An adviser who cannot name the instrument is not advising you, they are selling to you.</p>
+      </div>
+      <div class="verify-item">
+        <p class="v-check">Whether all-in costs match what the agent quoted</p>
+        <p class="v-who"><b>Ask:</b> A second, unaffiliated agent or law firm</p>
+        <p class="v-how">Get a competing written quote for the identical outcome and compare line by line.  </p>
+        <p class="v-expect"><b>A real answer sounds like:</b> Two comparable quotes. Large divergence is a reason to slow down, not to pick the cheaper.</p>
+      </div>
+    </div>
+
+    <h4>Hard requirements</h4>
+    <ul class="reqs">
+      <li><strong>Donation of US$245,000 to the government, or a qualifying investment of at least US$305,000</strong> — All-in costs including fees are commonly reported at roughly US$330,000 or more per applicant. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></li><li><strong>Aged 18 or over with no criminal record</strong> <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></li><li><strong>Three visits to Cambodia during the process</strong> — For documentation, government submission, and passport collection. There is no prior residency requirement. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></li>
+    </ul>
+
+    
+    <h4>What it costs</h4>
+    <table class="costs">
+      <thead><tr><th>Item</th><th>Amount</th><th>Note</th></tr></thead>
+      <tbody><tr><td>Donation route</td><td class="amt">US$245,000</td><td> <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></td></tr><tr><td>Investment route</td><td class="amt">From US$305,000</td><td> <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></td></tr><tr><td>Fees, agents, and processing</td><td class="amt">Frequently bringing the all-in total to US$330,000+</td><td>Get a written all-in figure before committing to anything. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></td></tr></tbody>
+    </table>
+
+    <h4>Step by step</h4>
+    <ol class="steps">
+      
+      <li>
+        <p class="step-title">Get a written all-in quote, not the headline figure</p>
+        <p>Donation or investment amount, government fees, agent fees, legal fees, translation and legalization, and travel. One number. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        <p class="step-blocker"><b>Blocked by:</b> Do not proceed on a headline number.</p>
+      </li>
+      <li>
+        <p class="step-title">Verify the current legal basis independently</p>
+        <p>The framework is actively evolving. Confirm the instrument and the current thresholds before transferring funds. </p>
+        <p class="step-meta">
+          <span><b>Who:</b> You, with independent counsel not paid by the agent</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Understand the US tax consequences before acquiring a second nationality</p>
+        <p>Acquiring another citizenship does not end US tax obligations. Take US tax advice first. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">8</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> Your US tax adviser</span>
+          
+          
+        </p>
+        
+      </li>
+      <li>
+        <p class="step-title">Complete the three required visits</p>
+        <p>For documentation, government submission, and passport collection. Plan them into your calendar and budget; there is no prior residency requirement but the visits are not optional. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></p>
+        <p class="step-meta">
+          <span><b>Who:</b> You</span>
+          
+          
+        </p>
+        
+      </li>
+    </ol>
+
+    
+    <h4>How this goes wrong</h4>
+    <div class="failures">
+      
+      <div class="failure">
+        <p class="f-mistake">Budgeting the headline donation figure</p>
+        <p class="f-conseq"><b>Consequence:</b> A shortfall of US$85,000 or more against the real all-in cost, discovered mid-process.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Written all-in quote, before anything.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Relying entirely on the agent selling the program</p>
+        <p class="f-conseq"><b>Consequence:</b> No independent check on an evolving legal framework, with a third of a million dollars committed.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Retain your own counsel. On a purchase this size the fee is rounding.</p>
+      </div>
+      <div class="failure">
+        <p class="f-mistake">Assuming a second passport reduces US tax obligations</p>
+        <p class="f-conseq"><b>Consequence:</b> It does not. US citizens are taxed on worldwide income regardless of other nationalities held.</p>
+        <p class="f-avoid"><b>Avoid it:</b> Take US tax advice before, not after.</p>
+      </div>
+    </div>
+  </article>
+</section>
+  
+<section id="gotchas" class="band">
+  <h2>Ten traps</h2>
+  <p class="lede">Cross-cutting failures that belong to no single pathway. If you read only one section of this guide, read this one.</p>
+  
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">1</span>An apostille is the wrong document for Cambodia</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Cambodia is not a party to the Hague Apostille Convention. Americans reflexively order an apostille because that is what works nearly everywhere, and it is rejected. The correct chain is Secretary of State certification for state-issued documents, then US Department of State authentication, then Cambodian Embassy legalization.</p>
+    <p><strong>Do this instead.</strong> Order the three-step consular legalization, and budget six to ten weeks and US$200 to 600 per document set. If you are comparing Cambodia against Vietnam, note that Vietnam moved to apostilles on 11 September 2026 and Cambodia did not — the two countries now need different paperwork. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a><a href="#src-kh-embassy-dc" title="Royal Embassy of Cambodia in Washington DC — consular legalization and licence guidance">5</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">2</span>The five-dollar decision at the airport counter</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> The tourist visa is about US$30 and extends exactly once. The ordinary E-class visa is about US$35 and extends indefinitely into every long-stay class in this guide. The counter issues whichever you ask for, and most arrivals ask for the tourist visa because it is called the tourist visa.</p>
+    <p><strong>Do this instead.</strong> Say &#39;ordinary visa&#39; or &#39;business visa&#39; at the counter, and check the sticker before walking away. If you are even slightly unsure how long you will stay, pay the extra five dollars. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">3</span>Your work permit expires on 31 December no matter when you got it</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Work permits run on the calendar year, not on a twelve-month clock from issue. A permit issued in October expires on 31 December, and the renewal is filed between 1 January and 31 March.</p>
+    <p><strong>Do this instead.</strong> The day you receive the permit, put 31 December and 31 March in your calendar. If you are joining an employer late in the year, ask whether it is worth waiting for the new permit year. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">4</span>The Foreign Manpower Quota is applied for a year in advance</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> Companies must apply for their Foreign Manpower Quota between 1 September and 30 November for the following year, capped at 10% of their Cambodian workforce. If your prospective employer missed that window, you cannot be issued a work permit that year regardless of your qualifications.</p>
+    <p><strong>Do this instead.</strong> Ask any prospective employer, before signing, whether they hold a current quota with capacity remaining. Ask to see it in their FWCMS account. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">5</span>The business visa is not permission to work</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> Cambodia runs two documents from two ministries: the EB extension from the Ministry of Interior for the right to stay, and the work permit from the Ministry of Labour for the right to work. Holding EB while working without a permit is illegal employment, and 2026 has brought more frequent business compliance checks and substantial fines.</p>
+    <p><strong>Do this instead.</strong> Treat them as two separate obligations with two separate deadlines. Never assume the visa agent who got your EB also handled the work permit — ask explicitly. <span class="cite"><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a><a href="#src-kh-wp-emerhub" title="Cambodia work permit requirements and process for foreigners">12</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">6</span>Badly bound documents are rejected on sight</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> The Cambodian Embassy requires multi-page documents to be securely bound with a paging seal or embossed seal. A stapled or loose multi-page document is rejected instantly, and you start the chain again.</p>
+    <p><strong>Do this instead.</strong> Confirm binding requirements with the embassy before submitting, and use a legalization service that has done Cambodia specifically rather than a generic apostille shop. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">7</span>You cannot own land, and the workarounds carry real risk</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> Foreigners cannot own land in Cambodia. You can own a condominium unit under a strata title, but only above the ground floor and only within a 70% foreign cap per building. For anything landed, the routes are long leases, a Cambodian-majority company, or a licensed trustee. Nominee arrangements — the land in a Cambodian friend&#39;s name — remain common and are exactly as risky as they sound.</p>
+    <p><strong>Do this instead.</strong> Rent for at least a year. If you do buy, buy a strata-titled unit and verify the title is registered with the Ministry of Land Management. Get independent counsel who is not connected to the seller or the agent. <span class="cite"><a href="#src-kh-property" title="Foreign property ownership in Cambodia — no land ownership, strata title above ground floor, 70% foreign cap per building, 2019 Trust Law alternatives">20</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-expensive">
+    <h3><span class="gnum">8</span>Cambodia&#39;s permissiveness is being quietly tightened</h3>
+    <p class="sev-label">expensive</p>
+    <p><strong>The trap.</strong> The country&#39;s reputation was built on extensions granted with minimal paperwork. In 2026, extensions increasingly require genuine supporting documents, accommodation records, and in some cases work permit or business proof, and compliance checks at businesses are more frequent.</p>
+    <p><strong>Do this instead.</strong> Do not plan on advice from forum posts more than a year or two old. Verify current requirements with two independent local agents before each renewal, and keep your paperwork genuinely in order rather than nominally. <span class="cite"><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+    
+  </article>
+  <article class="gotcha sev-annoying">
+    <h3><span class="gnum">9</span>Old or damaged US banknotes are refused</h3>
+    <p class="sev-label">annoying</p>
+    <p><strong>The trap.</strong> Cambodia is dollarized, which is a real convenience, but notes that are torn, heavily marked, or from older series are routinely rejected by shops and even banks. Meanwhile change under a dollar comes back in riel.</p>
+    <p><strong>Do this instead.</strong> Bring crisp, recent notes. Inspect notes you are given as change, and refuse damaged ones at the point of transaction rather than discovering the problem later. </p>
+    
+  </article>
+  <article class="gotcha sev-trip-ending">
+    <h3><span class="gnum">10</span>Your US licence may not convert to the class you actually need</h3>
+    <p class="sev-label">trip ending</p>
+    <p><strong>The trap.</strong> Conversion at MPWT produces an equivalent class only, and classes C, D and E cannot be converted to the same class. As in much of the region, the practical risk is riding a motorbike on a licence that does not cover it, then discovering after an accident that insurance declines.</p>
+    <p><strong>Do this instead.</strong> Convert your licence properly, obtain the motorbike class if you intend to ride, and get written confirmation from your health and travel insurers that they cover motorbike use at your licence class. <span class="cite"><a href="#src-kh-mpwt" title="Ministry of Public Works and Transport — driver&#39;s licence issuance and conversion">4</a><a href="#src-kh-driving" title="Foreign driving licence exchange in Cambodia — required documents including Sangkat certificate of residence, class limitations">22</a></span></p>
+    
+  </article>
+</section>
+  
+<section id="contested" class="band">
+  <h2>Where the sources disagree</h2>
+  <p class="lede">Questions credible sources answer differently. We publish the disagreement rather than picking a side and hoping — a guide that hides a genuine conflict is more dangerous than one that names it.</p>
+  
+  <article class="contested">
+    <h3>Does Cambodia tax a resident&#39;s foreign-sourced income?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Yes. Residents — anyone present more than 182 days in the tax year — are taxed on worldwide salary income at progressive rates up to 20%, with a foreign tax credit available for tax paid abroad. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a><a href="#src-kh-tax-pwc" title="PwC Worldwide Tax Summaries — Cambodia, taxes on personal income">17</a></span></p>
+        <p class="pos-who">Held by: Professional tax guidance, including major-firm country summaries</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">In practice, no. Cambodia&#39;s tax administration focuses almost exclusively on locally registered companies and formal local employment, and foreigners on foreign payrolls are effectively outside the net. <span class="cite"><a href="#src-kh-tax-territorial" title="Commentary describing Cambodian taxation as territorial in practice for foreign-payroll individuals">18</a></span></p>
+        <p class="pos-who">Held by: Widely repeated expat and nomad tax commentary</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> These describe the law and the enforcement pattern respectively, and both are probably accurate descriptions of their own subject. That means you are not choosing between two facts, you are choosing how much enforcement risk to carry. The exposure grows the longer you stay, the more visible your local footprint becomes, and the more the administration modernises.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Get a written opinion from a Cambodian tax adviser for your specific facts — where you are paid, by whom, and for work performed where. Ask specifically whether they would file a return for someone in your position, and what happens if the position is later challenged. This costs a few hundred dollars and is the only way to convert a rumour into a position you can defend. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a><a href="#src-kh-tax-territorial" title="Commentary describing Cambodian taxation as territorial in practice for foreign-payroll individuals">18</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Does working remotely for foreign clients from Cambodia require a Cambodian work permit?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Yes, arguably. The work permit regime covers foreigners working in Cambodia, and the labour authorities have not carved out remote work for foreign employers. Work performed physically in Cambodia is work in Cambodia. <span class="cite"><a href="#src-kh-wp-emerhub" title="Cambodia work permit requirements and process for foreigners">12</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></p>
+        <p class="pos-who">Held by: A conservative reading of the labour regime</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">In practice, no. Enforcement targets businesses employing foreigners locally, and the EG extension exists precisely for people who are in Cambodia without a local employer. <span class="cite"><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a></span></p>
+        <p class="pos-who">Held by: Established expat practice and the design of the EG class</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Cambodia is materially more permissive here than Vietnam, but permissiveness is not permission. The 2026 tightening was aimed at businesses rather than individuals, which is why this remains unsettled rather than resolved.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> If the risk matters to you, remove it structurally: register a company and sponsor your own work permit, which is far cheaper here than the equivalent in Vietnam. If you accept the risk, at least accept it knowingly, and revisit the question at every renewal. <span class="cite"><a href="#src-kh-wp-emerhub" title="Cambodia work permit requirements and process for foreigners">12</a><a href="#src-kh-eg-sponsor" title="Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one">15</a></span></p>
+  </article>
+  <article class="contested">
+    <h3>Is there a minimum income requirement for the ER retirement extension?</h3>
+    <div class="positions">
+      
+      <div class="position">
+        <p class="pos-num">Position 1</p>
+        <p class="pos-text">Around US$1,500 per month is the working benchmark, and applicants should evidence at least that. <span class="cite"><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></p>
+        <p class="pos-who">Held by: Most published expat guidance</p>
+      </div>
+      <div class="position">
+        <p class="pos-num">Position 2</p>
+        <p class="pos-text">There is no official published minimum. Cambodia does not publish a figure the way several neighbouring countries do; the requirement is to show you can support yourself without local employment, assessed with discretion. <span class="cite"><a href="#src-kh-er-mfaic" title="Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)">6</a><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></p>
+        <p class="pos-who">Held by: Official and semi-official descriptions of the ER class</p>
+      </div>
+    </div>
+    <p class="c-effect"><b>What this actually means for you.</b> Because the assessment is discretionary rather than arithmetic, aiming precisely at a rumoured threshold is the wrong strategy. More evidence is strictly better, and the form of the evidence matters as much as the amount.</p>
+    <p class="c-resolve"><b>How to settle it for your own case.</b> Ask the immigration office or the Cambodian embassy directly what they accept, and bring more documentation than any published figure suggests: benefit letter, pension statements, and several months of bank statements. <span class="cite"><a href="#src-kh-er-mfaic" title="Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)">6</a><a href="#src-kh-er-emerhub" title="Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension">14</a></span></p>
+  </article>
+</section>
+  
+<section id="checklists" class="band">
+  <h2>The move itself, phase by phase</h2>
+  <p class="lede">Eight phases, in order. These apply whichever pathway you took; items marked with a pathway only appear for that route. Your ticks are saved in this browser.</p>
+  <div class="phase-nav"><a href="#module-kh-decide">Decide</a><a href="#module-kh-documents">Documents</a><a href="#module-kh-exit">Leave United States</a><a href="#module-kh-money">Money</a><a href="#module-kh-arrival">Arrival</a><a href="#module-kh-first90">First 90 days</a><a href="#module-kh-ongoing">Ongoing</a><a href="#module-kh-contingency">Contingency</a></div>
+  
+  <article class="module" id="module-kh-decide">
+    <h3>Decide and pressure-test</h3>
+    <p class="window">T-120 to T-60 days</p>
+    <p class="mod-intro">Cambodia&#39;s low barrier to entry cuts both ways: it is easy to arrive and easy to drift. Decide what you are doing before you land.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-kh-decide-0" data-key="kh-decide-0">
+          <label for="chk-kh-decide-0">
+            <span class="task">Run the decision tree and write down your extension class<span class="tag tag-critical">critical</span></span>
+            <span class="detail">EB, EG, ER, or ES. Everything downstream follows from it. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-decide-1" data-key="kh-decide-1">
+          <label for="chk-kh-decide-1">
+            <span class="task">Scout on an ordinary E-class visa, not a tourist visa<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Even for a two-week look, the ordinary visa costs about five dollars more and keeps every door open. </span>
+            <span class="why"><b>Why:</b> Buying the wrong class is the most common and most avoidable mistake here.</span>
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-decide-2" data-key="kh-decide-2">
+          <label for="chk-kh-decide-2">
+            <span class="task">Compare Phnom Penh, Siem Reap, and Kampot honestly</span>
+            <span class="detail">They differ enormously in cost, medical access, and foreign community. Medical access should weigh heavily if you are over 55. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-decide-3" data-key="kh-decide-3">
+          <label for="chk-kh-decide-3">
+            <span class="task">Price serious medical evacuation cover<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Cambodian tertiary care is limited and complex cases are routinely evacuated to Bangkok. Check the evacuation limit, not the headline maximum. </span>
+            
+            
+          </label>
+        </li><li data-pathways="retirement-er">
+          <input type="checkbox" id="chk-kh-decide-4" data-key="kh-decide-4">
+          <label for="chk-kh-decide-4">
+            <span class="task">If retiring, confirm you can document your income before you commit</span>
+            <span class="detail">Getting Social Security letters and pension statements is far easier from inside the US. </span>
+            
+            <span class="scope">Applies to: ER Retirement Extension</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-decide-5" data-key="kh-decide-5">
+          <label for="chk-kh-decide-5">
+            <span class="task">Write down what would make you leave</span>
+            <span class="detail">Decide now, while you are calm. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-documents">
+    <h3>Assemble and legalize documents</h3>
+    <p class="window">T-120 to T-45 days</p>
+    <p class="mod-intro">The single biggest difference from most other countries: Cambodia does not accept apostilles. Read this before you order anything.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-kh-documents-0" data-key="kh-documents-0">
+          <label for="chk-kh-documents-0">
+            <span class="task">Do not get an apostille<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Cambodia is not a party to the Hague Apostille Convention. US documents need the three-step chain: Secretary of State certification for state-issued documents, then US Department of State authentication, then Cambodian Embassy legalization. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a><a href="#src-kh-embassy-dc" title="Royal Embassy of Cambodia in Washington DC — consular legalization and licence guidance">5</a></span></span>
+            <span class="why"><b>Why:</b> An apostille is the intuitive choice, it feels like doing it properly, and it will be rejected outright.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-documents-1" data-key="kh-documents-1">
+          <label for="chk-kh-documents-1">
+            <span class="task">Confirm which documents actually need legalizing before paying for any<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Ask your employer or school for the specific list. Legalizing documents nobody asked for is pure waste at US$200 to 600 a set. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-documents-2" data-key="kh-documents-2">
+          <label for="chk-kh-documents-2">
+            <span class="task">Have multi-page documents bound correctly<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The Cambodian Embassy requires multi-page documents to be securely bound with a paging or embossed seal. Incorrect binding is an instant rejection, and the document comes back for redoing. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-documents-3" data-key="kh-documents-3">
+          <label for="chk-kh-documents-3">
+            <span class="task">Budget six to ten weeks for the full chain</span>
+            <span class="detail">Three sequential authorities, each with its own queue and courier legs between them. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-documents-4" data-key="kh-documents-4">
+          <label for="chk-kh-documents-4">
+            <span class="task">Order extra certified copies</span>
+            <span class="detail">Two or three of everything. Reordering from Cambodia is slow. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-documents-5" data-key="kh-documents-5">
+          <label for="chk-kh-documents-5">
+            <span class="task">Scan everything, including the legalization certificates</span>
+            <span class="detail">Full colour, to encrypted cloud storage, before shipping or carrying. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-exit">
+    <h3>Close out the United States</h3>
+    <p class="window">T-90 to T-0 days</p>
+    <p class="mod-intro">Identical in structure to any US departure, with one Cambodia-specific tax question you must settle yourself.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-kh-exit-0" data-key="kh-exit-0">
+          <label for="chk-kh-exit-0">
+            <span class="task">Understand you keep filing US taxes forever<span class="tag tag-critical">critical</span></span>
+            <span class="detail">The US taxes citizens on worldwide income wherever they live. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">8</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-exit-1" data-key="kh-exit-1">
+          <label for="chk-kh-exit-1">
+            <span class="task">Learn the FEIE and FTC basics</span>
+            <span class="detail">For tax year 2026 the Foreign Earned Income Exclusion tops out at US$132,900 per person on Form 2555, requiring either the Physical Presence Test of 330 full days abroad or the Bona Fide Residence Test. Earned income only. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">8</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-exit-2" data-key="kh-exit-2">
+          <label for="chk-kh-exit-2">
+            <span class="task">Check the IRS treaty table for Cambodia yourself<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Do not take anyone&#39;s word, including this guide&#39;s, on treaty status. Open the IRS list of US income tax treaties and look for Cambodia. If it is absent, there is no treaty relief and no tie-breaker rules, and your defence is FEIE and the Foreign Tax Credit alone. <span class="cite"><a href="#src-irs-treaty-table" title="IRS — United States income tax treaties A to Z. Check Cambodia&#39;s status here yourself.">7</a></span></span>
+            <span class="why"><b>Why:</b> Treaty status is the sort of fact that a guide can get stale on and that you can verify in sixty seconds.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-exit-3" data-key="kh-exit-3">
+          <label for="chk-kh-exit-3">
+            <span class="task">Plan FBAR compliance<span class="tag tag-critical">critical</span></span>
+            <span class="detail">FinCEN Form 114 is required if your foreign accounts together exceeded US$10,000 at any point in the year. Filed free on the BSA E-Filing system. <span class="cite"><a href="#src-fincen-efile" title="FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate">9</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-exit-4" data-key="kh-exit-4">
+          <label for="chk-kh-exit-4">
+            <span class="task">Decide your state domicile deliberately</span>
+            <span class="detail">Driver&#39;s licence, voter registration, and mailing address as one coherent decision. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-exit-5" data-key="kh-exit-5">
+          <label for="chk-kh-exit-5">
+            <span class="task">Set up mail forwarding with scanning</span>
+            <span class="detail">A real street address, not a PO box. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-exit-6" data-key="kh-exit-6">
+          <label for="chk-kh-exit-6">
+            <span class="task">Tell your banks and brokerages before you go<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Some close accounts on a foreign address. Find out while you can still visit a branch. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-exit-7" data-key="kh-exit-7">
+          <label for="chk-kh-exit-7">
+            <span class="task">Understand Medicare does not cover you in Cambodia<span class="tag tag-critical">critical</span></span>
+            <span class="detail">And that Cambodian tertiary care is limited enough that evacuation cover is not optional. </span>
+            
+            
+          </label>
+        </li><li data-pathways="retirement-er">
+          <input type="checkbox" id="chk-kh-exit-8" data-key="kh-exit-8">
+          <label for="chk-kh-exit-8">
+            <span class="task">Confirm Social Security payment arrangements abroad</span>
+            <span class="detail">Especially important on the retirement pathway, where the benefit letter is also your visa evidence. </span>
+            
+            <span class="scope">Applies to: ER Retirement Extension</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-exit-9" data-key="kh-exit-9">
+          <label for="chk-kh-exit-9">
+            <span class="task">Register for absentee voting</span>
+            <span class="detail">Through the Federal Voting Assistance Program. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-money">
+    <h3>Money and banking</h3>
+    <p class="window">T-45 to T+30 days</p>
+    <p class="mod-intro">The good news: Cambodia is dollarized, which removes most of the currency friction of a move to Asia.</p>
+    <ul class="checklist">
+      <li>
+          <input type="checkbox" id="chk-kh-money-0" data-key="kh-money-0">
+          <label for="chk-kh-money-0">
+            <span class="task">Understand that US dollars are the working currency</span>
+            <span class="detail">Rent, salaries, visa fees, and most retail are priced in dollars. Riel is used as small change at roughly 4,000 to the dollar. </span>
+            <span class="why"><b>Why:</b> This eliminates the exchange-rate exposure that dominates budgeting in most destinations.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-money-1" data-key="kh-money-1">
+          <label for="chk-kh-money-1">
+            <span class="task">Bring clean, new US notes<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Torn, marked, or older-series notes are routinely refused, including by banks. This surprises every American once. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-money-2" data-key="kh-money-2">
+          <label for="chk-kh-money-2">
+            <span class="task">Keep a US bank account open permanently<span class="tag tag-critical">critical</span></span>
+            <span class="detail">For tax refunds, brokerage links, and US card payments. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-money-3" data-key="kh-money-3">
+          <label for="chk-kh-money-3">
+            <span class="task">Get cards with no foreign transaction fee before leaving</span>
+            <span class="detail">And expect meaningful per-withdrawal ATM fees in Cambodia. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-money-4" data-key="kh-money-4">
+          <label for="chk-kh-money-4">
+            <span class="task">Open a Cambodian account once you have status and an address</span>
+            <span class="detail">Straightforward with an extension and a lease. </span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-money-5" data-key="kh-money-5">
+          <label for="chk-kh-money-5">
+            <span class="task">Budget the company&#39;s true annual compliance cost<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Patent tax, monthly filings, and accounting continue whether or not the company trades. </span>
+            
+            <span class="scope">Applies to: Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-arrival">
+    <h3>Arrival week</h3>
+    <p class="window">T-0 to T+7 days</p>
+    <p class="mod-intro">One decision at the airport counter shapes everything that follows.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-kh-arrival-0" data-key="kh-arrival-0">
+          <label for="chk-kh-arrival-0">
+            <span class="task">Ask for the ordinary or business visa, not the tourist visa<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Say the words, and check the sticker before you leave the counter. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-arrival-1" data-key="kh-arrival-1">
+          <label for="chk-kh-arrival-1">
+            <span class="task">Photograph your visa sticker and entry stamp</span>
+            <span class="detail">The entry date starts both your 30-day clock and your tax-residency count. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-arrival-2" data-key="kh-arrival-2">
+          <label for="chk-kh-arrival-2">
+            <span class="task">Start counting days toward 182<span class="tag tag-critical">critical</span></span>
+            <span class="detail">More than 182 days in the calendar year makes you a Cambodian tax resident. See the contested section on what that actually means for your income. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a></span></span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-arrival-3" data-key="kh-arrival-3">
+          <label for="chk-kh-arrival-3">
+            <span class="task">Get a local SIM with your passport</span>
+            <span class="detail">Registration matters for banking and government services. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-arrival-4" data-key="kh-arrival-4">
+          <label for="chk-kh-arrival-4">
+            <span class="task">Do not sign a twelve-month lease in week one</span>
+            <span class="detail">Take somewhere short-term first. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-arrival-5" data-key="kh-arrival-5">
+          <label for="chk-kh-arrival-5">
+            <span class="task">Begin the extension process around day 20<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Not day 29. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-first90">
+    <h3>First 90 days</h3>
+    <p class="window">T+7 to T+90 days</p>
+    <p class="mod-intro">Converting arrival into a stable, renewable basis.</p>
+    <ul class="checklist">
+      <li class="critical">
+          <input type="checkbox" id="chk-kh-first90-0" data-key="kh-first90-0">
+          <label for="chk-kh-first90-0">
+            <span class="task">Convert the ordinary visa into your extension class<span class="tag tag-critical">critical</span></span>
+            <span class="detail">EB, EG, ER, or ES, with the supporting documents that class now requires. <span class="cite"><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></span>
+            
+            
+          </label>
+        </li><li data-pathways="employed-eb selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-first90-1" data-key="kh-first90-1">
+          <label for="chk-kh-first90-1">
+            <span class="task">Complete the health check in Cambodia</span>
+            <span class="detail">Required for the work permit. Quick and inexpensive. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></span>
+            
+            <span class="scope">Applies to: EB Extension plus Work Permit — employed, Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li><li class="critical" data-pathways="employed-eb selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-first90-2" data-key="kh-first90-2">
+          <label for="chk-kh-first90-2">
+            <span class="task">Get the work permit filed on FWCMS<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Separate from the visa, from a different ministry, and legally required to work. The EB extension alone is not enough. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a></span></span>
+            
+            <span class="scope">Applies to: EB Extension plus Work Permit — employed, Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-first90-3" data-key="kh-first90-3">
+          <label for="chk-kh-first90-3">
+            <span class="task">Obtain a certificate of residence from your Sangkat</span>
+            <span class="detail">The local commune office. Needed for the driving licence and useful for several other processes. <span class="cite"><a href="#src-kh-driving" title="Foreign driving licence exchange in Cambodia — required documents including Sangkat certificate of residence, class limitations">22</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-first90-4" data-key="kh-first90-4">
+          <label for="chk-kh-first90-4">
+            <span class="task">Convert your US driver&#39;s licence at MPWT<span class="tag tag-critical">critical</span></span>
+            <span class="detail">You need the licence, a translation into English or Khmer if required, your visa or extension, the Sangkat certificate of residence, three 4x6cm photos, and a medical certificate. Note that a US licence converts only to an equivalent class, and classes C, D and E cannot convert to the same class. <span class="cite"><a href="#src-kh-mpwt" title="Ministry of Public Works and Transport — driver&#39;s licence issuance and conversion">4</a><a href="#src-kh-driving" title="Foreign driving licence exchange in Cambodia — required documents including Sangkat certificate of residence, class limitations">22</a></span></span>
+            <span class="why"><b>Why:</b> Riding or driving unlicensed voids most insurance after an accident, and road trauma is the largest health risk to foreigners here.</span>
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-first90-5" data-key="kh-first90-5">
+          <label for="chk-kh-first90-5">
+            <span class="task">Buy health insurance with a real evacuation limit<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Assume complex care means Bangkok. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-first90-6" data-key="kh-first90-6">
+          <label for="chk-kh-first90-6">
+            <span class="task">Register with the US Embassy</span>
+            <span class="detail">Through the Smart Traveler Enrollment Program. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-first90-7" data-key="kh-first90-7">
+          <label for="chk-kh-first90-7">
+            <span class="task">Do not buy property in your first year<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Foreigners cannot own land, condo purchases need a strata title, and nominee structures are genuinely risky. Rent first. <span class="cite"><a href="#src-kh-property" title="Foreign property ownership in Cambodia — no land ownership, strata title above ground floor, 70% foreign cap per building, 2019 Trust Law alternatives">20</a></span></span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-ongoing">
+    <h3>Staying legal, year after year</h3>
+    <p class="window">Continuous</p>
+    <p class="mod-intro">Cambodia&#39;s annual cycle is unusual: it runs on fixed calendar dates, not on your personal anniversary. This is where people get caught.</p>
+    <ul class="checklist">
+      <li class="critical" data-pathways="employed-eb selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-ongoing-0" data-key="kh-ongoing-0">
+          <label for="chk-kh-ongoing-0">
+            <span class="task">Diarise the work permit calendar the day you receive the permit<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Permits are valid to 31 December regardless of issue date, and renewals are filed between 1 January and 31 March. A permit issued in October expires ten weeks later. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a></span></span>
+            
+            <span class="scope">Applies to: EB Extension plus Work Permit — employed, Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li><li class="critical" data-pathways="employed-eb selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-ongoing-1" data-key="kh-ongoing-1">
+          <label for="chk-kh-ongoing-1">
+            <span class="task">Diarise the Foreign Manpower Quota window<span class="tag tag-critical">critical</span></span>
+            <span class="detail">1 September to 30 November, for the following year. If you run your own company this is your job; if you are employed, ask HR in September whether it has been filed. <span class="cite"><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></span>
+            
+            <span class="scope">Applies to: EB Extension plus Work Permit — employed, Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-ongoing-2" data-key="kh-ongoing-2">
+          <label for="chk-kh-ongoing-2">
+            <span class="task">Renew your extension before expiry</span>
+            <span class="detail">Twelve months at a time once established. </span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-ongoing-3" data-key="kh-ongoing-3">
+          <label for="chk-kh-ongoing-3">
+            <span class="task">File your US return and FBAR every year<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Automatic extension to 15 June for expats, but interest runs from April. FBAR is separate. <span class="cite"><a href="#src-feie-2026" title="IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555">8</a><a href="#src-fincen-efile" title="FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate">9</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical">
+          <input type="checkbox" id="chk-kh-ongoing-4" data-key="kh-ongoing-4">
+          <label for="chk-kh-ongoing-4">
+            <span class="task">Settle your Cambodian tax position deliberately, once<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Read the contested claim on worldwide versus territorial taxation, then get a written answer from a Cambodian tax adviser for your specific facts. Do not rely on what other foreigners tell you at a bar. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a><a href="#src-kh-tax-pwc" title="PwC Worldwide Tax Summaries — Cambodia, taxes on personal income">17</a></span></span>
+            
+            
+          </label>
+        </li><li class="critical" data-pathways="selfsponsor-eb">
+          <input type="checkbox" id="chk-kh-ongoing-5" data-key="kh-ongoing-5">
+          <label for="chk-kh-ongoing-5">
+            <span class="task">Keep the company filings current<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Including the patent tax certificate, which the work permit application depends on. </span>
+            
+            <span class="scope">Applies to: Own Company plus Self-Sponsored EB</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-ongoing-6" data-key="kh-ongoing-6">
+          <label for="chk-kh-ongoing-6">
+            <span class="task">Keep a folder a lawyer could pick up cold</span>
+            <span class="detail">Entry stamps, every extension, work permits, leases, filings. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+  <article class="module" id="module-kh-contingency">
+    <h3>Contingency and exit</h3>
+    <p class="window">Have this before you need it</p>
+    <p class="mod-intro">Written while things are going well.</p>
+    <ul class="checklist">
+      <li class="critical" data-pathways="employed-eb">
+          <input type="checkbox" id="chk-kh-contingency-0" data-key="kh-contingency-0">
+          <label for="chk-kh-contingency-0">
+            <span class="task">Know what happens to your status if you lose your job<span class="tag tag-critical">critical</span></span>
+            <span class="detail">Your EB extension and work permit are tied to the sponsoring employer. Ask HR what the clock is before you need to know. </span>
+            
+            <span class="scope">Applies to: EB Extension plus Work Permit — employed</span>
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-contingency-1" data-key="kh-contingency-1">
+          <label for="chk-kh-contingency-1">
+            <span class="task">Understand the overstay regime</span>
+            <span class="detail">Overstay is resolved by a daily fine and an exit procedure. It is survivable and it leaves a record. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-contingency-2" data-key="kh-contingency-2">
+          <label for="chk-kh-contingency-2">
+            <span class="task">Keep three months of expenses plus a flight home, liquid</span>
+            <span class="detail">Reachable from either country. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-contingency-3" data-key="kh-contingency-3">
+          <label for="chk-kh-contingency-3">
+            <span class="task">Keep US documents current</span>
+            <span class="detail">Passport, and a valid US driver&#39;s licence if you might return. </span>
+            
+            
+          </label>
+        </li><li>
+          <input type="checkbox" id="chk-kh-contingency-4" data-key="kh-contingency-4">
+          <label for="chk-kh-contingency-4">
+            <span class="task">Write down your fallback extension class</span>
+            <span class="detail">If your current basis fails, which node of the tree do you re-enter at? EG is usually the honest answer, and it is a bridge, not a destination. </span>
+            
+            
+          </label>
+        </li>
+    </ul>
+  </article>
+</section>
+  
+<section id="watchlist" class="band">
+  <h2>What we are watching</h2>
+  <p class="lede">Rules that are moving, or expected to. Each carries the date we next check it. When one lands, this guide is updated and you get the new edition — that is what your purchase actually buys beyond the first read.</p>
+  
+  <article class="watch impact-pathway-changing">
+    <h3>The 2026 tightening of extension and compliance requirements</h3>
+    <p class="watch-meta">
+      <span class="wstatus">Enforcement shifting</span>
+      <span class="wimpact">Impact if it lands: pathway changing</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>If documentation requirements for extensions keep rising, the EG bridge narrows and Cambodia stops being the region&#39;s easy option. The reality check and the EG pathway would both need rewriting. <span class="cite"><a href="#src-kh-work-2026" title="Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar">11</a><a href="#src-kh-visa-2026" title="Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300">10</a></span></p>
+    <p class="waffects">Affects: Ordinary (E-class) Visa — the gateway, EG Extension — job seekers and remote workers, EB Extension plus Work Permit — employed</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>Citizenship-by-investment framework and thresholds</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by December 1, 2026</span>
+    </p>
+    <p>Thresholds and the governing instrument are described as actively evolving. Any change alters the only permanence route in this pack. <span class="cite"><a href="#src-kh-cbi" title="Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months">19</a></span></p>
+    <p class="waffects">Affects: Citizenship by Investment or Donation</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>Work permit renewal window and quota dates for the next cycle</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by November 15, 2026</span>
+    </p>
+    <p>The 1 January to 31 March renewal window and the 1 September to 30 November quota window are administrative dates that can move between years. They drive the most consequential deadlines in this pack. <span class="cite"><a href="#src-kh-fwcms" title="Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards">3</a><a href="#src-kh-fmq" title="Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce">13</a></span></p>
+    <p class="waffects">Affects: EB Extension plus Work Permit — employed, Own Company plus Self-Sponsored EB</p>
+  </article>
+  <article class="watch impact-significant">
+    <h3>Tax administration reach over foreign-sourced individual income</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: significant</span>
+      <span class="wcheck">We re-check by January 15, 2027</span>
+    </p>
+    <p>If the General Department of Taxation begins assessing resident foreigners on foreign-source income, the first contested claim resolves and the money module needs a substantial rewrite. <span class="cite"><a href="#src-kh-tax-acclime" title="Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents">16</a><a href="#src-kh-tax-territorial" title="Commentary describing Cambodian taxation as territorial in practice for foreign-payroll individuals">18</a></span></p>
+    
+  </article>
+  <article class="watch impact-minor">
+    <h3>Cambodia&#39;s position on the Apostille Convention</h3>
+    <p class="watch-meta">
+      <span class="wstatus">In force, details unclear</span>
+      <span class="wimpact">Impact if it lands: minor</span>
+      <span class="wcheck">We re-check by March 1, 2027</span>
+    </p>
+    <p>Cambodia remains outside the Convention. Vietnam&#39;s accession in September 2026 makes this a live comparison, and any Cambodian move would simplify the documents module considerably. <span class="cite"><a href="#src-kh-legalization" title="US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements">21</a></span></p>
+    
+  </article>
+</section>
+  
+<section id="sources" class="band">
+  <h2>Sources, and how much to trust each one</h2>
+  <p class="lede">Every factual claim above is numbered to this list. Tiers are marked honestly: a law firm's summary of a decree is not the decree, and we do not pretend otherwise. Verify anything that will cost you money before you act on it.</p>
+  <ol class="sources">
+    
+    <li id="src-kh-evisa-portal">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.evisa.gov.kh" rel="noopener noreferrer" target="_blank">Cambodia official e-visa portal — Ministry of Foreign Affairs and International Cooperation</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Type the address directly. As with Vietnam, search results for Cambodian visas are dominated by resellers.</span>
+    </li>
+    <li id="src-kh-immigration">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.immigration.gov.kh" rel="noopener noreferrer" target="_blank">Cambodian General Department of Immigration — visas, extensions of stay, foreigner registration</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-fwcms">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.fwcms.mlvt.gov.kh" rel="noopener noreferrer" target="_blank">Foreign Workers Centralized Management System (FWCMS), Ministry of Labour and Vocational Training — all work permits and employment cards</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-mpwt">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.mpwt.gov.kh/en/public-services/driver-s-license" rel="noopener noreferrer" target="_blank">Ministry of Public Works and Transport — driver&#39;s licence issuance and conversion</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-embassy-dc">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.embassyofcambodiadc.org" rel="noopener noreferrer" target="_blank">Royal Embassy of Cambodia in Washington DC — consular legalization and licence guidance</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-er-mfaic">
+      <span class="tier tier-government">government</span>
+      <a href="https://recberlin.mfaic.gov.kh/en-us/the-cambodia-retirement-visa-er" rel="noopener noreferrer" target="_blank">Cambodian Ministry of Foreign Affairs mission page — the Cambodia Retirement Visa (ER)</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-irs-treaty-table">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z" rel="noopener noreferrer" target="_blank">IRS — United States income tax treaties A to Z. Check Cambodia&#39;s status here yourself.</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-feie-2026">
+      <span class="tier tier-government">government</span>
+      <a href="https://www.irs.gov/individuals/international-taxpayers/figuring-the-foreign-earned-income-exclusion" rel="noopener noreferrer" target="_blank">IRS Foreign Earned Income Exclusion for tax year 2026 — US$132,900, Form 2555</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">The 2026 figure comes from published inflation-adjustment reporting; confirm on the IRS page for your filing year.</span>
+    </li>
+    <li id="src-fincen-efile">
+      <span class="tier tier-government">government</span>
+      <a href="https://bsaefiling.fincen.treas.gov" rel="noopener noreferrer" target="_blank">FinCEN BSA E-Filing — FBAR (Form 114), required when foreign accounts exceed US$10,000 in aggregate</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-visa-2026">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://cambodianess.com/article/cambodia-visa-2026-what-travelers-expats-and-long-stay-visitors-need-to-know" rel="noopener noreferrer" target="_blank">Cambodia visa classes, extension types and 2026 fees — ordinary E-class US$35, extensions from US$45 to about US$300</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-work-2026">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://cambodianess.com/article/working-in-cambodia-in-2026-visas-work-permits-and-everyday-reality-for-foreigners" rel="noopener noreferrer" target="_blank">Working in Cambodia 2026 — two-document system, 2026 compliance checks, work permit calendar</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-wp-emerhub">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://emerhub.com/cambodia/work-permit-in-cambodia/" rel="noopener noreferrer" target="_blank">Cambodia work permit requirements and process for foreigners</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-fmq">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.legal500.com/developments/thought-leadership/a-notification-on-the-procedure-for-employment-of-foreign-labor-in-the-kingdom-of-cambodia/" rel="noopener noreferrer" target="_blank">Notification on the procedure for employment of foreign labour — Foreign Manpower Quota, applied 1 September to 30 November, capped at 10% of the Cambodian workforce</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Law firm commentary on a ministry notification. Confirm current dates on FWCMS before relying on them.</span>
+    </li>
+    <li id="src-kh-er-emerhub">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://emerhub.com/cambodia/cambodia-retirement-visa/" rel="noopener noreferrer" target="_blank">Cambodia retirement visa (ER) — age 55, retirement income evidence, about US$275 for a 12-month extension</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-eg-sponsor">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.playroll.com/work-permit-visas/cambodia" rel="noopener noreferrer" target="_blank">Cambodia E-class extensions and sponsorship — 1 and 3-month EG extensions without sponsor, 12-month extensions requiring one</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-tax-acclime">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://cambodia.acclime.com/guides/personal-income-tax/" rel="noopener noreferrer" target="_blank">Personal income tax in Cambodia — 182-day residency, progressive rates to 20%, worldwide salary for residents</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-tax-pwc">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://taxsummaries.pwc.com/cambodia/individual/taxes-on-personal-income" rel="noopener noreferrer" target="_blank">PwC Worldwide Tax Summaries — Cambodia, taxes on personal income</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">The most authoritative non-government source in this pack for the tax position.</span>
+    </li>
+    <li id="src-kh-tax-territorial">
+      <span class="tier tier-community">community</span>
+      <a href="https://nomadtaxcalc.com/tax-guides/cambodia" rel="noopener noreferrer" target="_blank">Commentary describing Cambodian taxation as territorial in practice for foreign-payroll individuals</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">Included because it represents the position most foreigners in Cambodia actually hold. It conflicts with the professional sources — see the contested claims.</span>
+    </li>
+    <li id="src-kh-cbi">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.imidaily.com/cambodia-citizenship-by-investment-program/" rel="noopener noreferrer" target="_blank">Cambodia citizenship by investment — US$245,000 donation or US$305,000 investment, all-in commonly US$330,000+, three visits, 3 to 6 months</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-property">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://ips-cambodia.com/understanding-strata-title-in-cambodia/" rel="noopener noreferrer" target="_blank">Foreign property ownership in Cambodia — no land ownership, strata title above ground floor, 70% foreign cap per building, 2019 Trust Law alternatives</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-legalization">
+      <span class="tier tier-professional">professional</span>
+      <a href="https://www.usapostille.org/non-hague-legalization/cambodia-embassy-legalization-guide/" rel="noopener noreferrer" target="_blank">US document legalization for Cambodia — not a Hague Convention member, three-step chain, binding and paging seal requirements</a>
+      <span class="checked">checked September 8, 2026</span>
+      <span class="src-note">A legalization vendor&#39;s guide. The underlying fact — Cambodia&#39;s non-membership — is verifiable on the HCCH member list.</span>
+    </li>
+    <li id="src-kh-driving">
+      <span class="tier tier-community">community</span>
+      <a href="https://cambodiaexpatsonline.com/newsworthy/yes-foreigners-can-exchange-homecountry-driving-license-for-cambodian-license-t51582.html" rel="noopener noreferrer" target="_blank">Foreign driving licence exchange in Cambodia — required documents including Sangkat certificate of residence, class limitations</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+    <li id="src-kh-movetocambodia">
+      <span class="tier tier-community">community</span>
+      <a href="https://movetocambodia.com/planning-your-move-to-cambodia/cambodia-visas/" rel="noopener noreferrer" target="_blank">Move to Cambodia — long-running practical expat reference on visa classes</a>
+      <span class="checked">checked September 8, 2026</span>
+      
+    </li>
+  </ol>
+</section>
+  
+<section id="changelog" class="band">
+  <h2>What has changed</h2>
+  <p class="lede">Every edition of this guide, and what moved in it.</p>
+  
+  <article class="release">
+    <h3>v1.0.0 <span class="rel-date">September 8, 2026</span></h3>
+    <p class="rel-sum">First edition of the Cambodia pack, built on the same format as Vietnam.</p>
+    <ul class="rel-changes">
+      <li><span class="ckind">new content</span> Eight pathways, three contested claims, ten traps, and per-pathway self-verification steps.
+        </li>
+    </ul>
+  </article>
+</section>
+  <footer>
+    <p>Cambodia Relocation Guide, edition v1.0.0, verified September 8, 2026. Built on the Relocation OS country-pack format.</p>
+    <p>Licensed for personal use by the purchaser. Not legal, immigration, or tax advice.</p>
+  </footer>
+</div>
+
+<script>
+const PACK = {"tree":{"entry":"q-purpose","nodes":[{"id":"q-purpose","type":"question","question":"How long do you need to stay, and will you be doing any kind of work while you are there?","help":"Cambodia splits sharply at the thirty-day line, and again at the question of work. Getting the entry visa class right at the airport is the cheapest decision you will ever make here, and the most annoying one to undo.","answers":[{"label":"Thirty days or less, pure tourism","next":"out-tourist","note":"The tourist visa is fine and cheaper."},{"label":"Longer than thirty days, or any kind of work at all","next":"q-basis","note":"Then you want the ordinary E-class visa on arrival, not the tourist one. Keep going."}]},{"id":"q-basis","type":"question","question":"What will your basis for staying be?","help":"In Cambodia the visa you arrive on is almost always the same — the ordinary E-class — and what differs is the extension you convert it into. So this question is really: which extension class are you aiming at?","answers":[{"label":"I am 55 or older and retired, living on a pension or savings","next":"q-retire-check","note":"Cambodia has a real retirement extension, unlike Vietnam."},{"label":"I have, or expect to have, a Cambodian employer","next":"out-employed"},{"label":"I will register and run my own Cambodian company","next":"out-selfsponsor"},{"label":"I am enrolling in a Cambodian school or university","next":"out-student"},{"label":"I work remotely for foreign clients, or I am job-hunting on the ground","next":"out-jobseek"},{"label":"I want Cambodian citizenship and can invest several hundred thousand dollars","next":"out-citizenship"},{"label":"I want permanent residence or citizenship, but without a large investment","next":"dead-pr"},{"label":"I genuinely do not know yet — I want to arrive legally and decide there","next":"out-ordinary","note":"A completely reasonable answer in Cambodia, and one the system actually accommodates."}]},{"id":"q-retire-check","type":"question","question":"Three things have to be true at once. Are they?","help":"You need to be 55 or older, able to evidence retirement income or savings, and genuinely not working in Cambodia. The ER extension does not come with the right to work, and taking a local job on it is the same illegal-employment exposure as anything else.","answers":[{"label":"Yes — 55 or over, retired, with income I can document, and not planning to work locally","next":"out-retirement"},{"label":"I am 55 or over but I do intend to work in Cambodia","next":"out-employed","note":"Then your route is employment, not retirement — and it needs a work permit."},{"label":"I am under 55","next":"out-jobseek","note":"The retirement extension is closed to you. The extension classes that are not age-gated are where to look."}]},{"id":"out-tourist","type":"outcome","pathwayId":"tourist-t"},{"id":"out-ordinary","type":"outcome","pathwayId":"ordinary-e"},{"id":"out-employed","type":"outcome","pathwayId":"employed-eb"},{"id":"out-selfsponsor","type":"outcome","pathwayId":"selfsponsor-eb"},{"id":"out-retirement","type":"outcome","pathwayId":"retirement-er"},{"id":"out-jobseek","type":"outcome","pathwayId":"jobseek-eg"},{"id":"out-student","type":"outcome","pathwayId":"student-es"},{"id":"out-citizenship","type":"outcome","pathwayId":"citizenship-investment"},{"id":"dead-pr","type":"deadend","verdict":"There is no reliable residence-years-to-citizenship pipeline in Cambodia of the kind that exists in Europe or North America. Ordinary naturalization exists in law, but it is opaque in practice and is not something you can plan a decade around. What Cambodia actually offers is indefinite renewable temporary stay — which is unusually generous, and which is not the same as permanence. If you need a second passport or secure permanent status, the investment route is the only route with a published process.","alternatives":["Accept indefinite renewable extensions for what they are: the most permissive long-stay regime in the region, renewed annually, forever. Many long-term foreign residents in Cambodia live exactly this way.","Take the investment route if a passport is genuinely the objective and the cost is bearable — it is a real program with a published process, unlike some regional equivalents.","Marriage to a Cambodian citizen changes the picture and has its own naturalization provisions. If that applies to you, take specific advice; this guide does not cover it in depth.","If permanence is the actual requirement, compare Cambodia against countries that publish a residency-to-citizenship timeline before committing years here."]}]},"pathways":[{"id":"tourist-t","name":"Tourist (T-class) Visa","summary":"Thirty days, extendable once by thirty days, then you must leave. Cheaper than the ordinary visa and a dead end by design. Correct for a holiday, wrong for anything else.","difficulty":"low"},{"id":"ordinary-e","name":"Ordinary (E-class) Visa — the gateway","summary":"The most useful document in Cambodian immigration and the reason people call this the easiest country in the region. Thirty days on arrival, and then — uniquely — convertible into an extension of stay that can be renewed indefinitely. Almost every long-term route in this guide starts here.","difficulty":"low"},{"id":"employed-eb","name":"EB Extension plus Work Permit — employed","summary":"The standard route for anyone working for a Cambodian employer. Two documents from two ministries: the EB extension to stay, and the work permit to work. Both are required, and the calendar around them is unforgiving in a way that catches almost everyone once.","difficulty":"moderate"},{"id":"selfsponsor-eb","name":"Own Company plus Self-Sponsored EB","summary":"Register a Cambodian company, and it becomes the sponsor for your own extension and work permit. Cambodia's company formation thresholds are far lower than Vietnam's investor tiers, which makes this the realistic self-directed route in the region — at the cost of real, permanent compliance obligations.","difficulty":"high"},{"id":"retirement-er","name":"ER Retirement Extension","summary":"A genuine retirement route, which most of Cambodia's neighbours in this guide do not offer. Age 55 and over, evidence of retirement income, no local work. Renewable indefinitely in 1, 3, 6, or 12-month blocks.","difficulty":"low"},{"id":"jobseek-eg","name":"EG Extension — job seekers and remote workers","summary":"The extension class for people who are not yet employed. Short EG extensions of 1 and 3 months do not require a sponsor, which makes this the most accessible long-stay mechanism in the region — and the closest thing Cambodia has to a remote worker route, with an important legal caveat.","difficulty":"low"},{"id":"student-es","name":"ES Student Extension","summary":"For enrolment at a recognised Cambodian institution, including Khmer language programs. Inexpensive, low-friction, and a legitimate way to hold clear status while you work out whether Cambodia is right for you.","difficulty":"low"},{"id":"citizenship-investment","name":"Citizenship by Investment or Donation","summary":"Cambodia runs a real, published citizenship-by-investment program — a meaningful contrast with the regional trend of announcing golden visas that never launch. It is expensive, it is faster than most, and the headline figure is not the real cost.","difficulty":"very-high"}]};
+
+/* ---- decision tree ---- */
+(function () {
+  const nodes = new Map(PACK.tree.nodes.map(n => [n.id, n]));
+  const pathways = new Map(PACK.pathways.map(p => [p.id, p]));
+  const card = document.getElementById('tree-card');
+  const crumbs = document.getElementById('breadcrumb');
+  const back = document.getElementById('btn-back');
+  const restart = document.getElementById('btn-restart');
+  if (!card) return;
+
+  let path = [PACK.tree.entry];   // node ids
+  let picks = [];                 // answer labels
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  function scopeChecklists(pathwayId) {
+    document.querySelectorAll('.checklist li[data-pathways]').forEach(li => {
+      li.hidden = pathwayId ? !li.dataset.pathways.split(' ').includes(pathwayId) : false;
+    });
+    try { pathwayId ? localStorage.setItem('vn-pathway', pathwayId) : localStorage.removeItem('vn-pathway'); } catch (e) {}
+  }
+
+  function render() {
+    const node = nodes.get(path[path.length - 1]);
+    crumbs.innerHTML = picks.map(p => '<li>' + esc(p) + '</li>').join('');
+    back.hidden = path.length < 2;
+
+    if (node.type === 'question') {
+      scopeChecklists(null);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="q-text">' + esc(node.question) + '</p>' +
+        (node.help ? '<p class="q-help">' + esc(node.help) + '</p>' : '') +
+        '<div class="answers">' + node.answers.map((a, i) =>
+          '<button type="button" class="answer" data-i="' + i + '"><b>' + esc(a.label) + '</b>' +
+          (a.note ? '<i>' + esc(a.note) + '</i>' : '') + '</button>').join('') + '</div>';
+      card.querySelectorAll('.answer').forEach(btn => btn.addEventListener('click', () => {
+        const a = node.answers[+btn.dataset.i];
+        picks.push(a.label);
+        path.push(a.next);
+        render();
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }));
+      return;
+    }
+
+    if (node.type === 'outcome') {
+      const p = pathways.get(node.pathwayId);
+      scopeChecklists(p.id);
+      card.className = 'tree-card';
+      card.innerHTML =
+        '<p class="result-kicker">Your pathway</p>' +
+        '<p class="q-text">' + esc(p.name) + '</p>' +
+        '<p class="q-help">' + esc(p.summary) + '</p>' +
+        '<p><a class="btn" href="#pathway-' + p.id + '">Read the full pathway &rarr;</a></p>' +
+        '<p class="q-help" style="margin-top:1rem">The phase checklists below are now filtered to this pathway.</p>';
+      return;
+    }
+
+    scopeChecklists(null);
+    card.className = 'tree-card result-dead';
+    card.innerHTML =
+      '<p class="result-kicker">No pathway fits &mdash; here is the honest answer</p>' +
+      '<p class="q-help" style="font-size:1rem;color:var(--ink)">' + esc(node.verdict) + '</p>' +
+      (node.alternatives && node.alternatives.length
+        ? '<p style="font-weight:650;margin-top:1rem">What to actually consider:</p><ul class="alts">' +
+          node.alternatives.map(a => '<li>' + esc(a) + '</li>').join('') + '</ul>'
+        : '');
+  }
+
+  back.addEventListener('click', () => { if (path.length > 1) { path.pop(); picks.pop(); render(); } });
+  restart.addEventListener('click', () => { path = [PACK.tree.entry]; picks = []; render(); });
+  render();
+})();
+
+/* ---- checklist persistence ---- */
+(function () {
+  const KEY = 'vn-guide-progress';
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  document.querySelectorAll('.checklist input[data-key]').forEach(box => {
+    if (saved[box.dataset.key]) box.checked = true;
+    box.addEventListener('change', () => {
+      saved[box.dataset.key] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+})();
+</script>

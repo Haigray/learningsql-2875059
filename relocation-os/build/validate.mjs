@@ -76,9 +76,11 @@ const PHASE_SPINE = [
 ];
 
 function checkIntegrity(pack) {
+  const today = new Date().toISOString().slice(0, 10);
   const nodes      = new Map((pack.tree?.nodes ?? []).map(n => [n.id, n]));
   const pathwayIds = new Set((pack.pathways ?? []).map(p => p.id));
   const sourceIds  = new Set((pack.sources ?? []).map(s => s.id));
+  const sourceById = new Map((pack.sources ?? []).map(s => [s.id, s]));
 
   // Every source id referenced anywhere must exist in the registry.
   (function walkSourceRefs(value, path) {
@@ -162,7 +164,6 @@ function checkIntegrity(pack) {
   }
 
   // Freshness. Immigration content rots; the product must say so out loud.
-  const today = new Date().toISOString().slice(0, 10);
   if (pack.meta?.reviewDue && pack.meta.reviewDue < today) {
     err('meta.reviewDue', `pack is overdue for re-verification (due ${pack.meta.reviewDue}) — do not ship`);
   }
@@ -172,6 +173,84 @@ function checkIntegrity(pack) {
   for (const g of pack.gotchas ?? []) {
     if (g.expires && g.expires < today) {
       warn(`gotchas["${g.title}"]`, `expired on ${g.expires} — re-check whether this trap still applies`);
+    }
+  }
+
+  // --- Edition and assurance ------------------------------------------------
+  // The whole no-adviser model rests on these being enforced, not aspirational.
+  if (pack.meta?.edition === 'reviewed' && !pack.meta.reviewedBy) {
+    err('meta.edition', "claims 'reviewed' but names no reviewer — never claim professional review without one");
+  }
+
+  for (const pw of pack.pathways ?? []) {
+    // Self-verification is the substitute for a paid reviewer. No exceptions.
+    if (!pw.verification?.length) {
+      err(`pathways[${pw.id}].verification`, 'has no self-verification steps — a buyer cannot confirm this pathway without us');
+    }
+    // Point buyers at the government, not at commentary.
+    const anyOfficial = (pw.verification ?? []).some(v =>
+      v.url || pack.sources.some(s => s.isOfficialPortal && s.title.toLowerCase().includes(v.authority.toLowerCase().slice(0, 12)))
+    );
+    if (pw.verification?.length && !anyOfficial) {
+      warn(`pathways[${pw.id}].verification`, 'no verification step links an official portal — prefer a government URL the buyer can open');
+    }
+    // A pathway resting only on blogs is a pathway to re-research.
+    const tiers = new Set();
+    JSON.stringify(pw).replace(/"sourceIds":\[([^\]]*)\]/g, (_, ids) => {
+      ids.split(',').forEach(raw => {
+        const s = sourceById.get(raw.trim().replace(/"/g, ''));
+        if (s) tiers.add(s.tier);
+      });
+      return '';
+    });
+    if (tiers.size && !tiers.has('primary-law') && !tiers.has('government')) {
+      warn(`pathways[${pw.id}]`, 'rests entirely on professional/community sources — upgrade at least one claim to primary law or a government page');
+    }
+  }
+
+  // --- Contested claims -----------------------------------------------------
+  for (const c of pack.contested ?? []) {
+    for (const pos of c.positions) {
+      for (const id of pos.sourceIds ?? []) {
+        if (!sourceIds.has(id)) err(`contested["${c.question}"]`, `position cites unknown source "${id}"`);
+      }
+    }
+    if (!c.practicalEffect) {
+      warn(`contested["${c.question}"]`, 'states a dispute but not what the buyer should do meanwhile');
+    }
+  }
+
+  // --- Watchlist ------------------------------------------------------------
+  for (const w of pack.watchlist ?? []) {
+    for (const id of w.affectsPathways ?? []) {
+      if (!pathwayIds.has(id)) err(`watchlist["${w.title}"]`, `references unknown pathway "${id}"`);
+    }
+    if (w.checkBy && w.checkBy < today) {
+      warn(`watchlist["${w.title}"]`, `was due for a check on ${w.checkBy} — run build/watch.mjs`);
+    }
+    // A pathway-changing rumour is dangerous unless the buyer-facing copy
+    // already says it is unconfirmed. Check that it actually does.
+    if (w.status === 'rumoured' && w.impact === 'pathway-changing') {
+      const facing = JSON.stringify([pack.realityCheck ?? [], pack.gotchas ?? []]);
+      const flagged = (w.sourceIds ?? []).some(id => facing.includes(id));
+      if (!flagged) {
+        err(`watchlist["${w.title}"]`,
+          'is a pathway-changing rumour that no reality-check or gotcha entry warns about — buyers will meet this claim in the wild and must be told it is unconfirmed');
+      }
+    }
+  }
+
+  // --- Changelog ------------------------------------------------------------
+  const log = pack.changelog ?? [];
+  if (log.length) {
+    if (log[0].version !== pack.meta.version) {
+      err('changelog[0]', `newest entry is v${log[0].version} but meta.version is v${pack.meta.version} — bump one of them`);
+    }
+    const cmp = v => v.split('.').map(Number);
+    for (let i = 1; i < log.length; i++) {
+      const [a, b] = [cmp(log[i - 1].version), cmp(log[i].version)];
+      const newer = a[0] !== b[0] ? a[0] > b[0] : a[1] !== b[1] ? a[1] > b[1] : a[2] > b[2];
+      if (!newer) err(`changelog[${i}]`, `v${log[i].version} is not older than v${log[i - 1].version} — changelog must be newest first`);
     }
   }
 

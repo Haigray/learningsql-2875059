@@ -89,6 +89,19 @@ const pathwaySection = `
       ${p.timeline ? `<dt>Realistic timeline</dt><dd>${esc(p.timeline)}</dd>` : ''}
     </dl>
 
+    ${p.verification?.length ? `
+    <div class="verify">
+      <h4 class="verify-h">Verify this yourself before spending money</h4>
+      <p class="verify-lede">Under an hour of work. This is the check that matters — not our word, and not an agency's.</p>
+      ${p.verification.map(v => `
+      <div class="verify-item">
+        <p class="v-check">${esc(v.check)}</p>
+        <p class="v-who"><b>Ask:</b> ${esc(v.authority)}</p>
+        <p class="v-how">${esc(v.how)} ${v.url ? `<a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.url.replace(/^https?:\/\//, ''))}</a>` : ''} ${cite(v.sourceIds)}</p>
+        ${v.expectAnswer ? `<p class="v-expect"><b>A real answer sounds like:</b> ${esc(v.expectAnswer)}</p>` : ''}
+      </div>`).join('')}
+    </div>` : ''}
+
     <h4>Hard requirements</h4>
     <ul class="reqs">
       ${p.eligibility.map(e => `<li><strong>${esc(e.requirement)}</strong>${e.detail ? ` — ${esc(e.detail)}` : ''} ${cite(e.sourceIds)}</li>`).join('')}
@@ -168,6 +181,64 @@ const gotchaSection = !pack.gotchas?.length ? '' : `
     <p><strong>The trap.</strong> ${esc(g.trap)}</p>
     <p><strong>Do this instead.</strong> ${esc(g.doThis)} ${cite(g.sourceIds)}</p>
     ${g.expires ? `<p class="expires">Tied to a rule change — re-check this after ${esc(prettyDate(g.expires))}.</p>` : ''}
+  </article>`).join('')}
+</section>`;
+
+const contestedSection = !pack.contested?.length ? '' : `
+<section id="contested" class="band">
+  <h2>Where the sources disagree</h2>
+  <p class="lede">Questions credible sources answer differently. We publish the disagreement rather than picking a side and hoping — a guide that hides a genuine conflict is more dangerous than one that names it.</p>
+  ${pack.contested.map(c => `
+  <article class="contested">
+    <h3>${esc(c.question)}</h3>
+    <div class="positions">
+      ${c.positions.map((pos, i) => `
+      <div class="position">
+        <p class="pos-num">Position ${i + 1}</p>
+        <p class="pos-text">${esc(pos.position)} ${cite(pos.sourceIds)}</p>
+        <p class="pos-who">Held by: ${esc(pos.heldBy)}</p>
+      </div>`).join('')}
+    </div>
+    ${c.practicalEffect ? `<p class="c-effect"><b>What this actually means for you.</b> ${esc(c.practicalEffect)}</p>` : ''}
+    <p class="c-resolve"><b>How to settle it for your own case.</b> ${esc(c.howToResolve)} ${cite(c.sourceIds)}</p>
+  </article>`).join('')}
+</section>`;
+
+const WATCH_LABEL = {
+  'proposed': 'Proposed only', 'passed-not-in-force': 'Passed, not yet in force',
+  'in-force-unclear': 'In force, details unclear', 'rumoured': 'Rumoured — no traceable instrument',
+  'enforcement-shift': 'Enforcement shifting',
+};
+
+const watchSection = !pack.watchlist?.length ? '' : `
+<section id="watchlist" class="band">
+  <h2>What we are watching</h2>
+  <p class="lede">Rules that are moving, or expected to. Each carries the date we next check it. When one lands, this guide is updated and you get the new edition — that is what your purchase actually buys beyond the first read.</p>
+  ${pack.watchlist.map(w => `
+  <article class="watch impact-${esc(w.impact)}">
+    <h3>${esc(w.title)}</h3>
+    <p class="watch-meta">
+      <span class="wstatus">${esc(WATCH_LABEL[w.status] ?? w.status)}</span>
+      <span class="wimpact">Impact if it lands: ${esc(w.impact.replace('-', ' '))}</span>
+      ${w.checkBy ? `<span class="wcheck">We re-check by ${esc(prettyDate(w.checkBy))}</span>` : ''}
+    </p>
+    <p>${esc(w.whatChanges)} ${cite(w.sourceIds)}</p>
+    ${w.affectsPathways?.length ? `<p class="waffects">Affects: ${w.affectsPathways.map(id => esc(pack.pathways.find(x => x.id === id)?.name ?? id)).join(', ')}</p>` : ''}
+  </article>`).join('')}
+</section>`;
+
+const changelogSection = !pack.changelog?.length ? '' : `
+<section id="changelog" class="band">
+  <h2>What has changed</h2>
+  <p class="lede">Every edition of this guide, and what moved in it.</p>
+  ${pack.changelog.map(e => `
+  <article class="release">
+    <h3>v${esc(e.version)} <span class="rel-date">${esc(prettyDate(e.date))}</span></h3>
+    ${e.summary ? `<p class="rel-sum">${esc(e.summary)}</p>` : ''}
+    <ul class="rel-changes">
+      ${e.changes.map(c => `<li><span class="ckind">${esc(c.kind.replace('-', ' '))}</span> ${esc(c.what)}
+        ${c.actionRequired ? `<span class="c-action"><b>What to do:</b> ${esc(c.actionRequired)}</span>` : ''}</li>`).join('')}
+    </ul>
   </article>`).join('')}
 </section>`;
 
@@ -359,10 +430,67 @@ h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:0 0 .6rem}
 .cite{font-size:.7em;vertical-align:super;white-space:nowrap}
 .cite a{text-decoration:none;padding:0 .12em;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:650}
 
+
+/* verify-it-yourself — the block that replaces "trust us" */
+.verify{background:var(--accent-soft);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:1.15rem 1.25rem;margin:1.25rem 0}
+.verify-h{margin:0 0 .2rem;color:var(--accent)}
+.verify-lede{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+.verify-item{border-top:1px solid var(--line-strong);padding-top:.8rem;margin-top:.8rem}
+.verify-item:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.verify-item p{font-size:.93rem;margin-bottom:.3rem}
+.v-check{font-weight:650}
+.v-who{color:var(--muted)}
+.v-expect{color:var(--muted);font-style:italic;margin-bottom:0}
+.v-how a{word-break:break-all}
+
+/* contested claims */
+.contested{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.4rem;margin-bottom:1rem}
+.contested h3{margin-top:0}
+.positions{display:grid;gap:.7rem;margin:1rem 0}
+@media(min-width:44rem){.positions{grid-template-columns:1fr 1fr}}
+.position{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1rem}
+.pos-num{font:650 .68rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint);margin-bottom:.45rem}
+.pos-text{font-size:.93rem}
+.pos-who{font-size:.84rem;color:var(--faint);margin-bottom:0}
+.c-effect{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;
+  padding:.8rem 1rem;font-size:.95rem}
+.c-resolve{font-size:.95rem;margin-bottom:0}
+
+/* watchlist */
+.watch{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--line-strong);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+.watch.impact-significant{border-left-color:var(--warn)}
+.watch.impact-pathway-changing{border-left-color:var(--danger)}
+.watch h3{margin:0 0 .5rem;font-size:1.08rem}
+.watch-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;
+  font:600 .7rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.watch-meta span{border:1px solid var(--line-strong);border-radius:999px;padding:.35em .7em;color:var(--muted)}
+.wstatus{background:var(--warn-soft);color:var(--warn)!important;border-color:transparent!important}
+.watch p{font-size:.94rem}
+.waffects{color:var(--faint);font-size:.85rem;margin-bottom:0}
+
+/* changelog */
+.release{border-left:2px solid var(--line-strong);padding:0 0 .5rem 1.1rem;margin-bottom:1.2rem}
+.release h3{margin:0 0 .3rem;font-size:1.05rem}
+.rel-date{font:400 .8rem ui-sans-serif,system-ui,sans-serif;color:var(--faint);margin-left:.4rem}
+.rel-sum{color:var(--muted);font-size:.94rem}
+.rel-changes{list-style:none;padding:0;margin:.5rem 0 0}
+.rel-changes li{font-size:.92rem;margin-bottom:.6rem}
+.ckind{display:inline-block;font:650 .64rem/1 ui-sans-serif,system-ui,sans-serif;text-transform:uppercase;
+  letter-spacing:.06em;background:var(--bg);border:1px solid var(--line-strong);color:var(--faint);
+  padding:.3em .5em;border-radius:4px;margin-right:.45rem;vertical-align:.1em}
+.c-action{display:block;color:var(--accent);margin-top:.25rem}
+
+/* edition badge */
+.stamp .ed{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:650}
+
 footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,system-ui,sans-serif}
 @media print{
   .tree-controls,.phase-nav,#tree-app .answers{display:none}
-  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module{page-break-inside:avoid}
+  .band{page-break-inside:auto;border:0} .pathway,.gotcha,.module,.contested,.watch{page-break-inside:avoid}
   body{background:#fff;color:#000;font-size:11pt}
 }
 @media (max-width:34rem){ .facts{grid-template-columns:1fr;gap:.1rem .5rem} .facts dt{margin-top:.5rem} }
@@ -378,20 +506,27 @@ footer{padding:2.5rem 0 4rem;color:var(--faint);font:.85rem/1.6 ui-sans-serif,sy
     ${meta.reviewDue ? `<span>Next review <b>${esc(prettyDate(meta.reviewDue))}</b></span>` : ''}
     <span><b>${pack.pathways.length}</b> pathways</span>
     <span><b>${pack.sources.length}</b> cited sources</span>
+    <span class="ed">${meta.edition === 'reviewed' ? 'Professionally reviewed' : 'Navigator edition'}</span>
   </div>
 </div></header>
 
 <div class="wrap">
   <div class="notice">
     <p><b>Read this before you rely on anything here.</b> This is researched reference material, not legal or tax advice, and no lawyer-client relationship is created by buying it. Immigration rules change without notice and are applied with discretion by individual officers. Every claim is numbered to a source you can check yourself, and each source is labelled with how much weight it carries.</p>
+    <p>${meta.edition === 'reviewed'
+      ? `<b>Reviewed edition.</b> ${esc(meta.reviewedBy ?? '')}`
+      : '<b>Navigator edition.</b> This guide was researched against public primary and government sources by its publisher. No licensed practitioner in ' + esc(meta.country) + ' has reviewed it, and we do not pretend otherwise. That is exactly why every pathway carries its own <a href="#pathways">verify-this-yourself</a> steps, naming the office that can answer, the question to ask, and what a real answer sounds like. Run them. They cost an hour and they are worth more than our assurance.'}</p>
     <p style="margin-bottom:0"><b>Everything here was verified on ${esc(prettyDate(meta.verifiedAsOf))}.</b> Before you spend money or book a flight, confirm the specific rule against the cited source or with a licensed Vietnamese immigration adviser. ${esc(meta.fxNote ?? '')}</p>
   </div>
   ${realityCheck}
   ${treeSection}
   ${pathwaySection}
   ${gotchaSection}
+  ${contestedSection}
   ${moduleSection}
+  ${watchSection}
   ${sourceSection}
+  ${changelogSection}
   <footer>
     <p>${esc(meta.country)} Relocation Guide, edition v${esc(meta.version)}, verified ${esc(prettyDate(meta.verifiedAsOf))}. Built on the Relocation OS country-pack format.</p>
     <p>Licensed for personal use by the purchaser. Not legal, immigration, or tax advice.</p>
